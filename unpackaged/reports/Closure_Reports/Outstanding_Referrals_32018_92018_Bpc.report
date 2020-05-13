@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Complaints__c$Name</field>
+    </columns>
+    <columns>
+        <field>Complaints__c.Referrals1__r$Name</field>
+    </columns>
+    <columns>
+        <field>Complaints__c.Referrals1__r$Status__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Complaints__c.Referrals1__r$Status__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Findings Received</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <aggregateType>RowCount</aggregateType>
+        <dateGranularity>Day</dateGranularity>
+        <field>Complaints__c.Referrals1__r$External_Partner__c</field>
+        <sortByName>RowCount</sortByName>
+        <sortOrder>Desc</sortOrder>
+        <sortType>Aggregate</sortType>
+    </groupingsDown>
+    <groupingsDown>
+        <aggregateType>RowCount</aggregateType>
+        <dateGranularity>Day</dateGranularity>
+        <field>Complaints__c.Referrals1__r$External_Partner_Type__c</field>
+        <sortByName>RowCount</sortByName>
+        <sortOrder>Asc</sortOrder>
+        <sortType>Aggregate</sortType>
+    </groupingsDown>
+    <name>Outstanding Referrals 3/2018 - 9/2018</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Complaints_With_Referrals_New__c</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>false</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Complaints__c$Actual_Receive_Date__c</dateColumn>
+        <endDate>2018-09-01</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2018-03-01</startDate>
+    </timeFrameFilter>
+</Report>

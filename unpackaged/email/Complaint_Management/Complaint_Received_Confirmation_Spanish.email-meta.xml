@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Email response when complaint is received - Spanish</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Complaint Received Confirmation Spanish</name>
+    <style>formalLetter</style>
+    <subject>Gracias por enviarnos su queja ambiental.</subject>
+    <textOnly>DO NOT REPLY TO THIS MESSAGE.
+
+Thank you for submitting your environmental complaint to CalEPA.
+
+If this is an emergency, please dial 911 immediately. For hazardous material spill notification, call the State Warning Center at 1-800-852-7550.
+
+Dear {!Complaints__c.Complainant__c},
+
+
+
+The California Environmental Protection Agency (CalEPA) received your complaint on {!Complaints__c.CreatedDate}.  Your complaint will be referred to the appropriate agency for investigation. Your complaint tracking number is {!Complaints__c.Name}.
+
+
+
+
+A summary of the information you provided is provided below. If you need to correct any information or have questions about your complaint, please send your request or questions to complaints@calepa.ca.gov.
+
+
+
+Thank you for taking the time to notify us of your concern.
+
+
+
+Description:  {!Complaints__c.Description__c}
+
+Date/Time of Occurrence:  {!Complaints__c.Date_and_Time_of_Occurrence__c}
+
+Location Address:
+
+{!Complaints__c.Complaint_Location_Address__c}
+
+{!Complaints__c.Complaint_Location_City__c}, {!Complaints__c.Complaint_Location_Zip_Code__c}
+
+Location Description (if provided):  {!Complaints__c.Location_Description__c}
+
+
+
+Responsible Party Name:  {!Complaints__c.Responsible_Party_Name__c}
+
+Responsible Party Company Name:  {!Complaints__c.Responsible_Party_Company__c}
+
+Responsible Party Address:
+
+{!Complaints__c.Responsible_Party_Street__c}
+
+{!Complaints__c.Responsible_Party_City__c}, {!Complaints__c.Responsible_Party_State__c}  {!Complaints__c.Responsible_Party_Zip_Code__c}
+
+
+
+Your information:
+
+Email:  {!Complaints__c.Complainant_Email2__c}
+
+Home Phone:  {!Complaints__c.Complainant_Phone2__c}
+
+Mobile Phone:  {!Complaints__c.Complainant_Mobile_Phone__c}
+
+Your Address:
+
+{!Complaints__c.Complainant_Mailing_Street__c}
+
+{!Complaints__c.Complainant_Mailing_City__c}, {!Complaints__c.Complainant_Mailing_State__c}  {!Complaints__c.Complainant_Mailing_Zip_Code__c}</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

@@ -1,0 +1,74 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global" controller="CAMSUserProvisioningController" >
+    <aura:attribute name="hasErrors" type="Boolean" description="Indicate whether there were failures or not" />
+    <aura:attribute name="errors" type="string" />
+    <aura:attribute name="firstName" type="string" />
+    <aura:attribute name="lastName" type="string" />
+    <aura:attribute name="email" type="string" />
+    <aura:attribute name="userName" type="string" />
+    <aura:attribute name="jobFunction" type="string" />
+    <aura:attribute name="bdo" type="string" />
+    <aura:attribute name="division" type="string" />
+    <aura:handler name="init" value="{!this}" action="{!c.init}" />
+    <div class="slds-panel slds-size_medium slds-panel_docked slds-panel_docked-left slds-is-open" aria-hidden="false">
+        <div class="slds-panel__header">
+            <h2 class="slds-panel__header-title slds-text-heading_small slds-truncate" title="Panel Header">Create CAMS User</h2>
+        </div>
+        <div class="slds-panel__body">
+            <aura:if isTrue="{!v.hasErrors}">
+                <div class="userCreateError">
+                    <ui:message title="Error" severity="error" closable="true">
+                            {!v.errors}
+                    </ui:message>
+                </div>
+            </aura:if>
+            <div class="slds-form--stacked">
+                <div class="row">
+                    <lightning:input name="firstName" label="First Name:" value="{!v.firstName}"/>
+                </div>
+                <div class="slds-form-element">
+                    <div class="row">
+                        <lightning:input name="lastName" label="Last Name:" value="{!v.lastName}"/>
+                    </div>
+                </div>
+                <div class="slds-form-element">
+                    <div class="row">
+                        <lightning:input type="email" name="email" label="Email Address:" value="{!v.email}" onblur="{! c.setDefaultUsername }" />
+                    </div>
+                </div>
+                <div class="slds-form-element">
+                    <div class="row">
+                        <lightning:input type="userName" name="userName" label="Username:" value="{!v.userName}"/>
+                    </div>
+                </div> 
+                <div class="slds-form-element">
+                    <label class="slds-form-element__label" for="JobFunction">Job Function: </label>
+                    <div class="slds-form-element__control">
+                        <ui:inputSelect class="slds-input" aura:id="JobFunction" value="{!v.jobFunction}" required="true">
+                            <ui:inputSelectOption text=""/>
+                            <ui:inputSelectOption text="Assigner"/>
+                            <ui:inputSelectOption text="Coordinator"/>
+                            <ui:inputSelectOption text="Executive"/>
+                            <ui:inputSelectOption text="Reviewer"/>
+                </ui:inputSelect>
+                    </div>
+                    </div>
+                <div class="slds-form-element">
+                    <label class="slds-form-element__label" for="BDO">BDO: </label>
+                    <div class="slds-form-element__control">
+                        <ui:inputSelect class="slds-input" aura:id="BDO" value="{!v.bdo}" required="true" change="{! c.bdoChange }"/>
+                    </div>
+                    </div>
+                    <div class="slds-form-element">
+                        <label class="slds-form-element__label" for="Division">Division, Office or Program: </label>
+                        <div class="slds-form-element__control">
+                            <ui:inputSelect class="slds-input" aura:id="Division" value="{!v.division}" />
+                        </div>
+                    </div>               
+                    <div class="slds-form-element" style="padding-top:10px;">
+                        <lightning:button variant="neutral" label="Cancel" title="Cancel" onclick="{! c.clearForm }"/> 
+                        <lightning:button variant="brand" label="Save" title="Save" onclick="{! c.save }"/>
+                    </div>
+            </div>
+        </div>
+    </div>
+</aura:component>

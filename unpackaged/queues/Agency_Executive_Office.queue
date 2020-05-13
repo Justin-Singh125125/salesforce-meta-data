@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>true</doesSendEmailToMembers>
+    <name>Agency Executive Office</name>
+    <queueMembers>
+        <users>
+            <user>michelle.hutzel@calepa.ca.gov2</user>
+            <user>michelle.sinclair@calepa.ca.gov</user>
+        </users>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>CAMS_Assignment__c</sobjectType>
+    </queueSobject>
+    <queueSobject>
+        <sobjectType>CAMS_Task__c</sobjectType>
+    </queueSobject>
+</Queue>

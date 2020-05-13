@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>File</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Files</value>
+    </caseValues>
+    <fields>
+        <label><!-- Assignment --></label>
+        <name>Assignment__c</name>
+        <relationshipLabel><!-- Files --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- CAMS Task --></label>
+        <name>CAMS_Task__c</name>
+        <relationshipLabel><!-- Files --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Doc Id --></label>
+        <name>Doc_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Document Link --></label>
+        <name>Document_Link__c</name>
+    </fields>
+    <fields>
+        <label><!-- Final --></label>
+        <name>Final__c</name>
+    </fields>
+    <fields>
+        <label><!-- Name --></label>
+        <name>Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Test Data --></label>
+        <name>Test_Data__c</name>
+    </fields>
+    <fields>
+        <label><!-- Uploaded To --></label>
+        <name>Uploaded_To__c</name>
+    </fields>
+    <layouts>
+        <layout>File Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- New Section --></label>
+            <section>New Section</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- You cannot change the file name. --></errorMessage>
+        <name>Cannot_Change_File_Name</name>
+    </validationRules>
+</CustomObjectTranslation>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>45.0</apiVersion>
+    <available>true</available>
+    <description>Sent out when the subtasks assigned out have been completed.</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>CAMS All Subtasks Completed2</name>
+    <style>none</style>
+    <subject>All Subtasks Related to  (CAMS ID:  , Task ID:  ) have been completed</subject>
+    <type>visualforce</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

@@ -1,0 +1,364 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global" controller="ExecutiveDashboardStatisticsController" >
+    <aura:handler name="init" value="{!this}" action="{!c.init}" />    
+    <aura:attribute name="isTestEnvironment" type="boolean"/>    
+    <aura:attribute name="showPreviousPeriod" type="boolean" default='true'/>    
+    <aura:attribute name="selectedYear" type="string"/>
+    <aura:attribute name="title1" type="string"/>
+    <aura:attribute name="title2" type="string"/>
+    <aura:attribute name="totalComplaintsThisPeriod" type="integer"/>
+    <aura:attribute name="totalComplaintsThisPeriodLoaded" type="boolean" default='false'/>        
+    <aura:attribute name="totalComplaintsPreviousPeriod" type="integer"/>
+    <aura:attribute name="totalComplaintsPreviousPeriodLoaded" type="boolean" default='false'/>        
+    <aura:attribute name="totalEnforcementActionsThisPeriod" type="integer"/>
+    <aura:attribute name="totalEnforcementActionsThisPeriodLoaded" type="boolean" default='false'/>        
+    <aura:attribute name="totalEnforcementActionsPreviousPeriod" type="integer"/>    
+    <aura:attribute name="totalEnforcementActionsPreviousPeriodLoaded" type="boolean" default='false'/>        
+    <aura:attribute name="totalReferredThisPeriod" type="integer"/>
+    <aura:attribute name="totalReferredThisPeriodLoaded" type="boolean" default='false'/>        
+    <aura:attribute name="totalReferredPreviousPeriod" type="integer"/>    
+    <aura:attribute name="totalReferredPreviousPeriodLoaded" type="boolean" default='false'/>        
+    <aura:attribute name="calEPAHandledOpenComplaintsThisPeriod" type="integer"/>
+    <aura:attribute name="calEPAHandledOpenComplaintsThisPeriodLoaded" type="boolean" default='false'/>        
+    <aura:attribute name="calEPAHandledOpenComplaintsPreviousPeriod" type="integer"/>
+    <aura:attribute name="calEPAHandledOpenComplaintsPreviousPeriodLoaded" type="boolean" default='false'/>        
+    <aura:attribute name="calEPAHandledClosedComplaintsThisPeriod" type="integer"/>
+    <aura:attribute name="calEPAHandledClosedComplaintsThisPeriodLoaded" type="boolean" default='false'/>        
+    <aura:attribute name="calEPAHandledClosedComplaintsPreviousPeriod" type="integer"/>
+    <aura:attribute name="calEPAHandledClosedComplaintsPreviousPeriodLoaded" type="boolean" default='false'/>        
+    <aura:attribute name="averageDaysOpenThisPeriod" type="integer"/>
+    <aura:attribute name="averageDaysOpenThisPeriodLoaded" type="boolean" default='false'/>        
+    <aura:attribute name="averageDaysOpenPreviousPeriod" type="integer"/>
+    <aura:attribute name="averageDaysOpenPreviousPeriodLoaded" type="boolean" default='false'/>        
+    <aura:attribute name="averageDaysToCloseThisPeriod" type="integer"/>
+    <aura:attribute name="averageDaysToCloseThisPeriodLoaded" type="boolean" default='false'/>        
+    <aura:attribute name="averageDaysToClosePreviousPeriod" type="integer"/>
+    <aura:attribute name="averageDaysToClosePreviousPeriodLoaded" type="boolean" default='false'/>        
+
+    <aura:attribute name="years" type="List" />
+    <aura:attribute name="selectedQuarter" type="string"/>
+    <aura:attribute name="quarters" type="List" />
+    <div class="slds-panel slds-size_full slds-is-open" aria-hidden="false">
+        <div class="slds-panel__header" style="vertical-align:bottom;">
+            <div class="slds-grid" style="width:100%;">
+                <div class="slds-col slds-size_1-of-5">
+                    <h2 class="slds-panel__header-title slds-text-heading_small slds-truncate" title="Panel Header">
+                        Complaint Counts
+                    </h2>
+                </div>
+                <div class="slds-col slds-size_1-of-5">
+                    <lightning:select label="BDO:" aura:id="bdo" name="bdo">
+                        <option value="All">All</option>
+                        <option value="Air">Air</option>
+                        <option value="Solid Waste">Solid Waste</option>
+                        <option value="Pesticides">Pesticides</option>
+                        <option value="Toxic Substances">Toxic Substances</option>
+                        <option value="Water">Water</option>
+                        <option value="Multi-BDO">Multi-BDO</option>
+                    </lightning:select>
+                </div>
+                <div class="slds-col slds-size_1-of-5">
+                    <lightning:select label="Year:" name="year" aura:id="year" value="{!v.selectedYear}" onchange="{! c.reloadQuarter }">
+                        <option value="All Time">April 2016-present</option>
+                        <aura:iteration items="{!v.years}" var="year">
+                            <option text="{!year.label}" value="{!year.value}" selected="{!year.selected}"/>
+                        </aura:iteration>
+                    </lightning:select>
+                </div>
+                <div class="slds-col slds-size_1-of-5">
+                    <lightning:select label="Quarter:" name="quarter" aura:id="quarter" value="{!v.selectedQuarter}" >
+                            <option value=""></option>
+                            <aura:iteration items="{!v.quarters}" var="quarter">
+                                <option text="{!quarter.label}" value="{!quarter.value}" selected="{!quarter.selected}"/>
+                            </aura:iteration>
+                    </lightning:select>
+                </div>
+                <div class="slds-col slds-size_1-of-5" style='position: relative;'>
+                    <div style="position: absolute; bottom: 0;">
+                        <lightning:button variant="success" label="Go" title="Bo" onclick="{! c.loadDashboard }" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slds-panel__body">
+            <div style="position:relative; top:0; left:0; z-index:1;">
+                <table style="width: 100%;">
+                    <tr>
+                        <td style="font-size:125%;" colspan="4">{!v.title1}<br/><span style="font-size:small; font-style:italic;">Click on a number to view details.</span></td>
+                    </tr>
+                    <tr>
+                        <td style="width: 33%;">
+                            <div class="slds-panel slds-size_small slds-is-open" aria-hidden="false">
+                                <div class="slds-panel__header">
+                                    <h2 class="slds-panel__header-title slds-text-heading_small slds-truncate" title="Panel Header">
+                                        New Complaints
+                                    </h2>
+                                    <lightning:icon iconName="action:question_post_action" alternativeText="Approved" size="xx-small" onclick="{!c.loadNewComplaintsHelp}"/>
+                                </div>
+                                <div class="slds-panel__body" style="height:5rem; font-size: large;"><!---->
+                                    <aura:if isTrue="{! v.totalComplaintsThisPeriodLoaded }">
+                                        <lightning:formattedNumber value="{!v.totalComplaintsThisPeriod}"  onclick="{!c.loadNewComplaintsReport}" styleClass='reportLaunch'/> 
+                                        <aura:set attribute="else">
+                                            <img src="{!$Resource.Spinner}"/>
+                                        </aura:set>
+                                    </aura:if>                                    
+                                </div>
+                            </div>
+                        </td>
+                        <td style="width: 33%;">
+                            <div class="slds-panel slds-size_small slds-is-open" aria-hidden="false">
+                                <div class="slds-panel__header">
+                                    <h2 class="slds-panel__header-title slds-text-heading_small slds-truncate" title="Panel Header">
+                                        Violations
+                                    </h2>
+                                    <lightning:icon iconName="action:question_post_action" alternativeText="Approved" size="xx-small" onclick="{!c.loadEnforcementActionsHelp}"/>
+                                </div>
+                                <div class="slds-panel__body" style="height:5rem; font-size: large;">	      							
+                                    <aura:if isTrue="{! v.totalEnforcementActionsThisPeriodLoaded }">
+                                        <lightning:formattedNumber value="{!v.totalEnforcementActionsThisPeriod}"  onclick="{!c.loadComplaintsWithViolationsReport}"  htmlStyle="cursor: default;"/> 
+                                        <aura:set attribute="else">
+                                            <img src="{!$Resource.Spinner}"/>
+                                        </aura:set>
+                                    </aura:if>                                    
+                                </div>
+                            </div>
+                        </td>
+                        <td style="width: 33%;">
+                            <div class="slds-panel slds-size_small slds-is-open" aria-hidden="false">
+                                <div class="slds-panel__header">
+                                    <h2 class="slds-panel__header-title slds-text-heading_small slds-truncate" title="Panel Header">
+                                        Complaints Referred
+                                    </h2>
+                                    <lightning:icon iconName="action:question_post_action" alternativeText="Approved" size="xx-small" onclick="{!c.loadReferredHelp}"/>
+                                </div>
+                                <div class="slds-panel__body" style="height:5rem; font-size: large;">	      							
+                                    <aura:if isTrue="{! v.totalReferredThisPeriodLoaded }">
+                                        <lightning:formattedNumber value="{!v.totalReferredThisPeriod}" onclick="{!c.loadReferredComplaintsReport}"/>
+                                        <aura:set attribute="else">
+                                            <img src="{!$Resource.Spinner}"/>
+                                        </aura:set>
+                                    </aura:if>                                    
+                                </div>
+                            </div>
+                        </td>                        
+                    </tr>
+                    <tr>
+                        <td style="width: 33%;">
+                            <div class="slds-panel slds-size_small slds-is-open" aria-hidden="false">
+                                <div class="slds-panel__header">
+                                    <h2 class="slds-panel__header-title slds-text-heading_small slds-truncate" title="Panel Header">
+                                        CalEPA Handled Open
+                                    </h2>
+                                    <lightning:icon iconName="action:question_post_action" alternativeText="Approved" size="xx-small" onclick="{!c.loadCalEPAHandledOpenHelp}"/>
+                                </div>
+                                <div class="slds-panel__body" style="height:5rem; font-size: large;">                                    	      							
+                                    <aura:if isTrue="{! v.calEPAHandledOpenComplaintsThisPeriodLoaded }">
+                                        <lightning:formattedNumber value="{!v.calEPAHandledOpenComplaintsThisPeriod}"  onclick="{!c.loadCalEPAHandledOpenComplaintsReport}"/> 
+                                        <aura:set attribute="else">
+                                            <img src="{!$Resource.Spinner}"/>
+                                        </aura:set>
+                                    </aura:if>                                    
+                                </div>
+                            </div>
+                        </td>
+                        <td style="width: 33%;">
+                            <div class="slds-panel slds-size_small slds-is-open" aria-hidden="false">
+                                <div class="slds-panel__header">
+                                    <h2 class="slds-panel__header-title slds-text-heading_small slds-truncate" title="Panel Header">
+                                        CalEPA Handled Closed
+                                    </h2>
+                                    <lightning:icon iconName="action:question_post_action" alternativeText="Approved" size="xx-small" onclick="{!c.loadCalEPAHandledClosedHelp}"/>
+                                </div>
+                                <div class="slds-panel__body" style="height:5rem; font-size: large;">	      							
+                                    <aura:if isTrue="{! v.calEPAHandledClosedComplaintsThisPeriodLoaded }">
+                                        <lightning:formattedNumber value="{!v.calEPAHandledClosedComplaintsThisPeriod}"  onclick="{!c.loadCalEPAHandledClosedComplaintsReport}"/> 
+                                        <aura:set attribute="else">
+                                            <img src="{!$Resource.Spinner}"/>
+                                        </aura:set>
+                                    </aura:if>                                    
+                                </div>
+                            </div>
+                        </td>
+                    </tr>                    
+                    <tr>
+                        <td style="width: 33%;">
+                            <div class="slds-panel slds-size_small slds-is-open" aria-hidden="false">
+                                <div class="slds-panel__header">
+                                    <h2 class="slds-panel__header-title slds-text-heading_small slds-truncate" title="Panel Header">
+                                        Average Days Open
+                                    </h2>
+                                    <lightning:icon iconName="action:question_post_action" alternativeText="Approved" size="xx-small" onclick="{!c.loadAverageDaysOpenHelp}"/>
+                                </div>
+                                <div class="slds-panel__body" style="height:5rem; font-size: large;">                                    	      							
+                                    <aura:if isTrue="{! v.averageDaysOpenThisPeriodLoaded }">
+                                        <lightning:formattedNumber value="{!v.averageDaysOpenThisPeriod}"  onclick="{!c.loadCalEPAHandledOpenComplaintsReport}"/> 
+                                        <aura:set attribute="else">
+                                            <img src="{!$Resource.Spinner}"/>
+                                        </aura:set>
+                                    </aura:if>                                    
+                                </div>
+                            </div>
+                        </td>
+                        <td style="width: 33%;">
+                            <div class="slds-panel slds-size_small slds-is-open" aria-hidden="false">
+                                <div class="slds-panel__header">
+                                    <h2 class="slds-panel__header-title slds-text-heading_small slds-truncate" title="Panel Header">
+                                        Average Days to Close
+                                    </h2>
+                                    <lightning:icon iconName="action:question_post_action" alternativeText="Approved" size="xx-small" onclick="{!c.loadAverageDaysToCloseHelp}"/>
+                                </div>
+                                <div class="slds-panel__body" style="height:5rem; font-size: large;">	      							
+                                    <aura:if isTrue="{! v.averageDaysToCloseThisPeriodLoaded }">
+                                        <lightning:formattedNumber value="{!v.averageDaysToCloseThisPeriod}" onclick="{!c.loadCalEPAHandledClosedComplaintsReport}" /> 
+                                        <aura:set attribute="else">
+                                            <img src="{!$Resource.Spinner}"/>
+                                        </aura:set>
+                                    </aura:if>                                    
+                                </div>
+                            </div>
+                        </td>
+                    </tr>                     
+                </table>    
+
+                <aura:if isTrue="{! v.showPreviousPeriod }">
+                    <table style="width: 100%;">
+                        <tr>
+                            <td style="font-size:125%;" colspan="4">{!v.title2}<br/><span style="font-size:small; font-style:italic;">Click on a number to view details.</span></td>
+                        </tr>
+                        <tr>
+                            <td style="width: 33%;">
+                                <div class="slds-panel slds-size_small slds-is-open" aria-hidden="false">
+                                    <div class="slds-panel__header">
+                                        <h2 class="slds-panel__header-title slds-text-heading_small slds-truncate" title="Panel Header">
+                                            New Complaints
+                                        </h2>
+                                        <lightning:icon iconName="action:question_post_action" alternativeText="Approved" size="xx-small" onclick="{!c.loadNewComplaintsHelp}"/>
+                                    </div>
+                                    <div class="slds-panel__body" style="height:5rem; font-size: large;">
+                                        <aura:if isTrue="{! v.totalComplaintsPreviousPeriodLoaded }">
+                                        	<lightning:formattedNumber value="{!v.totalComplaintsPreviousPeriod}"  onclick="{!c.loadPreviousNewComplaintsReport}"/> 
+                                        	<aura:set attribute="else">
+                                        		<img src="{!$Resource.Spinner}"/>
+                                        	</aura:set>
+                                        </aura:if>                                        
+                                    </div>
+                                </div>
+                            </td>
+                            <td style="width: 33%;">
+                                <div class="slds-panel slds-size_small slds-is-open" aria-hidden="false">
+                                    <div class="slds-panel__header">
+                                        <h2 class="slds-panel__header-title slds-text-heading_small slds-truncate" title="Panel Header">
+                                            Violations
+                                        </h2>
+                                        <lightning:icon iconName="action:question_post_action" alternativeText="Approved" size="xx-small" onclick="{!c.loadEnforcementActionsHelp}"/>
+                                    </div>
+                                    <div class="slds-panel__body" style="height:5rem; font-size: large;">                                        
+                                        <aura:if isTrue="{! v.totalEnforcementActionsPreviousPeriodLoaded }">
+                                        	<lightning:formattedNumber value="{!v.totalEnforcementActionsPreviousPeriod}"  onclick="{!c.loadPreviousComplaintsWithViolationsReport}" />
+                                        	<aura:set attribute="else">
+                                        		<img src="{!$Resource.Spinner}"/>
+                                        	</aura:set>
+                                        </aura:if>
+                                    </div>
+                                </div>
+                            </td>
+                            <td style="width: 33%;">
+                            <div class="slds-panel slds-size_small slds-is-open" aria-hidden="false">
+                                <div class="slds-panel__header">
+                                    <h2 class="slds-panel__header-title slds-text-heading_small slds-truncate" title="Panel Header">
+                                        Complaints Referred
+                                    </h2>
+                                    <lightning:icon iconName="action:question_post_action" alternativeText="Approved" size="xx-small" onclick="{!c.loadReferredHelp}"/>
+                                </div>
+                                <div class="slds-panel__body" style="height:5rem; font-size: large;">	      							
+                                    <aura:if isTrue="{! v.totalReferredPreviousPeriodLoaded }">
+                                        <lightning:formattedNumber value="{!v.totalReferredPreviousPeriod}"  onclick="{!c.loadPreviousReferredComplaintsReport}" />
+                                        <aura:set attribute="else">
+                                            <img src="{!$Resource.Spinner}"/>
+                                        </aura:set>
+                                    </aura:if>                                    
+                                </div>
+                            </div>
+                        </td>        
+                        </tr>
+                        <tr>
+                            <td style="width: 33%;">
+                                <div class="slds-panel slds-size_small slds-is-open" aria-hidden="false">
+                                    <div class="slds-panel__header">
+                                        <h2 class="slds-panel__header-title slds-text-heading_small slds-truncate" title="Panel Header">
+                                            CalEPA Handled Open
+                                        </h2>
+                                        <lightning:icon iconName="action:question_post_action" alternativeText="Approved" size="xx-small" onclick="{!c.loadCalEPAHandledOpenHelp}"/>
+                                    </div>
+                                    <div class="slds-panel__body" style="height:5rem; font-size: large;">                                    	      							
+                                        <aura:if isTrue="{! v.calEPAHandledOpenComplaintsThisPeriodLoaded }">
+                                            <lightning:formattedNumber value="{!v.calEPAHandledOpenComplaintsPreviousPeriod}"  onclick="{!c.loadPreviousCalEPAHandledOpenComplaintsReport}"/>
+                                            <aura:set attribute="else">
+                                                <img src="{!$Resource.Spinner}"/>
+                                            </aura:set>
+                                        </aura:if>                                    
+                                    </div>
+                                </div>
+                            </td>
+                            <td style="width: 33%;">
+                                <div class="slds-panel slds-size_small slds-is-open" aria-hidden="false">
+                                    <div class="slds-panel__header">
+                                        <h2 class="slds-panel__header-title slds-text-heading_small slds-truncate" title="Panel Header">
+                                            CalEPA Handled Closed
+                                        </h2>
+                                        <lightning:icon iconName="action:question_post_action" alternativeText="Approved" size="xx-small" onclick="{!c.loadCalEPAHandledClosedHelp}"/>
+                                    </div>
+                                    <div class="slds-panel__body" style="height:5rem; font-size: large;">	      							
+                                        <aura:if isTrue="{! v.calEPAHandledClosedComplaintsThisPeriodLoaded }">
+                                            <lightning:formattedNumber value="{!v.calEPAHandledClosedComplaintsPreviousPeriod}"  onclick="{!c.loadPreviousCalEPAHandledClosedComplaintsReport}"/>
+                                            <aura:set attribute="else">
+                                                <img src="{!$Resource.Spinner}"/>
+                                            </aura:set>
+                                        </aura:if>                                    
+                                    </div>
+                                </div>
+                            </td>
+                        </tr> 
+                        <tr>
+                            <td style="width: 33%;">
+                                <div class="slds-panel slds-size_small slds-is-open" aria-hidden="false">
+                                    <div class="slds-panel__header">
+                                        <h2 class="slds-panel__header-title slds-text-heading_small slds-truncate" title="Panel Header">
+                                            Average Days Open
+                                        </h2>
+                                        <lightning:icon iconName="action:question_post_action" alternativeText="Approved" size="xx-small" onclick="{!c.loadAverageDaysOpenHelp}"/>
+                                    </div>
+                                    <div class="slds-panel__body" style="height:5rem; font-size: large;">                                    	      							
+                                        <aura:if isTrue="{! v.averageDaysOpenPreviousPeriodLoaded }">
+                                            <lightning:formattedNumber value="{!v.averageDaysOpenPreviousPeriod}"  onclick="{!c.loadPreviousCalEPAHandledOpenComplaintsReport}"/> 
+                                            <aura:set attribute="else">
+                                                <img src="{!$Resource.Spinner}"/>
+                                            </aura:set>
+                                        </aura:if>                                    
+                                    </div>
+                                </div>
+                            </td>
+                            <td style="width: 33%;">
+                                <div class="slds-panel slds-size_small slds-is-open" aria-hidden="false">
+                                    <div class="slds-panel__header">
+                                        <h2 class="slds-panel__header-title slds-text-heading_small slds-truncate" title="Panel Header">
+                                            Average Days to Close
+                                        </h2>
+                                        <lightning:icon iconName="action:question_post_action" alternativeText="Approved" size="xx-small" onclick="{!c.loadAverageDaysToCloseHelp}"/>
+                                    </div>
+                                    <div class="slds-panel__body" style="height:5rem; font-size: large;">	      							
+                                        <aura:if isTrue="{! v.averageDaysToClosePreviousPeriodLoaded }">
+                                            <lightning:formattedNumber value="{!v.averageDaysToClosePreviousPeriod}"  onclick="{!c.loadPreviousCalEPAHandledClosedComplaintsReport}"/> 
+                                            <aura:set attribute="else">
+                                                <img src="{!$Resource.Spinner}"/>
+                                            </aura:set>
+                                        </aura:if>                                    
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>   
+                    </table>                    
+                </aura:if>  
+            </div>           
+        </div>
+    </div>
+</aura:component>

@@ -1,0 +1,1355 @@
+<apex:page applyBodyTag="false"    
+    applyHTMLTag="false" 
+    cache="false" 
+    docType="HTML-5.0" 
+    id="Layout" 
+    sidebar="false" 
+    showChat="false" 
+    showHeader="false"    
+    standardStylesheets="false"> 
+    <apex:composition template="StateTemplateV5">
+        <apex:define name="title">
+            CalEPA Complaint System
+        </apex:define>
+        <apex:define name="PageCss">
+            <apex:stylesheet value="{!URLFOR($Resource.jstree, '/themes/default/style.min.css')}"/>            
+            <apex:stylesheet value="{!URLFOR($Resource.Plugins, '/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css')}"/>
+            <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"/>
+            <style>
+                /*Form*/
+                #ComplaintBody
+                {
+              		margin-right: auto;
+    				margin-left: auto;
+    			    position: relative;                
+                	max-width: 1280px;
+                }
+                #complaintForm 
+                {
+              		background-color: #ffffff;
+              		min-width: 300px;
+            	}                
+                .tab 
+                {
+                  display: none; /* Hide all steps by default: */
+                }
+                
+                /* Make circles that indicate the steps of the form: */
+                .step 
+                {
+                  height: 15px;
+                  width: 15px;
+                  margin: 0 2px;
+                  background-color: #bbbbbb;
+                  border: none;
+                  border-radius: 50%;
+                  display: inline-block;
+                  opacity: 0.5;
+                }
+                
+                /* Mark the active step: */
+                .step.active 
+                {
+                  opacity: 1;
+                }
+                
+                /* Mark the steps that are finished and valid: */
+                .step.finish 
+                {
+                  background-color: #4CAF50;
+                }
+                input 
+                {
+                	padding: 10px;
+                  	font-size: 17px;
+                    border: 1px solid #aaaaaa;
+                }
+                
+  
+                
+                
+                
+                
+                /*Bing Address Auto-Suggest*/
+                .searchBox,.responsibleSearchBox
+                {
+                	width:100%;
+                }
+                
+                /*DateTimePicker*/
+                .dateTimeOfOccurrance
+                {
+                	width:100px;
+                }
+			</style>                
+        </apex:define>
+        <apex:define name="UtilityLinks">
+	        <a href="/contact.html"><span class="ca-gov-icon-contact-us" aria-hidden="true"></span> Contact Us</a>
+            <button class="btn btn-xs btn-primary" data-toggle="collapse" data-target="#siteSettings" aria-expanded="false" aria-controls="siteSettings"><span class="ca-gov-icon-gear" aria-hidden="true"></span> Settings</button>
+        </apex:define>
+        <apex:define name="NavListIcons">
+
+        </apex:define>
+        <apex:define name="Body">
+			<div id="ComplaintBody">
+           		<h1>Submit a Complaint</h1>
+               	<apex:form id="complaintForm">
+                    <!-- One "tab" for each step in the form: -->
+                    <div class="tab">
+                        <h2>
+                            Select a Category
+                        </h2>
+                        <div id="jstree_demo_div"></div>
+                        <apex:inputHidden id="complaintCategory" html-Class="complaintCategory"/>
+                    </div>
+                    <div class="tab">
+                       	<div class="form-group">
+        					<h2>
+                            	Description
+                        	</h2>
+                            <p>
+                              Please describe complaint (What happened, what materials or substances were involved, how much is involved, where did the materials or substances go, who else have you reported this to and what was the outcome? Provide any information that will help our inspectors determine the most timely and effective response. Text only.)  
+                            </p>
+                            <apex:inputTextarea id="description" rows="10" cols="80" styleClass="form-control description" />
+                            <p>
+                                How did you become aware of the incident?
+                            </p>
+                            <apex:inputTextarea id="howAware" rows="10" cols="80" styleClass="form-control howAware" />
+    					</div>
+                    </div>
+                    <div class="tab">
+                        <h2>
+                            Complaint Location
+                        </h2>
+                        <p>
+                            Use the search box to locate a spot on the map.  You can then move the pin on the map to a more precise location.  If you do not know the exact location, you may type a textual description in the location description box.
+                        </p>
+                        <div class="form-group" id='addressGroup'>
+                            <label for="responsiblePhone" class="form-control-label"> Address</label>
+                            <div class="group">
+                                <div class="full-width">
+                                    <div id='searchBoxContainer'>
+                                        <apex:input id="searchBox" styleClass="searchBox" style="margin-bottom: 10px;"/>
+                                    </div>                            
+                                </div>
+                            </div>
+                            <div class="group">
+                                <div class="full-width" style='height:425px;'>
+                                    <div id='bingMap' style='width: 100%; height:400px;'>  
+                                    </div> 
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group" id='locationDescriptionGroup'>
+                            <label for="responsiblePhone" class="form-control-label"> Location Description</label>
+                            <div class="group">
+                                <div class="full-width">
+                                    <apex:inputTextarea id="locationdescription" rows="10" cols="80" styleClass="form-control locationDescription" html-placeholder="Description of the location.  For example 'Near mile marker 150 on Interstate 5 South'" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group" id='sensitiveLocationGroup'>
+                            <label class="form-control-label"> Is the complaint near a sensitive location?</label>
+                        	<label class="select">
+                         	   	<span class="sr-only">Select options:</span>
+                        		<select name="sensitiveLocation" id="sensitiveLocation">
+                                    <option></option>
+                                	<option>Residences/Apartments</option>
+                                	<option>School/Daycare/Churches</option>
+                                	<option>Hospitals/Eldercare Home</option>
+	                                <option>Ocean/Lakes/Stream/Riverbed/Wetlands</option>
+    	                            <option>Storm Drain</option>
+                                    <option>Public Parks/State and National Parks</option>
+                                    <option>Unknown</option>
+        	                        <option>Other</option>
+            	                </select>
+                    		</label>                            
+                        </div>
+                        <div class="form-group" id='otherSensitiveLocationGroup' style="display: none;">
+                            <label class="form-control-label"> Other Location</label>
+                        	<input type="text" class="form-control" id="otherSensitiveLocation"/>	                       
+                        </div>
+                        
+                        
+                        
+                        <apex:inputHidden id="complaintLocationAddress" html-Class="complaintLocationAddress"/>
+                        <apex:inputHidden id="complaintLocationCity" html-Class="complaintLocationCity"/>
+                        <apex:inputHidden id="complaintLocationState" html-Class="complaintLocationState"/>
+                        <apex:inputHidden id="complaintLocationZipCode" html-Class="complaintLocationZipCode"/>
+                        <apex:inputHidden id="complaintLocationLatitude" html-Class="complaintLocationLatitude"/>
+                        <apex:inputHidden id="complaintLocationLongitude" html-Class="complaintLocationLongitude"/>
+                    </div>           
+                    <div class="tab">
+                        <h2>
+                            Date and Time of Occurrance
+                        </h2>
+                         <div class="form-group">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="onGoingCheck"/>
+                                <label class="form-check-label" for="onGoingCheck">
+                                    This is Ongoing
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="input-append date" id="datetimepicker" data-link-field="dateAndTimeOfOccurrance">
+                            <apex:input id="occurrance" styleClass="dateTimeOfOccurrance" html-placeholder="Click here to select date" html-readonly="readonly"/>
+    						<span class="add-on"><i class="icon-th"></i></span>
+						</div>
+            			<input type="hidden" id="dateAndTimeOfOccurrance" value="" /><br/>
+                    </div>                               
+                    <div class="tab">
+                        <h2>
+                            Alleged Responsible Party
+                        </h2>
+                        
+                        <div class="m-b" id="responsibleBusinessOrIndividualGroup">
+                            <label class="check">
+                                <input class="hidden-up pos-abs top-0 left-0" name="responsibleBusinessOrIndividual" checked="checked" type="radio" value="Business"/>
+                                <span class="btn btn-lg btn-block bg-highlight--checked rounded-0" id="businessSpan">Business</span>
+                            </label>
+                            <label class="check">
+                                <input class="hidden-up pos-abs top-0 left-0" name="responsibleBusinessOrIndividual" type="radio" value="Individual"/>
+                                <span class="btn btn-lg btn-block bg-highlight--checked rounded-0" id="individualSpan">Individual/Residence</span>
+                            </label>
+                        </div>
+                        <div class="form-group" id='responsibleCompanyGroup'>
+                            <label for="responsibleCompany" class="form-control-label"><span class="required-label">*</span> Company Name</label>
+                            <input type="text" class="form-control" id="responsibleCompany"/>
+                        </div>
+                        <div class="form-group" id='responsibleFirstNameGroup' style='display:none;'>
+                            <label for="responsibleFirstName" class="form-control-label"> First Name</label>
+                            <input type="text" class="form-control" id="responsibleFirstName"/>
+                        </div>
+                        <div class="form-group" id='responsibleLastNameGroup' style='display:none;'>
+                            <label for="responsibleLastName" class="form-control-label"> Last Name</label>
+                            <input type="text" class="form-control" id="responsibleLastName"/>
+                        </div>
+                        <div class="form-group" id='responsibleAddressGroup'>
+                            <label for="responsibleAddress" class="form-control-label"> Address</label>
+                            <apex:input id="responsibleAddress" styleClass="responsibleSearchBox" style="margin-bottom: 10px;"/>
+                            <input type="hidden" id="responsiblePartyAddress"/>
+                            <input type="hidden" id="responsiblePartyCity"/>
+                            <input type="hidden" id="responsiblePartyState"/>
+                            <input type="hidden" id="responsiblePartyZipCode"/>
+                        </div>
+                        <div class="form-group" id='responsiblePhoneGroup'>
+                            <label for="responsiblePartyPhone" class="form-control-label"> Phone</label>
+                            <input type="phone" class="form-control form-control" id="responsiblePartyPhone"/>
+                        </div>
+                        <div class="form-group" id='responsibleRelationshipGroup'>
+                            <label for="responsiblePhone" class="form-control-label"> Relationship to Responsible Party</label>
+                        	<label class="select">
+                         	   	<span class="sr-only">Select options:</span>
+                        		<select name="responsibleRelationship" id="responsibleRelationship">
+                                    <option></option>
+                                	<option>Current Employee</option>
+                                	<option>Previous Employee</option>
+                                	<option>Tenant</option>
+	                                <option>Neighbor</option>
+    	                            <option>None</option>
+        	                        <option>Other</option>
+            	                </select>
+                    		</label>
+                        </div>
+                        <div class="form-group" id='otherResponsibleRelationship' style="display: none;">
+                            <label class="form-control-label"> Other Relationship</label>
+                        	<input type="text" class="form-control" id="otherResponsibleRelationship"/>	                       
+                        </div>
+                    </div>                               
+                    <div class="tab">
+                        <h2>
+                            Additional Questions
+                        </h2>
+                        <div id="waterRightsOrWaterQuality" style="display:none;">
+                            <p>
+                                Name of Affected Water Source
+                            </p>
+                            <input type="text" class="form-control" id="affectedWaterSource"/>
+                            <p>
+                                Name of Watershed
+                            </p>
+                            <input type="text" class="form-control" id="watershed"/>
+                            <p>
+                                Parcel Number
+                            </p>
+                            <input type="text" class="form-control" id="parcelNumber"/>
+						</div>                            
+                        <div id="waterRightsOnly" style="display:none;">
+                            <p>
+                                Water Rights Owner
+                            </p>
+                            <div class="form-group" id='waterRightsOwnerGroup'>
+                        	<label class="select">
+                         	   	<span class="sr-only">Select options:</span>
+                        		<select name="waterRightsOwner" id="waterRightsOwner">
+                                    <option></option>
+                                	<option>Complainant</option>
+                                	<option>Alleged Responsible Party</option>
+            	                </select>
+                    		</label>                            
+                        </div>
+                            <p>
+                                Rights Description
+                            </p>
+                            <input type="text" class="form-control" id="rightsDescription"/>
+                            <p>
+                                Rights Number
+                            </p>
+                            <input type="text" class="form-control" id="rightsNumber"/>
+						</div> 
+                        <div id="pesticidesOnly" style="display:none;">
+                            <p>
+                                Have you contacted your local County Agricultural Commissioner's office?
+                            </p>
+                            <div class="form-group" id='waterRightsOwnerGroup'>
+                                <label class="select">
+                                    <span class="sr-only">Select options:</span>
+                                    <select name="contactCAC" id="contactCAC">
+                                        <option></option>
+                                        <option>Yes</option>
+                                        <option>No</option>
+                                    </select>
+                                </label>                            
+                        	</div>
+						</div> 
+					</div>           
+                    <div class="tab">
+                        <h2>
+                            Contact Information
+                        </h2>                                                                        
+					</div>           
+                    <div class="tab">
+                        <h2>
+                            Files
+                        </h2>                                                                                                
+					</div>                                
+ 					<div style="overflow:auto;">
+                        <div style="float:right;">
+                            <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+                            <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+                        </div>
+                    </div>                    
+                    <!-- Circles which indicates the steps of the form: -->
+                    <div style="text-align:center;margin-top:40px;" id="steps">
+                        <span class="step"></span>
+                        <span class="step"></span>
+                        <span class="step"></span>
+                        <span class="step"></span>
+                        <span class="step"></span>
+                        <span class="step"></span>
+                        <span class="step"></span>                        
+                    </div>
+              	</apex:form>
+           </div>
+        </apex:define>
+        <apex:define name="PageScriptIncludes">
+           <apex:includeScript value="{!URLFOR($Resource.jstree, 'jstree.min.js')}"/>            
+           <script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?key=vuAxWmrJSZH602OL5TJC~vr_pv_rBV11EiNwToBe_YQ~Ahz1LVn5di1OTUwbHic_6nxi-fVK8n8HO99z1jBxJ-xSKsEgI72TIyAPdvIRarIt' async="async" defer="defer"></script><!--&callback=loadMapScenario-->
+           <script type="text/javascript" src="http://dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=7.0"></script>                        
+           <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+           <apex:includeScript value="{!URLFOR($Resource.Plugins, '/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js')}"/>            
+        </apex:define>
+        <apex:define name="PageScripts">
+			<script>
+            	var map = null;  
+            	var pushpin = null;
+            	var credentials = 'vuAxWmrJSZH602OL5TJC~vr_pv_rBV11EiNwToBe_YQ~Ahz1LVn5di1OTUwbHic_6nxi-fVK8n8HO99z1jBxJ-xSKsEgI72TIyAPdvIRarIt';
+            	var currentTab = 0; // Current tab is set to be the first tab (0)
+            	showTab(currentTab); // Display the current tab
+            	function showTab(n) 
+            	{
+                  	// This function will display the specified tab of the form ...
+                  	var x = document.getElementsByClassName("tab");
+                  	x[n].style.display = "block";
+                  	// ... and fix the Previous/Next buttons:
+                  	if (n == 0) 
+                    {
+                    	document.getElementById("prevBtn").style.display = "none";
+                        document.getElementById('nextBtn').setAttribute("disabled","disabled");
+                  	} 
+                    else 
+                    {
+                    	document.getElementById("prevBtn").style.display = "inline";
+                  	}
+                  	if (n == (x.length - 1)) 
+                    {
+                    	document.getElementById("nextBtn").innerHTML = "Submit";
+                  	} 
+                    else 
+                    {
+                    	document.getElementById("nextBtn").innerHTML = "Next";
+                  	}
+                  	// ... and run a function that displays the correct step indicator:
+                  	fixStepIndicator(n)
+                    switch(currentTab) 
+                    {
+                      	case 2: 
+                            loadMapScenario();
+                            if (navigator.geolocation) 
+                           {  
+                                navigator.geolocation.getCurrentPosition(showLocation, errorHandler,  
+                                {  
+                                    maximumAge: 100,  
+                                    timeout: 6000,  
+                                    enableHighAccuracy: true  
+                                });  
+                            }  
+                        else 
+                        {  
+                            alert('Geolocation not suported');  
+                        } 
+                      		break;
+						case 4:
+                            loadResponsibleAutoSuggest();
+                            break;
+                    }
+                }
+                
+            	function nextPrev(n) 
+            	{
+                    console.log('nextPrev');
+                  	// This function will figure out which tab to display
+                  	var x = document.getElementsByClassName("tab");
+                  	
+                    // Exit the function if any field in the current tab is invalid:
+                  	if (n == 1 && !validateForm()) return false;
+                  	
+                    //Persist the Data
+                    persist();
+                    
+                    // Hide the current tab:
+                  	x[currentTab].style.display = "none";
+                  	
+                    // Increase or decrease the current tab by 1:
+                  	currentTab = currentTab + n;                    
+                    if(currentTab == 5)
+                    {
+                        var complaint = retrieveComplaint();
+                        if(complaint.Water_Quality__c == false && complaint.Water_Rights__c == false && complaint.Pesticides__c == false)
+                        {
+                    		currentTab = currentTab + n;        
+                        }
+                    }
+                  	
+                    // if you have reached the end of the form... :
+                  	if (currentTab >= x.length) 
+                    {
+                    	//...the form gets submitted:
+                        //document.getElementById("complaintForm").submit();
+                    	return false;
+                  	}
+                  	
+                    // Otherwise, display the correct tab:
+                  	showTab(currentTab);
+                }
+                
+                function validateForm(n) 
+            	{
+                	// This function deals with validation of the form fields
+                  	var valid = true;
+                  	switch(currentTab) 
+                    {
+                      case 0:                                                
+                      	break;
+                      case 1:
+                        var description = document.getElementsByClassName("description")[0].value;
+                        if(description=='')
+                        {
+                            valid = false;
+                            $('.description').focus();
+                            $(".description").css('border-color', 'red');;
+                        }
+                        else
+                        {
+                            $(".description").css('border-color', '#ccc');;
+                        }
+                        break;
+                      case 2: 
+						var zipCode = document.getElementsByClassName("complaintLocationZipCode")[0].value;
+						var latitude = null;
+						var longitude = null;                            
+						var locationDescription = null;
+						if(zipCode == null && (latitude==null || longitude==null) && locationDescription == null)
+ 							valid = false;                            
+                        break;
+                      default:
+                        // code block
+                    }
+                    
+                  	
+                  	// If the valid status is true, mark the step as finished and valid:
+                  	if (valid) 
+                    {
+                    	document.getElementsByClassName("step")[currentTab].className += " finish";
+                  	}
+                  	return valid; // return the valid status
+                }
+                
+                function fixStepIndicator(n) 
+            	{
+                  	// This function removes the "active" class of all steps...
+                  	var i, x = document.getElementsByClassName("step");
+                  	for (i = 0; i < x.length; i++) 
+                    {
+                    	x[i].className = x[i].className.replace(" active", "");
+                  	}
+                  	//... and adds the "active" class to the current step:
+                  	x[n].className += " active";
+                }
+            
+            	function persist() 
+            	{
+                    console.log('persist');
+                	switch(currentTab) 
+                    {
+                      case 0:                                                
+                        saveCategory();
+                        break;
+                      case 1:
+                        saveDescription();
+                        break;
+                      case 2:
+                        saveLocation();
+                        break;                            
+                      case 3:
+                        saveDateAndTimeOfOccurrance();
+                        break;                                                        
+                      case 4:
+                        saveResponsibleParty();
+                        break;                                                                                    
+                      default:
+                        // code block
+                    }
+                }
+            
+            	function saveCategory()
+            	{
+                    console.log('saveCategory');
+                	var complaint = retrieveComplaint();
+                    var category = document.getElementsByClassName("complaintCategory")[0].value;
+                    if(category.startsWith("Air/"))
+                    {
+                        complaint.Air__c=true;
+                        complaint.Water__c=false;
+                        complaint.Pesticides__c=false;
+                        complaint.Toxic_Substances__c=false;
+                        complaint.Solid_Waste__c=false;
+                        if(category.includes("/Vehicle/"))
+                    	{
+                        	complaint.Vehicle_or_Stationary__c="Vehicle";    
+                            if(category == "Air/Vehicle/Cars")
+                            {
+                                complaint.Air_Complaint_Source_Info__c="Cars";
+                            }
+                            else if(category == "Air/Vehicle/Trucks")
+                            {
+                                complaint.Air_Complaint_Source_Info__c="Trucks";
+                            }
+                            else if(category == "Air/Vehicle/Off road Equipment")
+                            {
+                                complaint.Air_Complaint_Source_Info__c="Off Road Equipment";
+                            }
+							else
+                            {
+                                complaint.Air_Complaint_Source_Info__c="Other Vehicles";
+                            }
+                            
+                        }
+						else if(category.includes("/Stationary Source/"))
+                    	{
+                            complaint.Vehicle_or_Stationary__c="Stationary Source";    
+                            if(category == "Air/Stationary Source/Dust")
+                            {
+                                complaint.Air_Complaint_Source_Info__c="Dust";
+                            }                            
+                            else if(category == "Air/Stationary Source/Smoke")
+                            {
+                                complaint.Air_Complaint_Source_Info__c="Smoke";
+                            }                                                        
+                            else if(category == "Air/Stationary Source/Odors")
+                            {
+                                complaint.Air_Complaint_Source_Info__c="Odors";
+                            }                                                 
+                            else if(category == "Air/Stationary Source/Gas Stations")
+                            {
+                                complaint.Air_Complaint_Source_Info__c="Gas Stations";
+                            }                                                 
+                            else if(category == "Air/Stationary Source/Painting")
+                            {
+                                complaint.Air_Complaint_Source_Info__c="Painting";
+                            }                                                 
+                            else if(category == "Air/Stationary Source/Asbestos")
+                            {
+                                complaint.Air_Complaint_Source_Info__c="Asbestos";
+                            }                                                 
+							else
+                            {
+                            	complaint.Air_Complaint_Source_Info__c="Other Stationary Sources";
+                            }
+                        }                        
+                        else
+                        {
+                            complaint.Air_Complaint_Source_Info__c=null;
+						}                                
+                        complaint.Water_Cannabis_Marijuana__c=false;                        
+                        complaint.Water_Quality__c=false;
+                        complaint.Drinking_Water__c=false;
+                        complaint.Water_Rights__c=false;
+                        complaint.Other_Water_Related_Concerns__c = false;
+                        complaint.Nature_of_Pesticides_Report__c=null;
+                        complaint.Bottles_Cans_Recycling__c=false;
+                        complaint.Waste_Tires__c=false;
+                        complaint.Additional_Solid_Waste_Checkbox__c = false;
+                    }
+                    else if(category.startsWith("Water/"))
+                    {
+                        complaint.Water__c=true;
+                        if(category == "Water/Cannabis/Marijuana cultivation")
+                        {
+                            complaint.Water_Cannabis_Marijuana__c=true;
+                            complaint.Water_Quality__c=false;
+                        	complaint.Drinking_Water__c=false;
+                        	complaint.Water_Rights__c=false;
+                            complaint.Other_Water_Related_Concerns__c = false;
+                        }
+                        else if(category == "Water/Drinking Water")
+                        {
+                            complaint.Water_Cannabis_Marijuana__c=false;
+                            complaint.Water_Quality__c=false;
+                        	complaint.Drinking_Water__c=true;
+                        	complaint.Water_Rights__c=false;
+                            complaint.Other_Water_Related_Concerns__c = false;
+                        }
+                        else if(category == "Water/Water Quality")
+                        {
+                            complaint.Water_Cannabis_Marijuana__c=false;
+                            complaint.Water_Quality__c=true;
+                        	complaint.Drinking_Water__c=false;
+                        	complaint.Water_Rights__c=false;
+                            complaint.Other_Water_Related_Concerns__c = false;
+                        }
+                        else if(category == "Water/Water Rights")
+                        {
+                            complaint.Water_Cannabis_Marijuana__c=false;
+                            complaint.Water_Quality__c=false;
+                        	complaint.Drinking_Water__c=false;
+                        	complaint.Water_Rights__c=true;
+                            complaint.Other_Water_Related_Concerns__c = false;
+                        }
+						else
+                        {
+                            complaint.Water_Cannabis_Marijuana__c=false;
+                            complaint.Water_Quality__c=false;
+                        	complaint.Drinking_Water__c=false;
+                        	complaint.Water_Rights__c=false;
+                            complaint.Other_Water_Related_Concerns__c = true;
+                        }
+                        complaint.Air__c=false;
+                        complaint.Pesticides__c=false;
+                        complaint.Toxic_Substances__c=false;
+                        complaint.Solid_Waste__c=false;
+                        complaint.Vehicle_or_Stationary__c=null;
+                        complaint.Air_Complaint_Source_Info__c=null;
+                        complaint.Nature_of_Pesticides_Report__c=null;
+                        complaint.Bottles_Cans_Recycling__c=false;
+                        complaint.Waste_Tires__c=false;        
+                        complaint.Additional_Solid_Waste_Checkbox__c = false;
+					}
+                    else if(category.startsWith("Hazardous Waste/Materials/"))
+                    {
+                        complaint.Toxic_Substances__c=true;
+                        complaint.Air__c=false;
+                        complaint.Water__c=false;
+                        complaint.Pesticides__c=false;
+                        complaint.Solid_Waste__c=false;
+                        complaint.Vehicle_or_Stationary__c=null;
+                        complaint.Air_Complaint_Source_Info__c=null;
+                        complaint.Water_Cannabis_Marijuana__c=false;                        
+                        complaint.Water_Quality__c=false;
+                        complaint.Drinking_Water__c=false;
+                        complaint.Water_Rights__c=false;
+                        complaint.Nature_of_Pesticides_Report__c=null;
+                        complaint.Bottles_Cans_Recycling__c=false;
+                        complaint.Waste_Tires__c=false;          
+						complaint.Additional_Solid_Waste_Checkbox__c = false;                        
+					}                    
+                    else if(category.startsWith("Pesticides/"))
+                    {
+                        complaint.Pesticides__c=true;
+                        if(category == "Pesticides/Misuse")
+                        {
+                        	complaint.Nature_of_Pesticides_Report__c="Pesticide Misuse";
+                        }
+                        else if(category == "Pesticides/Violation of Pesticide Sales")
+                        {
+                        	complaint.Nature_of_Pesticides_Report__c="Violation of Pesticide Sales";
+                        }		                        
+                        else
+                        {
+                            complaint.Nature_of_Pesticides_Report__c=null;
+                        }
+                        
+                        complaint.Air__c=false;
+                        complaint.Water__c=false;
+                        complaint.Toxic_Substances__c=false;
+                        complaint.Solid_Waste__c=false;
+                        complaint.Vehicle_or_Stationary__c=null;
+                        complaint.Air_Complaint_Source_Info__c=null;
+                        complaint.Water_Cannabis_Marijuana__c=false;                        
+                        complaint.Water_Quality__c=false;
+                        complaint.Drinking_Water__c=false;
+                        complaint.Water_Rights__c=false;
+                        
+                        complaint.Bottles_Cans_Recycling__c=false;
+                        complaint.Waste_Tires__c=false;    
+						complaint.Additional_Solid_Waste_Checkbox__c = false;                        
+					}
+                    else if(category.startsWith("Solid Waste/Recycling/"))
+                    {
+                        complaint.Solid_Waste__c=true;
+                        if(category == "Solid Waste/Recycling/Bottles and Cans Recycling")
+                        {
+                        	complaint.Bottles_Cans_Recycling__c=true;
+                            complaint.Waste_Tires__c=false;
+                            complaint.Additional_Solid_Waste_Checkbox__c = false;
+                        }                        
+                        if(category == "Solid Waste/Recycling/Waste Tires")
+                        {
+                        	complaint.Bottles_Cans_Recycling__c=false;
+                            complaint.Waste_Tires__c=true;
+                            complaint.Additional_Solid_Waste_Checkbox__c = false;
+                        }
+                        else
+                        {
+                        	complaint.Bottles_Cans_Recycling__c=false;
+                            complaint.Waste_Tires__c=false;
+                            complaint.Additional_Solid_Waste_Checkbox__c = true;                            
+                        }
+                        complaint.Air__c=false;
+                        complaint.Water__c=false;
+                        complaint.Pesticides__c=false;
+                        complaint.Toxic_Substances__c=false;                        
+                        complaint.Vehicle_or_Stationary__c=null;
+                        complaint.Air_Complaint_Source_Info__c=null;
+                        complaint.Water_Cannabis_Marijuana__c=false;                        
+                        complaint.Water_Quality__c=false;
+                        complaint.Drinking_Water__c=false;
+                        complaint.Water_Rights__c=false;
+                        complaint.Nature_of_Pesticides_Report__c=null;
+					}                                        
+                    else
+                    {
+                        complaint.Air__c=false;
+                        complaint.Water__c=false;
+                        complaint.Pesticides__c=false;
+                        complaint.Toxic_Substances__c=false;
+                        complaint.Solid_Waste__c=false;
+                        complaint.Vehicle_or_Stationary__c=null;
+                        complaint.Air_Complaint_Source_Info__c=null;
+                        complaint.Water_Cannabis_Marijuana__c=false;                        
+                        complaint.Water_Quality__c=false;
+                        complaint.Drinking_Water__c=false;
+                        complaint.Other_Water_Related_Concerns__c = false;
+                        complaint.Water_Rights__c=false;
+                        complaint.Nature_of_Pesticides_Report__c=null;
+                        complaint.Bottles_Cans_Recycling__c=false;
+                        complaint.Waste_Tires__c=false;  
+                        complaint.Additional_Solid_Waste_Checkbox__c = false;
+                    }
+                    saveComplaint(complaint);
+                    if(category == "Water/Water Quality" || category == "Water/Water Rights" || category.startsWith("Pesticides/"))
+                    {
+                    	var newStep = document.createElement("span");
+                    	newStep.classList.add("step");
+                    	document.getElementById("steps").appendChild(newStep);
+                        if(category == "Water/Water Quality")
+                        {
+                            document.getElementById("waterRightsOrWaterQuality").style.display = "block"; 
+                            document.getElementById("waterRightsOnly").style.display = "none"; 
+                            document.getElementById("pesticidesOnly").style.display = "none";                             
+                        }
+                        if(category == "Water/Water Rights")
+                        {
+                            document.getElementById("waterRightsOrWaterQuality").style.display = "block"; 
+                            document.getElementById("waterRightsOnly").style.display = "block"; 
+                            document.getElementById("pesticidesOnly").style.display = "none";                             
+                        }
+                        if(category.startsWith("Pesticides/"))
+                        {
+                            document.getElementById("waterRightsOrWaterQuality").style.display = "none"; 
+                            document.getElementById("waterRightsOnly").style.display = "none"; 
+                            document.getElementById("pesticidesOnly").style.display = "block";                             
+                        }
+                    }
+                    else
+                    {
+                        document.getElementById("waterRightsOrWaterQuality").style.display = "none"; 
+                        document.getElementById("waterRightsOnly").style.display = "none"; 
+                        document.getElementById("pesticidesOnly").style.display = "none";           
+                    }
+                }
+            
+                function saveDescription()
+            	{
+                    console.log('saveDescription');
+                	var complaint = retrieveComplaint();
+                    var description = document.getElementsByClassName("description")[0].value;
+                    complaint.Description__c=description;
+                    var howAware = document.getElementsByClassName("howAware")[0].value;
+                    complaint.How_did_you_become_aware_of_incident__c=howAware;
+                    saveComplaint(complaint);
+                }
+            
+                function saveLocation()
+            	{
+                    console.log('saveLocation');
+                	var complaint = retrieveComplaint();
+  					complaint.Complaint_Location_Address__c = document.getElementsByClassName("complaintLocationAddress")[0].value;
+					complaint.Complaint_Location_City__c = document.getElementsByClassName("complaintLocationCity")[0].value;
+                    complaint.Complaint_Location_State__c = document.getElementsByClassName("complaintLocationState")[0].value;
+                    complaint.Complaint_Location_Zip_Code__c = document.getElementsByClassName("complaintLocationZipCode")[0].value;
+                    complaint.Complaint_Location__c.latitude = document.getElementsByClassName("complaintLocationLatitude")[0].value;
+                    complaint.Complaint_Location__c.longitude = document.getElementsByClassName("complaintLocationLongitude")[0].value;
+                    complaint.Location_Description__c = document.getElementsByClassName("locationDescription")[0].value;
+                    
+                    
+                    var sensitiveLocationSelect = document.getElementById("sensitiveLocation");
+                    var sensitiveLocation = sensitiveLocationSelect.options[sensitiveLocationSelect.selectedIndex].value;
+                    
+                    
+                    complaint.Sensitive_Location__c = sensitiveLocation;
+                    if(sensitiveLocation == "Other")
+                    {
+                        complaint.Toxics_Other_Location__c = document.getElementById("otherSensitiveLocation").value;
+                    }
+                    saveComplaint(complaint);
+                }
+            
+            	function saveDateAndTimeOfOccurrance()
+            	{
+                	console.log('saveDateAndTimeOfOccurrance');
+                	var complaint = retrieveComplaint();
+                    var ongoingOccurrance = document.getElementById("onGoingCheck").checked;
+                    complaint.On_going_Occurrence__c = ongoingOccurrance;
+                    complaint.Date_and_Time_of_Occurrence__c = document.getElementById("dateAndTimeOfOccurrance").value; 
+                    saveComplaint(complaint);
+                }
+            
+            	function saveResponsibleParty()
+            	{
+                    console.log('saveResponsibleParty');
+                	var complaint = retrieveComplaint();
+                    var businessOrIndividual = document.querySelector('input[name="responsibleBusinessOrIndividual"]:checked').value
+                    if(businessOrIndividual == "Business")
+                    {
+                        var company = document.getElementById("responsibleCompany").value;
+                    	complaint.Responsible_Party_Company__c = company;
+                        complaint.Responsible_Party_Name__c = '';
+                    }
+                    else
+                    {
+                        complaint.Responsible_Party_Company__c = '';
+                        var firstName = document.getElementById("responsibleFirstName").value;
+                        var lastName = document.getElementById("responsibleLastName").value;
+                        complaint.Responsible_Party_Name__c = firstName + " " + lastName;
+                    }
+                    var responsiblePartyAddress = document.getElementById("responsiblePartyAddress").value;
+                    complaint.Responsible_Party_Street__c = responsiblePartyAddress;
+                    var responsiblePartyCity = document.getElementById("responsiblePartyCity").value;
+                    complaint.Responsible_Party_Phone__c = responsiblePartyPhone;
+                    var responsiblePartyState = document.getElementById("responsiblePartyState").value;
+                    complaint.Responsible_Party_State__c = responsiblePartyState;
+                    var responsiblePartyZipCode = document.getElementById("responsiblePartyZipCode").value;
+                    complaint.Responsible_Party_Zip_Code__c = responsiblePartyZipCode;
+                    var responsiblePartyPhone = document.getElementById("responsiblePartyPhone").value;
+                    complaint.Responsible_Party_Phone__c = responsiblePartyPhone;
+                    var responsibleRelationshipSelect = document.getElementById("responsibleRelationship");
+                    var responsibleRelationship = responsibleRelationshipSelect.options[responsibleRelationshipSelect.selectedIndex].value;
+                    complaint.Relationship_to_Responsible_Party__c = responsibleRelationship;
+                    if(responsibleRelationship == "Other")
+                    {
+                    	complaint.Other_Relationship__c = document.getElementById("otherResponsibleRelationship").value;        
+                    }
+                    saveComplaint(complaint);
+                }
+            	
+            	function saveAdditionalQuestions()
+                {
+                    console.log('saveResponsibleParty');
+                	var complaint = retrieveComplaint();
+                    complaint.Name_of_Affected_Water_Source__c = null;
+                    complaint.Watershed__c = null;
+                    complaint.Complaint_Location_Parcel_Number__c = null;
+                    complaint.Water_Rights_Owner__c = null;
+                    complaint.Water_Rights_Description__c = null;
+                    complaint.Water_Right_Number__c = null;
+                    complaint.Reported_to_CAC__c = null;
+                    if(complaint.Water_Quality__c == false)
+                    {
+                        var affectedWaterSource = document.getElementById("affectedWaterSource").value;
+                    	complaint.Name_of_Affected_Water_Source__c = affectedWaterSource;
+                        var watershed = document.getElementById("watershed").value;
+                    	complaint.Watershed__c = watershed;
+                        var parcelNumber = document.getElementById("parcelNumber").value;
+                    	complaint.Complaint_Location_Parcel_Number__c = parcelNumber;
+                    }
+                    if(complaint.Water_Rights__c == false)
+                    {
+                        var affectedWaterSource = document.getElementById("affectedWaterSource").value;
+                    	complaint.Name_of_Affected_Water_Source__c = affectedWaterSource;
+                        var watershed = document.getElementById("watershed").value;
+                    	complaint.Watershed__c = watershed;
+                        var parcelNumber = document.getElementById("parcelNumber").value;
+                    	complaint.Complaint_Location_Parcel_Number__c = parcelNumber;
+                        
+                        var responsibleRelationshipSelect = document.getElementById("waterRightsOwner");
+                    	var waterRightsOwner = responsibleRelationshipSelect.options[responsibleRelationshipSelect.selectedIndex].value;
+                    	complaint.Water_Rights_Owner__c = waterRightsOwner;
+                        
+                        var rightsDescription = document.getElementById("rightsDescription").value;
+                    	complaint.Water_Rights_Description__c = rightsDescription;
+                        var rightsNumber = document.getElementById("rightsNumber").value;
+                    	complaint.Water_Right_Number__c = rightsNumber;
+                    }
+                    if(complaint.Pesticides__c == false)
+                    {
+                    	var contactCACSelect = document.getElementById("contactCAC");
+                    	var contactCAC = contactCACSelect.options[contactCACSelect.selectedIndex].value;
+                    	complaint.Reported_to_CAC__c = contactCAC;
+                    }
+                    saveComplaint(complaint);
+                }
+            
+            	function retrieveComplaint()
+            	{
+                    console.log('retrieveComplaint');
+                	if (typeof(Storage) !== "undefined") 
+                    {
+  						if (localStorage.getItem("complaint") != null && localStorage.getItem("complaint") != '') 
+                        {
+							var complaintJsonString = localStorage.getItem("complaint");  
+                            var complaint = JSON.parse(complaintJsonString);
+                            return complaint;
+						}
+                        else
+                        {
+                            var complaint = instantiateNewComplaint();
+                            localStorage.setItem('complaint', JSON.stringify(complaint));
+                            return complaint;
+                        }
+					} 
+                    else 
+                    {
+  						// Code for temporary storage
+					}
+                }
+            
+            	function instantiateNewComplaint()
+            	{
+                	var complaint = {
+	                                Air__c: false,
+                        			Water__c: false,
+                        			Pesticides__c: false,
+                        			Toxic_Substances__c: false,
+                        			Solid_Waste__c: false,
+                                    Vehicle_or_Stationary__c: null,
+                                    Air_Complaint_Source_Info__c : null,                        
+                                    Water_Cannabis_Marijuana__c : false,                        
+                                    Water_Quality__c : false,
+                                    Drinking_Water__c : false,
+                                    Water_Rights__c : false,
+                        			Other_Water_Related_Concerns__c : false,
+                                    Nature_of_Pesticides_Report__c : null,
+                                    Bottles_Cans_Recycling__c : false,
+                                    Waste_Tires__c : false,
+                        			Additional_Solid_Waste_Checkbox__c: false,
+                        			Description__c : null,
+                        			How_did_you_become_aware_of_incident__c : null,
+                        			Complaint_Location_Address__c: null,
+									Complaint_Location_City__c: null,
+                        			Complaint_Location_State__c: null,
+                        			Complaint_Location_Zip_Code__c: null,                        			
+                        			Location_Description__c : null,
+                        			Date_and_Time_of_Occurrence__c : null,
+                        			On_going_Occurrence__c : false,
+                        			Complaint_Location__c: 
+                        			{
+										latitude : null,
+                                        longitude : null
+                                    },
+                        			Sensitive_Location__c : null,
+                        			Toxics_Other_Location__c : null,
+                        			Responsible_Party_City__c : null,
+                                    Responsible_Party_Company__c : null,
+                                    Responsible_Party_Name__c : null,
+                                    Responsible_Party_Phone__c : null,
+                                    Responsible_Party_State__c : null,
+                                    Responsible_Party_Street__c : null,
+                                    Responsible_Party_Zip_Code__c : null,
+                        			Relationship_to_Responsible_Party__c : null,
+                        			Other_Relationship__c : null,
+                        			Name_of_Affected_Water_Source__c : null,
+                                    Watershed__c : null,
+                                    Complaint_Location_Parcel_Number__c : null,
+                                    Water_Rights_Owner__c : null,
+                                    Water_Rights_Description__c: null,
+                                    Water_Right_Number__c : null,
+                                    Reported_to_CAC__c : null
+                                };
+                    return complaint;
+                }
+            
+            	function saveComplaint(complaint)
+            	{
+                    console.log('saveComplaint');
+                	localStorage.setItem('complaint', JSON.stringify(complaint));
+                }
+            </script>
+           	<script>
+                $('#jstree_demo_div').jstree({
+                    'core' : {
+                        'multiple' : false,
+                        'data' : [
+                            { 
+                                "text" : "Air", "children" : 
+                             	[
+                                    { 
+                                        "text" : "Vehicle",
+                                        "children":
+                                        [
+                                            {"id" : 1, "text" : "Cars"},
+                                            {"id" : 2, "text" : "Trucks"},
+                                            {"id" : 3, "text" : "Off road Equipment"},
+                                            {"id" : 4, "text" : "Other"}
+                                        ]
+                                    },
+                                    { 
+                                        "text" : "Stationary Source",
+                                        "children":
+                                        [
+                                            {"id" : 5, "text" : "Dust"},
+                                            {"id" : 6, "text" : "Smoke"},
+                                            {"id" : 7, "text" : "Odors"},
+                                            {"id" : 8, "text" : "Gas Stations"},
+                                            {"id" : 9, "text" : "Painting"},
+                                            {"id" : 10, "text" : "Asbestos"},
+                                            {"id" : 11, "text" : "Other"}
+                                        ] 
+                                    }
+                            	]
+                            },
+                            {
+                            	"text":"Water","children":
+                                [
+                                	{"text":"Cannabis/Marijuana cultivation"},    
+                                    {"text":"Drinking Water"},
+                                    {"text":"Water Quality"},
+                                    {"text":"Water Rights"},
+                                    {"text":"Other"}
+                                ]
+                            },
+							{
+                            	"text":"Hazardous Waste/Materials","children":
+                                [
+                                	{"text":"Illegal Disposal/Handling"},    
+                                    {"text":"Management Facilities"},
+                                    {"text":"Transporters"},
+                                    {"text":"Recyclers"},
+                                    {"text":"In Consumer Products"},
+                                    {"text":"Other"}
+                                ]
+                            },
+							{
+                            	"text":"Pesticides","children":
+                                [
+                                	{"text":"Misuse"},    
+                                    {"text":"Overspray"},
+                                    {"text":"Violation of Pesticide Sales"},                                    
+                                    {"text":"Other"}
+                                ]
+                            },
+							{
+                            	"text":"Solid Waste/Recycling","children":
+                                [
+                                	{"text":"Bottles and Cans Recycling"},    
+                                    {"text":"Waste Tires"},                                    
+                                    {"text":"Other"}
+                                ]
+                            },
+                            {"text": "Other"}
+                                
+                            
+                        ]
+                    }
+                }).on("changed.jstree", function (e, data) {
+                    if(data.selected.length) 
+                    {
+                        var selectedText=data.instance.get_node(data.selected[0]).text;
+                        if(selectedText!='Air' && selectedText!='Water' && selectedText!='Hazardous Waste/Materials' && selectedText!='Solid Waste/Recycling' && selectedText!='Pesticides' &&
+                         selectedText!='Vehicle' &&  selectedText!='Stationary Source' )
+                        {
+                        	document.getElementById('nextBtn').removeAttribute("disabled");        
+                            var path = data.instance.get_path(data.node,'/');
+                            $(".complaintCategory").val(path);
+                        }
+                        else
+                        {
+                            $("#jstree_demo_div").jstree("open_node", data.instance.get_node(data.selected[0]).id);
+                        }
+                        
+                    }
+				});
+            </script>
+            <script>
+                function loadMapScenario()
+                {
+                    Microsoft.Maps.loadModule('Microsoft.Maps.AutoSuggest', 
+                    {
+                        callback: onLoad,
+                        errorCallback: onError
+                    });
+                    function onLoad() 
+                    {
+                        var options = { maxResults: 5 };
+                        var manager = new Microsoft.Maps.AutosuggestManager(options);
+                        manager.attachAutosuggest('.searchBox', '#searchBoxContainer', selectedSuggestion);
+                    }
+                    function onError(message) 
+                    {
+                        console.log(message);
+                    }
+                    function selectedSuggestion(suggestionResult) 
+                    {
+                        document.getElementsByClassName("complaintLocationAddress")[0].value = suggestionResult.address.addressLine;
+                        document.getElementsByClassName("complaintLocationCity")[0].value = suggestionResult.address.locality;
+                        document.getElementsByClassName("complaintLocationState")[0].value = suggestionResult.address.adminDistrict;
+                        document.getElementsByClassName("complaintLocationZipCode")[0].value = suggestionResult.address.postalCode;
+                        
+                        document.getElementsByClassName("complaintLocationLatitude")[0].value = suggestionResult.location.latitude;
+                        document.getElementsByClassName("complaintLocationLongitude")[0].value = suggestionResult.location.longitude;
+                        
+                        
+                        
+                        
+                        
+                        if(map == null)
+                    	{
+                            map = new Microsoft.Maps.Map(document.getElementById('bingMap'),  
+                            {  
+                                credentials: credentials  
+                            });
+                        }
+                        map.entities.clear();
+    					map.setView({ bounds: suggestionResult.bestView });
+                        pushpin = new Microsoft.Maps.Pushpin(suggestionResult.location, { draggable: true});  
+                        map.entities.push(pushpin);
+                        Microsoft.Maps.Events.addHandler(pushpin, 'dragstart', StartDragHandler);
+                        Microsoft.Maps.Events.addHandler(pushpin, 'drag', DragHandler);
+                        Microsoft.Maps.Events.addHandler(pushpin, 'dragend', EndDragHandler);
+                    }
+                }
+            </script>
+        	<script type='text/javascript'>  
+              
+                function showLocation(pos) 
+                {  
+                    if(map == null)
+                    {
+                        var lat = null;  
+                        var long = null;  
+                        var zoom = null;
+                        var r = confirm("Is the complaint located at your current location? (OK for Yes, Cancel for No)");
+                        if (r == true) 
+                        {
+                            lat = pos.coords.latitude;  
+                            long = pos.coords.longitude;
+                            document.getElementsByClassName("complaintLocationLatitude")[0].value = lat;
+                    		document.getElementsByClassName("complaintLocationLongitude")[0].value = long;
+                            zoom = 12;
+                            map = new Microsoft.Maps.Map(document.getElementById('bingMap'),  
+                            {  
+                                credentials: credentials  
+                            });
+                            
+                            
+                            Microsoft.Maps.loadModule('Microsoft.Maps.Search', function() 
+                            {
+                                var searchManager = new Microsoft.Maps.Search.SearchManager(map);
+                                var reverseGeocodeRequestOptions = 
+                                {
+                                    location: new Microsoft.Maps.Location(lat,long),
+                                    callback: function (answer, userData) 
+                                    {
+                                        map.setView({ bounds: answer.bestView });
+                                        //map.entities.push(new Microsoft.Maps.Pushpin(reverseGeocodeRequestOptions.location));
+                                        document.getElementsByClassName('searchBox')[0].value = answer.address.formattedAddress;
+                                        document.getElementsByClassName("complaintLocationAddress")[0].value = answer.address.addressLine;
+                                        document.getElementsByClassName("complaintLocationCity")[0].value = answer.address.locality;
+                                        document.getElementsByClassName("complaintLocationState")[0].value = answer.address.adminDistrict;
+                                        document.getElementsByClassName("complaintLocationZipCode")[0].value = answer.address.postalCode;
+                                    }
+                                };
+                                searchManager.reverseGeocode(reverseGeocodeRequestOptions);
+                            });    
+                            pushpin = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(lat, long), { draggable: true});  
+                            map.entities.push(pushpin);
+                            Microsoft.Maps.Events.addHandler(pushpin, 'dragstart', StartDragHandler);
+                            Microsoft.Maps.Events.addHandler(pushpin, 'drag', DragHandler);
+                            Microsoft.Maps.Events.addHandler(pushpin, 'dragend', EndDragHandler);
+                        }
+                        else
+                        {
+                            lat = 36.7783;  
+                            long = -119.4179;  
+                            zoom = 5;
+                            map = new Microsoft.Maps.Map(document.getElementById('bingMap'),  
+                            {  
+                                credentials: credentials  
+                            });
+                        }
+                    	map.setView({ zoom: zoom, center: new Microsoft.Maps.Location(lat, long) });  
+                  	}
+                }  
+               
+                function errorHandler(e) 
+                {  
+                    if (e.code === 1) // PERMISSION_DENIED  
+                    { 
+                        lat = 36.7783;  
+                        long = -119.4179;  
+                        zoom = 5;
+                        map = new Microsoft.Maps.Map(document.getElementById('bingMap'),  
+                                                     {  
+                                                         credentials: credentials  
+                                                     });
+                        map.setView({ zoom: zoom, center: new Microsoft.Maps.Location(lat, long) });  
+                    } 
+                    else if (e.code === 2) //POSITION_UNAVAILABLE
+                    {   
+                        console.log('Make sure your network connection is active and ' + 'try this again. - ' + e.message);  
+                    } 
+                    else if (e.code === 3) //TIMEOUT  
+                    { 
+                        console.log('A timeout ocurred; try again. - ' + e.message);  
+                    }  
+                }  
+                
+                function StartDragHandler(e) 
+                {
+                }
+                 
+                function DragHandler(e) 
+                {
+                }
+                 
+                function EndDragHandler(e) 
+                {
+                    var loc = e.location;
+                    var lat = loc.latitude;
+                    var long = loc.longitude;
+                    document.getElementsByClassName("complaintLocationLatitude")[0].value = loc.latitude;
+                    document.getElementsByClassName("complaintLocationLongitude")[0].value = loc.longitude;
+                    Microsoft.Maps.loadModule('Microsoft.Maps.Search', function() 
+                    {
+                    	var searchManager = new Microsoft.Maps.Search.SearchManager(map);
+                        var reverseGeocodeRequestOptions = 
+                        {
+                        	location: new Microsoft.Maps.Location(lat,long),
+                            callback: function (answer, userData) 
+                            {
+                            	map.setView({ bounds: answer.bestView });
+                                document.getElementsByClassName('searchBox')[0].value = answer.address.formattedAddress;
+                            }
+                      	};
+                        searchManager.reverseGeocode(reverseGeocodeRequestOptions);
+                    });    
+                }
+
+            	$('#sensitiveLocation').on('change', function() {
+                      if( this.value == "Other" )
+                      {
+    	                  	$("#otherSensitiveLocationGroup" ).show();
+                      }
+                      else
+                      {
+	                        $("#otherSensitiveLocationGroup" ).hide();  
+                      }
+                });
+            
+            </script>  
+             <script type="text/javascript">
+            	$('#datetimepicker').datetimepicker(
+                    {
+        				format: 'mm/dd/yyyy HH:ii P',
+                    	showMeridian: true
+    				}).on('show', function(ev)
+                      	{
+                     		$( ".datetimepicker" ).find( "th.next > i" ).addClass( "ca-gov-icon-arrow-right" );
+                            $( ".datetimepicker" ).find( "th.prev > i" ).addClass( "ca-gov-icon-arrow-left" );
+                		}).on('changeDate', function(ev)
+                              {
+                    			$(this).datetimepicker('hide');
+                		});
+			</script>
+            <script>
+            //responsibleBusinessOrIndividual
+            //
+            $(document).ready(function(){
+                $("#responsibleBusinessOrIndividualGroup").on('click', "span", function(){ 
+                    var selectedId = $(this).attr('id');         
+                    if(selectedId=='businessSpan')
+                    {
+                        $("#responsibleCompanyGroup" ).show();
+                        $("#responsibleFirstNameGroup" ).hide();
+                        $("#responsibleLastNameGroup" ).hide();
+                    }
+                    else
+                    {
+                        $("#responsibleCompanyGroup" ).hide();
+                        $("#responsibleFirstNameGroup" ).show();
+                        $("#responsibleLastNameGroup" ).show();
+                    }
+                });
+             }); 
+            
+            function loadResponsibleAutoSuggest()
+            {
+                    Microsoft.Maps.loadModule('Microsoft.Maps.AutoSuggest', 
+                    {
+                        callback: onLoadResponsible,
+                        errorCallback: onErrorResponsible
+                    });
+                    function onLoadResponsible() 
+                    {
+                        var options = { maxResults: 5 };
+                        var manager = new Microsoft.Maps.AutosuggestManager(options);
+                        manager.attachAutosuggest('.responsibleSearchBox', '#responsibleAddressGroup', responsibleselectedSuggestion);
+                    }
+                    function onErrorResponsible(message) 
+                    {
+                        console.log(message);
+                    }
+                    function responsibleselectedSuggestion(suggestionResult) 
+                    {
+                        document.getElementById("responsiblePartyAddress").value = suggestionResult.address.addressLine;
+                        document.getElementById("responsiblePartyCity").value = suggestionResult.address.locality;
+                        document.getElementById("responsiblePartyState").value = suggestionResult.address.adminDistrict;
+                        document.getElementById("responsiblePartyZipCode").value = suggestionResult.address.postalCode;
+                    }
+                }
+            
+            $('#responsibleRelationship').on('change', function() {
+                      if( this.value == "Other" )
+                      {
+    	                  	$("#otherResponsibleRelationship" ).show();
+                      }
+                      else
+                      {
+	                        $("#otherResponsibleRelationship" ).hide();  
+                      }
+                });
+            </script>
+        </apex:define>        
+	</apex:composition>         
+</apex:page>

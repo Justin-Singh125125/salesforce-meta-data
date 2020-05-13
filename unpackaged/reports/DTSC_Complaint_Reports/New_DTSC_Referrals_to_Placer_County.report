@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Complaints__c$Actual_Receive_Date__c</field>
+    </columns>
+    <columns>
+        <field>Complaints__c$Name</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Complaints__c.Referrals1__r$Created_By_BDO__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>DTSC</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Complaints__c.Referrals1__r$External_Partner__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Placer County Environmental Health</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>(New) DTSC Referrals to Placer County</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Complaints_With_Referrals_New__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>Complaints__c$Name</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>Complaints__c$Actual_Receive_Date__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

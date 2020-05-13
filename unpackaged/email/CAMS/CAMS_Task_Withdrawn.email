@@ -1,0 +1,30 @@
+<messaging:emailTemplate subject="{!relatedTo.CAMS_Assignment__r.Type__c} has been Withdrawn (CAMS ID:  {!relatedTo.CAMS_Assignment__r.Name}, Task ID:  {!relatedTo.Name})" recipientType="User" relatedToType="CAMS_Task__c">
+    <messaging:htmlEmailBody >
+        <html>
+            <body style="font-family:arial;">
+                <p>
+                    ***Task Withdrawn***
+                </p>
+                <p>
+                    The following Task has been withdrawn by {!relatedTo.LastModifiedBy.Name} of {!relatedTo.LastModifiedBy.BDO__c}
+                </p>
+                <p>            
+                    Request from:  {!relatedTo.CAMS_Assignment__r.BDO__c}<br/>
+                    CAMS ID:  {!relatedTo.CAMS_Assignment__r.Name}<br/>  
+                    Type: {!relatedTo.CAMS_Assignment__r.Type__c}  <br/>
+                    Subject:  {!relatedTo.CAMS_Assignment__r.Subject__c}<br/>  
+                </p>
+                <p>                 
+                    Please contact {!relatedTo.LastModifiedBy.Name} if you have questions regarding this update.  
+                </p>
+                <p>                 
+                    Please use the following link to view the Task in CAMS:
+                </p>
+                <p>                 
+                    <a href="{!LEFT($Api.Enterprise_Server_URL_300, FIND('/services',$Api.Enterprise_Server_URL_300))+'/'+relatedto.Id}">{!LEFT($Api.Enterprise_Server_URL_300, FIND('/services',$Api.Enterprise_Server_URL_300))+'/'+relatedto.Id}</a>
+                </p>
+
+            </body>
+        </html>
+    </messaging:htmlEmailBody>
+</messaging:emailTemplate>

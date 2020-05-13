@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Finding</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Findings</value>
+    </caseValues>
+    <fields>
+        <label><!-- Complaint --></label>
+        <name>Complaint__c</name>
+        <relationshipLabel><!-- Findings --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Completed By --></label>
+        <name>Completed_By__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact --></label>
+        <name>Contact__c</name>
+        <relationshipLabel><!-- Findings --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Date Referred to to External Agency --></help>
+        <label><!-- Date of Referral --></label>
+        <name>Date_of_Referral__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date of Site Visit --></help>
+        <label><!-- Date of Site Visit --></label>
+        <name>Date_of_Site_Visit__c</name>
+    </fields>
+    <fields>
+        <label><!-- External Id --></label>
+        <name>External_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- External Partner --></label>
+        <name>External_Partner__c</name>
+    </fields>
+    <fields>
+        <help><!-- Is Enforcement Complete? --></help>
+        <label><!-- Is Enforcement Complete --></label>
+        <name>Is_Enforcement_Complete__c</name>
+    </fields>
+    <fields>
+        <help><!-- Describe any on-going enforcement efforts --></help>
+        <label><!-- On-Going Enforcement --></label>
+        <name>On_Going_Enforcement__c</name>
+    </fields>
+    <fields>
+        <help><!-- If other was selected for reason no site visit was conducted, please provide the reason here. --></help>
+        <label><!-- Other Reason for No Site Visit --></label>
+        <name>Other_Reason_for_No_Site_Visit__c</name>
+    </fields>
+    <fields>
+        <help><!-- If no site visit was conducted, why not? --></help>
+        <label><!-- Why didn&apos;t you conduct a site visit? --></label>
+        <name>Reason_for_No_Site_Visit__c</name>
+        <picklistValues>
+            <masterLabel>Complaint is outside agency jurisdiction</masterLabel>
+            <translation><!-- Complaint is outside agency jurisdiction --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Complaint lacked sufficient information</masterLabel>
+            <translation><!-- Complaint lacked sufficient information --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Complaint was referred to another agency for handling</masterLabel>
+            <translation><!-- Complaint was referred to another agency for handling --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Name of the Agency to which You Referred the Finding --></help>
+        <label><!-- Who Did You Refer it to? --></label>
+        <name>Referral_Agency__c</name>
+    </fields>
+    <fields>
+        <label><!-- Referral --></label>
+        <name>Referral__c</name>
+        <relationshipLabel><!-- Findings --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Did you refer this complaint to another agency? --></help>
+        <label><!-- Did you refer this to another agency? --></label>
+        <name>Secondary_Referral__c</name>
+    </fields>
+    <fields>
+        <help><!-- Did you conduct a site visit to investigate the complaint? --></help>
+        <label><!-- Did you conduct a site visit? --></label>
+        <name>Site_Visit_Conducted__c</name>
+    </fields>
+    <fields>
+        <help><!-- Summary of violations and enforcement action taken. --></help>
+        <label><!-- Summary of Violations and enforcement --></label>
+        <name>Summary_of_Violations_and_enforcement__c</name>
+    </fields>
+    <fields>
+        <label><!-- Test Data --></label>
+        <name>Test_Data__c</name>
+    </fields>
+    <fields>
+        <help><!-- Were the violations related to the complaint? --></help>
+        <label><!-- Violations Related to Complaint --></label>
+        <name>Violations_Related_to_Complaint__c</name>
+    </fields>
+    <fields>
+        <help><!-- Did you find violations or compliance issues? --></help>
+        <label><!-- Violations or Compliance Issues --></label>
+        <name>Violations_or_Compliance_Issues__c</name>
+    </fields>
+    <layouts>
+        <layout>Finding Layout</layout>
+        <sections>
+            <label><!-- Complaint --></label>
+            <section>Complaint</section>
+        </sections>
+        <sections>
+            <label><!-- Compliance and Enforcement Information --></label>
+            <section>Compliance and Enforcement Information</section>
+        </sections>
+        <sections>
+            <label><!-- Contact Information --></label>
+            <section>Contact Information</section>
+        </sections>
+        <sections>
+            <label><!-- Conversion Information --></label>
+            <section>Conversion Information</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Inspection Information --></label>
+            <section>Inspection Information</section>
+        </sections>
+        <sections>
+            <label><!-- Secondary Referral --></label>
+            <section>Secondary Referral</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

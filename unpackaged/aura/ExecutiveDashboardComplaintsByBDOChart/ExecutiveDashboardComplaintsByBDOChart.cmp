@@ -1,0 +1,24 @@
+<aura:component implements="flexipage:availableForAllPageTypes" controller="DashboardComplaintsByBDOChart">
+    <ltng:require scripts="{!join(',',$Resource.Highcharts,
+                           $Resource.highchart3d,
+                           $Resource.Highchartsexport
+                           )}" afterScriptsLoaded="{!c.afterScriptsLoaded}"/>
+    
+  
+    <aura:attribute name="allTimeChartTitle" type="string" default="Complaints by BDO"/>
+    <aura:attribute name="allTimeChartSubTitle" type="string" default="April 2016-Present"/>
+    <aura:attribute name="thisYearChartTitle" type="string" default="Complaints by BDO"/>
+    <aura:attribute name="thisYearChartSubTitle" type="string"/>
+    <aura:attribute name="xAxisCategories" type="string[]" default="['Air','Solid Waste','Pesticides','Toxic Substances','Water']"/>
+    <aura:attribute name="yAxisParameter" type="string" default="Percent of Complaints"/>
+    <aura:attribute name="allTimeData" type="string"/>
+    <aura:attribute name="thisYearData" type="string"/>
+    
+    
+    
+    <div class="slds-card">
+        <div class="slds-grid slds-wrap slds-grid--pull-padded" style="margin-right:0; margin-left:0;">
+            <div aura:id="complaintsByBDOAllTime" style="height: 100%; width:100%;"></div>
+        </div>
+    </div>
+</aura:component>

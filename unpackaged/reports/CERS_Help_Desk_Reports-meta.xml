@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ReportFolder xmlns="http://soap.sforce.com/2006/04/metadata">
+    <accessType>Shared</accessType>
+    <name>CERS Help Desk Reports</name>
+    <publicFolderAccess>ReadWrite</publicFolderAccess>
+    <sharedTo>
+        <group>CERS_Help_Desk_Development_Team</group>
+        <group>CERS_Help_Desk_Technical_Managers</group>
+        <group>CERS_Help_Desk_Technical_Support</group>
+        <group>CERS_Help_Desk_Unified_Program</group>
+    </sharedTo>
+</ReportFolder>

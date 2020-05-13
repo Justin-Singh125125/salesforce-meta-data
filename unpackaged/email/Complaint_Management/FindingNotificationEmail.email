@@ -1,0 +1,11 @@
+<html xmlns="http://www.w3.org/1999/xhtml">    
+    <head>
+        <title>
+            New Findings Record Filed
+        </title>
+    </head> 
+    <body>
+        <div>A new finding has been submitted for {!Finding__c.Complaint__c}.</div>
+        <div>Click <a href='{!Finding__c.Link}'>here</a> to view the finding record.</div>
+    </body>
+</html>

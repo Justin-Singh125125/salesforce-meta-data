@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assignments>
+        <name>Set_CERS_Manager_Notification_Datetime</name>
+        <label>Set CERS Manager Notification Datetime</label>
+        <locationX>359</locationX>
+        <locationY>69</locationY>
+        <assignmentItems>
+            <assignToReference>Case.CERS_Manager_Notification_Datetime__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ThreeBusinessDaysFromNow</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Case</targetReference>
+        </connector>
+    </assignments>
+    <formulas>
+        <name>ThreeBusinessDaysFromNow</name>
+        <dataType>DateTime</dataType>
+        <expression>IF(MOD({!Case.CreatedDate} - DATETIMEVALUE(DATE(1900, 1, 6)), 7) &gt; 3,{!Case.CreatedDate}  + 3,IF(MOD( {!Case.CreatedDate} - DATETIMEVALUE(DATE(1900, 1, 6)), 7) &gt; 0,{!Case.CreatedDate} + 4, {!Case.CreatedDate} + 5))</expression>
+    </formulas>
+    <interviewLabel>CERS Help Desk Set Manager Notification Datetime {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>CERS Help Desk Set Manager Notification Datetime</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Retrieve_Case</name>
+        <label>Retrieve Case</label>
+        <locationX>183</locationX>
+        <locationY>50</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Set_CERS_Manager_Notification_Datetime</targetReference>
+        </connector>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>CaseId</elementReference>
+            </value>
+        </filters>
+        <object>Case</object>
+        <outputReference>Case</outputReference>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>CreatedDate</queriedFields>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_Case</name>
+        <label>Update Case</label>
+        <locationX>501</locationX>
+        <locationY>103</locationY>
+        <inputReference>Case</inputReference>
+    </recordUpdates>
+    <startElementReference>Retrieve_Case</startElementReference>
+    <status>Active</status>
+    <variables>
+        <name>Case</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Case</objectType>
+    </variables>
+    <variables>
+        <name>CaseId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

@@ -1,0 +1,212 @@
+<apex:page applyBodyTag="false"   
+cache="false" 
+    applyHTMLTag="false" 
+    docType="HTML-5.0"  
+    id="ExternalPartnerAccountProfile" 
+    sidebar="false" 
+    showChat="false" 
+    showHeader="false"   
+    standardController="Account" 
+    standardStylesheets="false"  
+    extensions="ExternalPartnerPortalController"
+    action="{!LoadExternalPartnerAccountProfile}">  
+    <apex:composition template="ExternalPartnerLayout"> 
+        <apex:define name="ExternalPartnerLayoutTitle"></apex:define>
+        <apex:define name="ExternalPartnerLayoutPageCss">
+            <apex:stylesheet value="https://cdn.datatables.net/v/dt/dt-1.10.15/datatables.min.css" />
+        </apex:define>        
+        <apex:define name="ExternalPartnerLayoutBody"> 
+            <apex:form id="ExternalPartnerAccountProfileForm" html-role="form">
+                <div class="group">
+                    <div class="full-width">
+                        <div class="panel panel-understated">
+                            <div class="panel-heading">
+                                <h4>Agency Profile</h4>
+                            </div>
+                            <div class="panel-body">
+                                <apex:inputHidden value="{!ExternalPartnerAccountProfileViewModel.AccountId}" html-class="AccountId"/>
+                                <div class="group" id="AccountInformationGroup">
+                                    <div class="form-group full-width">
+                                        <label> Name:  </label>&nbsp;<a href="mailto:complaints@calepa.ca.gov?subject=Account Name Change Request"> Submit Name Change Request  </a>
+                                        <apex:inputText value="{!ExternalPartnerAccountProfileViewModel.Name}" styleClass="form-control Name" html-readonly="readonly" />
+                                        <label id="NameError" class="pull-left" style="color:red;"></label>
+                                    </div>
+                                     <div class="form-group half">
+                                        <label> Phone:  </label>
+                                        <apex:inputText value="{!ExternalPartnerAccountProfileViewModel.Phone}" styleClass="form-control Phone PhoneMask" />
+                                        <label id="PhoneError" class="pull-left" style="color:red;"></label>
+                                    </div>
+                                    <div class="form-group half">
+                                        <label> Fax:  </label>
+                                        <apex:inputText value="{!ExternalPartnerAccountProfileViewModel.Fax}" styleClass="form-control Fax PhoneMask" />
+                                        <label id="FaxError" class="pull-left" style="color:red;"></label>
+                                    </div>
+                                     <div class="form-group full-width">
+                                        <label> Street Address:  </label>
+                                        <apex:inputText value="{!ExternalPartnerAccountProfileViewModel.ShippingStreet}" styleClass="form-control ShippingStreet" />
+                                        <label id="ShippingStreetError" class="pull-left" style="color:red;"></label>
+                                    </div>
+                                    <div class="form-group third">
+                                        <label> City:  </label>
+                                        <apex:inputText value="{!ExternalPartnerAccountProfileViewModel.ShippingCity}" styleClass="form-control ShippingCity" />
+                                        <label id="CityError" class="pull-left" style="color:red;"></label>
+                                    </div>
+                                    <div class="form-group third">
+                                        <label> State:  </label>
+                                        <apex:inputText value="{!ExternalPartnerAccountProfileViewModel.ShippingState}" styleClass="form-control ShippingState" html-readonly="readonly" />
+                                        <label id="StateError" class="pull-left" style="color:red;"></label>
+                                    </div>
+                                    <div class="form-group third">
+                                        <label> Postal Code:  </label>
+                                        <apex:inputText value="{!ExternalPartnerAccountProfileViewModel.ShippingPostalCode}" styleClass="form-control PostalCode" />
+                                        <label id="PostalCodeError" class="pull-left" style="color:red;"></label>
+                                    </div>                                                                       
+                                    <div class="form-group full-width">
+                                        <label> Website:  </label>
+                                        <apex:inputText value="{!ExternalPartnerAccountProfileViewModel.Website}" styleClass="form-control Website" />
+                                        <label id="WebsiteError" class="pull-left" style="color:red;"></label>
+                                    </div>
+                                    <div class="form-group full-width">
+                                        <button id="SaveAccount" type="submit" class="btn btn-secondary active pull-right">Save Agency Information</button>
+                                        <apex:actionFunction name="Save" action="{!UpdateExternalPartnerAccountProfile}" />
+                                        <label id="UpdateError" class="pull-left" style="color:red;"></label>
+                                        
+                                    </div>
+                                    <div class="form-group full-width">
+                                        <apex:outputText style="color: green;" value="{!ExternalPartnerAccountProfileViewModel.SuccessMessage}" styleClass="pull-right" /> 
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div> 
+                    <div class="full-width">
+                        <div class="panel panel-understated">
+                            <div class="panel-heading">
+                                <h4>Agency Contacts</h4>
+                            </div>
+                            <div class="panel-body">
+                                <apex:inputHidden value="{!ExternalPartnerAccountProfileViewModel.ContactId}" html-class="ContactId"/>
+                                <table id="ContactsTable" class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th></th>
+                                            <th>Name</th>
+                                            <th>Title</th>
+                                            <th>Email</th>
+                                            <th>Phone Number</th>
+                                            <th>Inactive</th>
+                                        </tr>
+                                    </thead>
+                                </table>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+                <apex:actionFunction name="RedirectToExternalPartnerContactProfile" action="{!RedirectToExternalPartnerContactProfile}"/>
+            </apex:form>
+        </apex:define>
+        <apex:define name="ExternalPartnerLayoutPageScriptIncludes">
+            <apex:includeScript value="{!URLFOR($Resource.Jquery_Mask_Plugin, '/jQuery-Mask-Plugin-master/src/jquery.mask.js')}"/>
+            <apex:includescript value="https://cdn.datatables.net/v/dt/dt-1.10.15/datatables.min.js" />       
+        </apex:define>
+        <apex:define name="ExternalPartnerLayoutPageScripts">
+            <script>
+                $(document).ready(function() 
+                {
+                    $('.PhoneMask').mask('(000) 000-0000');
+                    function IsEmail(email)  
+                    {
+                        var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+                        return regex.test(email);
+                    }
+                    $(document).on('click', '#SaveAccount', function(event) 
+                    {
+                        event.preventDefault();
+                        Save();
+                    });
+                    var accountId = $('.AccountId').val();
+                    Visualforce.remoting.Manager.invokeAction('{!$RemoteAction.ExternalPartnerPortalController.GetContactsByAccount}', accountId ,
+                        function(result, event)
+                        {
+                            if (event.status) 
+                            {
+                                console.log(result); 
+                                $('#ContactsTable').DataTable( {
+                                    destroy: true,
+                                    paging:   false,
+                                    ordering: false,
+                                    info:     false,
+                                    filter: false,
+                                    data: result,
+                                    columns: 
+                                    [
+                                        { 
+                                            title: "", 
+                                            data: "Id",
+                                            render: function ( data, type, row ) 
+                                            {
+                                                return '<a href="#" class="ContactLink" data-id=\'' + data + '\'>Edit</a>';
+                                            }
+                                        },
+                                        { 
+                                            title: "Name", 
+                                            data: "Name",
+                                            render: function ( data, type, row ) 
+                                            {
+                                                return data;
+                                            }
+                                        },
+                                        { 
+                                            title: "Title", 
+                                            data: "Title",
+                                            render: function ( data, type, row ) 
+                                            {
+                                                return data;
+                                            }
+                                        },
+                                        { 
+                                            title: "Email", 
+                                            data: "Email",
+                                            render: function ( data, type, row ) 
+                                            {
+                                                return data;
+                                            }
+                                        },
+                                        { 
+                                            title: "Phone", 
+                                            data: "Phone",
+                                            render: function ( data, type, row ) 
+                                            {
+                                                return data;
+                                            }
+                                        },                                                                                
+                                        { 
+                                            title: "Inactive", 
+                                            data: "Inactive",
+                                            render: function ( data, type, row ) 
+                                            {
+                                                return data;
+                                            }
+                                        },      
+                                    ]
+                                } );
+                            } 
+                            else 
+                            {
+                                console.log(event.message);
+                            }
+                        }, 
+                        {escape: true}
+                    );
+                    $(document).on('click', '.ContactLink', function(event) 
+                    {
+                        event.preventDefault();
+                        $(".ContactId").val($(this).data('id'));
+                        RedirectToExternalPartnerContactProfile();
+                    });
+                });
+            </script>
+        </apex:define>
+    </apex:composition> 
+</apex:page>

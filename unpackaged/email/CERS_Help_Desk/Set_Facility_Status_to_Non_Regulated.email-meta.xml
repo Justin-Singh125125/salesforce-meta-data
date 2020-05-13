@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Regulator User inquires about how to set a facility’s status to “Non-Regulated”</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Set Facility Status to “Non-Regulated”</name>
+    <style>none</style>
+    <subject>How to set Facility Status to “Non-Regulated”</subject>
+    <textOnly>How to set Facility Status to “Non-Regulated”
+
+
+Sign-in to CERS Regulator.
+Locate facility record by searching, via the “Facilities” Search/selecting the “Facilities” button from the CERS Regulator menu bar.
+Open the facility record, by selecting the CERS ID button from the Facilities Search results.
+Select the “Manage Facility” link, from the menu on the left-hand side of the Facility “Summary” page.
+Select the “Non-Regulated Facilities” link, from the “Manage Facility” page.
+Confirm on the following page(s), to remove the reporting requirements for this facility record and remove the facility from its current Business Organization.</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

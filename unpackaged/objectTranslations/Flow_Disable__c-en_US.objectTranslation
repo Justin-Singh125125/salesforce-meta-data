@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Flow Disable</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Flow Disable</value>
+    </caseValues>
+    <fields>
+        <label><!-- DisableFlows --></label>
+        <name>DisableFlows__c</name>
+    </fields>
+    <fields>
+        <label><!-- DisableTriggers --></label>
+        <name>DisableTriggers__c</name>
+    </fields>
+    <fields>
+        <label><!-- DisableValidationRules --></label>
+        <name>DisableValidationRules__c</name>
+    </fields>
+    <fields>
+        <label><!-- DisableWorkflows --></label>
+        <name>DisableWorkflows__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

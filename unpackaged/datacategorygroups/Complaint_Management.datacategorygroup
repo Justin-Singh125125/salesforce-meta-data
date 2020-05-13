@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataCategoryGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <dataCategory>
+        <dataCategory>
+            <label>Complaints</label>
+            <name>Complaints</name>
+        </dataCategory>
+        <dataCategory>
+            <label>Referrals</label>
+            <name>Referrals</name>
+        </dataCategory>
+        <dataCategory>
+            <label>Findings</label>
+            <name>Findings</name>
+        </dataCategory>
+        <dataCategory>
+            <label>Accounts</label>
+            <name>Accounts</name>
+        </dataCategory>
+        <dataCategory>
+            <label>Contacts</label>
+            <name>Contacts</name>
+        </dataCategory>
+        <dataCategory>
+            <label>Reporting</label>
+            <name>Reporting</name>
+        </dataCategory>
+        <label>All</label>
+        <name>All</name>
+    </dataCategory>
+    <label>Complaint Management</label>
+    <objectUsage>
+        <object>KnowledgeArticleVersion</object>
+    </objectUsage>
+</DataCategoryGroup>

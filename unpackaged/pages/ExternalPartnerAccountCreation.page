@@ -1,0 +1,106 @@
+<apex:page applyBodyTag="false"    
+    applyHTMLTag="false" 
+    cache="false" 
+    docType="HTML-5.0" 
+    id="ExternalPartnerAccountCreation"  
+    sidebar="false"  
+    showChat="false"  
+    showHeader="false"   
+    standardController="Finding__c" 
+    standardStylesheets="false" 
+    extensions="ExternalPartnerPortalController"
+    action="{!LoadExternalPartnerAccountCreation}">  
+    <apex:composition template="ExternalPartnerLayout">
+        <apex:define name="ExternalPartnerLayoutTitle"></apex:define>
+        <apex:define name="ExternalPartnerLayoutPageCss">
+            <style> 
+                .messageText h4
+                {
+                    display:none;
+                }
+                .messageText
+                {
+                    color:red;
+                }
+            </style> 
+        </apex:define>
+        <apex:define name="ExternalPartnerLayoutBody">
+            <div class="group">
+                <div class="full-width">
+                    <div class="panel panel-understated">
+                        <div class="panel-heading">
+                            <h4>Please Provide the Following About Your Agency/Department</h4>
+                        </div>
+                        <div class="panel-body">
+                            <apex:form id="AccountCreationForm" html-role="form">
+                            <apex:inputHidden value="{!ExternalPartnerAccountCreationViewModel.ComplaintId}" Html-Class="ComplaintId"/>
+                            <apex:inputHidden value="{!ExternalPartnerAccountCreationViewModel.AccountId}" Html-Class="AccountId"/>
+                                <div class="form-group">
+                                    <label for="AccountName"><span class="required-label">*</span> Agency/Department Name</label>
+                                      <input type="text" class="form-control" id="AccountName" placeholder="Enter Agency/Department Name"/>
+                                </div>
+                                <input id="SubmitButton" type="button" value="Submit" class="btn btn-secondary pull-left" />
+                                <apex:actionFunction name="SelectNewAccount" action="{!SelectNewAccount}" />
+                                <div class="group">
+                                    <div class="full-width">
+                                        <label id="CreateAccountError" class="pull-left" style="color:red;"></label>
+                                    </div>
+                                </div>
+                            </apex:form>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+        </apex:define>
+        <apex:define name="ExternalPartnerLayoutPageScriptIncludes"></apex:define>
+        <apex:define name="ExternalPartnerLayoutPageScripts">
+            <script>
+                $(document).ready(function() 
+                {
+                    $(document).on('click', '#SubmitButton', function(event) 
+                    {
+                        event.preventDefault();
+                        if($('.AccountName').val()=='')
+                        {
+                            $('#CreateAccountError').text('Please Enter Your Account\'s Name');
+                            $("#AccountName").css('border-color', 'red');;
+                            $('#AccountName').focus();
+                            return false;
+                        }
+                        var accountName = $("#AccountName").val();
+                        Visualforce.remoting.Manager.invokeAction('{!$RemoteAction.ExternalPartnerPortalController.CreateAccount}', accountName, 
+                            function(result, event)
+                            {
+                                if (event.status) 
+                                {
+                                    Visualforce.remoting.Manager.invokeAction('{!$RemoteAction.ExternalPartnerPortalController.GetAccountByName}', accountName, 
+                                        function(result, event)
+                                        {
+                                            if (event.status) 
+                                            {
+                                                $(".AccountId").val(result.Id);
+                                                SelectNewAccount();
+                                            } 
+                                            else 
+                                            {
+                                                $("#CreateAccountError").text(event.message);
+                                            }
+                                        }, 
+                                        {escape: true}
+                                    );
+                                } 
+                                else 
+                                {
+                                    $("#CreateAccountError").text(event.message);
+                                }
+                            }, 
+                            {escape: true}
+                        );
+
+                        
+                    });
+                });
+            </script>
+        </apex:define>
+    </apex:composition> 
+</apex:page>

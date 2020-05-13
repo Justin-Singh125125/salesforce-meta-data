@@ -1,0 +1,20 @@
+<aura:component extends="forceCommunity:navigationMenuBase">
+    <aura:attribute name="calEPAMenuItems" type="object[]" default="" />
+    <aura:handler name="change" value="{!v.menuItems}" action="{!c.onNavMenuItemsChange}"/>
+	<nav id="navigation" class="main-navigation dropdown">    
+   		<ul id="nav_list" class="top-level-nav" >
+       		<aura:iteration items="{!v.calEPAMenuItems}" var="calEPAMenuItem">
+           		<li class="nav-item">
+                    <a href="javascript:void(0);"  onclick="{!c.onMenuItemClick}" data-menu-item-id="{!calEPAMenuItem.id}" class="first-level-link">
+                        <span class="{!calEPAMenuItem.icon}"></span>
+                        {!calEPAMenuItem.text}
+                    </a>
+                </li>
+       		</aura:iteration>
+             <li class="nav-item" id='nav-item-search'>
+            	<a href="" class="first-level-link"><span class="ca-gov-icon-search" aria-hidden="true"></span>Search</a>
+        	</li>
+			<c:CalEPACommunityProfile></c:CalEPACommunityProfile>            
+   		</ul>
+	</nav>
+</aura:component>

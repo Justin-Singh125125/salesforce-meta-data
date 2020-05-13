@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailFolder xmlns="http://soap.sforce.com/2006/04/metadata">
+    <accessType>Shared</accessType>
+    <name>Complaint Management</name>
+    <publicFolderAccess>ReadWrite</publicFolderAccess>
+    <sharedTo>
+        <group>Complaint_Management_Users</group>
+        <group>Complaint_Public_Site</group>
+        <group>External_Partner_Portal_Complaints</group>
+    </sharedTo>
+</EmailFolder>

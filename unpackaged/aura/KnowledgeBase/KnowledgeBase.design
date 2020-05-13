@@ -1,0 +1,3 @@
+<design:component label="Knowledge Base">    
+    <design:attribute name="category" label="Knowledge Article Category" />
+</design:component>

@@ -1,0 +1,77 @@
+<html>
+    <head>
+
+    </head>
+    <body style="font-family:arial; width:75%; font-size:11pt;">
+        <table style="width:50%">
+            <tbody>
+                <tr>
+                    <td style="width:50%;">
+                        <p>
+                            <img style="width: 50%; height: 50%;" src="[[CalEPALogo]]"
+                            />
+                        </p>
+                    </td>
+                    <td style="width:50%; vertical-align:top;">
+                        <div style="font-weight: bold; width: 100%; text-align:right; color:green; font-size:8pt;">
+                            Gavin Newsom
+                        </div>
+                        <div style="font-style: italic; width: 100%; text-align:right; color:green; font-size:8pt;">
+                            Governor
+                        </div>                            
+                        <div style="font-weight: bold; width: 100%; text-align:right; color:green; font-size:8pt;">
+                                Jared Blumenfeld
+                        </div>
+                        <div style="font-style: italic; width: 100%; text-align:right; color:green; font-size:8pt;">
+                                Secretary for Environmental Protection
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>        
+        <br/>
+        <br/>
+        <p>
+            {!Complaints__c.Closed_Date__c}
+        </p>        
+        <p>
+            {!Complaints__c.Complainant__c.Name}
+        </p>
+        <p>
+            {!Complaints__c.Complainant__c.PersonMailingStreet}
+        </p>
+        <p>
+            {!Complaints__c.Complainant__c.PersonMailingCity}{!Complaints__c.Complainant__c.PersonMailingState}{!Complaints__c.Complainant__c.PersonMailingPostalCode}
+        </p>
+        <p>
+                <span style="font-weight:bold;">Subject:</span>  Your environmental complaint has been closed
+        </p>
+        <p>
+            Dear {!Complaints__c.Complainant__c.Name}:
+        </p>
+        <p>
+            This message relates to the environmental complaint {!Complaints__c.Name}  you submitted to CalEPA on {!Complaints__c.Actual_Recieve_Date__c}.  Your complaint has been closed.
+        </p>
+        <p style="font-weight: bold;">
+            Your complaint was handled by the following agencies:
+        </p>
+        <table style="width:50%; font-size:85%;">
+                <tbody>
+                    [[IndividualBDOs]]
+            </tbody>
+        </table>
+        <p>
+            If you would like more information, please contact the listed agencies directly.
+        </p>
+        <p>
+            Sincerely,
+        </p>
+        <br/>
+        <p>
+            CalEPA Complaint Management
+        </p>
+        <p>
+            <a href="mailto:complaints@calepa.ca.gov">complaints@calepa.ca.gov</a>
+        </p>
+    </body>
+</html>

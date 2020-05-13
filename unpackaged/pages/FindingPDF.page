@@ -1,0 +1,264 @@
+<apex:page id="FindingPDF"   
+applyBodyTag="false" 
+applyHtmlTag="false" 
+cache="false" 
+docType="HTML-5.0" 
+showChat="false" 
+showHeader="false" 
+sidebar="false" 
+standardController="Finding__c" 
+standardStylesheets="false"
+extensions="FindingPDFController"
+renderAs="pdf"
+action="{!LoadFindingPDF}">
+<!--  -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <style> 
+            @page 
+            {
+                size: letter;
+            }
+            h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6 
+            {
+                font-family: "Source Sans Pro", sans-serif;
+                font-weight: 400;
+                line-height: 1.1;
+                color: inherit;
+            }
+            
+            hr.hr-understated 
+            {
+                border: none;
+                border-bottom-style: dotted;
+                border-bottom-width: 2px;
+                border-bottom-color: #cccccc;
+            }
+            
+            hr 
+            {
+                margin-top: 22px;
+                margin-bottom: 22px;
+                border: 0;
+                border-top: 1px solid #cccccc;
+            }
+            
+            hr 
+            {
+                box-sizing: content-box;
+                height: 0;
+            }
+            
+            table 
+            {
+                font-family: "Source Sans Pro", sans-serif;
+                font-size: 85%;
+                /*border: 1px solid black;*/
+                empty-cells: show;
+            }
+            td
+            {
+                width: 1.75in;
+                /*border: 1px solid black;*/
+            }
+            tr
+            {
+            }
+            label
+            {
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>
+            Finding Report
+        </h2>
+        <h3>Finding Number:  {!FindingDetailViewModel.FindingName}</h3> 
+        <hr class="hr-understated"/>
+        <h4>Finding Information</h4>
+        <table>
+            <tbody> 
+                <tr>
+                    <td>
+                        <label>Completed By</label>
+                    </td>
+                    <td>
+                        <p>{!FindingDetailViewModel.CompletedBy}</p>
+                    </td>
+                    <td>
+                        <label>Title</label>
+                    </td>
+                   <td>
+                        <p>{!FindingDetailViewModel.Title}</p>
+                    </td>                    
+                </tr>
+                <tr>
+                    <td>
+                        <label>Email</label>
+                    </td>
+                    <td>
+                        <p>{!FindingDetailViewModel.Email}</p>
+                    </td>
+                    <td>
+                        <label>Phone</label>
+                    </td>                    
+                    <td>
+                        <p>{!FindingDetailViewModel.Phone}</p>
+                    </td>                                        
+                </tr>                
+            </tbody>
+        </table>
+        <hr class="hr-understated"/>
+        <h4>Secondary Referral</h4>
+        <table>
+            <tbody> 
+                <tr>
+                    <td colspan='2'>
+                        <label>Did you refer this to another agency?</label>
+                    </td>
+                    <td colspan='2'>
+                        <p>{!FindingDetailViewModel.SecondaryReferral}</p>
+                    </td>
+                </tr>
+                <apex:outputPanel rendered="{!FindingDetailViewModel.IsSecondaryReferral}">
+                    <tr>
+                        <td colspan='2'>
+                            <label>Who did you refer it to?</label>
+                        </td>
+                        <td colspan='2'>
+                            <p>{!FindingDetailViewModel.ReferralAgency}</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan='2'>
+                            <label>Date of referral</label>
+                        </td>
+                        <td colspan='2'>
+                            <p>{!FindingDetailViewModel.DateOfReferral}</p>
+                        </td>                    
+                    </tr>                
+                </apex:outputPanel> 
+            </tbody>
+        </table>        
+        <hr class="hr-understated"/>
+        <h4>Inspection Information</h4>
+        <table>
+            <tbody> 
+                <tr>
+                    <td colspan='2'>
+                        <label>Did you conduct a site visit?</label>
+                    </td>
+                    <td>
+                        <p>{!FindingDetailViewModel.SiteVisitConducted}</p>                       
+                    </td>
+                </tr>
+                <apex:outputPanel rendered="{!FindingDetailViewModel.IsSiteVisit}">
+                    <tr>
+                        <td colspan='2'>
+                            <label>Date of site visit</label>
+                        </td>
+                        <td>
+                            <p>{!FindingDetailViewModel.DateOfSiteVisit}</p>
+                        </td>
+                        <td>
+
+                        </td>
+                        <td>
+
+                        </td>                    
+                    </tr>
+                </apex:outputPanel>
+                <apex:outputPanel rendered="{!FindingDetailViewModel.IsSiteVisit==false}">
+                    <tr>
+                        <td>
+                            <label>Why didn't you conduct a site visit?</label>
+                        </td>
+                        <td>
+                            <p>{!FindingDetailViewModel.ReasonForNoSiteVisit}</p>
+                        </td>
+                        <td>
+
+                        </td>
+                        <td>
+
+                        </td>                    
+                    </tr>
+                </apex:outputPanel>
+            </tbody>
+        </table>                
+        <hr class="hr-understated"/>
+        <h4>Compliance and Enforcement Information</h4>        
+        <table>
+            <tbody> 
+                <tr>
+                    <td colspan='2'>
+                        <label>Did you find violations or compliance issues?</label>
+                    </td>
+                    <td>
+                        <p>{!FindingDetailViewModel.ViolationsOrComplianceIssues}</p>
+                    </td>
+                </tr>
+                <apex:outputPanel rendered="{!FindingDetailViewModel.IsViolationsOrComplianceIssues}">        
+                        <tr>
+                            <td colspan='4'>
+                                <label>Summary of violations and enforcement action taken</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan='4'>
+                                <p>{!FindingDetailViewModel.SummaryOfViolationsAndEnforcement}</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan='2'>
+                                <label>Were the violations related to the complaint?</label>
+                            </td>
+                            <td>
+                                <p>{!FindingDetailViewModel.ViolationsRelatedToComplaint}</p>
+                            </td>                    
+                        </tr>                        
+                </apex:outputPanel>                   
+                <tr>
+                    <td colspan='2'>
+                        <label>Is enforcement complete?</label>
+                    </td>
+                    <td>
+                        <p>{!FindingDetailViewModel.IsEnforcementComplete}</p>
+                    </td>
+                </tr>                
+                <apex:outputPanel rendered="{!FindingDetailViewModel.IsIsEnforcementComplete==false}">
+                    <tr>
+                        <td colspan='4'>
+                            <label>Describe any on-going enforcement efforts</label>
+                        </td>
+                    </tr>
+                    <tr colspan='4'>
+                        <td>
+                            <p>{!FindingDetailViewModel.OnGoingEnforcement}</p>
+                        </td>
+                    </tr>
+                </apex:outputPanel>
+            </tbody>
+        </table>    
+        <apex:outputPanel rendered="{!FindingDetailViewModel.Attachments.size > 0}">
+            <hr class="hr-understated"/>
+            <h4>Attachments</h4>                                                      
+            <table class="table table-default">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <apex:repeat value="{!FindingDetailViewModel.Attachments}" var="attachment" id="attachmentRepeat">
+                    <tr>
+                        <td><a href="{!URLFOR($Action.Attachment.Download, attachment.Id)}">{!attachment.Name}</a></td>
+                    </tr>
+                </apex:repeat>
+                </tbody>
+            </table>
+        </apex:outputPanel>
+    </body>
+</html>
+</apex:page>

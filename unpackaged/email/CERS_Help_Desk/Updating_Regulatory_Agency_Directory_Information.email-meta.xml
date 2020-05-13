@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Regulator User inquires about updating Regulatory Agency Directory Information</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Updating Regulatory Agency Directory Information</name>
+    <style>none</style>
+    <subject>Updating Regulatory Agency Directory Information</subject>
+    <textOnly>How to Update Regulatory Agency Directory Information
+
+
+Sign-in to CERS Regulator.
+Select the “Regulators” button from the menu bar. (Located at the top of each page.)
+Select regulatory agency.
+Select the “Directory Info” link. (Located on the left-hand side of the Regulator “Summary” page.)
+Select the “Edit” button. (Located at the bottom of the “Directory Info” page.)
+Make the necessary change(s), then select the “Save” button to update regulatory agency directory information, in CERS.</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

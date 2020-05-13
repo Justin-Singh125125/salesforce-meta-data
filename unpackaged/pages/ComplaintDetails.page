@@ -1,0 +1,1181 @@
+<apex:page applyBodyTag="false"
+           applyHTMLTag="false"
+           docType="HTML-5.0"
+           id="details"
+           action="{!pageCheck}"
+           sidebar="false"
+           showChat="false"
+           showHeader="false"
+           standardController="Complaints__c"
+           standardStylesheets="false"
+           extensions="ComplaintController"
+           language="{!currentLanguage}" >
+    
+    <!-- Everything goes in the composition inside of the apex:define tags  -->
+    <apex:composition template="Template">
+        <apex:define name="title">{!$Label.COMPLAINT_TXT_Complaint_page_title}</apex:define>
+        <apex:define name="styles">
+            <!--<link rel="stylesheet" href="css/page-specific-styles.css" />-->
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.min.css" />
+        </apex:define>
+        <!--
+Only override the header region if you need to pass in custom attributes to the header component.
+<apex:define name="header">
+<c:JCMC_Header customAttribute="custom value" />
+</apex:define>
+-->
+        <apex:define name="body">
+            
+            <c:Complaint_Steps step="2" />
+            <apex:pageMessages ></apex:pageMessages>
+            <apex:form styleclass="form" id="detailsForm"  html-data-toggle="validator" html-role="form">
+                
+                <apex:inputHidden id="rAttach" value="{!rAttachmentId}" />
+                <!-- <div class="row">
+<div class="alert alert-dismissible alert-warning col-xs-12 text-center">
+<a href="{! $Page.Emergency }" class="alert-link"><strong>IS THIS A SPILL?</strong>  </a>
+<button type="button" class="btn-link" style="color:white;" data-dismiss="alert">No</button>
+</div>
+</div> -->
+                
+                <div class="row">
+                    
+                    <div class="col-xs-12 col-md-5 col-md-offset-1">
+                        <div class="form-group text-center">
+                            <label class="control-label">
+                                <p class="lead">{!$Label.COMPLAINT_LBL_Are_You_Reporting_a_Spill}</p>
+                            </label>
+                            <div id='spillToggle' class="">
+                                <apex:inputcheckbox html-data-toggle="toggle" html-data-on="{!$Label.COMPLAINT_TXT_Yes}" html-data-off="{!$Label.COMPLAINT_TXT_No}" value="{!complaint.Spill__c}" />
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-5 ">
+                        <div class="form-group text-center">
+                            <label class="control-label">
+                                <p class="lead">{!$Label.COMPLAINT_LBL_Is_This_Complaint_Related_To_A_Refinery}</p>
+                            </label>
+                            <div id='refineryToggle' class="">
+                                <apex:inputcheckbox html-data-toggle="toggle" html-data-on="{!$Label.COMPLAINT_TXT_Yes}" html-data-off="{!$Label.COMPLAINT_TXT_No}" value="{!complaint.Refinery__c}" />
+                            </div>
+                        </div>
+                    </div> 
+                    <div class="col-xs-12">
+                        <h2>{!$LABEL.COMPLAINT_LBL_Complaint} </h2>
+                    </div>
+                    <div class="col-xs-12 col-md-6">
+                        <p class="lead">
+                            {!$LABEL.COMPLAINT_TXT_Complaint}
+                        </p>
+                    </div>
+                    <div class="col-xs-12 col-md-6 "> 
+                        <div class="form-group {!if(descError,'has-error','')}">
+                            <label class="control-label" style=""> {!$LABEL.COMPLAINT_LBL_Complaint_Description} <span class="has-error">*</span></label>
+                            <div class="">
+                                <apex:inputTextarea id="descriptionTextArea" value="{! Complaint.Description__c }" rows="10" styleClass="form-control" html-placeholder="{!$Label.COMPLAINT_TXT_Please_Describe_The_Issue_In_as_much}" />
+                            </div>
+                        </div>
+                        
+                        
+                    </div> 
+                    <div class="col-xs-12 col-md-6 col-md-offset-6">
+                        <div class="form-group">
+                            <label class="control-label">{!$Label.COMPLAINT_LBL_If_You_Previously_Submitted}</label>
+                            <div class="">
+                                <apex:inputTextarea id="previouslySubmittedTextArea" value="{! Complaint.Previous_Organizations__c }" styleClass="form-control" html-placeholder="{!$Label.COMPLAINT_LBL_List_Organizations_that}" html-maxlength="50" />
+                            </div>
+                        </div>
+                    </div> 
+                </div> 
+                <hr/>
+                
+                <!-- Complaint Location -->
+                <div class="row" id="complaintLocation">
+                    <fieldgroup>
+                        <div class="col-xs-12">
+                            
+                            <h2>{!$Label.COMPLAINT_LBL_Complaint_Location}</h2>
+                        </div>
+                        <div class="col-xs-12 col-lg-6">
+                            <p class="lead">
+                                {!$Label.COMPLAINT_TXT_Complaint_Location}    
+                            </p>
+                        </div>
+                        <div class="col-xs-12 col-lg-6">
+                            <div class="form-group">
+                                <label class="control-label">{!$Label.COMPLAINT_LBL_Address}</label>
+                                <apex:inputText id="address" required="required" value="{! Complaint.Complaint_Location_Address__c }" styleClass="form-control" html-placeholder="{!$Label.COMPLAINT_TXT_Address}" /> 
+                                <apex:inputHidden id="latitude" value="{!complaint.Complaint_Location__Latitude__s}" />
+                                <apex:inputHidden id="longitude" value="{!complaint.Complaint_Location__Longitude__s}" />
+                                <apex:inputHidden id="county" value="{!complaint.Complaint_Location_County__c}" />
+                            </div>
+                            
+                            
+                            <div class="row">
+                                <div class="form-group col-xs-12 col-sm-4">
+                                    <label class="control-label">{!$Label.COMPLAINT_LBL_City}</label>
+                                    <apex:inputText id="city"  value="{! Complaint.Complaint_Location_City__c }"  styleClass="form-control" html-placeholder="{!$Label.COMPLAINT_TXT_City}"/>
+                                    <div class="help-block with-errors"></div>
+                                    
+                                </div>
+                                <div class="form-group col-xs-12 col-sm-5">
+                                    <label class="control-label">{!$LABEL.COMPLAINT_LBL_State}</label>
+                                    <div>
+                                        <input type="text" disabled="disabled" id="state"  value="California" class="form-control"/>
+                                        
+                                    </div>
+                                </div>
+                                <div class="form-group col-xs-12 col-sm-3 ">
+                                    <label class="control-label">{!$LABEL.COMPLAINT_LBL_Zip}</label>
+                                    
+                                    <apex:inputText id="zipcode" value="{! Complaint.Complaint_Location_Zip_Code__c }"  styleClass="form-control" html-placeholder="{!$Label.COMPLAINT_TXT_Zip}"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <!-- btn-block - changed this to btn-lg below -->
+                                <span id="pinMap" class="btn btn-primary btn-lg" onclick="updateMap('{!$Component.address}','{!$Component.city}','{!$Component.zipcode}','{!$Component.latitude}', '{!$Component.longitude}','{!$Component.county}', true, false);">
+                                    {!$LABEL.COMPLAINT_LBL_Place_Pin_On_Map} &nbsp; <i class="fa fa-map-marker"></i>
+                                </span>
+                            </div>
+                            
+                            <!-- MAP -->
+                            <div class="embed-responsive embed-responsive-4by3" id="map">
+                                
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">{!$LABEL.COMPLAINT_LBL_Location_Description}</label>
+                                <div class="">
+                                    <apex:inputTextarea id="locationDescriptionTextArea" value="{! Complaint.Location_Description__c }" styleClass="form-control" html-placeholder="{!$Label.COMPLAINT_TXT_Description_of_Location}" />
+                                </div>
+                            </div>
+                        </div> 
+                    </fieldgroup>
+                </div>
+                <hr/>
+                
+                <!-- Responsible Party -->
+                <apex:outputPanel layout="block" id="responsibleAddress" styleClass="row">
+                    <div class="col-xs-12">
+                        <h2>{!$Label.COMPLAINT_LBL_Responsible_Party}</h2>
+                    </div>
+                    <div class="col-xs-12 col-lg-6">
+                        <p class="lead">{!$Label.COMPLAINT_TXT_Responsible_Party}</p>
+                    </div>
+                    <div class="col-xs-12 col-lg-6">
+                        <div class="row">
+                            <div class="form-group col-xs-12 col-sm-6">
+                                <label class="control-label">{!$Label.COMPLAINT_LBL_Responsible_Person_Name}</label>
+                                
+                                <apex:inputText id="responsiblePartyNameInput" value="{! Complaint.Responsible_Party_Name__c }" styleClass="form-control" html-placeholder="{!$Label.COMPLAINT_TXT_Person_Name}" />
+                            </div>      
+                            <div class="form-group col-xs-12 col-sm-6">
+                                <label class="control-label">{!$Label.COMPLAINT_LBL_Reponsible_Company_Name}</label>
+                                <apex:inputText id="responsiblePartyCompanyInput" value="{! Complaint.Responsible_Party_Company__c }" styleClass="form-control" html-placeholder="{!$LABEL.COMPLAINT_TXT_Company_Name }"/>
+                            </div>
+                        </div>
+                        <br />
+                        <div class="row"> 
+                            <div class="col-xs-12">
+                                <div class="form-group" id="reponsiblePartySameAddressToggle"> 
+                                    <label class="control-label">
+                                        <apex:inputHidden id="saId" value="{!sameAddress}" />
+                                        <p class="lead lead-nomargin">{!$LABEL.COMPLAINT_LBL_Same_Address_As_The_Above}  &nbsp;&nbsp;
+                                            <input type="checkbox"  id="ckSameAddress" data-toggle="toggle" onchange="updateSameAddress(this,'{!$Component.saId}','{!$Component.address}','{!$Component.city}','{!$Component.state}','{!$Component.zipcode}','{!$Component.rpStreet}', '{!$Component.rpCity}', '{!$Component.rpState}', '{!$Component.rpZip}'); return false;" data-on="{!$Label.COMPLAINT_TXT_Yes}" data-off="{!$Label.COMPLAINT_TXT_No}" /> 
+                                        </p>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" id="responsibleAddress">
+                            <div class="form-group col-xs-12">
+                                <label class="control-label">{!$LABEL.COMPLAINT_LBL_Address}</label>
+                                
+                                <apex:inputText id="rpStreet" required="required" value="{! Complaint.Responsible_Party_Street__c }" styleClass="form-control" html-placeholder="{!$Label.COMPLAINT_TXT_Address}"/>
+                            </div>
+                            <div class="form-group col-xs-12 col-sm-4">
+                                <label class="control-label">{!$Label.COMPLAINT_LBL_City}</label>
+                                <apex:inputText id="rpCity" value="{! Complaint.Responsible_Party_City__c }" styleClass="form-control" html-placeholder="{!$Label.COMPLAINT_TXT_City}"/>
+                                
+                            </div>
+                            <div class="form-group col-xs-12 col-sm-5" id='responsiblePartyState'>
+                                <label class="control-label">{!$Label.COMPLAINT_LBL_State}</label>
+                                <apex:selectList id="rpState" styleClass="selectpicker" value="{!complaint.Responsible_Party_State__c}" multiselect="false" size="1">
+                                    <apex:selectOptions value="{!states}"></apex:selectOptions>
+                                </apex:selectList>
+                                
+                            </div>
+                            <div class="form-group col-xs-12 col-sm-3">
+                                <label class="control-label">{!$Label.COMPLAINT_LBL_Zip}</label>
+                                
+                                <apex:inputText id="rpZip" value="{! Complaint.Responsible_Party_Zip_Code__c }" styleClass="form-control" html-placeholder="{!$Label.COMPLAINT_TXT_Zip}"/>
+                            </div>
+                        </div>
+                    </div>
+                </apex:outputPanel>
+                <hr/>
+                
+                <!-- Air -->
+                <apex:outputPanel rendered="{!complaint.Air__c}" layout="none">
+                    <div class="row">
+                        
+                        <div class="col-xs-12 col-md-12">
+                            <h2>
+                                {!$LABEL.COMPLAINT_LBL_Your_Air_Concern} &nbsp; 
+                                <!--<apex:inputField value="{!complaint.Air__c}" />--> &nbsp; 
+                            </h2>
+                        </div>
+                        <div class="col-xs-12 col-md-6">
+                            <p class="lead">
+                                {!$LABEL.COMPLAINT_LBL_Additional_Information} 
+                            </p>
+                        </div>
+                        <div class="col-xs-12 col-md-6">
+                            <div class="form-group" id="vehicleOrStationary">
+                                <label for="{! $Component.airVehicle}" class="control-label">{!$LABEL.COMPLAINT_LBL_Vehicle_Or_Stationary } </label><br/>
+                                <apex:inputField id="airVehicle" styleClass="selectpicker" value="{!complaint.Vehicle_or_Stationary__c}" onchange="$('.selectpicker').selectpicker" />
+                            </div>
+                            <div class="form-group" id="airComplaintSource">
+                                <label for="{! $Component.airsource}" class="control-label">{!$LABEL.COMPLAINT_LBL_Air_Complaint_Source } </label><br/>
+                                <apex:inputField id="airsource" styleClass="selectpicker" value="{!complaint.Air_Complaint_Source_Info__c}" />
+                            </div>
+                        </div> 
+                    </div>
+                    <hr/>
+                </apex:outputPanel>
+                
+                <!-- Water -->
+                <apex:outputPanel rendered="{!complaint.Water__c}" layout="none">
+                    
+                    <div class="row">
+                        <div class="col-xs-12 col-md-12">
+                            <h2>  {!$LABEL.COMPLAINT_LBL_Your_Water_Concern } &nbsp; <!--<apex:inputField value="{!complaint.Water__c}" />--> &nbsp;</h2>
+                        </div>  
+                        <div >
+                            <div class="col-xs-12 col-md-6">
+                                <p class="lead">
+                                    {!$LABEL.COMPLAINT_LBL_Your_Water_Concern_Is_Related_to } 
+                                </p>
+                            </div>
+                            <div class="col-xs-12 col-md-6">
+                                <div class="form-group" id='cannabisMarijuanaToggle'>
+                                    <label for="{! $Component.waterMarijuana }">
+                                        <p class="lead lead-nomargin">
+                                            {!$LABEL.COMPLAINT_LBL_Cannabis_Marijuana} &nbsp; 
+                                            <apex:inputcheckbox id="waterMarijuana" value="{!complaint.Water_Cannabis_Marijuana__c}" styleClass="form-control"  html-data-toggle="toggle" html-data-on="{!$Label.COMPLAINT_TXT_Yes}" html-data-off="{!$Label.COMPLAINT_TXT_No}" />
+                                            &nbsp;<i class="fa fa-question-circle" title="{!$LABEL.COMPLAINT_HELP_Cannabis_Marijuana}" data-toggle="tooltip" data-placement="top"></i>
+                                        </p>
+                                    </label>
+                                </div>
+                                
+                                <div class="form-group" id='drinkingWaterToggle'>
+                                    <label for="{! $component.drinkingwater}">
+                                        <p class="lead lead-nomargin">
+                                            {!$LABEL.COMPLAINT_LBL_Drinking_Water} &nbsp; 
+                                            <apex:inputcheckbox id="dringkingwater" value="{!complaint.Drinking_Water__c}" styleClass="form-control"  html-data-toggle="toggle" html-data-on="{!$Label.COMPLAINT_TXT_Yes}" html-data-off="{!$Label.COMPLAINT_TXT_No}" />
+                                            &nbsp;<i class="fa fa-question-circle" title="{!$ObjectType.Complaints__c.fields.Drinking_Water__c.inlineHelpText}" data-toggle="tooltip" data-placement="top"></i>
+                                        </p>
+                                    </label>
+                                </div>
+                                <div class="form-group" id='waterQualityToggle'>
+                                    <label for="{! $component.waterquality}">
+                                        <p class="lead lead-nomargin">
+                                            {!$LABEL.COMPLAINT_LBL_Water_Quality} &nbsp; 
+                                            <apex:inputcheckbox id="waterquality" value="{!complaint.Water_Quality__c}" styleClass="form-control"  html-data-toggle="toggle" html-data-on="{!$Label.COMPLAINT_TXT_Yes}" html-data-off="{!$Label.COMPLAINT_TXT_No}" />
+                                            &nbsp;<i class="fa fa-question-circle" title="{!$LABEL.COMPLAINT_HELP_Water_Quality}" data-toggle="tooltip" data-placement="top"></i>
+                                        </p>
+                                    </label>
+                                </div>
+                                
+                                
+                                <div class="form-group" id='waterRightsToggle'>
+                                    <label for="{! $Component.waterrights }">
+                                        <p class="lead lead-nomargin">
+                                            {!$LABEL.COMPLAINT_LBL_Water_Rights} &nbsp; 
+                                            <apex:inputcheckbox id="waterrights" value="{!complaint.Water_Rights__c}" styleClass="form-control  water-rights-toggle"  html-data-toggle="toggle" html-data-on="{!$Label.COMPLAINT_TXT_Yes}" html-data-off="{!$Label.COMPLAINT_TXT_No}" />
+                                            &nbsp;<i class="fa fa-question-circle" title="{!$LABEL.COMPLAINT_HELP_Water_Rights}" data-toggle="tooltip" data-placement="top"></i>
+                                        </p>
+                                    </label>
+                                </div>
+                                
+                                <div class="form-group" id='waterOtherToggle'>
+                                    <label for="{! $Component.waterother}">
+                                        <p class="lead lead-nomargin">
+                                            {!$LABEL.COMPLAINT_LBL_Water_Other} &nbsp; 
+                                            <apex:inputCheckbox id="waterother" value="{!complaint.Other_Water_Related_Concerns__c}"  styleClass="form-control"  html-data-toggle="toggle" html-data-on="{!$Label.COMPLAINT_TXT_Yes}" html-data-off="{!$Label.COMPLAINT_TXT_No}"/>
+                                            &nbsp;<i class="fa fa-question-circle" title="{!$ObjectType.Complaints__c.fields.Other_Water_Related_Concerns__c.inlineHelpText}" data-toggle="tooltip" data-placement="top"></i>
+                                        </p>
+                                    </label>
+                                </div>
+                            </div>
+                            <div >
+                                <div class="col-xs-12 col-md-6">
+                                    <p class="lead">
+                                        {!$LABEL.COMPLAINT_LBL_For_Water_Quality_Or_Water_Rights}
+                                    </p>
+                                </div>
+                                <div class="col-xs-12 col-md-6">
+                                    <div class="form-group">
+                                        
+                                        <label for="watersource" styleClass="control-label">{!$LABEL.COMPLAINT_LBL_Name_Of_Affected_Water_Source} &nbsp; <i class="fa fa-question-circle fa-2x" title="{!$ObjectType.Complaints__c.fields.Name_of_Affected_Water_Source__c.inlineHelpText}" data-toggle="tooltip" data-placement="right"></i></label>
+                                        
+                                        <!-- <apex:outputLabel for="watersource" value="Name of affected water source" styleClass="control-label" data-toggle="tooltip" data-placement="left" data-original-title="{!$ObjectType.Complaints__c.fields.Name_of_Affected_Water_Source__c.inlineHelpText}" /> -->
+                                        <!-- {!$ObjectType.Complaints__c.fields.Name_of_Affected_Water_Source__c.inlineHelpText} -->
+                                        <apex:inputField id="watersource" value="{!complaint.Name_of_Affected_Water_Source__c}" styleClass="form-control" />
+                                    </div>
+                                    <div class="form-group">
+                                        <apex:outputLabel for="watershed" value="{!$Label.COMPLAINT_LBL_Watershed}" styleClass="control-label">
+                                            <!--<i class="fa fa-question-circle"  title="{!$ObjectType.Complaints__c.fields.Watershed__c.inlineHelpText}" data-toggle="tooltip" data-placement="right"></i>-->
+                                        </apex:outputLabel>
+                                        <apex:inputField id="watershed" value="{!complaint.Watershed__c}" styleClass="form-control" />
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <apex:outputLabel for="parcel" value="{!$Label.COMPLAINT_LBL_Parcel_Number}" styleClass="control-label">
+                                            
+                                            <!--<i class="fa fa-question-circle"  title="{!$ObjectType.Complaints__c.fields.Complaint_Location_Parcel_Number__c.inlineHelpText}" data-toggle="tooltip" data-placement="right"></i>-->
+                                        </apex:outputLabel>
+                                        <apex:inputField id="parcel" value="{!complaint.Complaint_Location_Parcel_Number__c}" styleClass="form-control" />
+                                    </div>
+                                    
+                                    
+                                    
+                                </div>
+                                
+                                
+                            </div>
+                            <div class="collapse fade" id="water-rights" >
+                                <div class="col-xs-12 col-md-6">
+                                    <p class="lead">
+                                        {!$LABEL.COMPLAINT_LBL_Water_Rights_Concerns} 
+                                    </p>
+                                </div>
+                                <div class="col-xs-12 col-md-6" id="waterRightsOwner">
+                                    <div class="form-group">
+                                        <label for="{! $Component.waterowner}" class="control-label" >
+                                            {!$LABEL.COMPLAINT_LBL_Water_Rights_Owner} </label>
+                                        <apex:inputField id="waterowner" value="{!complaint.Water_Rights_Owner__c}"  styleClass="form-control selectpicker" />
+                                        
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="{! $Component.waterdesc}" Class="control-label" >{!$LABEL.COMPLAINT_LBL_Rights_Description}</label>
+                                        <apex:inputField id="waterdesc" value="{!complaint.Water_Rights_Description__c}"  styleClass="form-control"   />
+                                        
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="{! $Component.rightsnumber}" Class="control-label" >
+                                            {!$LABEL.COMPLAINT_LBL_Rights_Number} </label>
+                                        <apex:inputField id="rightsnumber" value="{!complaint.Water_Right_Number__c}"  styleClass="form-control" />
+                                        
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>  
+                    </div>
+                    <hr/>
+                </apex:outputPanel>
+                
+                <!-- Toxic Substances -->
+                <apex:outputPanel rendered="{!complaint.Toxic_Substances__c}">
+                    <div class="row">
+                        <div class="col-xs-12 col-md-12">
+                            <h2> {!$LABEL.COMPLAINT_LBL_Your_Toxics_Concern} &nbsp; <!--<apex:inputField value="{!complaint.Toxic_Substances__c}" />--> &nbsp;</h2>
+                        </div>
+                        <div class="col-xs-12 col-md-6">
+                            <p class="lead">
+                                {!$LABEL.COMPLAINT_LBL_Additional_Information}  
+                            </p>
+                        </div>
+                        <div class="col-xs-12 col-md-6">
+                            <div class="form-group">
+                                <label for="toxicbeaware" class="control-label">{!$LABEL.COMPLAINT_LBL_How_Did_You_Become_Aware_of}</label>
+                                <apex:inputField id="toxicbeaware" value="{!complaint.How_did_you_become_aware_of_incident__c}" styleClass="form-control" />
+                            </div>
+                            <div class="form-group" id="toxicSensitiveSelect">
+                                <label for="toxicSensitive" class="control-label">{!$LABEL.COMPLAINT_LBL_Is_The_Complaint_Near_A_Sensitive_Location}</label>
+                                <apex:inputField id="toxicSensitive" value="{!complaint.Sensitive_Location__c}" styleClass="form-control selectpicker" />
+                            </div>
+                            <div class="form-group">
+                                <label for="toxicotherlocations" class="control-label">{!$LABEL.COMPLAINT_LBL_Other_Locations}</label>
+                                <apex:inputField id="toxicotherlocations" value="{!complaint.Toxics_Other_Location__c}" styleClass="form-control" />
+                            </div>
+                            <div class="form-group">
+                                <label for="toxicrelationship" class="control-label">{!$LABEL.COMPLAINT_LBL_Relationship_To_Responsible_Party}</label>
+                                <apex:inputField id="toxicrelationship" value="{!complaint.Relationship_to_Responsible_Party__c}" styleClass="form-control" />
+                            </div>
+                            <div class="form-group">
+                                <label for="toxicotherrelation" class="control-label">{!$LABEL.COMPLAINT_LBL_Other_Relationship}</label>
+                                <apex:inputField id="toxicotherrelation" value="{!complaint.Other_Relationship__c}" styleClass="form-control" />
+                            </div>
+                        </div>  
+                    </div>
+                    <hr/>
+                </apex:outputPanel>
+                
+                <!-- Pesticides -->
+                <apex:outputPanel rendered="{!complaint.Pesticides__c}" layout="none">
+                    <div class="row">
+                        <div class="col-xs-12 col-md-12">
+                            <h2> {!$LABEL.COMPLAINT_LBL_Your_Pesticides_Concern} &nbsp; <!--<apex:inputField value="{!complaint.Pesticides__c}" />--> &nbsp;</h2>
+                        </div>
+                        <div class="col-xs-12 col-md-6 ">
+                            <p class="lead">
+                                {!$LABEL.COMPLAINT_LBL_Additional_Information}  
+                            </p>
+                            <p>
+                                <apex:outputPanel styleClass="form-group" rendered="{!if(pesticideUrl <> '',true,false)}" >
+                                    <a href="{!pesticideUrl}" target="_blank">{!$Label.COMPLAINT_LBL_CAC_Directory}</a>
+                                </apex:outputPanel>
+                                <!--<i class="fa fa-information"></i> <a href="#">CAC directory <i class="fa fa-external"></i></a>-->
+                            </p>
+                        </div>
+                        <div class="col-xs-12 col-md-6 ">
+                            <div class="form-group" id="natureOfReport">
+                                <label for="pesticidenaturereport" class="control-label ">{!$LABEL.COMPLAINT_LBL_Nature_Of_Report}</label>
+                                <apex:inputField id="pesticidenaturereport" value="{!complaint.Nature_of_Pesticides_Report__c}" styleClass="form-control selectpicker" />
+                            </div>
+                            <div class="form-group" id="contactCAC">
+                                <label for="pesticidecac" class="control-label">{!$LABEL.COMPLAINT_LBL_Have_You_Contacted_Your_Local_County_Ag}</label>
+                                <apex:inputField id="pesticidecac" value="{!complaint.Reported_to_CAC__c}" styleClass="form-control selectpicker" />
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <hr/>
+                </apex:outputPanel>
+                
+                <!-- Solid Waste -->
+                <apex:outputPanel rendered="{!complaint.Solid_Waste__c}" layout="none">
+                    <div class="row">
+                        <div class="col-xs-12 col-md-12">
+                            <h2> {!$LABEL.COMPLAINT_LBL_Your_Solid_Waste_Concern} &nbsp; <!--<apex:inputField value="{!complaint.Solid_Waste__c}" />--> &nbsp; </h2>
+                        </div>
+                        <div class="col-xs-12 col-md-6">
+                            <p class="lead">
+                                {!$LABEL.COMPLAINT_LBL_Additional_Information}  
+                            </p>
+                        </div>
+                        <div class="col-xs-12 col-md-6">
+                            <div class="form-group" id="bottlesAndCansToggle">
+                                <label for="bottles" class="control-label"><p class="lead lead-nomargin">{!$LABEL.COMPLAINT_LBL_Bottles_And_Cans_Recycling} &nbsp;
+                                    <apex:inputCheckbox id="bottles" value="{!complaint.Bottles_Cans_Recycling__c}" styleClass="form-control"  html-data-toggle="toggle" html-data-on="{!$Label.COMPLAINT_TXT_Yes}" html-data-off="{!$Label.COMPLAINT_TXT_No}" /> 
+                                    </p>
+                                </label>
+                            </div>
+                            <div class="form-group" id="additionalWasteToggle">
+                                <label for="additionalWaste" class="control-label">
+                                    <p class="lead lead-nomargin">{!$LABEL.COMPLAINT_LBL_Additional_Solid_Waste} &nbsp;
+                                        <apex:inputCheckbox id="additionalWaste" value="{!complaint.Additional_Solid_Waste_Checkbox__c}" styleClass="form-control"  html-data-toggle="toggle" html-data-on="{!$Label.COMPLAINT_TXT_Yes}" html-data-off="{!$Label.COMPLAINT_TXT_No}" />
+                                    </p>
+                                </label>
+                            </div>
+                            <div class="form-group" id="wasteTiresToggle">
+                                <label for="tires" class="control-label"><p class="lead lead-nomargin">{!$LABEL.COMPLAINT_LBL_Waste_Tires} &nbsp;
+                                    <apex:inputCheckbox id="tires" value="{!complaint.Waste_Tires__c}" styleClass="form-control"  html-data-toggle="toggle" html-data-on="{!$Label.COMPLAINT_TXT_Yes}" html-data-off="{!$Label.COMPLAINT_TXT_No}" />
+                                    </p>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <hr/>
+                </apex:outputPanel>
+                
+                <!-- Date of Occurance -->
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h2>{!$Label.COMPLAINT_LBL_Confirmation_Date_Of_Occurence}</h2>
+                    </div>
+                    <div class="col-xs-12 col-lg-6 text-right">
+                        <label class="lead" for="{! $Component.occuranceTimeFrame }">{!$Label.COMPLAINT_LBL_Timeframe}</label> 
+                    </div>
+                    <div class="col-xs-12 col-lg-6">
+                        <div class="form-group" id='timeFrameSelect'>
+                            <apex:inputField id="occuranceTimeFrame" value="{! Complaint.Unknown_Date_of_Occurrence__c }"  styleClass="selectpicker occurance-select" />
+                        </div>                       
+                    </div>
+                    <div id="occurenceTimeDatePanel" style="{! IF(Complaint.Unknown_Date_of_Occurrence__c != 'Exact Date','display:none;','') }">
+                            <div class="col-xs-12 col-lg-6 text-right">
+                                <label class="lead" for="{! $Component.dateOfOccurence}">{!$Label.COMPLAINT_LBL_Confirmation_Date_Of_Occurrence_Approx_Time}</label>
+                            </div>
+                            <div class="col-xs-12 col-lg-6">
+                                <div class="form-group">
+                                    <label class="control-label sr-only">{!$Label.COMPLAINT_LBL_Confirmation_Date_Of_Occurrence_Approx_Time}</label>
+                                    <div class="input-group" id="dateOfOccurence">
+                                        <apex:inputhidden id="dateOfOccurence" value="{! occuranceDateTime }" />
+                                    </div>
+                                </div>
+                            </div>
+                        
+                     </div>
+                    <div class="col-xs-12 col-lg-6 text-right">
+                        <label class="lead" for="{! $Component.ongoingOccurance }">{!$LABEL.COMPLAINT_LBL_Confirmation_Ongoing_Occurrence} &nbsp;&nbsp;
+                        </label> 
+                    </div>
+                    <div class="col-xs-12 col-lg-6">
+                        <div class="form-group" id="ongoingOccuranceToggle">
+                            <apex:inputcheckbox id="ongoingOccurance" value="{! Complaint.On_Going_Occurrence__c}" html-data-toggle="toggle" html-data-on="{!$Label.COMPLAINT_TXT_Yes}" html-data-off="{!$Label.COMPLAINT_TXT_No}" />
+                        </div>
+                    </div>
+                </div>
+                <hr/>
+                
+                <!-- Attach Files -->
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h2>{!$Label.COMPLAINT_LBL_Attach_Files}</h2>
+                    </div>
+                    <div class="col-xs-12 col-md-6">
+                        
+                        <p class="lead">
+                            {!$Label.COMPLAINT_LBL_Please_Include_Any_Relevant_Images_Or_Docs}
+                        </p>
+                    </div>
+                    <div class="col-xs-12 col-md-6">
+                        
+                        <apex:variable var="displayAttachments" value="false"/>
+                        <apex:repeat var="check" value="{!attachmentMap}">
+                            <apex:variable var="displayAttachments" value="true"/>
+                        </apex:repeat>
+                        <apex:outputpanel id="attachments" rendered="{!displayAttachments}" layout="none">
+                            <table class="table" id="removeTable">
+                                <thead>
+                                    <tr>
+                                        <th>{!$Label.COMPLAINT_LBL_Document_Name}</th>
+                                        <th>{!$Label.COMPLAINT_LBL_Action}</th> 
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <apex:repeat var="aKey" value="{!attachmentMap}">
+                                        <tr id="removerow{! aKey }">
+                                            <th>{!attachmentMap[aKey]}</th>
+                                            <th>
+                                                <apex:commandlink styleClass="link-danger" onClick="remoteRevomeAttachment('{!aKey}'); return false;" immediate="true">
+                                                    
+                                                    <i class="fa fa-minus-square"></i>
+                                                </apex:commandlink>
+                                            </th>
+                                        </tr>
+                                    </apex:repeat>
+                                </tbody>
+                            </table>
+                        </apex:outputpanel>
+                        
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-btn">
+                                    <span class="file-input btn btn-primary btn-file" id="browseButton">
+                                        {!$LABEL.COMPLAINT_BTN_Browse}&hellip; 
+                                        <apex:inputFile id="fileInput" fileName="{!attachment.Name}" contentType="{!attachment.ContentType}" value="{!attachment.body}" styleclass="file-loading" />
+                                    </span>
+                                </span>
+                                <input type="text" class="form-control" readonly="readonly" />
+                                <div class="input-group-btn">
+                                    <apex:commandButton id="attachButton" onclick="attachmentStatus(); return false;" styleClass="btn btn-primary btn-md" value=" {!$Label.COMPLAINT_LBL_Attach_Files} " />
+                                </div>
+                            </div>
+                            <div class="help-block">{!$Label.COMPLAINT_TXT_10MB_Max_File_Size} </div>
+                            <apex:outputpanel >
+                                
+                                <div id="el_loading" 
+                                     class="waitingSearchDiv" 
+                                     style="background-color: #F0F0F0; height: 100%;opacity:0.65;width:100%; display: none;"> 
+                                    <div class="waitingHolder" style="top: 185px; width: 240px;">
+                                        <img class="waitingImage" src="/img/loading.gif" title="Please Wait..." />
+                                        <span class="waitingDescription"
+                                              style='font-weight: bold; font-size: 18px;'>
+                                            {!$LABEL.COMPLAINT_TXT_Uploading_File}...
+                                        </span>
+                                    </div>
+                                </div>
+                            </apex:outputpanel>
+                        </div>
+                    </div>
+                </div>
+                <hr/>
+                
+                <!-- Navigation Buttons -->
+                <div class="row">
+                    <div class="col-xs-6">
+                        <apex:commandlink action="{!step1}">
+                            <button class="btn btn-primary btn-lg">
+                                <i class="fa fa-arrow-left"></i>&nbsp; {!$LABEL.COMPLAINT_BNT_Previous}
+                            </button>
+                        </apex:commandlink>
+                    </div>
+                    <div class="col-xs-6 text-right">
+                        <apex:commandlink action="{!step3}" > <!-- onclick="validateForm(this, nextStep);" -->
+                            <button class="btn btn-primary btn-lg" id="almostDoneButton" >
+                                {!$LABEL.COMPLAINT_BTN_Almost_Done} &nbsp; <i class="fa fa-arrow-right"></i>
+                            </button>
+                        </apex:commandlink>
+                    </div>
+                </div>
+                
+                <!-- Action functions -->
+                <apex:actionFunction name="updateSelection" id="updateSelection" reRender="detailsForm"/>
+                <apex:actionFunction name="removeAttachmentFunction" id="removeAttachmentFunction" action="{!removeAttachment}" reRender="theForm" >    
+                </apex:actionFunction>
+                <apex:actionFunction action="{!updateSameAddress}" name="updateSameAfunction" id="updateSA" reRender="responsibleAddress" >
+                </apex:actionFunction>
+                <apex:actionFunction action="{!addAttachment}" name="addAttachmentFunction" id="addAttachmentFunction" />
+                <apex:actionFunction name="nextStep" id="nextStepFunction" action="{!step3}" />
+                
+            </apex:form>
+        </apex:define>
+        <apex:define name="scripts">
+            
+            <script   type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
+            <script  type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
+            
+            <script> 
+            function attachmentStatus(){
+                $( "#el_loading" ).show();
+                addAttachmentFunction();
+            }
+            
+            function poCheck(elem){
+                console.log(elem);
+                var regex = new RegExp('[PO.]*\\s?B(ox)?.*\\d+', 'i');
+                var match = regex.exec($(elem).val());
+                if (match != null)
+                {
+                    $(elem).attr("placeholder", "{!$LABEL.COMPLAINT_TXT_Street_address_only_PO_not_allowed}");
+                    $(elem).val('');
+                    $(elem).css("border-color","red");
+                    $(elem).focus();
+                } else {
+                    $(elem).attr("placeholder","Street Address");
+                    $(elem).css("border-color","grey");
+                }
+            }
+            
+            function updateSameAddress(el,saId,cstreet,ccity,cstate,czip,rpstreet,rpcity,rpstate,rpzip){
+                console.log('this is ', $(el).prop('checked') );
+                if ($(el).prop('checked')){
+                    document.getElementById(saId).value = 'true';
+                    console.log('this is checked');
+                    console.log('zipId' + czip);
+                    console.log(document.getElementById(cstreet).value );
+                    console.log(document.getElementById(czip).value );
+                    if (document.getElementById(cstreet).value !== 'undefined'){
+                        document.getElementById(rpstreet).value = document.getElementById(cstreet).value;
+                    }
+                    if(document.getElementById(ccity).value  !== 'undefined'){
+                        document.getElementById(rpcity).value = document.getElementById(ccity).value;
+                    }
+                    //if(document.getElementById(cstate).value  !== 'undefined'){
+                    document.getElementById(rpstate).value = 'California';
+                    //}
+                    if(document.getElementById(czip).value  !== 'undefined'){
+                        document.getElementById(rpzip).value = document.getElementById(czip).value;
+                    }
+                }else{
+                    document.getElementById(saId).value = 'false';
+                    document.getElementById(rpstreet).value = '';
+                    document.getElementById(rpcity).value = '';
+                    document.getElementById(rpstate).value = '';
+                    document.getElementById(rpzip).value = '';
+                    console.log('this is NOT checked');
+                }
+                nVar = 'false';
+                if (document.getElementById('ckSameAddress').checked) {
+                    nVar = 'true';    
+                }
+                //console.log('nVar: ' + nVar);
+                //document.getElementById(saID).value = nVar;
+                //console.log(document.getElementById(saID).value);
+                //updateSameAfunction();
+                console.log('updateSameAddress');
+            }
+            
+            function initMap() {
+                console.log('initMap');
+                var geocoder = new google.maps.Geocoder();
+                var marker;
+                var infoWindow; 
+                var pos;
+                var map;
+                var address;
+                var myOptions = {
+                    zoom: 10,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP,
+                    mapTypeControl: false
+                }
+                var addressId = '{!$Component.detailsForm.address}';
+                var cityId = '{!$Component.detailsForm.city}';
+                var zipCodeId = '{!$Component.detailsForm.zipcode}';
+                var latId = '{!$Component.detailsForm.latitude}';
+                var lngId = '{!$Component.detailsForm.longitude}';
+                var countyId = '{!$Component.detailsForm.county}';
+                var myLat = 37.1954073; // must be a number
+                var myLng = -119.7742066; // must be a number
+                var street = '{!complaint.Complaint_Location_Address__c}';
+                var city = '{!complaint.Complaint_Location_City__c}';
+                var state = '{!complaint.Complaint_Location_State__c}';
+                var zip = '{!complaint.Complaint_Location_Zip_Code__c}';
+                if(street !== 'undefined'){address = street;}
+                if(city !== 'undefined'){address += ', ' + city;}
+                if(state !== 'undefined'){address += ', ' + state;}
+                if(zip !== 'undefined'){address += ', ' + zip;}
+                console.log('myLat ' + myLat);
+                console.log("myLng " + myLng);
+                console.log('address ' + address);
+                
+                // Try HTML5 geolocation.
+                map = new google.maps.Map(document.getElementById('map'), {
+                    center: {lat: myLat, lng: myLng},
+                    zoom: 6
+                });
+                //infoWindow = new google.maps.InfoWindow({map: map});
+                
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(function(position) {
+                        var pos = {
+                            lat: position.coords.latitude,
+                            lng: position.coords.longitude
+                        };
+                        myLat = position.coords.latitude;
+                        myLng = position.coords.longitude;
+                        //infoWindow.setPosition(pos);
+                        //infoWindow.setContent('Location found.');
+                        marker = new google.maps.Marker({
+                            position: pos,
+                            map: map,
+                            draggable:true,
+                            animation: google.maps.Animation.DROP,
+                            title: 'Zoom in and drag to the exact position.'
+                        });
+                        map.setCenter(pos);
+                        document.getElementById('{!$Component.detailsForm.latitude}').value = myLat;
+                        document.getElementById('{!$Component.detailsForm.longitude}').value = myLng;
+                        
+                        updateMap(addressId,cityId,zipCodeId,latId,lngId,countyId, true, true);
+                        
+                    }, function() {
+                        handleLocationError(true, infoWindow, map.getCenter());
+                    });
+                } else {
+                    // Browser doesn't support Geolocation
+                    //document.getElementById('{!$Component.detailsForm.latitude}').value = myLat;
+                    //document.getElementById('{!$Component.detailsForm.longitude}').value = myLng;
+                    
+                    handleLocationError(false, infoWindow, map.getCenter());
+                    
+                    //updateMap(addressId,cityId,zipCodeId,latId,lngId,countyId, false, true);
+                    
+                }
+                
+            }
+            
+            function updateMap(addressId, cityId, zipCodeId, latId, lngId, countyId, clickUpdate, initialLoad) {
+                console.log('updateMap');
+                console.log('addressId: ' + addressId);
+                console.log('cityId: ' + cityId);
+                console.log('zipCodeId: ' + zipCodeId);
+                console.log('latId: ' + latId);
+                console.log('lngId: ' + lngId);
+                console.log('countyId: ' + countyId);
+                var myOptions;
+                var mapInstructions = '{!$LABEL.COMPLAINT_LBL_Map_Instructions }';                
+                myOptions = {
+                    zoom: 15,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP,
+                    mapTypeControl: false
+                }
+                var cordLength = 6;
+                var geocoder = new google.maps.Geocoder();
+                var marker;
+                var infoWindow;
+                var pos;
+                var map;
+                
+                //var myLat = Number('{!complaint.Complaint_Location__Latitude__s}'); // must be a number
+                //var myLng = Number('{!complaint.Complaint_Location__Longitude__s}'); // must be a number
+                
+                var myLat = Number(document.getElementById('{!$Component.detailsForm.latitude}').value);
+                var myLng = Number(document.getElementById('{!$Component.detailsForm.longitude}').value);
+                console.log('myLat ' + myLat);
+                
+                // get it based on address field
+                var address;
+                var street;
+                if(document.getElementById(addressId).value !== undefined && document.getElementById(addressId).value !== null){
+                    street = document.getElementById(addressId).value;
+                }
+                var city;
+                if(document.getElementById(cityId).value !== undefined && document.getElementById(cityId).value !== null){
+                    city = document.getElementById(cityId).value;
+                }
+                var state = '{!complaint.Complaint_Location_State__c}';
+                //if(state != 'California'){state = 'California';}
+                var zip;
+                if(document.getElementById(zipCodeId).value !== undefined && document.getElementById(zipCodeId).value !== null){
+                    zip = document.getElementById(zipCodeId).value;
+                }
+                var county;
+                if(document.getElementById(countyId).value !== undefined && document.getElementById(countyId).value !== null){
+                    county = document.getElementById(countyId).value;
+                }
+                if(street !== 'undefined'){address = street;}
+                if(city !== 'undefined'){address += ', ' + city;}
+                if(state !== 'undefined'){address += ', ' + state;}
+                if(zip !== 'undefined'){address += ', ' + zip;}
+                console.log('address: ' + address);
+                if(street == '' && city == ''){
+                    myOptions = {
+                        zoom: 7,
+                        mapTypeId: google.maps.MapTypeId.ROADMAP,
+                        mapTypeControl: false
+                    }
+                }
+                
+                            
+                
+                geocoder.geocode( { address: address}, function(results, status) {
+                    if (status == google.maps.GeocoderStatus.OK && results.length) {
+                        if (status != google.maps.GeocoderStatus.ZERO_RESULTS) {
+                            
+                            //create map
+                            map = new google.maps.Map(document.getElementById("map"), myOptions);
+                            
+                            infoWindow = new google.maps.InfoWindow({map: map});
+                            infoWindow.setContent(mapInstructions);
+                            // Get Posistion
+                            pos = results[0].geometry.location
+                            
+                            console.log('pos: ' + pos);
+                            
+                            //center map
+                            map.setCenter(pos);
+                            
+                            //create marker
+                            marker = new google.maps.Marker({
+                                position: pos,
+                                map: map,
+                                draggable:true,
+                                animation: google.maps.Animation.DROP,
+                                title: 'Zoom in and drag to the exact position.'
+                            });
+                            
+                            document.getElementById(latId).value = marker.getPosition().lat().toFixed(cordLength);
+                            document.getElementById(lngId).value = marker.getPosition().lng().toFixed(cordLength);
+                            
+                            if(clickUpdate == true){
+                                geocodeLatLng(geocoder, map, marker, infoWindow, marker.getPosition().lat(), marker.getPosition().lng(),addressId, cityId, zipCodeId, countyId);
+                            }
+                            console.log('lat: ' + document.getElementById(latId).value);
+                            console.log('lng: ' + document.getElementById(lngId).value);
+                            //add listeners
+                            google.maps.event.addListener(map, 'click', function(evt) {
+                                document.getElementById(latId).value = evt.latLng.lat().toFixed(cordLength);
+                                document.getElementById(lngId).value = evt.latLng.lng().toFixed(cordLength);
+                                console.log('lat: ' + document.getElementById(latId).value);
+                                console.log('lng: ' + document.getElementById(lngId).value);
+                                var latlng = {lat: parseFloat(evt.latLng.lat().toFixed(cordLength)), lng: parseFloat(evt.latLng.lng().toFixed(cordLength))};
+                                marker.setPosition(latlng);
+                                marker.setMap(map);
+                                map.setCenter(marker.getPosition());
+                                if (map.getZoom() > 10) map.setZoom(10);
+                                if(city != '' || street != ''){
+                                    infoWindow.open(map,marker);
+                                }
+                                geocodeLatLng(geocoder, map, marker, infoWindow, evt.latLng.lat(),evt.latLng.lng(),addressId, cityId, zipCodeId, countyId);
+                                
+                            });
+                            google.maps.event.addListener(infoWindow, 'closeclick', function() {
+                                map.setCenter(marker.getPosition()); 
+                            });
+                            
+                            google.maps.event.addListener(marker, 'dragend', function(evt) {
+                                document.getElementById(latId).value = evt.latLng.lat().toFixed(cordLength);
+                                document.getElementById(lngId).value = evt.latLng.lng().toFixed(cordLength);
+                                console.log('lat: ' + document.getElementById(latId).value);
+                                console.log('lng: ' + document.getElementById(lngId).value);
+                                if(city != '' || street != ''){
+                                    infoWindow.open(map,marker);
+                                }
+                                
+                                geocodeLatLng(geocoder, map, marker, infoWindow, evt.latLng.lat(),evt.latLng.lng(),addressId, cityId, zipCodeId, countyId);
+                            });
+                            
+                            google.maps.event.addListener(marker, 'dragstart', function(evt){
+                                
+                            });
+                        }
+                        
+                    } else {
+                        //$('#map').css({'height' : '15px'});
+                        //$('#map').html("Oops! Address could not be found, please make sure the address is correct.");
+                        if(myLat != '' && myLat != 0){
+                            //create map
+                            map = new google.maps.Map(document.getElementById("map"), myOptions);
+                            
+                            infoWindow = new google.maps.InfoWindow({map: map});
+                            infoWindow.setContent(mapInstructions);
+                            // Get Posistion
+                            pos = {
+                                lat: myLat,
+                                lng: myLng
+                            };
+                            
+                            console.log('pos: ' + pos);
+                            
+                            //center map
+                            map.setCenter(pos);
+                            
+                            //create marker
+                            marker = new google.maps.Marker({
+                                position: pos,
+                                map: map,
+                                draggable:true,
+                                animation: google.maps.Animation.DROP,
+                                title: 'Zoom in and drag to the exact position.'
+                            });
+                            google.maps.event.addListener(map, 'click', function(evt) {
+                                document.getElementById(latId).value = evt.latLng.lat().toFixed(cordLength);
+                                document.getElementById(lngId).value = evt.latLng.lng().toFixed(cordLength);
+                                console.log('lat: ' + document.getElementById(latId).value);
+                                console.log('lng: ' + document.getElementById(lngId).value);
+                                var latlng = {lat: parseFloat(evt.latLng.lat().toFixed(cordLength)), lng: parseFloat(evt.latLng.lng().toFixed(cordLength))};
+                                marker.setPosition(latlng);
+                                marker.setMap(map);
+                                map.setCenter(marker.getPosition());
+                                if (map.getZoom() > 10) map.setZoom(10);
+                                if(city != '' || street != ''){
+                                    infoWindow.open(map,marker);
+                                }
+                                geocodeLatLng(geocoder, map, marker, infoWindow, evt.latLng.lat(),evt.latLng.lng(),addressId, cityId, zipCodeId, countyId);
+                                
+                            });
+                            google.maps.event.addListener(infoWindow, 'closeclick', function() {
+                                map.setCenter(marker.getPosition()); 
+                            });
+                            google.maps.event.addListener(marker, 'dragend', function(evt) {
+                                document.getElementById(latId).value = evt.latLng.lat().toFixed(cordLength);
+                                document.getElementById(lngId).value = evt.latLng.lng().toFixed(cordLength);
+                                console.log('lat: ' + document.getElementById(latId).value);
+                                console.log('lng: ' + document.getElementById(lngId).value);
+                                if(city != '' || street != ''){
+                                    infoWindow.open(map,marker);
+                                }
+                                
+                                geocodeLatLng(geocoder, map, marker, infoWindow, evt.latLng.lat(),evt.latLng.lng(),addressId, cityId, zipCodeId, countyId);
+                            });
+                            geocodeLatLng(geocoder, map, marker, infoWindow, myLat,myLng,addressId, cityId, zipCodeId, countyId);
+                        }
+                        
+                    }
+                    console.log('initialLoad: ' + initialLoad);
+                    if(initialLoad == true){
+                            document.getElementById(latId).value = "";
+                            document.getElementById(lngId).value = "";
+                        }
+                });
+                
+                
+            }
+            
+            function geocodeLatLng(geocoder, map, marker, infoWindow, lat, lng, addressId, cityId, zipCodeId, countyId) {
+                console.log("countyId: " + countyId);
+                //console.log('infoWindow: ' + infoWindow.);
+                var latlng = {lat: parseFloat(lat), lng: parseFloat(lng)};
+                geocoder.geocode({'location': latlng}, function(results, status) {
+                    
+                    if (status === google.maps.GeocoderStatus.OK) {
+                        
+                        if (results[0]) {
+                            
+                            /*
+                    var marker = new google.maps.Marker({
+                      position: latlng,
+                      draggable: true,
+                      map: map
+                    });
+                    */
+                      marker.setPosition(latlng);
+                      marker.setMap(map);
+                      if (map.getZoom() > 10) map.setZoom(10);
+                      var tAddress = results[0].formatted_address;
+                      var gaAddress = tAddress.split(',', 4);
+                      var stateZip;
+                      var address;
+                      var city;
+                      var zipcode;
+                      var county;
+                      county = '';
+                      address = '';
+                      city = '';
+                      console.log('formated adress: ' + tAddress);
+                      if(gaAddress.length >= 4){
+                          address = gaAddress[0];
+                          console.log(gaAddress.length);
+                          city = gaAddress[1];
+                          stateZip = gaAddress[2].split(' ',3);
+                          console.log(gaAddress[2]);
+                      } else {
+                          
+                          stateZip = gaAddress[1].split(' ' ,3);
+                          console.log(gaAddress[2]);
+                      }
+                      if(stateZip.length >= 3){
+                          zipcode = stateZip[2];
+                      } else {
+                          zipcode = '';
+                      }
+                      console.log(stateZip);
+                      var province;
+                      var route;
+                      for (var i=0; i<results[0].address_components.length; i++) {
+                          for (var b=0;b<results[0].address_components[i].types.length;b++) {
+                              if (results[0].address_components[i].types[b] == "administrative_area_level") {
+                                  //this is the object you are looking for
+                                  province = results[0].address_components[i];
+                                  console.log("province: " + province.long_name);
+                                  if(province.long_name != ''){ 
+                                      county = province.long_name; 
+                                      console.log("county: " + county);
+                                      console.log("countyId: " + countyId);
+                                      document.getElementById(countyId).value = county;
+                                      //break;
+                                  }
+                              }
+                              if (results[0].address_components[i].types[b] == "route" && address == "") {
+                                  route = results[0].address_components[i];
+                                  console.log("route: " + route.long_name);
+                                  if(route.long_name != ''){
+                                      address = route.long_name;
+                                  }
+                                  
+                              }
+                          }
+                      }
+                      
+                      
+                      document.getElementById(addressId).value = address;
+                      document.getElementById(cityId).value = city;
+                      document.getElementById(zipCodeId).value = zipcode;
+                      infoWindow.setContent(results[1].formatted_address);
+                      infoWindow.open(map, marker);
+                  } else {
+                      window.alert('No results found');
+                  }
+                } else {
+                    window.alert('Geocoder failed due to: ' + status);
+                }
+              });
+            }
+            
+            function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+                infoWindow.setPosition(pos);
+                infoWindow.setContent(browserHasGeolocation ?
+                                      'Error: Unable to locate your current location. Please Enter in an address below.' :
+                                      'Error: Your browser doesn\'t support geolocation.');
+            }
+            
+            function validateForm(el,func){
+                var $theForm = $(el).closest('form');
+                $theForm.css('border','10px solid green').hide();
+                if (( typeof($theForm[0].checkValidity) == "function" ) && !$theForm[0].checkValidity()) {
+                    //func();
+                    nextStep();
+                }
+                else {
+                    //func();
+                    nextStep();
+                };
+            }
+            function remoteRevomeAttachment(id) {
+                $('#removerow'+id).toggleClass('alert-danger');
+                Visualforce.remoting.Manager.invokeAction(
+                    '{!$RemoteAction.ComplaintController.remoteRemoveAttachment}',
+                    id, 
+                    function(result, event){
+                        if (result == id) {
+                            $('#removerow'+id).remove();
+                        }
+                        //location.reload();
+                    }, 
+                    {escape: false}
+                );
+                //see if table is empty and remove if so.
+                var rcnt = 0;
+                var trs = document.getElementsByTagName("tr");
+                for(var i = 0; i < trs.length; i++) {
+                    if(trs[i].id.indexOf("removerow") == 0 && trs[i].id != 'removerow'+id) {
+                        rcnt++;
+                    }
+                }
+                if(rcnt == 0){
+                    $('#removeTable').remove();
+                }
+            }
+            function setRemoveAttachment(rid){
+                console.log(rid);
+                document.getElementById('{! SUBSTITUTE($Component.detailsForm.rAttach,':','\\\\:')}').value = rid;
+                console.log(docment.getElementById('{! SUBSTITUTE($Component.detailsForm.rAttach, ':', '\\\\:') }').value);
+                removeAttachmentFunction();
+            }
+            
+            
+            // Document Ready
+            $(function() {
+                $('.water-rights-toggle').on('change', function(e){
+                    $('#water-rights').collapse('toggle');
+                });
+                
+                $('form').on('ready change', '.occurance-select', function(){
+                    var $panel = $('#occurenceTimeDatePanel');
+                    console.log(">"+$(this).find("option:selected").val()+"<");
+                    if ( $(this).find("option:selected").val() == 'Exact Date') {
+                        $panel.show();
+                    }
+                    else {
+                        $panel.hide();
+                    }
+                });
+                
+                
+                if($('#removeTable').size()) {
+                    document.getElementById('{! $Component.detailsForm.fileInput }').focus();
+                }
+                
+                $('#responsibleAddress').toggle(!$('#sameAddress').is(':checked'));
+                
+                
+                $('#dateOfOccurence').datetimepicker({
+                    inline: true,
+                    sideBySide: true
+                }); 
+                
+                $('body').on('change','#sameAddress', function(){
+                    $('#responsibleAddress').toggle(!this.checked);
+                });
+                
+                $(document).on('change', '.btn-file :file', function() {
+                    var input = $(this),
+                        numFiles = input.get(0).files ? input.get(0).files.length : 1,
+                        label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+                    input.trigger('fileselect', [numFiles, label]);
+                });
+                
+                $('.btn-file :file').on('fileselect', function(event, numFiles, label) {
+                    
+                    var input = $(this).parents('.input-group').find(':text'),
+                        log = numFiles > 1 ? numFiles + ' files selected' : label;
+                    
+                    if( input.length ) {
+                        input.val(log);
+                    } else {
+                        if( log ) alert(log);
+                    }
+                    
+                });
+            });
+            </script>
+             <script async="async" defer="defer" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDMDFrLIhZqR5RHelkRESgI-Y7qkUgGLOw&callback=initMap"></script>
+            
+            <!-- ALL, yes ALL custom javascript for the page should go here otherwise it will get executed out of order -->
+                </apex:define>
+                </apex:composition>
+                </apex:page>

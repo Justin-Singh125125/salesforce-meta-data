@@ -1,0 +1,5 @@
+<apex:component controller="EPPAccessGrantedTemplateController" access="global">
+<apex:attribute type="String" name="CId" assignTo="{!ContactId}" description="Value to pass into the controller"/>
+<apex:attribute type="String" name="Code" assignTo="{!ResetCode}" description="Value to pass into the controller"/>
+<a href="{!Url}" class="button button--green" target="_blank">Register</a>
+</apex:component>

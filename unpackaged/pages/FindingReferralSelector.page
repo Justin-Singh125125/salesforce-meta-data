@@ -1,0 +1,72 @@
+<apex:page applyBodyTag="false"    
+    applyHTMLTag="false" 
+    cache="false" 
+    docType="HTML-5.0" 
+    id="FindingReferralSelector" 
+    sidebar="false" 
+    showChat="false" 
+    showHeader="false"  
+    standardController="Finding__c" 
+    standardStylesheets="false" 
+    extensions="ExternalPartnerPortalController"
+    action="{!LoadFindingReferralSelector}"> 
+    <apex:composition template="ExternalPartnerLayout">
+        <apex:define name="ExternalPartnerLayoutTitle"></apex:define>
+        <apex:define name="ExternalPartnerLayoutPageCss">
+            <apex:stylesheet value="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css"/>            
+            <style>
+                .messageText h4
+                {
+                    display:none;
+                }
+                .messageText
+                {
+                    color:red;
+                }
+            </style>
+        </apex:define>        
+        <apex:define name="ExternalPartnerLayoutBody">
+            <h2 id="complaintNumber">{!FindingReferralSelectorViewModel.ComplaintNumber}</h2>             
+            <div class="group" id="ReferralSelections">
+                <div class="full-width">
+                    <div class="panel panel-understated">
+                        <div class="panel-heading">
+                            <h4>Please Select Your Agency/Department</h4>
+                        </div>
+                        <div class="panel-body">
+                            <apex:form id="PatnerSelectionForm" html-role="form">
+                                <apex:inputhidden value="{!FindingReferralSelectorViewModel.ComplaintId}" html-class="complaintId"/>
+                                <div class="form-group">
+                                    <apex:selectList value="{!FindingReferralSelectorViewModel.ReferralId}" styleClass="form-control contact-name ExternalPartnerId" multiselect="false" size="1">
+                                        <apex:selectOptions value="{!FindingReferralSelectorViewModel.ExternalPartners}"/>
+                                    </apex:selectList>
+                                </div>
+                                <div class="form-group">
+                                    <input id="SubmitButton" type="button" value="Submit" class="btn btn-secondary pull-right" />
+                                    <apex:actionFunction name="SelectReferral" action="{!SelectReferral}" />
+                                    <p id="ExternalPartnerError" style="color:red;"></p>
+                                    <apex:outputLabel value="{!PageErrorMessage}" html-class="PageErrorMessage pull-left" style="color: red;"/>
+                                </div>
+                            </apex:form>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+        </apex:define>
+        <apex:define name="ExternalPartnerLayoutPageScriptIncludes">
+            <apex:includeScript value="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"/>
+        </apex:define>
+        <apex:define name="ExternalPartnerLayoutPageScripts">
+            <script>
+             $(document).ready(function() 
+                {
+                    $(document).on('click', '#SubmitButton', function(event) 
+                    {
+                        event.preventDefault();
+                        SelectReferral();
+                    }); 
+                });               
+            </script>
+        </apex:define>
+    </apex:composition> 
+</apex:page>

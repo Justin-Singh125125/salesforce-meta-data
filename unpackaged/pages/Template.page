@@ -1,0 +1,138 @@
+<apex:page applyBodyTag="false" applyHtmlTag="false" controller="TemplateController2" docType="HTML-5.0" id="JCMC" showChat="false" showHeader="false" sidebar="false" standardStylesheets="false">
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+
+    <head>
+        <meta charset="utf-8" />
+        <title>
+            <apex:insert name="title" />
+        </title>
+        <meta name="description" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <!--<link rel="apple-touch-icon" href="apple-touch-icon.png" />-->
+
+        <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />-->
+        <!-- Yeti Theme from Bootswatch http://bootswatch.com/ -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.5/yeti/bootstrap.min.css" />
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+        <!-- bootstrap select -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.8.1/css/bootstrap-select.min.css" />
+        <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.0/css/bootstrap-toggle.min.css" rel="stylesheet" />
+        <!-- Or use a custom Bootstrap Theme <link rel="stylesheet" href="css/bootstrap-theme.min.css" /> -->
+        <link rel="stylesheet" href="{! $Resource.TemplateCSS2 }" />
+        <apex:insert name="styles" />
+        <script src="{! $Resource.Template_Modernizr }" />
+    </head>
+    <body>
+        
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <apex:insert name="header">
+            <c:Template_Header title="{! $Label.COMPLAINT_Environmental_Complaint_System }" />
+        </apex:insert>
+
+
+        <div class="container" id="main">
+
+            <apex:insert name="body">
+                <h1>This is the template, the body is overwritten by each individual page.</h1>
+            </apex:insert>
+
+          <footer class="footer">
+              <div class="row">
+                  <div class="container">
+                      <div class="col-xs-4">
+                         <a href="{!$LABEL.Complaint_About_Link}" >{!$LABEL.Complaint_lbl_About}</a>                           
+                      </div>
+                    
+                    <div class="col-xs-4"> 
+                        
+                        </div>
+                    <div class="col-xs-4 text-right">
+                        
+                         <a href="#privacyModal" data-toggle="modal" data-target="#privacyModal">{!$LABEL.COMPLAINT_Privacy}</a><!-- {!$LABEL.COMPLAINT_LBL_Privacy_Notice_Regarding_Information_Collection}-->
+                    </div>
+                         <!--
+                             <div class="col-xs-4 text-right">
+                                 <a href="http://www.calepa.ca.gov/Privacy.htm" target="_blank"> {! $LABEL.COMPLAINT_Privacy } &nbsp; <i class="fa fa-external-link"></i> </a>
+                                     </div>
+                         -->
+                    </div>
+               </div>
+          </footer>
+        </div> <!-- / container -->
+        <!-- Modal -->
+        <div class="modal fade" id="privacyModal" tabindex="-1" role="dialog" aria-labelledby="privacyModalLabel">
+          <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="privacyModalLabel">{!$LABEL.COMPLAINT_LBL_Privacy_Notice_Regarding_Information_Collection}</h4>
+              </div>
+              <div class="modal-body">
+
+                  <apex:outputtext value="{! $Label.COMPLAINT_PRIVACY_POLICY_1 }" escape="false" />
+                  <apex:outputtext value="{! $Label.COMPLAINT_PRIVACY_POLICY_2 }" escape="false" />
+                  <apex:outputtext value="{! $Label.COMPLAINT_PRIVACY_POLICY_3 }" escape="false" />
+                
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">{!$LABEL.COMPLAINT_BNT_Dismiss}</button> 
+              </div>
+            </div>
+          </div>
+        </div>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="{! $Resource.jquery }"><\/script>')</script>
+
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.8.1/js/bootstrap-select.min.js"></script>
+        <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.0/js/bootstrap-toggle.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.9.0/validator.min.js"></script>
+        <!--
+            Custom Site-wide Plugins & Scripts
+            <script src="js/plugins.js"></script>
+            <script src="js/main.js"></script>
+        -->
+        <!-- Custom scripts are inserted here after our javascript libraries, and site wide code have loaded -->
+        <script>
+        $(function() {
+            $('#nav').affix({
+              offset: {
+                top: $('#nav').height()
+              }
+            });
+            
+            $("[data-toggle='tooltip']").tooltip();
+            
+            var $headerHeight = $('#header').height();
+            
+            $(window).on('resize', function(){
+                $headerHeight = $('#header').height();
+                var $main = $('#main');
+                $main.css('margin-top',$headerHeight);
+            });
+            
+            $(window).trigger('resize');
+        });
+
+        </script>
+        <apex:insert name="scripts" />
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X','auto');ga('send','pageview');
+        </script>
+    </body>
+</html>
+
+</apex:page>

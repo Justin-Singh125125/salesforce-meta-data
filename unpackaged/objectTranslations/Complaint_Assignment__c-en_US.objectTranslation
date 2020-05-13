@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Complaint Assignment</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Complaint Assignments</value>
+    </caseValues>
+    <fields>
+        <label><!-- AKA --></label>
+        <name>AKA__c</name>
+    </fields>
+    <fields>
+        <label><!-- Closure Comments --></label>
+        <name>Closure_Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Closure External Partner --></label>
+        <name>Closure_External_Partner__c</name>
+        <relationshipLabel><!-- Complaint Assignments --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Closure Reason --></label>
+        <name>Closure_Reason__c</name>
+        <picklistValues>
+            <masterLabel>Insufficient Information</masterLabel>
+            <translation><!-- Insufficient Information --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Investigated by BDO</masterLabel>
+            <translation><!-- Investigated by BDO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Investigated by External Agency</masterLabel>
+            <translation><!-- Investigated by External Agency --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Outside of Agency&apos;s Jurisdiction</masterLabel>
+            <translation><!-- Outside of Agency&apos;s Jurisdiction --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Transferred to External Agency</masterLabel>
+            <translation><!-- Transferred to External Agency --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unsubstantiated</masterLabel>
+            <translation><!-- Unsubstantiated --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Closure Violations Found --></label>
+        <name>Closure_Violations_Found__c</name>
+    </fields>
+    <fields>
+        <label><!-- Complaint --></label>
+        <name>Complaint__c</name>
+        <relationshipLabel><!-- Complaint Assignments --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Date Closed Backup --></label>
+        <name>Date_Closed_Backup__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Closed --></label>
+        <name>Date_Closed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Referred --></label>
+        <name>Date_Referred__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date to Under Review --></label>
+        <name>Date_to_Under_Review__c</name>
+    </fields>
+    <fields>
+        <label><!-- Days Open --></label>
+        <name>Days_Open__c</name>
+    </fields>
+    <fields>
+        <label><!-- Days To Process --></label>
+        <name>Days_To_Process__c</name>
+    </fields>
+    <fields>
+        <label><!-- Days to First Process --></label>
+        <name>Days_to_First_Process__c</name>
+    </fields>
+    <fields>
+        <label><!-- External Id --></label>
+        <name>External_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Group Type --></label>
+        <name>Group_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Group --></label>
+        <name>Group__c</name>
+        <relationshipLabel><!-- Complaint Assignments --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Month Created --></label>
+        <name>Month_Created__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Closed</masterLabel>
+            <translation><!-- Closed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New</masterLabel>
+            <translation><!-- New --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Referred</masterLabel>
+            <translation><!-- Referred --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Under Review</masterLabel>
+            <translation><!-- Under Review --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>Agency</masterLabel>
+            <translation><!-- Agency --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Air</masterLabel>
+            <translation><!-- Air --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pesticides</masterLabel>
+            <translation><!-- Pesticides --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Solid Waste</masterLabel>
+            <translation><!-- Solid Waste --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Toxic Substances</masterLabel>
+            <translation><!-- Toxic Substances --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Water</masterLabel>
+            <translation><!-- Water --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Year Created --></label>
+        <name>Year_Created__c</name>
+    </fields>
+    <layouts>
+        <layout>Complaint Assignment Layout</layout>
+        <sections>
+            <label><!-- Closure Information --></label>
+            <section>Closure Information</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- You cannot change closure information if the status is not closed. --></errorMessage>
+        <name>Closure_Info_Only_Edited_If_Closed</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You must provide a closure reason when closing a complaint assignment. --></errorMessage>
+        <name>Closure_Must_Have_Reason</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You must select whether or not there were violations or provide closure comments if you select &quot;Investigated By BDO&quot; as a Closure Reason. --></errorMessage>
+        <name>Inv_By_BDO_Must_Answer_Violations</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You must select the External Partner if you select &quot;Investigated By External Agency&quot; as a Closure Reason. --></errorMessage>
+        <name>Inv_By_Ext_Agy_Ext_Part</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You must select whether or not violations were found if you select &quot;Investigated By External Agency&quot; as a Closure Reason. --></errorMessage>
+        <name>Inv_By_Ext_Agy_Vio_Found</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You must provide Closure Comments if you select &quot;Other&quot; as a Closure Reason. --></errorMessage>
+        <name>Other_Must_Provide_Comments</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- The Complaint Number, Assignment Type, and Complaint Assignment Group fields cannot be changed. --></errorMessage>
+        <name>Prevent_Certain_Fields_From_Being_Change</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You cannot move the status backwards from Closed to New. --></errorMessage>
+        <name>Proper_Status_Flow_Closed_To_New</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You cannot move the status backwards from Closed to Referred. --></errorMessage>
+        <name>Proper_Status_Flow_Closed_To_Referred</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You cannot move the status backwards from Closed to Under Review. --></errorMessage>
+        <name>Proper_Status_Flow_Closed_To_Under_Revie</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You cannot move the status backwards from Referred to New. --></errorMessage>
+        <name>Proper_Status_Flow_Referred_To_New</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You cannot move the status backwards from Referred to Under Review. --></errorMessage>
+        <name>Proper_Status_Flow_Referred_To_Under_Rev</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You cannot move the status backwards from Under Review to New. --></errorMessage>
+        <name>Proper_Status_Flow_Under_Review_To_New</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You must the External Partner if you select &quot;Transferred to External Agency&quot; as a Closure Reason. --></errorMessage>
+        <name>Transferred_Must_Select_Account</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- The type of the group must match the type of the assignment. --></errorMessage>
+        <name>Type_and_Group_Must_Match</name>
+    </validationRules>
+</CustomObjectTranslation>

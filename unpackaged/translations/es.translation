@@ -1,0 +1,1420 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Translations xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customApplications>
+        <label><!-- CAMS --></label>
+        <name>CAMS</name>
+    </customApplications>
+    <customApplications>
+        <label><!-- CERS Help Desk --></label>
+        <name>CERS_Help_Desk</name>
+    </customApplications>
+    <customApplications>
+        <label><!-- CERS Help Desk 2 --></label>
+        <name>CERS_Help_Desk_2</name>
+    </customApplications>
+    <customApplications>
+        <label><!-- CalEPA --></label>
+        <name>CalEPA</name>
+    </customApplications>
+    <customApplications>
+        <label><!-- Complaint Management Help Desk --></label>
+        <name>Complaint_Management_Help_Desk</name>
+    </customApplications>
+    <customApplications>
+        <label><!-- Complaint Management --></label>
+        <name>Complaint_Management_Lightning</name>
+    </customApplications>
+    <customLabels>
+        <label>&lt;p&gt;Dar información personal tal como su nombre, dirección, teléfono, quizá no sea posible comunicarnos con usted si necesitamos información adicional para investigar completamente su queja, ni podremos informarle a usted sobre la resolución de su queja. CalEPA mantendrá su información confidencial de manera confidencial en la medida que lo permita la ley. Para mayor información sobre el uso y potencial revelación de su información personal, favor de revisar nuestra  &lt;a href=&quot;http://www.calepa.ca.gov/Privacy.htm&quot; target=&quot;_blank&quot;&gt;política de privacidad&lt;/a&gt;.&lt;/p&gt;</label>
+        <name>COMPLAINT_ANON_TEXT</name>
+    </customLabels>
+    <customLabels>
+        <label>Despedir</label>
+        <name>COMPLAINT_BNT_Dismiss</name>
+    </customLabels>
+    <customLabels>
+        <label>Anterior</label>
+        <name>COMPLAINT_BNT_Previous</name>
+    </customLabels>
+    <customLabels>
+        <label>Casi termino</label>
+        <name>COMPLAINT_BTN_Almost_Done</name>
+    </customLabels>
+    <customLabels>
+        <label>Vistazo</label>
+        <name>COMPLAINT_BTN_Browse</name>
+    </customLabels>
+    <customLabels>
+        <label>Detalles de la queja</label>
+        <name>COMPLAINT_BTN_Complaint_Details</name>
+    </customLabels>
+    <customLabels>
+        <label>Enviar</label>
+        <name>COMPLAINT_BTN_Submit</name>
+    </customLabels>
+    <customLabels>
+        <label>¿Quiere permanecer en el anonimato?</label>
+        <name>COMPLAINT_Do_you_wish_to_remain_anonymous</name>
+    </customLabels>
+    <customLabels>
+        <label>Por favor, introduzca el texto que coincida con el código de imagen que se muestra .</label>
+        <name>COMPLAINT_ERR_Captcha</name>
+    </customLabels>
+    <customLabels>
+        <label>Por favor, introduzca la dirección de correo electrónico.</label>
+        <name>COMPLAINT_ERR_Email_Address</name>
+    </customLabels>
+    <customLabels>
+        <label>dirección de correo electrónico no coincide</label>
+        <name>COMPLAINT_ERR_Email_Confirm</name>
+    </customLabels>
+    <customLabels>
+        <label>Por favor, introduzca primero nombre</label>
+        <name>COMPLAINT_ERR_First_Name</name>
+    </customLabels>
+    <customLabels>
+        <label>Por favor, ingrese el apellido</label>
+        <name>COMPLAINT_ERR_Last_Name</name>
+    </customLabels>
+    <customLabels>
+        <label>Por favor, no introduzca un apartado de correos Caja</label>
+        <name>COMPLAINT_ERR_POBox</name>
+    </customLabels>
+    <customLabels>
+        <label>Sistema de Quejas del Medio Ambiente</label>
+        <name>COMPLAINT_Environmental_Complaint_System</name>
+    </customLabels>
+    <customLabels>
+        <label>Palomee este cuadro si tiene una queja general sobre la contaminación, lo cual incluye quemas a cielo abierto, emisiones de fuentes estacionarias, emisiones de polvo fugitivo, y bocas de manguera de gasolina. Corte y peque la siguiente liga en su navegador de internet http://www.arb.ca.gov/enf/complaints/complaints.htm si su queja tiene que ver con vehiculos que echan mucho humo, vehículos comerciales en ralentí, vehículos en ralentí cerca de una escuela, y motores de locomotoras en ralentí o que echan mucho humo.</label>
+        <name>COMPLAINT_HELP_Air</name>
+    </customLabels>
+    <customLabels>
+        <label>La contaminación de las vías de agua y la tierra debido a la basura, sustancias químicas y plaguicidas asociadas con el cultivo de cannabis, o el uso de agua para irrigar plantas de cannabis o la nivelación, excavación, construcción de vialidades, y el desarrollo de sitios.</label>
+        <name>COMPLAINT_HELP_Cannabis_Marijuana</name>
+    </customLabels>
+    <customLabels>
+        <label>Palomee este cuadro si su queja tiene que ver con la venta inapropiada, el transporte, almacenamiento o uso de plaguicidas. Si su queja tiene que ver con los residuos de plaguicidas que hayan sido dispuestos o almacenados de forma inapropiada, favor de palomear el cuadro que indica Sustancias Tóxicas.</label>
+        <name>COMPLAINT_HELP_Pesticides</name>
+    </customLabels>
+    <customLabels>
+        <label>Palomee este cuadro si usted tiene una queja relacionada con una instalación de residuos sólidos (o relleno sanitario de basura). Una instalación de residuos sólidos puede recibir, manejar o disponer de residuos sólidos o líquidos, incluyendo basura, papel, desperdicios, cenizas, residuos industriales, desechos provenientes de la demolición y construcción, vehículos abandonados y partes de vehículos, llantas de desecho, aparatos eléctricos desechados de hogares o de industrias, lodo del drenaje que no es un residuo peligroso, abono, o desechos vegetales o animales. Usted también puede palomear este cuadro si usted tiene una queja sobre un reciclador de aceite usado, un reciclador de residuos electrónicos, o por residuos peligrosos domésticos.</label>
+        <name>COMPLAINT_HELP_Solid_Waste</name>
+    </customLabels>
+    <customLabels>
+        <label>Palomee este cuadro si su queja tiene que ver con la disposición o manejo ilegal de residuos peligrosos. Esto incluye la disposición, almacenamiento, transporte o tratamiento ilegal de residuos químicos peligrosos, aceite de desecho, anti-congelante de desecho, tubos de luz fluorescente de desecho, residuos electrónicos, de plaguicidas, y pintura de desecho. Favor de palomear este cuadro para quejas que tengan qué ver con instalaciones para el manejo de residuos peligrosos comerciales, transportistas de residuos peligrosos, y los recicladores de residuos peligrosos.</label>
+        <name>COMPLAINT_HELP_Toxic_Substance</name>
+    </customLabels>
+    <customLabels>
+        <label>Palomee este cuadro si su queja tiene que ver con la contaminación o descargas ilegales a las aguas superficiales o aguas subterráneas, descargas de contaminantes o sustancias químicas que afectan la calidad del agua,  violaciones a los permisos de Descarga de Residuos, desviaciones ilegales del agua u otras violaciones de los derechos del agua percibidas, fugas de tanques subterráneos de almacenamiento, suministros de agua subterránea contaminada, erosión y otros escurrimientos de aguas pluviales contaminadas, o desbordes de agua del alcantarillado.</label>
+        <name>COMPLAINT_HELP_Water</name>
+    </customLabels>
+    <customLabels>
+        <label>Los problemas o la contaminación en un arroyo, río, lago, humedal, bahía, cuenca de agua subterránea, u oceano que resultan de descargas de agua contaminada o agua pluvial contaminada, o de otras actividades, tales como la construcción, nivelación y excavaciones.</label>
+        <name>COMPLAINT_HELP_Water_Quality</name>
+    </customLabels>
+    <customLabels>
+        <label>Las desviaciones del agua de arroyos, ríos o lagos, o la extracción de agua subterránea que pudiera estar no autorizada o ser ilegal, puede estar impactando sus derechos de agua, puede ser un desperdicio y un uso no razonable de agua, o puede estar impactando a los peces, a la vida silvestre o a los hábitats.</label>
+        <name>COMPLAINT_HELP_Water_Rights</name>
+    </customLabels>
+    <customLabels>
+        <label>¿ESTO TIENE QUE VER CON LA PROPUESTA 65?</label>
+        <name>COMPLAINT_LBEL_Regarding_Prop65</name>
+    </customLabels>
+    <customLabels>
+        <label>Acción</label>
+        <name>COMPLAINT_LBL_Action</name>
+    </customLabels>
+    <customLabels>
+        <label>Información Adicional</label>
+        <name>COMPLAINT_LBL_Additional_Information</name>
+    </customLabels>
+    <customLabels>
+        <label>¿Residuos sólidos adicionales?</label>
+        <name>COMPLAINT_LBL_Additional_Solid_Waste</name>
+    </customLabels>
+    <customLabels>
+        <label>Dirección</label>
+        <name>COMPLAINT_LBL_Address</name>
+    </customLabels>
+    <customLabels>
+        <label>Aire</label>
+        <name>COMPLAINT_LBL_Air</name>
+    </customLabels>
+    <customLabels>
+        <label>¿Fuente de la Queja Sobre el Aire?</label>
+        <name>COMPLAINT_LBL_Air_Complaint_Source</name>
+    </customLabels>
+    <customLabels>
+        <label>Anónimo?</label>
+        <name>COMPLAINT_LBL_Anonymous</name>
+    </customLabels>
+    <customLabels>
+        <label>¿Usted está haciendo una remisión a CalEPA de otra agencia gubernamental ?</label>
+        <name>COMPLAINT_LBL_Are_You_Making_A_Referral</name>
+    </customLabels>
+    <customLabels>
+        <label>¿Está usted reportando un derrame?</label>
+        <name>COMPLAINT_LBL_Are_You_Reporting_a_Spill</name>
+    </customLabels>
+    <customLabels>
+        <label>Anexe Archivos</label>
+        <name>COMPLAINT_LBL_Attach_Files</name>
+    </customLabels>
+    <customLabels>
+        <label>¿Reciclaje de botellas y latas?</label>
+        <name>COMPLAINT_LBL_Bottles_And_Cans_Recycling</name>
+    </customLabels>
+    <customLabels>
+        <label>Directorio CAC</label>
+        <name>COMPLAINT_LBL_CAC_Directory</name>
+    </customLabels>
+    <customLabels>
+        <label>¿Cultivo de Cannabis/Marihuana?</label>
+        <name>COMPLAINT_LBL_Cannabis_Marijuana</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- COMPLAINT_LBL_Captcha --></label>
+        <name>COMPLAINT_LBL_Captcha</name>
+    </customLabels>
+    <customLabels>
+        <label>Ciudad</label>
+        <name>COMPLAINT_LBL_City</name>
+    </customLabels>
+    <customLabels>
+        <label>Queja</label>
+        <name>COMPLAINT_LBL_Complaint</name>
+    </customLabels>
+    <customLabels>
+        <label>Descripción de la queja</label>
+        <name>COMPLAINT_LBL_Complaint_Description</name>
+    </customLabels>
+    <customLabels>
+        <label>Ubicación de la Queja</label>
+        <name>COMPLAINT_LBL_Complaint_Location</name>
+    </customLabels>
+    <customLabels>
+        <label>Dirección</label>
+        <name>COMPLAINT_LBL_Complaintant_Address</name>
+    </customLabels>
+    <customLabels>
+        <label>Ciudad</label>
+        <name>COMPLAINT_LBL_Complaintant_City</name>
+    </customLabels>
+    <customLabels>
+        <label>Confirme su Dirección Electrónica</label>
+        <name>COMPLAINT_LBL_Complaintant_Confirm_Email_Address</name>
+    </customLabels>
+    <customLabels>
+        <label>Dirección Electrónica</label>
+        <name>COMPLAINT_LBL_Complaintant_Email_Address</name>
+    </customLabels>
+    <customLabels>
+        <label>Teléfono en casa</label>
+        <name>COMPLAINT_LBL_Complaintant_Home_Phone</name>
+    </customLabels>
+    <customLabels>
+        <label>Teléfono celular</label>
+        <name>COMPLAINT_LBL_Complaintant_Mobile_Phone</name>
+    </customLabels>
+    <customLabels>
+        <label>Estado</label>
+        <name>COMPLAINT_LBL_Complaintant_State</name>
+    </customLabels>
+    <customLabels>
+        <label>Código postal</label>
+        <name>COMPLAINT_LBL_Complaintant_Zip</name>
+    </customLabels>
+    <customLabels>
+        <label>Completar</label>
+        <name>COMPLAINT_LBL_Complete</name>
+    </customLabels>
+    <customLabels>
+        <label>Confirmación</label>
+        <name>COMPLAINT_LBL_Confirmation</name>
+    </customLabels>
+    <customLabels>
+        <label>Dirección</label>
+        <name>COMPLAINT_LBL_Confirmation_Address</name>
+    </customLabels>
+    <customLabels>
+        <label>Regresar a CalEPA (http://www.calepa.ca.gov/)</label>
+        <name>COMPLAINT_LBL_Confirmation_Back_To_Call_EPA</name>
+    </customLabels>
+    <customLabels>
+        <label>Ciudad</label>
+        <name>COMPLAINT_LBL_Confirmation_City</name>
+    </customLabels>
+    <customLabels>
+        <label>Descripción de la Queja</label>
+        <name>COMPLAINT_LBL_Confirmation_Complaint_Description</name>
+    </customLabels>
+    <customLabels>
+        <label>Ubicación de la Queja</label>
+        <name>COMPLAINT_LBL_Confirmation_Complaint_Location</name>
+    </customLabels>
+    <customLabels>
+        <label>Fecha del Suceso</label>
+        <name>COMPLAINT_LBL_Confirmation_Date_Of_Occurence</name>
+    </customLabels>
+    <customLabels>
+        <label>Fecha del Suceso y Hora Aproximada</label>
+        <name>COMPLAINT_LBL_Confirmation_Date_Of_Occurrence_Approx_Time</name>
+    </customLabels>
+    <customLabels>
+        <label>Descripción de la Ubicación</label>
+        <name>COMPLAINT_LBL_Confirmation_Location_Description</name>
+    </customLabels>
+    <customLabels>
+        <label>¿Suceso continuó?</label>
+        <name>COMPLAINT_LBL_Confirmation_Ongoing_Occurrence</name>
+    </customLabels>
+    <customLabels>
+        <label>Nombre del responsable de la empresa</label>
+        <name>COMPLAINT_LBL_Confirmation_Responsible_Company_Name</name>
+    </customLabels>
+    <customLabels>
+        <label>Parte Responsable</label>
+        <name>COMPLAINT_LBL_Confirmation_Responsible_Party</name>
+    </customLabels>
+    <customLabels>
+        <label>Dirección</label>
+        <name>COMPLAINT_LBL_Confirmation_Responsible_Party_Address</name>
+    </customLabels>
+    <customLabels>
+        <label>Ciudad</label>
+        <name>COMPLAINT_LBL_Confirmation_Responsible_Party_City</name>
+    </customLabels>
+    <customLabels>
+        <label>Estado</label>
+        <name>COMPLAINT_LBL_Confirmation_Responsible_Party_State</name>
+    </customLabels>
+    <customLabels>
+        <label>Código postal</label>
+        <name>COMPLAINT_LBL_Confirmation_Responsible_Party_Zip</name>
+    </customLabels>
+    <customLabels>
+        <label>Nombre de la persona responsable</label>
+        <name>COMPLAINT_LBL_Confirmation_Responsible_Person_Name</name>
+    </customLabels>
+    <customLabels>
+        <label>Estado</label>
+        <name>COMPLAINT_LBL_Confirmation_State</name>
+    </customLabels>
+    <customLabels>
+        <label>Código postal</label>
+        <name>COMPLAINT_LBL_Confirmation_Zip</name>
+    </customLabels>
+    <customLabels>
+        <label>Información de Contacto</label>
+        <name>COMPLAINT_LBL_Contact_Information</name>
+    </customLabels>
+    <customLabels>
+        <label>Fecha del Suceso</label>
+        <name>COMPLAINT_LBL_Date_Of_Occurance</name>
+    </customLabels>
+    <customLabels>
+        <label>Fecha del Suceso y Hora Aproximada</label>
+        <name>COMPLAINT_LBL_Date_Of_Occurence_And_Approximate_Time</name>
+    </customLabels>
+    <customLabels>
+        <label>Detalles</label>
+        <name>COMPLAINT_LBL_Details</name>
+    </customLabels>
+    <customLabels>
+        <label>¿Desea recibir más actualizaciones sobre esta queja?</label>
+        <name>COMPLAINT_LBL_Do_You_Wish_To_Receive_Further_Updates</name>
+    </customLabels>
+    <customLabels>
+        <label>¿Desea seguir siendo anónimo?</label>
+        <name>COMPLAINT_LBL_Do_You_Wish_To_Remain_Anonymous</name>
+    </customLabels>
+    <customLabels>
+        <label>nombre del documento</label>
+        <name>COMPLAINT_LBL_Document_Name</name>
+    </customLabels>
+    <customLabels>
+        <label>¿Agua potable?</label>
+        <name>COMPLAINT_LBL_Drinking_Water</name>
+    </customLabels>
+    <customLabels>
+        <label>Dirección electrónica de la persona de la dependencia externa que canalizó el asunto*</label>
+        <name>COMPLAINT_LBL_Email_Of_Person_Referring</name>
+    </customLabels>
+    <customLabels>
+        <label>¿ESTO ES UNA EMERGENCIA?</label>
+        <name>COMPLAINT_LBL_Emergency</name>
+    </customLabels>
+    <customLabels>
+        <label>Nombre</label>
+        <name>COMPLAINT_LBL_First_Name</name>
+    </customLabels>
+    <customLabels>
+        <label>Para inquietudes sobre derechos de agua o de calidad del agua, favor de indicar lo siguiente (si es que lo sable):</label>
+        <name>COMPLAINT_LBL_For_Water_Quality_Or_Water_Rights</name>
+    </customLabels>
+    <customLabels>
+        <label>¿Se ha comunicado usted con su oficina local de CAC?</label>
+        <name>COMPLAINT_LBL_Have_You_Contacted_Your_Local_County_Ag</name>
+    </customLabels>
+    <customLabels>
+        <label>¿Cómo se enteró de este incidente?</label>
+        <name>COMPLAINT_LBL_How_Did_You_Become_Aware_of</name>
+    </customLabels>
+    <customLabels>
+        <label>Si usted previamente presentó esta queja, favor de indicar la(s) organización(es) u oficina del gobierno local con la que se comunicó.</label>
+        <name>COMPLAINT_LBL_If_You_Previously_Submitted</name>
+    </customLabels>
+    <customLabels>
+        <label>¿La queja se encuentra cerca de una ubicación sensible?</label>
+        <name>COMPLAINT_LBL_Is_The_Complaint_Near_A_Sensitive_Location</name>
+    </customLabels>
+    <customLabels>
+        <label>¿Esta queja tiene que ver con una Refinería?</label>
+        <name>COMPLAINT_LBL_Is_This_Complaint_Related_To_A_Refinery</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- COMPLAINT_LBL_Language_Preference --></label>
+        <name>COMPLAINT_LBL_Language_Preference</name>
+    </customLabels>
+    <customLabels>
+        <label>Apellido</label>
+        <name>COMPLAINT_LBL_Last_Name</name>
+    </customLabels>
+    <customLabels>
+        <label>Escriba una lista de las organizaciones a las que ha reportado previamente este problema.</label>
+        <name>COMPLAINT_LBL_List_Organizations_that</name>
+    </customLabels>
+    <customLabels>
+        <label>Descripción de la ubicación</label>
+        <name>COMPLAINT_LBL_Location_Description</name>
+    </customLabels>
+    <customLabels>
+        <label>Llene la dirección de arriba o mover pasador a la posición queja</label>
+        <name>COMPLAINT_LBL_Map_Instructions</name>
+    </customLabels>
+    <customLabels>
+        <label>Puede elegir más de una</label>
+        <name>COMPLAINT_LBL_More_Than_One_Selection</name>
+    </customLabels>
+    <customLabels>
+        <label>Nombre</label>
+        <name>COMPLAINT_LBL_Name</name>
+    </customLabels>
+    <customLabels>
+        <label>Nombre de la fuente de agua afectada</label>
+        <name>COMPLAINT_LBL_Name_Of_Affected_Water_Source</name>
+    </customLabels>
+    <customLabels>
+        <label>Nombre de la persona de la dependencia externa que canalizó (si es aplicable)</label>
+        <name>COMPLAINT_LBL_Name_Of_Person_Referring</name>
+    </customLabels>
+    <customLabels>
+        <label>Índole del reporte</label>
+        <name>COMPLAINT_LBL_Nature_Of_Report</name>
+    </customLabels>
+    <customLabels>
+        <label>¿Suceso Continuó?</label>
+        <name>COMPLAINT_LBL_Ongoing_Occurrence</name>
+    </customLabels>
+    <customLabels>
+        <label>Otra ubicación</label>
+        <name>COMPLAINT_LBL_Other_Locations</name>
+    </customLabels>
+    <customLabels>
+        <label>Otro tipo de relación</label>
+        <name>COMPLAINT_LBL_Other_Relationship</name>
+    </customLabels>
+    <customLabels>
+        <label>Número de parcela</label>
+        <name>COMPLAINT_LBL_Parcel_Number</name>
+    </customLabels>
+    <customLabels>
+        <label>Mal uso de Plaguicidas,Violación de Venta de Plaguicidas</label>
+        <name>COMPLAINT_LBL_Pesticide_Misuse</name>
+    </customLabels>
+    <customLabels>
+        <label>Plaguicidas</label>
+        <name>COMPLAINT_LBL_Pesticides</name>
+    </customLabels>
+    <customLabels>
+        <label>Poner el alfiler en el mapa en la dirección arriba indicada</label>
+        <name>COMPLAINT_LBL_Place_Pin_On_Map</name>
+    </customLabels>
+    <customLabels>
+        <label>Favor de incluir toda imagen o documento pertinente.</label>
+        <name>COMPLAINT_LBL_Please_Include_Any_Relevant_Images_Or_Docs</name>
+    </customLabels>
+    <customLabels>
+        <label>Favor de usar este número de queja en cualquier otra correspondencia relacionada a esta queja.</label>
+        <name>COMPLAINT_LBL_Please_Reference_This_Complaint_Number_during</name>
+    </customLabels>
+    <customLabels>
+        <label>Privacidad</label>
+        <name>COMPLAINT_LBL_Privacy</name>
+    </customLabels>
+    <customLabels>
+        <label>Dar información personal tal como su nombre, dirección, teléfono, quizá no sea posible comunicarnos con usted si necesitamos información adicional para investigar completamente su queja, ni podremos informarle a usted sobre la resolución de su queja. CalEPA mantendrá su información confidencial de manera confidencial en la medida que lo permita la ley. Para mayor información sobre el uso y potencial revelación de su información personal, favor de revisar nuestra política de privacidad.</label>
+        <name>COMPLAINT_LBL_Privacy_Notice</name>
+    </customLabels>
+    <customLabels>
+        <label>Aviso de Privacidad Concerniente a la Recolección de Información</label>
+        <name>COMPLAINT_LBL_Privacy_Notice_Regarding_Information_Collection</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- COMPLAINT_LBL_Receive_Updates --></label>
+        <name>COMPLAINT_LBL_Receive_Updates</name>
+    </customLabels>
+    <customLabels>
+        <label>Dependencia que Canalizó</label>
+        <name>COMPLAINT_LBL_Referral_Agency</name>
+    </customLabels>
+    <customLabels>
+        <label>Dependencia externa que canalizó (si es aplicable)</label>
+        <name>COMPLAINT_LBL_Referring_External_Agency</name>
+    </customLabels>
+    <customLabels>
+        <label>Relación con la parte responsable</label>
+        <name>COMPLAINT_LBL_Relationship_To_Responsible_Party</name>
+    </customLabels>
+    <customLabels>
+        <label>Nombre de la empresa responsable</label>
+        <name>COMPLAINT_LBL_Reponsible_Company_Name</name>
+    </customLabels>
+    <customLabels>
+        <label>ELIJA UNA IMAGEN PARA REPORTAR UN PROBLEMA</label>
+        <name>COMPLAINT_LBL_Report_Problem</name>
+    </customLabels>
+    <customLabels>
+        <label>¿ESTÁ USTED REPORTANDO AGUA RESIDUAL?</label>
+        <name>COMPLAINT_LBL_Report_Water_Waste</name>
+    </customLabels>
+    <customLabels>
+        <label>Parte responsable</label>
+        <name>COMPLAINT_LBL_Responsible_Party</name>
+    </customLabels>
+    <customLabels>
+        <label>Nombre de la persona responsable</label>
+        <name>COMPLAINT_LBL_Responsible_Person_Name</name>
+    </customLabels>
+    <customLabels>
+        <label>Descripción de derechos</label>
+        <name>COMPLAINT_LBL_Rights_Description</name>
+    </customLabels>
+    <customLabels>
+        <label>Número de derechos</label>
+        <name>COMPLAINT_LBL_Rights_Number</name>
+    </customLabels>
+    <customLabels>
+        <label>¿Es la misma dirección que la indicada arriba?</label>
+        <name>COMPLAINT_LBL_Same_Address_As_The_Above</name>
+    </customLabels>
+    <customLabels>
+        <label>Residuos sólidos</label>
+        <name>COMPLAINT_LBL_Solid_Waste</name>
+    </customLabels>
+    <customLabels>
+        <label>Comienzo</label>
+        <name>COMPLAINT_LBL_Start</name>
+    </customLabels>
+    <customLabels>
+        <label>Estado</label>
+        <name>COMPLAINT_LBL_State</name>
+    </customLabels>
+    <customLabels>
+        <label>Presentado:</label>
+        <name>COMPLAINT_LBL_Submitted</name>
+    </customLabels>
+    <customLabels>
+        <label>Gracias por sus comentarios. Su queja ha quedado registrada.</label>
+        <name>COMPLAINT_LBL_Thank_you_for_your_comments_Your_complaint_has_been_logged</name>
+    </customLabels>
+    <customLabels>
+        <label>Marco temporal</label>
+        <name>COMPLAINT_LBL_Timeframe</name>
+    </customLabels>
+    <customLabels>
+        <label>Tóxico</label>
+        <name>COMPLAINT_LBL_Toxic</name>
+    </customLabels>
+    <customLabels>
+        <label>¿De vehículo o fuente estacionaria?</label>
+        <name>COMPLAINT_LBL_Vehicle_Or_Stationary</name>
+    </customLabels>
+    <customLabels>
+        <label>¿Llantas de desecho?</label>
+        <name>COMPLAINT_LBL_Waste_Tires</name>
+    </customLabels>
+    <customLabels>
+        <label>Agua</label>
+        <name>COMPLAINT_LBL_Water</name>
+    </customLabels>
+    <customLabels>
+        <label>Otro</label>
+        <name>COMPLAINT_LBL_Water_Other</name>
+    </customLabels>
+    <customLabels>
+        <label>¿Calidad del agua?</label>
+        <name>COMPLAINT_LBL_Water_Quality</name>
+    </customLabels>
+    <customLabels>
+        <label>¿Derechos del agua?</label>
+        <name>COMPLAINT_LBL_Water_Rights</name>
+    </customLabels>
+    <customLabels>
+        <label>Para inquietudes sobre derechos de agua, favor de indicar si usted (el quejoso) o la presunta parte responsable tiene derechos de agua.</label>
+        <name>COMPLAINT_LBL_Water_Rights_Concerns</name>
+    </customLabels>
+    <customLabels>
+        <label>¿Es usted dueño de derechos sobre el agua?</label>
+        <name>COMPLAINT_LBL_Water_Rights_Owner</name>
+    </customLabels>
+    <customLabels>
+        <label>Cuenca de agua</label>
+        <name>COMPLAINT_LBL_Watershed</name>
+    </customLabels>
+    <customLabels>
+        <label>Su Inquietud Sobre el &quot;Aire&quot;</label>
+        <name>COMPLAINT_LBL_Your_Air_Concern</name>
+    </customLabels>
+    <customLabels>
+        <label>Su Inquietud Sobre &quot;Plaguicidas&quot;</label>
+        <name>COMPLAINT_LBL_Your_Pesticides_Concern</name>
+    </customLabels>
+    <customLabels>
+        <label>Su Inquietud Sobre &quot;Residuos Sólidos&quot;</label>
+        <name>COMPLAINT_LBL_Your_Solid_Waste_Concern</name>
+    </customLabels>
+    <customLabels>
+        <label>Sus Inquietudes Sobre &quot;Tóxicos&quot;</label>
+        <name>COMPLAINT_LBL_Your_Toxics_Concern</name>
+    </customLabels>
+    <customLabels>
+        <label>Su Inquietud Sobre el &quot;Agua&quot;</label>
+        <name>COMPLAINT_LBL_Your_Water_Concern</name>
+    </customLabels>
+    <customLabels>
+        <label>Su inquietud sobre el agua está relacionada con (elija todas las que sean aplicables):</label>
+        <name>COMPLAINT_LBL_Your_Water_Concern_Is_Related_to</name>
+    </customLabels>
+    <customLabels>
+        <label>Código postal</label>
+        <name>COMPLAINT_LBL_Zip</name>
+    </customLabels>
+    <customLabels>
+        <label>La ley en California autoriza a la Agencia para la Protección Ambiental de California (CalEPA, por sus siglas en inglés), asi como a sus Juntas y sus Departamentos, a que adopten acciones para hacer cumplir los requisitos que buscan proteger la salud del público y el medio ambiente. CalEPA y las Juntas y Departamentos que conforman CalEPA, y otras dependencias del gobierno estatal y de gobiernos locales que están facultados para hacer cumplir la reglamentación ambiental, utilizan la información que usted proporcione para asegurarse de que cualquier queja ambiental que se presente ante la agencia se resuelva. 
+
+Usted no está obligado a proporcionar la información personal que se le pide. Sin embargo, si usted no desea proporcionarnos la información necesaria, quizás no podamos investigar su queja.</label>
+        <name>COMPLAINT_PRIVACY_POLICY_1</name>
+    </customLabels>
+    <customLabels>
+        <label>Al proporcionar información o documentación, por favor no incluya información personal que no le estemos pidiendo, como por ejemplo, el número de su seguro social o de su licencia de manejar, tampoco incluya cualquier información innecesaria sobre su salud, o la de otros, e información financiera o de su tarjeta de crédito. 
+
+Nosotros podemos compartir su información con otras dependencias gubernamentales, conforme lo permite la ley, para adelantar en la investigación que llevemos a cabo sobre su queja. CalEPA está obligada a cumplir con la Ley sobre Registros Públicos (Public Records Act). Esta Ley protege el derecho que tiene el público de tener tener acceso a los registros o documentos en poder de las dependencias de gobierno, incluyendo las quejas que se reporten a la agencia a través de su portal o sitio en internet.</label>
+        <name>COMPLAINT_PRIVACY_POLICY_2</name>
+    </customLabels>
+    <customLabels>
+        <label>CalEPA está obligada a cumplir con la Ley sobre Registros Públicos (Public Records Act). Esta Ley protege el derecho que tiene el público de tener tener acceso a los registros o documentos en poder de las dependencias de gobierno, incluyendo las quejas que se reporten a la agencia a través de su portal o sitio en internet. Sin embargo, la Ley reconoce el derecho a la privacidad que tiene cada persona, y, por lo tanto, dispone una exención para proteger la información personal que pudiese encontrarse en los registros o documentación que tiene la agencia. Cal EPA únicamente da a conocer información de conformidad con los requisitos de la Ley sobre Registros Públicos.
+
+Esta notificación se proporciona de conformidad con la Ley sobre las Prácticas de información (Information Practices Act) de 1977 (Código Civil de California, Sección 1798.17)
+ 
+Si desea más información, por favor lea la política sobre la privacidad de CalEPA (privacy policy).</label>
+        <name>COMPLAINT_PRIVACY_POLICY_3</name>
+    </customLabels>
+    <customLabels>
+        <label>Intimidad</label>
+        <name>COMPLAINT_Privacy</name>
+    </customLabels>
+    <customLabels>
+        <label>10 MB Tamaño máximo de archivo</label>
+        <name>COMPLAINT_TXT_10MB_Max_File_Size</name>
+    </customLabels>
+    <customLabels>
+        <label>Calle</label>
+        <name>COMPLAINT_TXT_Address</name>
+    </customLabels>
+    <customLabels>
+        <label>La contaminación de las vías de agua y la tierra debido a la basura, sustancias químicas y plaguicidas asociadas con el cultivo de cannabis, o el uso de agua para irrigar plantas de cannabis o la nivelación, excavación, construcción de vialidades, y el desarrollo de sitios.</label>
+        <name>COMPLAINT_TXT_Cannabis_Marijuana</name>
+    </customLabels>
+    <customLabels>
+        <label>Favor de escriba el texto que se muestra en el cuadro para continuar</label>
+        <name>COMPLAINT_TXT_Captcha</name>
+    </customLabels>
+    <customLabels>
+        <label>Ciudad</label>
+        <name>COMPLAINT_TXT_City</name>
+    </customLabels>
+    <customLabels>
+        <label>Nombre de la empresa</label>
+        <name>COMPLAINT_TXT_Company_Name</name>
+    </customLabels>
+    <customLabels>
+        <label>Favor de describir la queja (qué sucedió, qué materiales o sustancias se usaron, cuánto se usó, a dónde fueron los materiales o las sustancias, a quién más ha usted reportado esto y cuál fue el resultado de su reporte? De cualquier información que puede ayudar a nuestros inspectores a determinar la respuesta más oportuna y efectiva. Únicamente texto.)</label>
+        <name>COMPLAINT_TXT_Complaint</name>
+    </customLabels>
+    <customLabels>
+        <label>Dara información sobre esta queja.  Si usted no sabe la dirección, favor de dar una descripción de la ubicación (como &quot;esquina de la calle 1 y River Blvd&quot;) o colocar una marca (alfiler) en el mapa proporcionado abajo.</label>
+        <name>COMPLAINT_TXT_Complaint_Location</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- COMPLAINT_TXT_Complaint_page_title --></label>
+        <name>COMPLAINT_TXT_Complaint_page_title</name>
+    </customLabels>
+    <customLabels>
+        <label>Descripción de la ubicación</label>
+        <name>COMPLAINT_TXT_Description_of_Location</name>
+    </customLabels>
+    <customLabels>
+        <label>Mal sabor, olor o la contaminación del agua suministrada a su casa o negocio; o inquietudes sobre el sistema de suministro de agua de su ciudad o las operaciones del suministrador de su agua municipal.</label>
+        <name>COMPLAINT_TXT_Drinking_Water</name>
+    </customLabels>
+    <customLabels>
+        <label>Nombre de pila</label>
+        <name>COMPLAINT_TXT_First</name>
+    </customLabels>
+    <customLabels>
+        <label>&lt;h2 class=&quot;text-danger&quot;&gt; 
+PARA EMERGENCIAS,
+&lt;/h2&gt; 
+&lt;p class=&quot;lead text-danger&quot;&gt; 
+LLAME AL 911 
+&lt;/p&gt;</label>
+        <name>COMPLAINT_TXT_For_Emergency</name>
+    </customLabels>
+    <customLabels>
+        <label>&lt;h2&gt;Para notificaciones de derrames de materiales peligrosos&lt;/h2&gt;
+&lt;p class=&quot;lead&quot;&gt; 
+Llame al Centro Estatal de Advertencias&lt;br/&gt; 
+&lt;span class=&quot;clearfix visible-lg-block&quot;&gt;&lt;/span&gt; 1-800-852-7550 
+&lt;/p&gt;</label>
+        <name>COMPLAINT_TXT_For_Hazmat</name>
+    </customLabels>
+    <customLabels>
+        <label>Si usted trabaja para una entidad de gobierno diferente a CalEPA, y está haciendo una canalización formal de dependencia a CalEPA, favor de dar su información.</label>
+        <name>COMPLAINT_TXT_If_You_Work_For_A_Governmental_Entity</name>
+    </customLabels>
+    <customLabels>
+        <label>Apellido</label>
+        <name>COMPLAINT_TXT_Last</name>
+    </customLabels>
+    <customLabels>
+        <label>Nos están depositando la dirección introducida en el mapa , por favor validar su localización antes de continuar</label>
+        <name>COMPLAINT_TXT_MapPin</name>
+    </customLabels>
+    <customLabels>
+        <label>Arroyo, río, lago, bahía, cuenca de agua subterránea, o área costera</label>
+        <name>COMPLAINT_TXT_Name_Of_Affected_Water_Source</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- COMPLAINT_TXT_No --></label>
+        <name>COMPLAINT_TXT_No</name>
+    </customLabels>
+    <customLabels>
+        <label>Nombre de la persona</label>
+        <name>COMPLAINT_TXT_Person_Name</name>
+    </customLabels>
+    <customLabels>
+        <label>Favor de describir el problema lo más detalladamente posible</label>
+        <name>COMPLAINT_TXT_Please_Describe_The_Issue_In_as_much</name>
+    </customLabels>
+    <customLabels>
+        <label>La Oficina del Procurador General de California hace cumplir la Propuesta 65, y se le puede encontrar en al (510) 873-6321 o su forma de contacto &lt;a href=&quot;https://oag.ca.gov/prop65/contact-us&quot;&gt;un formulario de contacto&lt;/a&gt;.&lt;br/&gt; 
+Para obtener información general sobre la Propuesta 65, por favor lea la guía que ha preparado la Oficina de Evaluación de Peligros a la Salud Ambiental, escrita de una manera fácil de entender.&lt;a href=&quot;http://www.oehha.ca.gov/prop65/background/p65plain.html&quot;&gt;guía de lenguaje sencillo&lt;/a&gt;. 
+&lt;/p&gt;</label>
+        <name>COMPLAINT_TXT_Regarding_Prop65</name>
+    </customLabels>
+    <customLabels>
+        <label>&lt;h2&gt; 
+Favor de reportar quejas relativas al Agua Residual aquí:
+&lt;/h2&gt; 
+&lt;p class=&quot;lead&quot;&gt; 
+&lt;a href=&quot;http://savewater.ca.gov/&quot; target=&quot;_blank&quot;&gt;http://savewater.ca.gov/&lt;/a&gt; &amp;nbsp; &lt;i class=&quot;fa fa-external-link&quot;&gt;&lt;/i&gt; 
+&lt;/p&gt;</label>
+        <name>COMPLAINT_TXT_Report_Water_Waste</name>
+    </customLabels>
+    <customLabels>
+        <label>Dar información sobre la instalación, empresa o persona presuntamente responsable de este problema.</label>
+        <name>COMPLAINT_TXT_Responsible_Party</name>
+    </customLabels>
+    <customLabels>
+        <label>Sólo dirección de la calle - Grupo Cajas de PO no permitido</label>
+        <name>COMPLAINT_TXT_Street_address_only_PO_not_allowed</name>
+    </customLabels>
+    <customLabels>
+        <label>La subida de archivos</label>
+        <name>COMPLAINT_TXT_Uploading_File</name>
+    </customLabels>
+    <customLabels>
+        <label>Ejemplos son el mal uso de subvenciones o préstamos para proyectos de agua, o conducta inapropiada por parte de los operadores de plantas de tratamiento de aguas residuales.</label>
+        <name>COMPLAINT_TXT_Water_Other</name>
+    </customLabels>
+    <customLabels>
+        <label>Las desviaciones del agua de arroyos, ríos o lagos, o la extracción de agua subterránea que pudiera estar no autorizada o ser ilegal, puede estar impactando sus derechos de agua, puede ser un desperdicio y un uso no razonable de agua, o puede estar impactando a los peces, a la vida silvestre o a los hábitats.</label>
+        <name>COMPLAINT_TXT_Water_Rights</name>
+    </customLabels>
+    <customLabels>
+        <label>Sí</label>
+        <name>COMPLAINT_TXT_Yes</name>
+    </customLabels>
+    <customLabels>
+        <label>Código postal</label>
+        <name>COMPLAINT_TXT_Zip</name>
+    </customLabels>
+    <customLabels>
+        <label>tú@Tu dominio.com</label>
+        <name>COMPLAINT_TXT_sample_email</name>
+    </customLabels>
+    <customLabels>
+        <label>https://calepa.ca.gov/enforcement/complaints/spanish/</label>
+        <name>Complaint_About_Link</name>
+    </customLabels>
+    <customLabels>
+        <label>Sobre</label>
+        <name>Complaint_lbl_About</name>
+    </customLabels>
+    <customLabels>
+        <label>&lt;p&gt;&lt;strong&gt;Información sobre el Sistema de Quejas Ambientales&lt;/strong&gt;&lt;/p&gt; 
+
+
+
+
+ &lt;p&gt;Bienvenido al sistema de quejas ambientales por internet de la Agencia para la Protección Ambiental de California (CalEPA). Esta herramienta permite que los habitantes de California puedan reportar un problema ambiental en cualquier parte del estado, y les proporciona a las dependencias ambientales información sobre peligros potenciales y violaciones a la reglamentación ambiental.&lt;/p&gt; 
+
+ &lt;p&gt;Si usted está enterado de alguna actividad que sospecha podría ser ilegal, o no autorizada, que pudiese impactar el medio ambiente de California o la salud pública, CalEPA quiere conocer esta información. Por favor utilice este formulario de quejas para proporcionarnos todos los detalles que usted tenga al respecto.&lt;/p&gt;</label>
+        <name>Complaint_lbl_About_Text1</name>
+    </customLabels>
+    <customLabels>
+        <label>&lt;p&gt;Al presentarse una queja, la misma se canaliza a la dependencia estatal o local apropiada. Si usted nos proporciona su correo electrónico, le enviaremos un correo cuando su queja ya haya sido asignada, e incluiremos el nombre de la dependencia a la que se le haya asignado; le enviaremos otro correo cuando la queja haya quedado resuelta.&lt;/p&gt; 
+
+ &lt;p&gt;Se pueden presentar quejas de manera anónima. Sin embargo, si usted no nos proporciona su información de contacto, no podremos mantenerlo actualizado sobre el estado que guarda la queja. Si tiene preguntas o inquietudes sobre la privacidad, por favor lea nuestra &lt;a href=&quot;http://www.calepa.ca.gov/Privacy.htm&quot;&gt;política sobre la privacidad&lt;/a&gt;.&lt;/p&gt;</label>
+        <name>Complaint_lbl_About_Text2</name>
+    </customLabels>
+    <customLabels>
+        <label>&lt;p&gt;Si usted tiene preguntas sobre el sistema de quejas de CalEPA, por favor dirija sus preguntas a 
+ &lt;a 
+ href=&quot;https://mail.ces.ca.gov/owa/redir.aspx?SURL=rNJpQrXzy54rPHIhB5mOG1FuSOARFL0ZnxvV-Lk5USs6RAVPnGjTCG0AYQBpAGwAdABvADoAYwBvAG0AcABsAGEAaQBuAHQAcwBAAGMAYQBsAGUAcABhAC4AYwBhAC4AZwBvAHYA&amp;amp;URL=mailto%3acomplaints%40calepa.ca.gov&quot; 
+ target=&quot;_blank&quot; 
+ &gt; 
+ complaints@calepa.ca.gov 
+ &lt;/a&gt;&lt;/p&gt; 
+
+ &lt;p&gt;¡Gracias por ayudarnos a proteger el medio ambiente de California!&lt;/p&gt; 
+
+ &lt;p&gt;&lt;strong&gt;Arsenio Mataka&lt;/strong&gt;&lt;/p&gt; 
+
+ &lt;p&gt;Subsecretario de Justicia Ambiental y Asuntos Tribales&lt;/p&gt; 
+
+ &lt;p&gt;Agencia para la Protección Ambiental de California&lt;/p&gt;</label>
+        <name>Complaint_lbl_About_Text3</name>
+    </customLabels>
+    <customLabels>
+        <label>NO ENVÍE RESPUESTA A ESTE MENSAJE.
+
+Estimado(a) &lt;:COMPLAINANT:&gt;,
+
+Este mensaje es en relación a la queja ambiental número &lt;:NUMBER:&gt; que usted presentó ante la Agencia para la Protección Ambiental de California (California Environmental Protection Agency, o CalEPA) el día &lt;:DATE:&gt;. Su queja ha sido turnada a las siguientes dependencias:
+
+&lt;:OWNER:&gt;
+
+Aún estamos investigando su queja. Le informaremos cuando la queja haya quedado resuelta.
+
+Gracias.</label>
+        <name>Email_Notification_15Day</name>
+    </customLabels>
+    <customLabels>
+        <label>Actualización sobre su queja ambiental.</label>
+        <name>Email_Notification_15Day_Subject</name>
+    </customLabels>
+    <customLabels>
+        <label>Su queja ambiental ha sido resuelta.
+
+Estimado(a) &lt;:COMPLAINANT:&gt;,
+
+Este mensaje es en relación a la queja ambiental número &lt;:NUMBER:&gt; que usted presentó ante la Agencia para la Protección Ambiental de California (California Environmental Protection Agency, o CalEPA) el día &lt;:DATE:&gt;. Su queja ha quedado resuelta. A continuación se encuentra una lista de las dependencias que se hicieron cargo de su queja. Si usted desea recibir más información, por favor comuníquese directamente con las dependencias en la lista.
+
+&lt;:OWNER:&gt;
+
+Gracias.</label>
+        <name>Email_Notification_Closed</name>
+    </customLabels>
+    <customLabels>
+        <label>Su queja del medio ambiente se ha cerrado</label>
+        <name>Email_Notification_Closed_Subject</name>
+    </customLabels>
+    <customTabs>
+        <label><!-- Help --></label>
+        <name>CERS_Help_Desk_Help</name>
+    </customTabs>
+    <customTabs>
+        <label><!-- Help --></label>
+        <name>Complaint_Management_Help</name>
+    </customTabs>
+    <flowDefinitions>
+        <flows>
+            <fullName>Launch_New_Complaint_Management_Case_Flow-2</fullName>
+        </flows>
+        <fullName>Launch_New_Complaint_Management_Case_Flow</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows>
+            <fullName>Launch_Set_Complaint_Owner_to_Agency-2</fullName>
+        </flows>
+        <fullName>Launch_Set_Complaint_Owner_to_Agency</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows>
+            <fullName>New_Complaint_Management_Case-2</fullName>
+        </flows>
+        <fullName>New_Complaint_Management_Case</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows>
+            <fullName>Set_Complaint_Owner_to_Agency2-2</fullName>
+        </flows>
+        <fullName>Set_Complaint_Owner_to_Agency2</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows>
+            <fullName>CERS_Case_Scheduler-3</fullName>
+        </flows>
+        <fullName>CERS_Case_Scheduler</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows>
+            <fullName>CERS_Case_on_Create-3</fullName>
+        </flows>
+        <fullName>CERS_Case_on_Create</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows>
+            <fullName>CERS_Help_Desk_Assign_Escalation_Case_Team-1</fullName>
+            <textTemplates>
+                <name>EscalationEmailBody</name>
+            </textTemplates>
+        </flows>
+        <fullName>CERS_Help_Desk_Assign_Escalation_Case_Team</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows>
+            <fullName>CERS_Help_Desk_Automatically_Contact_Association-2</fullName>
+        </flows>
+        <fullName>CERS_Help_Desk_Automatically_Contact_Association</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows>
+            <fullName>CERS_Case_on_Update-2</fullName>
+        </flows>
+        <fullName>CERS_Case_on_Update</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows>
+            <fullName>CERS_Help_Desk_Add_Technical_Manager_to_Case_Team-1</fullName>
+        </flows>
+        <fullName>CERS_Help_Desk_Add_Technical_Manager_to_Case_Team</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows>
+            <fullName>CERS_Help_Desk_Set_Manager_Notification_Datetime-1</fullName>
+        </flows>
+        <fullName>CERS_Help_Desk_Set_Manager_Notification_Datetime</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows>
+            <fullName>CERS_Help_Desk_Set_Manager_on_Case-1</fullName>
+        </flows>
+        <fullName>CERS_Help_Desk_Set_Manager_on_Case</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows>
+            <fullName>CERS_Help_Desk_Send_Contact_New_Case_Notification-1</fullName>
+            <textTemplates>
+                <name>EmailBody</name>
+            </textTemplates>
+            <textTemplates>
+                <name>EmailSubject</name>
+            </textTemplates>
+        </flows>
+        <fullName>CERS_Help_Desk_Send_Contact_New_Case_Notification</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows>
+            <fullName>CERS_Help_Desk_Send_Overdue_Case_Manager_Notification-1</fullName>
+            <textTemplates>
+                <name>EmailBody</name>
+            </textTemplates>
+            <textTemplates>
+                <name>EmailSubject</name>
+            </textTemplates>
+        </flows>
+        <fullName>CERS_Help_Desk_Send_Overdue_Case_Manager_Notification</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows>
+            <fullName>Create_Water_Assignment-15</fullName>
+        </flows>
+        <fullName>Create_Water_Assignment</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows>
+            <fullName>CAMS_Handle_CAMS_History_Test_Data-1</fullName>
+        </flows>
+        <fullName>CAMS_Handle_CAMS_History_Test_Data</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows>
+            <fullName>CAMS_File_On_Update-1</fullName>
+        </flows>
+        <fullName>CAMS_File_On_Update</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows>
+            <fullName>Launch_Create_Air_Pesticides_and_Solid_Waste_Assignments_Flow-5</fullName>
+        </flows>
+        <fullName>Launch_Create_Air_Pesticides_and_Solid_Waste_Assignments_Flow</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows>
+            <fullName>X15_Day_Emain_to_Complainant_Complaint_Still_Open-8</fullName>
+        </flows>
+        <fullName>X15_Day_Emain_to_Complainant_Complaint_Still_Open</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows>
+            <fullName>Create_Air_Pesticides_and_Solid_Waste_Assignments-18</fullName>
+        </flows>
+        <fullName>Create_Air_Pesticides_and_Solid_Waste_Assignments</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows>
+            <fullName>CAMS_In_Progress_Assignment-1</fullName>
+        </flows>
+        <fullName>CAMS_In_Progress_Assignment</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows>
+            <fullName>Create_Toxic_Substances_Assignment-11</fullName>
+        </flows>
+        <fullName>Create_Toxic_Substances_Assignment</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows>
+            <fullName>CAMS_History_on_Create-1</fullName>
+        </flows>
+        <fullName>CAMS_History_on_Create</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows>
+            <fullName>CAMS_Create_Task_Assigned_To_Update_History_Record-1</fullName>
+        </flows>
+        <fullName>CAMS_Create_Task_Assigned_To_Update_History_Record</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows>
+            <fullName>Set_Assignment_Status_to_Referred_on_New_Referral-6</fullName>
+        </flows>
+        <fullName>Set_Assignment_Status_to_Referred_on_New_Referral</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows>
+            <fullName>CAMS_Create_Assignment_Owner_Group_Share-1</fullName>
+        </flows>
+        <fullName>CAMS_Create_Assignment_Owner_Group_Share</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows>
+            <fullName>CAMS_File_On_Create-1</fullName>
+        </flows>
+        <fullName>CAMS_File_On_Create</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows>
+            <fullName>Launch_Flow_Close_Complaint_After_All_Assignments_are_Closed-4</fullName>
+        </flows>
+        <fullName>Launch_Flow_Close_Complaint_After_All_Assignments_are_Closed</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows>
+            <fullName>Closed_Complaint_Email-12</fullName>
+        </flows>
+        <fullName>Closed_Complaint_Email</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows>
+            <fullName>CAMS_Create_Task_Share_for_Assignment_Owner-2</fullName>
+        </flows>
+        <fullName>CAMS_Create_Task_Share_for_Assignment_Owner</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows>
+            <fullName>Launch_Set_Assignment_Status_to_Referred_on_New_Referral-3</fullName>
+        </flows>
+        <fullName>Launch_Set_Assignment_Status_to_Referred_on_New_Referral</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows>
+            <fullName>CAMS_Complete_Subtask-1</fullName>
+        </flows>
+        <fullName>CAMS_Complete_Subtask</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows>
+            <fullName>CAMS_Automate_Travel-1</fullName>
+        </flows>
+        <fullName>CAMS_Automate_Travel</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows>
+            <fullName>CAMS_Create_Assignment_Assigned_To_Update_History_Record-1</fullName>
+        </flows>
+        <fullName>CAMS_Create_Assignment_Assigned_To_Update_History_Record</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows>
+            <fullName>CAMS_Complete_Task-1</fullName>
+        </flows>
+        <fullName>CAMS_Complete_Task</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows>
+            <fullName>Close_Complaint_After_All_Assignments_are_Closed-5</fullName>
+        </flows>
+        <fullName>Close_Complaint_After_All_Assignments_are_Closed</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows>
+            <fullName>CAMS_Task_Delegation-1</fullName>
+        </flows>
+        <fullName>CAMS_Task_Delegation</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows>
+            <fullName>CAMS_Share_New_Task_With_Delegated_Siblings-1</fullName>
+        </flows>
+        <fullName>CAMS_Share_New_Task_With_Delegated_Siblings</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows>
+            <fullName>Set_Complaint_Date_Referred-2</fullName>
+        </flows>
+        <fullName>Set_Complaint_Date_Referred</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows>
+            <fullName>Complaint_Message_on_Create-1</fullName>
+        </flows>
+        <fullName>Complaint_Message_on_Create</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows>
+            <fullName>CAMS_Send_Task_Reminder_Email-3</fullName>
+        </flows>
+        <fullName>CAMS_Send_Task_Reminder_Email</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows>
+            <fullName>CAMS_Send_Task_Overdue_Email-3</fullName>
+        </flows>
+        <fullName>CAMS_Send_Task_Overdue_Email</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows>
+            <fullName>CAMS_Set_Child_Task_Status-1</fullName>
+        </flows>
+        <fullName>CAMS_Set_Child_Task_Status</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows>
+            <fullName>CAMS_Send_Task_Withdrawn_Email-3</fullName>
+        </flows>
+        <fullName>CAMS_Send_Task_Withdrawn_Email</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows>
+            <fullName>Referral_on_Create-1</fullName>
+        </flows>
+        <fullName>Referral_on_Create</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows>
+            <fullName>Complaint_Management_Notify_Group_Members_When_New_Complaint_Message-2</fullName>
+        </flows>
+        <fullName>Complaint_Management_Notify_Group_Members_When_New_Complaint_Message</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows>
+            <fullName>CAMS_Send_Assignment_Overdue_Email-2</fullName>
+        </flows>
+        <fullName>CAMS_Send_Assignment_Overdue_Email</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows>
+            <fullName>CAMS_Send_All_Task_Completed_For_Assignment_Email-2</fullName>
+        </flows>
+        <fullName>CAMS_Send_All_Task_Completed_For_Assignment_Email</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows>
+            <fullName>CAMS_Send_Task_Back_to_Assigned_Email-3</fullName>
+        </flows>
+        <fullName>CAMS_Send_Task_Back_to_Assigned_Email</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows>
+            <fullName>CAMS_Send_Assignment_Reminder_Email-3</fullName>
+        </flows>
+        <fullName>CAMS_Send_Assignment_Reminder_Email</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows>
+            <fullName>CAMS_Note_On_Update-1</fullName>
+        </flows>
+        <fullName>CAMS_Note_On_Update</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows>
+            <fullName>CAMS_Note_On_Create-1</fullName>
+        </flows>
+        <fullName>CAMS_Note_On_Create</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows>
+            <fullName>Launch_New_Finding_Post_to_Chatter-4</fullName>
+        </flows>
+        <fullName>Launch_New_Finding_Post_to_Chatter</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows>
+            <fullName>CAMS_Send_All_Subtasks_Completed_Email-3</fullName>
+        </flows>
+        <fullName>CAMS_Send_All_Subtasks_Completed_Email</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows>
+            <fullName>CAMS_Reopen_Assignment_If_Completed_or_Closed_And_New_Task_Added-1</fullName>
+        </flows>
+        <fullName>CAMS_Reopen_Assignment_If_Completed_or_Closed_And_New_Task_Added</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows>
+            <fullName>New_Finding_Post_to_Chatter-1</fullName>
+        </flows>
+        <fullName>New_Finding_Post_to_Chatter</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows>
+            <fullName>CAMS_Assignment_on_Update-2</fullName>
+        </flows>
+        <fullName>CAMS_Assignment_on_Update</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows>
+            <fullName>CAMS_Assignment_on_Create-1</fullName>
+        </flows>
+        <fullName>CAMS_Assignment_on_Create</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows>
+            <fullName>CAMS_Withdraw_Successor_Tasks-1</fullName>
+        </flows>
+        <fullName>CAMS_Withdraw_Successor_Tasks</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows>
+            <fullName>CAMS_Withdraw_Child_Tasks-1</fullName>
+        </flows>
+        <fullName>CAMS_Withdraw_Child_Tasks</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows>
+            <fullName>CAMS_Assignment_Scheduled_Actions-1</fullName>
+        </flows>
+        <fullName>CAMS_Assignment_Scheduled_Actions</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows>
+            <fullName>CAMS_Update_Assignment_Owner-1</fullName>
+        </flows>
+        <fullName>CAMS_Update_Assignment_Owner</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows>
+            <fullName>CAMS_Task_Scheduled_Actions-1</fullName>
+        </flows>
+        <fullName>CAMS_Task_Scheduled_Actions</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows>
+            <fullName>CAMS_Withdraw_Assignment-1</fullName>
+        </flows>
+        <fullName>CAMS_Withdraw_Assignment</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows>
+            <fullName>CAMS_Update_Task_Owner_to_Queue-1</fullName>
+        </flows>
+        <fullName>CAMS_Update_Task_Owner_to_Queue</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows>
+            <fullName>Complaint_on_Update-2</fullName>
+        </flows>
+        <fullName>Complaint_on_Update</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows>
+            <fullName>CAMS_Task_On_Update-2</fullName>
+        </flows>
+        <fullName>CAMS_Task_On_Update</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows>
+            <fullName>Complaint_Assignment_on_Update-1</fullName>
+        </flows>
+        <fullName>Complaint_Assignment_on_Update</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows>
+            <fullName>CAMS_Task_On_Create-2</fullName>
+        </flows>
+        <fullName>CAMS_Task_On_Create</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows>
+            <fullName>Complaint_On_Create-1</fullName>
+        </flows>
+        <fullName>Complaint_On_Create</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows>
+            <fullName>Launch_Set_Complaint_Assignment_Owner-3</fullName>
+        </flows>
+        <fullName>Launch_Set_Complaint_Assignment_Owner</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows>
+            <fullName>Set_Complaint_Assignment_Owner-3</fullName>
+        </flows>
+        <fullName>Set_Complaint_Assignment_Owner</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows>
+            <fullName>Launch_Recommended_Routing_Flow-10</fullName>
+        </flows>
+        <fullName>Launch_Recommended_Routing_Flow</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows>
+            <fullName>Recommended_Routing_Flow-5</fullName>
+        </flows>
+        <fullName>Recommended_Routing_Flow</fullName>
+    </flowDefinitions>
+    <quickActions>
+        <label><!-- LogACall --></label>
+        <name>LogACall</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- NewAccount --></label>
+        <name>NewAccount</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- NewCase --></label>
+        <name>NewCase</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- NewContact --></label>
+        <name>NewContact</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- NewEvent --></label>
+        <name>NewEvent</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- NewGroup --></label>
+        <name>NewGroup</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- NewLead --></label>
+        <name>NewLead</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- NewNote --></label>
+        <name>NewNote</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- NewOpportunity --></label>
+        <name>NewOpportunity</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- NewTask --></label>
+        <name>NewTask</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- SendEmail --></label>
+        <name>SendEmail</name>
+    </quickActions>
+    <reportTypes>
+        <description><!-- Complaint Reports --></description>
+        <label><!-- Complaint Reports --></label>
+        <name>Complaint_Reports</name>
+        <sections>
+            <label><!-- Complaints --></label>
+            <name>Complaints</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
+        <description><!-- Complaints with Referrals (New) --></description>
+        <label><!-- Complaints with Referrals (New) --></label>
+        <name>Complaints_With_Referrals_New</name>
+        <sections>
+            <label><!-- Complaints --></label>
+            <name>Complaints</name>
+        </sections>
+        <sections>
+            <label><!-- Referral --></label>
+            <name>Referral</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
+        <description><!-- Complaints with Assignments --></description>
+        <label><!-- Complaints with Assignments --></label>
+        <name>Complaints_with_Assignments</name>
+        <sections>
+            <label><!-- Complaint Assignments --></label>
+            <name>Complaint Assignments</name>
+        </sections>
+        <sections>
+            <label><!-- Complaints --></label>
+            <name>Complaints</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
+        <description><!-- Complaints with Findings (New) --></description>
+        <label><!-- Complaints with Findings (New) --></label>
+        <name>Complaints_with_Findings_New</name>
+        <sections>
+            <label><!-- Complaints --></label>
+            <name>Complaints</name>
+        </sections>
+        <sections>
+            <label><!-- Finding --></label>
+            <name>Finding</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
+        <description><!-- Complaints with Referrals and Findings --></description>
+        <label><!-- Complaints with Referrals and Findings --></label>
+        <name>Complaints_with_Referrals_and_Findings</name>
+        <sections>
+            <label><!-- Complaints --></label>
+            <name>Complaints</name>
+        </sections>
+        <sections>
+            <label><!-- Findings --></label>
+            <name>Findings</name>
+        </sections>
+        <sections>
+            <label><!-- Referrals --></label>
+            <name>Referrals</name>
+        </sections>
+    </reportTypes>
+</Translations>

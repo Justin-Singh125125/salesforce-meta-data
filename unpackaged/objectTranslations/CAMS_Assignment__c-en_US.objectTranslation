@@ -1,0 +1,853 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Assignment</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Assignments</value>
+    </caseValues>
+    <fields>
+        <label><!-- Absence Dates --></label>
+        <name>Absence_Dates__c</name>
+    </fields>
+    <fields>
+        <label><!-- Agency --></label>
+        <name>Agency__c</name>
+    </fields>
+    <fields>
+        <help><!-- When created, this will default to your name --></help>
+        <label><!-- Assigned To --></label>
+        <name>Assigned_To__c</name>
+        <relationshipLabel><!-- Assignments --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Attendee(s) --></label>
+        <name>Attendee_s__c</name>
+    </fields>
+    <fields>
+        <label><!-- Author Name --></label>
+        <name>Author_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Division, Office or Program --></label>
+        <name>BDO_Suborganization__c</name>
+        <picklistValues>
+            <masterLabel>Agriculture</masterLabel>
+            <translation><!-- Agriculture --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chief Information Officer</masterLabel>
+            <translation><!-- Chief Information Officer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Climate Policy</masterLabel>
+            <translation><!-- Climate Policy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Communications</masterLabel>
+            <translation><!-- Communications --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Director</masterLabel>
+            <translation><!-- Director --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Environmental Justice and Tribal</masterLabel>
+            <translation><!-- Environmental Justice and Tribal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Environmental Policy</masterLabel>
+            <translation><!-- Environmental Policy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Executive Office</masterLabel>
+            <translation><!-- Executive Office --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fiscal and Admin Programs</masterLabel>
+            <translation><!-- Fiscal and Admin Programs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Health and Public Policy</masterLabel>
+            <translation><!-- Health and Public Policy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Law Enforcement and Counsel</masterLabel>
+            <translation><!-- Law Enforcement and Counsel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Legal Office</masterLabel>
+            <translation><!-- Legal Office --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Legislative Affairs</masterLabel>
+            <translation><!-- Legislative Affairs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Legislative Office</masterLabel>
+            <translation><!-- Legislative Office --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PRA</masterLabel>
+            <translation><!-- PRA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Travel</masterLabel>
+            <translation><!-- Travel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unified Program</masterLabel>
+            <translation><!-- Unified Program --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- BDO --></label>
+        <name>BDO__c</name>
+        <picklistValues>
+            <masterLabel>ARB</masterLabel>
+            <translation><!-- ARB --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Agency</masterLabel>
+            <translation><!-- Agency --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CalRecycle</masterLabel>
+            <translation><!-- CalRecycle --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPR</masterLabel>
+            <translation><!-- DPR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DTSC</masterLabel>
+            <translation><!-- DTSC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OEHHA</masterLabel>
+            <translation><!-- OEHHA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SWRCB</masterLabel>
+            <translation><!-- SWRCB --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Body --></label>
+        <name>Body__c</name>
+    </fields>
+    <fields>
+        <label><!-- Closed/Withdrawn Date --></label>
+        <name>Closed_Withdrawn_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Confidential --></label>
+        <name>Confidential__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact Name --></label>
+        <name>Contact_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Department --></label>
+        <name>Department__c</name>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Division --></label>
+        <name>Division__c</name>
+    </fields>
+    <fields>
+        <label><!-- Document Number --></label>
+        <name>Document_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Due Date --></label>
+        <name>Due_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Event City --></label>
+        <name>Event_City__c</name>
+    </fields>
+    <fields>
+        <label><!-- Event End Date --></label>
+        <name>Event_End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Event Hours --></label>
+        <name>Event_Hours__c</name>
+    </fields>
+    <fields>
+        <label><!-- Event Location --></label>
+        <name>Event_Location__c</name>
+    </fields>
+    <fields>
+        <label><!-- Event Sponsor --></label>
+        <name>Event_Sponsor__c</name>
+    </fields>
+    <fields>
+        <label><!-- Event Start Date --></label>
+        <name>Event_Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Event State --></label>
+        <name>Event_State__c</name>
+        <picklistValues>
+            <masterLabel>Alabama</masterLabel>
+            <translation><!-- Alabama --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Alaska</masterLabel>
+            <translation><!-- Alaska --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Arizona</masterLabel>
+            <translation><!-- Arizona --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Arkansas</masterLabel>
+            <translation><!-- Arkansas --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>California</masterLabel>
+            <translation><!-- California --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Colorado</masterLabel>
+            <translation><!-- Colorado --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Connecticut</masterLabel>
+            <translation><!-- Connecticut --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Delaware</masterLabel>
+            <translation><!-- Delaware --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Florida</masterLabel>
+            <translation><!-- Florida --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Georgia</masterLabel>
+            <translation><!-- Georgia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hawaii</masterLabel>
+            <translation><!-- Hawaii --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Idaho</masterLabel>
+            <translation><!-- Idaho --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Illinois</masterLabel>
+            <translation><!-- Illinois --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Indiana</masterLabel>
+            <translation><!-- Indiana --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Iowa</masterLabel>
+            <translation><!-- Iowa --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kansas</masterLabel>
+            <translation><!-- Kansas --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kentucky</masterLabel>
+            <translation><!-- Kentucky --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Louisiana</masterLabel>
+            <translation><!-- Louisiana --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Maine</masterLabel>
+            <translation><!-- Maine --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Maryland</masterLabel>
+            <translation><!-- Maryland --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Massachusetts</masterLabel>
+            <translation><!-- Massachusetts --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Michigan</masterLabel>
+            <translation><!-- Michigan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Minnesota</masterLabel>
+            <translation><!-- Minnesota --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mississippi</masterLabel>
+            <translation><!-- Mississippi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Missouri</masterLabel>
+            <translation><!-- Missouri --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Montana</masterLabel>
+            <translation><!-- Montana --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nebraska</masterLabel>
+            <translation><!-- Nebraska --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nevada</masterLabel>
+            <translation><!-- Nevada --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Hampshire</masterLabel>
+            <translation><!-- New Hampshire --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Jersey</masterLabel>
+            <translation><!-- New Jersey --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Mexico</masterLabel>
+            <translation><!-- New Mexico --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New York</masterLabel>
+            <translation><!-- New York --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>North Carolina</masterLabel>
+            <translation><!-- North Carolina --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>North Dakota</masterLabel>
+            <translation><!-- North Dakota --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ohio</masterLabel>
+            <translation><!-- Ohio --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oklahoma</masterLabel>
+            <translation><!-- Oklahoma --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oregon</masterLabel>
+            <translation><!-- Oregon --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pennsylvania</masterLabel>
+            <translation><!-- Pennsylvania --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rhode Island</masterLabel>
+            <translation><!-- Rhode Island --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>South Carolina</masterLabel>
+            <translation><!-- South Carolina --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>South Dakota</masterLabel>
+            <translation><!-- South Dakota --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tennessee</masterLabel>
+            <translation><!-- Tennessee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Texas</masterLabel>
+            <translation><!-- Texas --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Utah</masterLabel>
+            <translation><!-- Utah --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vermont</masterLabel>
+            <translation><!-- Vermont --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Virginia</masterLabel>
+            <translation><!-- Virginia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Washington</masterLabel>
+            <translation><!-- Washington --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>West Virginia</masterLabel>
+            <translation><!-- West Virginia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wisconsin</masterLabel>
+            <translation><!-- Wisconsin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wyoming</masterLabel>
+            <translation><!-- Wyoming --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Event Title --></label>
+        <name>Event_Title__c</name>
+    </fields>
+    <fields>
+        <label><!-- Event Zip Code --></label>
+        <name>Event_Zip_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Excess Lodging --></label>
+        <name>Excess_Lodging__c</name>
+    </fields>
+    <fields>
+        <help><!-- Does not need to be resubmitted if actual costs do not vary more than 10% from this estimate. --></help>
+        <label><!-- Expenses not to Exceed $ --></label>
+        <name>Expenses_not_to_Exceed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Final Outcome --></label>
+        <name>Final_Outcome__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Declined</masterLabel>
+            <translation><!-- Declined --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Withdrawn</masterLabel>
+            <translation><!-- Withdrawn --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Flag Logged In User Program --></label>
+        <name>Flag_Logged_In_User_Program__c</name>
+    </fields>
+    <fields>
+        <label><!-- Flag Logged In User --></label>
+        <name>Flag_Logged_In_User__c</name>
+    </fields>
+    <fields>
+        <label><!-- Form of Original --></label>
+        <name>Form_of_Original__c</name>
+        <picklistValues>
+            <masterLabel>E-mail</masterLabel>
+            <translation><!-- E-mail --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fax</masterLabel>
+            <translation><!-- Fax --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Letter</masterLabel>
+            <translation><!-- Letter --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Memo</masterLabel>
+            <translation><!-- Memo --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other/General</masterLabel>
+            <translation><!-- Other/General --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Phone Call</masterLabel>
+            <translation><!-- Phone Call --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Do not enter numerical code.
+Enter full name of the fund as shown in the Governor&apos;s Budget. --></help>
+        <label><!-- Fund --></label>
+        <name>Fund__c</name>
+    </fields>
+    <fields>
+        <label><!-- Governor&apos;s Office Number --></label>
+        <name>Governor_s_Office_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Internal Tracking ID --></label>
+        <name>Internal_Tracking_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Mission Critical Justification --></label>
+        <name>Mission_Critical_Justification__c</name>
+    </fields>
+    <fields>
+        <help><!-- Select if
+- Enforcement Responsibility
+- Auditing
+- Revenue Collection
+- Function required by Statute, Contract or Executive Directive
+- Required License Maintenance &amp; Training
+- Contract required Equipment inspection
+- Grant Meeting
+- Litigation --></help>
+        <label><!-- Mission Critical Travel --></label>
+        <name>Mission_Critical_Travel__c</name>
+    </fields>
+    <fields>
+        <label><!-- My Assignments --></label>
+        <name>My_Assignments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Originator --></label>
+        <name>Originator__c</name>
+        <relationshipLabel><!-- Assignments (Originator) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- * Requires approval by the Governors Director of Operations --></help>
+        <label><!-- Other --></label>
+        <name>Other__c</name>
+    </fields>
+    <fields>
+        <label><!-- Phone --></label>
+        <name>Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Purpose of Attendance --></label>
+        <name>Purpose_of_Attendance__c</name>
+    </fields>
+    <fields>
+        <label><!-- Received Date --></label>
+        <name>Received_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Check here if regular board meeting, workshop or other meeting required by statute. --></help>
+        <label><!-- Regular Meeting or Workshop --></label>
+        <name>Regular_Visit__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reply By --></label>
+        <name>Reply_By__c</name>
+        <picklistValues>
+            <masterLabel>E-mail</masterLabel>
+            <translation><!-- E-mail --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fax</masterLabel>
+            <translation><!-- Fax --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inter-Agency</masterLabel>
+            <translation><!-- Inter-Agency --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Letter/Memo</masterLabel>
+            <translation><!-- Letter/Memo --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Phone</masterLabel>
+            <translation><!-- Phone --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Requested By --></label>
+        <name>Requested_By__c</name>
+    </fields>
+    <fields>
+        <label><!-- For Signature Of --></label>
+        <name>Signature_Of__c</name>
+        <picklistValues>
+            <masterLabel>Chief Deputy Director/ Designee</masterLabel>
+            <translation><!-- Chief Deputy Director/ Designee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Director</masterLabel>
+            <translation><!-- Director --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Executive Officer</masterLabel>
+            <translation><!-- Executive Officer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Secretary</masterLabel>
+            <translation><!-- Secretary --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Signed by --></label>
+        <name>Signed_by__c</name>
+        <relationshipLabel><!-- Assignments (Signed by) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Closed</masterLabel>
+            <translation><!-- Closed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Completed</masterLabel>
+            <translation><!-- Completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress</masterLabel>
+            <translation><!-- In Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending</masterLabel>
+            <translation><!-- Pending --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Withdrawn</masterLabel>
+            <translation><!-- Withdrawn --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Subject --></label>
+        <name>Subject__c</name>
+    </fields>
+    <fields>
+        <label><!-- Test Data --></label>
+        <name>Test_Data__c</name>
+    </fields>
+    <fields>
+        <label><!-- Title --></label>
+        <name>Title__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Estimated Event Cost --></label>
+        <name>Total_Estimated_Event_Cost__c</name>
+    </fields>
+    <fields>
+        <help><!-- One Way Miles --></help>
+        <label><!-- Travel Distance From HQ --></label>
+        <name>Travel_Distance_From_HQ__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Unit --></label>
+        <name>Unit__c</name>
+    </fields>
+    <fields>
+        <label><!-- Urgent --></label>
+        <name>Urgent__c</name>
+    </fields>
+    <layouts>
+        <layout>Assignment Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Details --></label>
+            <section>Details</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Controlled Correspondence Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Details --></label>
+            <section>Details</section>
+        </sections>
+        <sections>
+            <label><!-- New Section --></label>
+            <section>New Section</section>
+        </sections>
+        <sections>
+            <label><!-- Original Correspondence --></label>
+            <section>Original Correspondence</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Goldenrod Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Details --></label>
+            <section>Details</section>
+        </sections>
+        <sections>
+            <label><!-- New Section --></label>
+            <section>New Section</section>
+        </sections>
+        <sections>
+            <label><!-- Original Correspondence --></label>
+            <section>Original Correspondence</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>In State Travel Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Details --></label>
+            <section>Details</section>
+        </sections>
+        <sections>
+            <label><!-- Event Info --></label>
+            <section>Event Info</section>
+        </sections>
+        <sections>
+            <label><!-- Event Information --></label>
+            <section>Event Information</section>
+        </sections>
+        <sections>
+            <label><!-- New Section --></label>
+            <section>New Section</section>
+        </sections>
+        <sections>
+            <label><!-- Request to Travel In-State --></label>
+            <section>Request to Travel In-State</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Master Assignment Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Details --></label>
+            <section>Details</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Out of State Travel Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Details --></label>
+            <section>Details</section>
+        </sections>
+        <sections>
+            <label><!-- Event Info --></label>
+            <section>Event Info</section>
+        </sections>
+        <sections>
+            <label><!-- Event Information --></label>
+            <section>Event Information</section>
+        </sections>
+        <sections>
+            <label><!-- New Section --></label>
+            <section>New Section</section>
+        </sections>
+        <sections>
+            <label><!-- Request to Travel Out of State --></label>
+            <section>Request to Travel Out of State</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <label><!-- Assign All Tasks --></label>
+        <name>Assign_All_Tasks</name>
+    </quickActions>
+    <recordTypes>
+        <label><!-- 4 Controlled Correspondence --></label>
+        <name>Controlled_Correspondence</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- 3 Goldenrod --></label>
+        <name>Goldenrod</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- 8 Governor&apos;s Office Action Request (GOAR) --></label>
+        <name>Governors_Office_Action_Request_GOAR</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- 1 In State Travel --></label>
+        <name>In_State_Travel</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- 5 Mandated Legislative Reports --></label>
+        <name>Mandated_Legislative_Reports</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- 2 Out of State Travel --></label>
+        <name>Out_of_State_Travel</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- 6 Pre-Regulation Package --></label>
+        <name>Pre_Regulation_Package</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- 7 Regulation Package --></label>
+        <name>Regulation_Package</name>
+    </recordTypes>
+    <sharingReasons>
+        <label><!-- Owner Group --></label>
+        <name>Owner_Group</name>
+    </sharingReasons>
+    <sharingReasons>
+        <label><!-- Record Creator --></label>
+        <name>Record_Creator</name>
+    </sharingReasons>
+    <sharingReasons>
+        <label><!-- Tasked Group --></label>
+        <name>Tasked_Group</name>
+    </sharingReasons>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Must match the User&apos;s BDO --></errorMessage>
+        <name>BDO_User</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Closed/Withdrawn Date cannot be in the future. --></errorMessage>
+        <name>Closed_Withdrawn_Date_Cannot_Be_Future</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Closed/Withdrawn Date must be empty if status is not Closed or Withdrawn --></errorMessage>
+        <name>Closed_Withdrawn_Date_Empty_Not_Closed</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Closed/Withdrawn Date is required if status is Closed or Withdrawn --></errorMessage>
+        <name>Closed_Withdrawn_Date_Required_if_Closed</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Closed/Withdrawn Date is required if status is Closed or Withdrawn --></errorMessage>
+        <name>Closed_Withdrawn_Date_Required_if_Withdr</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please allow six days to process a travel request.  If you need less than six days, please contact michelle.hutzel@calepa.ca.gov or Ashlyne.Poston@calepa.ca.gov for assistance. --></errorMessage>
+        <name>Due_Date_less_than_6_Days_From_Today</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Event End Date cannot be before Event Start Date --></errorMessage>
+        <name>Event_End_Date_Cant_be_before_Start_Date</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You can only move the Status to Closed or Withdrawn --></errorMessage>
+        <name>Moving_Status</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- The Owner must be a Queue --></errorMessage>
+        <name>Owner_must_be_a_Queue</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Print_Assignment --></label>
+        <name>Print_Assignment</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Routing_Sheet --></label>
+        <name>Routing_Sheet</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Summary_Sheet --></label>
+        <name>Summary_Sheet</name>
+    </webLinks>
+</CustomObjectTranslation>

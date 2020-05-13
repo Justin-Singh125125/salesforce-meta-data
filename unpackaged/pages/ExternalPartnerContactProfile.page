@@ -1,0 +1,122 @@
+<apex:page applyBodyTag="false"   
+cache="false" 
+    applyHTMLTag="false" 
+    docType="HTML-5.0" 
+    id="ExternalPartnerContactProfile" 
+    sidebar="false" 
+    showChat="false" 
+    showHeader="false"   
+    standardController="Contact"  
+    standardStylesheets="false"  
+    extensions="ExternalPartnerPortalController"
+    action="{!LoadExternalPartnerContactProfile}">  
+    <apex:composition template="ExternalPartnerLayout"> 
+        <apex:define name="ExternalPartnerLayoutTitle"></apex:define>
+        <apex:define name="ExternalPartnerLayoutPageCss">
+        </apex:define>        
+        <apex:define name="ExternalPartnerLayoutBody">
+            <apex:form id="FindingsLandingForm" html-role="form">
+                <div class="group">
+                    <div class="full-width">
+                        <div class="panel panel-understated">
+                            <div class="panel-heading">
+                                <h4>My Profile</h4>
+                            </div>
+                            <div class="panel-body">
+                                <apex:inputHidden value="{!ExternalPartnerContactProfileViewModel.ContactId}"/>
+                                <div class="group" id="ContactInformationGroup">
+                                    <div class="form-group half">
+                                        <label> First Name:  </label>
+                                        <apex:inputText value="{!ExternalPartnerContactProfileViewModel.FirstName}" styleClass="form-control FirstName"/>
+                                        <label id="FirstNameError" class="pull-left" style="color:red;"></label>
+                                    </div>
+                                    <div class="form-group half">
+                                        <label> Last Name:  </label>
+                                        <apex:inputText value="{!ExternalPartnerContactProfileViewModel.LastName}" styleClass="form-control LastName"/>
+                                        <label id="LastNameError" class="pull-left" style="color:red;"></label>
+                                    </div>
+                                    <div class="form-group full-width">
+                                        <label> Email:  </label>
+                                        <apex:inputText value="{!ExternalPartnerContactProfileViewModel.Email}" styleClass="form-control Email" />
+                                        <label id="EmailError" class="pull-left" style="color:red;"></label>
+                                    </div>
+                                    <div class="form-group half">
+                                        <label> Phone:  </label>
+                                        <apex:inputText value="{!ExternalPartnerContactProfileViewModel.Phone}" styleClass="form-control Phone" />
+                                        <label id="PhoneError" class="pull-left" style="color:red;"></label>
+                                    </div>
+                                    <div class="form-group half">
+                                        <label> Title:  </label>
+                                        <apex:inputText value="{!ExternalPartnerContactProfileViewModel.Title}" styleClass="form-control Title" />
+                                        <label id="TitleError" class="pull-left" style="color:red;"></label>
+                                    </div>
+                                    <div class="form-group full-width">
+                                        <div class="checkbox">
+                                            <label>
+                                                <apex:inputCheckbox value="{!ExternalPartnerContactProfileViewModel.Inactive}"/> Inactive
+                                            </label> 
+                                        </div>
+                                    </div>
+                                    <div class="form-group full-width">
+                                        <button id="SaveContact" type="submit" class="btn btn-secondary active pull-right">Save Contact Information</button>
+                                        <apex:actionFunction name="Save" action="{!UpdateExternalPartnerContactProfile}" />
+                                        <label id="UpdateError" class="pull-left" style="color:red;"></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+            </apex:form>
+        </apex:define>
+        <apex:define name="ExternalPartnerLayoutPageScriptIncludes">
+            <apex:includeScript value="{!URLFOR($Resource.Jquery_Mask_Plugin, '/jQuery-Mask-Plugin-master/src/jquery.mask.js')}"/>
+        </apex:define>
+        <apex:define name="ExternalPartnerLayoutPageScripts">
+            <script>
+                $(document).ready(function() 
+                {
+                    $('.Phone').mask('(000) 000-0000');
+                    function IsEmail(email)  
+                    {
+                        var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+                        return regex.test(email);
+                    }
+                    $(document).on('click', '#SaveContact', function(event) 
+                    {
+                        event.preventDefault();
+                        if($('.FirstName').val()=='')
+                        {
+                            $("#FirstNameError").text('Please provide your first name.');
+                            $(".FirstName").css('border-color', 'red');;
+                            $('.FirstName').focus();
+                            return false;
+                        }
+                        if($('.LastName').val()=='')
+                        {
+                            $("#LastNameError").text('Please provide your last name.');
+                            $(".LastName").css('border-color', 'red');;
+                            $('.LastName').focus();
+                            return false;
+                        }
+                        if($('.Email').val()=='')
+                        {
+                            $("#EmailError").text('Please provide your email.');
+                            $(".Email").css('border-color', 'red');;
+                            $('.Email').focus();
+                            return false;
+                        }
+                        if(!IsEmail($('.Email').val()))
+                        {
+                            $("#EmailError").text('Please provide a valid email.');
+                            $(".Email").css('border-color', 'red');;
+                            $('.Email').focus();
+                            return false;
+                        }
+                        Save();
+                    });
+                });
+            </script>
+        </apex:define>
+    </apex:composition> 
+</apex:page>

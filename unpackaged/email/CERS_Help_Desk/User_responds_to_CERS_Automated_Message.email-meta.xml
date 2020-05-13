@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>: Business user responds to automated e-mail message, regarding submittal status being changed to “Not Accepted”. Business user replies – requesting clarification/guidance/assistance.</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>User responds to CERS Automated Message</name>
+    <style>none</style>
+    <subject>You have responded to a CERS automated notification e-mail message</subject>
+    <textOnly>“You have responded to a CERS automated notification e-mail message – which sends an e-mail message to our CERS Technical Support e-mail address. (Used for reporting technical issues/errors in the CERS website.) Please be advised that you will need to address your message to the intended recipient.” Please sign into CERS, select Local Regulator to find contact information.</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

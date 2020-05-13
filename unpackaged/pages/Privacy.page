@@ -1,0 +1,46 @@
+<apex:page applyBodyTag="false" applyHTMLTag="false"
+           docType="HTML-5.0" 
+           sidebar="false"
+           showChat="false"
+           showHeader="false"
+           standardController="Complaints__c"
+           standardStylesheets="false" 
+           extensions="ComplaintController">
+    
+    <apex:composition template="Template">
+        <apex:define name="title">Confirmation</apex:define>
+        <apex:define name="styles">
+            <!--<link rel="stylesheet" href="css/page-specific-styles.css" />-->
+        </apex:define>
+        
+        <apex:define name="body">
+            <div class="row">
+                <div class="col-xs-12">
+                    
+                    <h1>CalEPA Environmental Complaint Form - About Your Privacy</h1>
+                    
+                    <h2>Providing Personal Information Is Voluntary</h2>
+                    
+                    <p>You do not have to provide the personal information requested; you may remain anonymous.  However, if you do not provide personal information, such as your name, address or telephone number, we may not be able to contact you if we need further information, nor will we be able to inform you of any resolution to your complaint.</p> 
+                    
+                    <h2>Possible Disclosure of Personal Information.</h2>
+                    
+                    <p>CalEPA will maintain confidentiality of your information to the extent allowed by California and federal law.  In order to follow up on your complaint, we may need to share the information you give us with other regulators or government agencies. This may include sharing any personal information you include in your complaint form.</p> 
+                    
+                    <p>The information you provide may also be disclosed in the following circumstances:  </p>
+                    
+                    <ul class="indent"> 
+                        <li>In response to a Public Records Act request, as allowed by the California Public Records Act;</li>
+                        <li>To another government agency as required by state or federal law; or</li>
+                        <li>In response to a court or administrative order, a subpoena or a search warrant.</li>
+                        
+                    </ul>
+                    
+                </div>                
+            </div>
+            
+            
+            
+        </apex:define>
+    </apex:composition>
+</apex:page>

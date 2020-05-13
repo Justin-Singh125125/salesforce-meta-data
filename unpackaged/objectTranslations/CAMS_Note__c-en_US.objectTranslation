@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>CAMS Note</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>CAMS Notes</value>
+    </caseValues>
+    <fields>
+        <label><!-- Assignment --></label>
+        <name>CAMS_Assignment__c</name>
+        <relationshipLabel><!-- CAMS Notes --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Task --></label>
+        <name>CAMS_Task__c</name>
+        <relationshipLabel><!-- CAMS Notes --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Content --></label>
+        <name>Content__c</name>
+    </fields>
+    <fields>
+        <label><!-- Test Data --></label>
+        <name>Test_Data__c</name>
+    </fields>
+    <fields>
+        <label><!-- Uploaded To --></label>
+        <name>Uploaded_To__c</name>
+    </fields>
+    <layouts>
+        <layout>CAMS Note Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

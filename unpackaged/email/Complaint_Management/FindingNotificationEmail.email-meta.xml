@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>FindingNotificationEmail</name>
+    <style>none</style>
+    <subject>New Findings Record Filed</subject>
+    <textOnly>New Findings Record Filed
+
+A new finding has been submitted for {!Finding__c.Complaint__c}.
+Visit the Complaint Management System to view the finding record.</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

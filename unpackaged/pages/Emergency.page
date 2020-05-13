@@ -1,0 +1,57 @@
+<apex:page applyBodyTag="false" applyHTMLTag="false"
+           docType="HTML-5.0" 
+           sidebar="false"
+           showChat="false"
+           showHeader="false"
+           title="Emergency/Spill"
+           id="complaintController"
+           standardController="Complaints__c"
+           standardStylesheets="false" >
+    
+    <!-- Everything goes in the composition inside of the apex:define tags  -->
+    <apex:composition template="Template">
+        <apex:define name="title">Emergency</apex:define>
+        <apex:define name="styles">
+            <!--<link rel="stylesheet" href="css/page-specific-styles.css" />-->
+        </apex:define>
+        <!--
+        Only override the header region if you need to pass in custom attributes to the header component.
+        <apex:define name="header">
+        <c:JCMC_Header customAttribute="custom value" />
+        </apex:define>
+        -->
+        <apex:define name="body">
+            <div class="row">
+                
+                <div class="col-xs-12 text-center">
+                    <h1>
+                        
+                    </h1>
+
+                </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-6 text-center">
+                
+                    <h2 class="text-danger">
+                        FOR EMERGENCIES
+                    </h2>
+                    <p class="lead text-danger">
+                       CALL 911
+                    </p>
+              </div>
+              <div class="col-xs-6 text-center">
+                
+                   
+                    <h2>FOR HAZMAT SPILL NOTIFICATIONS</h2>
+                    <p class="lead text-danger">
+                      CALL THE STATE WARNING CENTER 1-800-852-7550
+                    </p>
+              </div>
+            </div>
+        </apex:define>
+        <apex:define name="scripts">
+            <!-- ALL, yes ALL custom javascript for the page should go here otherwise it will get executed out of order -->
+        </apex:define>
+    </apex:composition>
+</apex:page>

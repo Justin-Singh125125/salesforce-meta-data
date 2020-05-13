@@ -1,0 +1,26 @@
+<aura:component implements="forceCommunity:profileMenuInterface" access="global" controller="CalEPACommunityController">
+    <aura:attribute name="options" type="Map[]" default="[{ text: 'Home', icon: 'ca-gov-icon-home' }, { text: 'My Profile', icon: 'ca-gov-icon-person' } , { text: 'My Messages', icon: 'ca-gov-icon-email' } ,{ text: 'Settings', icon: 'ca-gov-icon-tool' } ,{ text: 'LogOut', icon: 'ca-gov-icon-hand' }]" /><!--,{ text: 'Dashboards', icon: 'ca-gov-icon-bar-chart' }, { text: 'My Options', icon: 'ca-gov-icon-gears' }-->
+  	<aura:attribute name="isAuthenticated" type="boolean" default="true"/>   
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+	<aura:renderIf isTrue="{!v.isAuthenticated}">
+        <li class="nav-item">
+            <a href="javascript:void(0)" class="first-level-link"><span class="ca-gov-icon-person" aria-hidden="true"></span>Profile</a>
+            <div class="sub-nav">
+                <div class="full-width">
+                    <ul class="second-level-nav">
+                        <aura:iteration items="{!v.options}" var="opt">
+                            <li class="unit1">
+                                <a href="javascript:void(0)" class="second-level-link" data-link-name='{!opt.text}' onclick="{!c.handleClick}"><span class="{!opt.icon}" aria-hidden="true"></span>{!opt.text}</a>
+                            </li>
+                        </aura:iteration>        
+                    </ul>
+                </div>
+            </div>
+        </li>
+		<aura:set attribute="else">
+            <li class="nav-item">
+                <a href="../login/" class="first-level-link"><span class="ca-gov-icon-person" aria-hidden="true"></span>Login</a>
+            </li>            
+    	</aura:set>
+	</aura:renderIf>
+</aura:component>

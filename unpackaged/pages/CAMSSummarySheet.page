@@ -1,0 +1,286 @@
+<apex:page controller="CAMSSummarySheetController" applyBodyTag="false" applyHtmlTag="false" showHeader="false" renderAs="pdf"><!--renderAs="pdf"-->
+    <!--<apex:form >-->
+    <!--<html>-->
+        <head>
+            <style type="text/css" media="print">
+            @page:first {            
+                                margin-top: 30px;
+                                margin-bottom: 80px;
+                                
+                                 @top-center {
+                                       content: none;
+                               }
+                               
+                                  @bottom-left {
+                                     content: element(footer);
+                               }
+
+                            }
+                       @page {
+                                
+                                margin-top: 80px;
+                                margin-bottom: 80px;
+                                
+                                 @top-center {
+                                       content: element(header);
+                               }
+                               @bottom-left {
+                                     content: element(footer);
+                               }
+                            }
+                                     div.header {
+                                      page-break-after:avoid;
+                                      page-break-inside:avoid;
+                                      padding: 10px;
+                                      margin:30px;
+                                      
+                                      position: running(header);
+                           }
+                                                           
+                       div.footer {
+                                display: block;
+                             padding: 5px;
+                             margin-bottom: 30px;
+                               position: running(footer);
+                               
+                      }
+                                     
+                    </style>
+            <!--<apex:stylesheet value="{!$Resource.FooterStyleSheet}"> </apex:stylesheet>-->
+            
+        </head>   
+        
+        <div >
+                   <apex:image url="{!$Resource.CalEPALogoGreen}" width="225" height="75" />
+                   <h2 style="text-align:center;">CalEPA Assignment Summary</h2>
+      
+        </div>
+        <div class="header" >
+                
+            <div style="float">
+            <table style="border-collapse:collapse;width: 100%;"><!--font-family:arial,sans-serif;-->
+                <tr>
+                    <td style="border: 0.5px solid #dddddd;text-align: left;padding:5px;" colspan="2">
+                    </td>
+                    <th style="border: 0.5px solid #dddddd;text-align: left;padding:5px;font-family:Proxima Nova;">
+                        CAMS#:
+                    </th>
+                    <td style="border: 0.5px solid #dddddd;text-align: center;padding: 5px;">
+                        {!assgnmnt.name}
+                    </td>
+                </tr>
+            </table>       
+            </div>                             
+
+            
+             </div>
+        
+        <body style="margin-top: 10px;">
+
+            <table style="border-collapse:collapse;width: 100%;"><!--font-family:arial,sans-serif;-->
+            
+                <tr>
+                    <td style="border: 0.5px solid #dddddd;text-align: left;padding:5px;" colspan="2">
+                    </td>
+                    <th style="border: 0.5px solid #dddddd;text-align: left;padding:5px;font-family:Proxima Nova;">
+                        CAMS#:
+                    </th>
+                    <td style="border: 0.5px solid #dddddd;text-align: center;padding: 5px;">
+                        {!assgnmnt.name}
+                    </td>
+                </tr>
+                <tr>
+                    <th style="border: 0.5px solid #dddddd;text-align: left;width:30%;padding: 5px;font-family:Proxima Nova;">Subject:</th>
+                    <td style="border: 0.5px solid #dddddd;text-align: left;padding: 5px;" colspan="3">{!assgnmnt.Subject__c}</td>
+                </tr>
+                <tr>
+                    <th style="border: 0.5px solid #dddddd;text-align:left;padding:5px;font-family:Proxima Nova;">Submitted By:</th>
+                    <td colspan="3" style="border: 0.5px solid #dddddd;text-align:left;padding:5px;">
+                    <!--<apex:outputText value="{0,date,MM/dd/yy}"> 
+                                <apex:param value="{!assgnmnt.CreatedDate}"/>
+                            </apex:outputText>-->
+                            {!assgnmnt.CreatedBy.Name}
+                    </td>
+                </tr>
+                <tr>
+                    <th style="border: 0.5px solid #dddddd;text-align:left;padding:5px;font-family:Proxima Nova;">BDO:</th>
+                    <td style="border: 0.5px solid #dddddd;text-align: left;padding:5px;" colspan="3">{!assgnmnt.BDO__c}</td>
+                </tr>
+                <tr>
+                    <th style="border: 0.5px solid #dddddd;text-align: left;padding:5px;font-family:Proxima Nova;">Division, Office or Program:</th>
+                    <td style="border: 0.5px solid #dddddd;text-align: left;padding:5px;" colspan="3">{!assgnmnt.BDO_Suborganization__c}</td>
+                </tr>
+                <tr>
+                    <th style="border: 0.5px solid #dddddd;text-align: left;padding:5px;font-family:Proxima Nova;">Originator:</th>
+                    <td style="border: 0.5px solid #dddddd;text-align: left;padding:5px;" colspan="3">{!assgnmnt.Originator__r.name}</td>
+                </tr>
+                <tr>
+                    <th style="border: 0.5px solid #dddddd;text-align: left;padding:5px;font-family:Proxima Nova;">Status:</th>
+                   <td style="border: 0.5px solid #dddddd;text-align: left;padding:5px;">{!assgnmnt.Status__c}</td>  
+                    <td style="border: 0.5px solid #dddddd;text-align: left;padding:5px;" colspan="2"><b>Closed Date:&nbsp;</b>{!assgnmnt.Closed_Withdrawn_Date__c}</td>
+                </tr>
+
+                <tr>
+                    <th style="border: 0.5px solid #dddddd;text-align: left;padding:5px;font-family:Proxima Nova;">Type:</th>
+                   <td style="border: 0.5px solid #dddddd;text-align: left;padding:5px;">{!assgnmnt.Type__c}</td>  
+                    <td style="border: 0.5px solid #dddddd;text-align: left;padding:5px;" colspan="2"><b>Governor’s Office Number:&nbsp;</b>{!assgnmnt.Governor_s_Office_Number__c}</td>
+                </tr>
+
+            </table>            
+                    
+            <!--Routing Information table-->
+            <h2 style="text-align:center;">Summary</h2>
+            
+            <h4 style="text-align:left;">Assignment History</h4>
+            
+            <table style="border-collapse: collapse;width:100%;">
+                <tr>
+                    <th style="width:5px; border: 0.5px solid #dddddd;text-align: center;padding:5px;font-family:Proxima Nova;">Date</th>
+                    <th style="width:5px; border: 0.5px solid #dddddd;text-align: center;padding:5px;font-family:Proxima Nova;">Field</th>
+                    <th style="width:5px; border: 0.5px solid #dddddd;text-align: center;padding:5px;font-family:Proxima Nova;">User</th>
+                    <th style="width:5px; border: 0.5px solid #dddddd;text-align: center;padding:5px;font-family:Proxima Nova;">Old Value</th>
+                    <th style="width:5px; border: 0.5px solid #dddddd;text-align: center;padding:5px;font-family:Proxima Nova;">New Value</th>
+                </tr>
+                <apex:repeat value="{!ah}" var="task1">
+                    <tr>
+                        <td style="width:5px; border: 0.5px solid #FFFFFF;text-align: left;padding:5px;">
+                            <apex:outputText value="{0,date,MM/dd/yy}"> 
+                                <apex:param value="{!task1.CreatedDate}"/>
+                            </apex:outputText>
+                        </td>
+                        <td style="width:5px; border: 0.5px solid #FFFFFF;text-align: left;padding:5px;">{!task1.field}</td>
+                        <td style="width:5px; border: 0.5px solid #FFFFFF;text-align: left;padding:5px;">{!task1.createdby.name}</td>
+                        
+                      
+                        <td style="border: 0.5px solid #FFFFFF;text-align: left;padding:5px;">
+                        <apex:outputPanel rendered="{!if(contains(task1.field,'Date'), true, false)}">
+                        <apex:outputText value="{0,date,MM/dd/yy}"> 
+                                <apex:param value="{!task1.OldValue}"/>
+                            </apex:outputText>
+                        </apex:outputPanel>
+                        <apex:outputPanel rendered="{!if(not(contains(task1.field,'Date')), true, false)}">
+                        {!task1.OldValue}
+                        </apex:outputPanel>
+                        </td>
+                        <td style="border: 0.5px solid #FFFFFF;text-align: left;padding:5px;">
+                        <apex:outputPanel rendered="{!if(contains(task1.field,'Date'), true, false)}">
+                        <apex:outputText value="{0,date,MM/dd/yy}"> 
+                                <apex:param value="{!task1.NewValue}"/>
+                            </apex:outputText>
+                        </apex:outputPanel>
+                        <apex:outputPanel rendered="{!if(not(contains(task1.field,'Date')), true, false)}">
+                        {!task1.NewValue}
+                        </apex:outputPanel>
+                        
+                        </td>
+                       
+                        
+
+                    </tr>
+                </apex:repeat>
+            </table>
+
+           <h4 style="text-align:left;">Task History</h4>
+            
+            <table style="border-collapse: collapse;width:100%;">
+                <tr>
+                    <th style="width:5px; border: 0.5px solid #dddddd;text-align: center;padding:5px;font-family:Proxima Nova;">Date</th>
+                    <th style="width:5px; border: 0.5px solid #dddddd;text-align: center;padding:5px;font-family:Proxima Nova;">Task</th>
+                    <th style="width:5px; border: 0.5px solid #dddddd;text-align: center;padding:5px;font-family:Proxima Nova;">Field</th>
+                    <th style="width:5px; border: 0.5px solid #dddddd;text-align: center;padding:5px;font-family:Proxima Nova;">User</th>
+                    <th style="width:5px; border: 0.5px solid #dddddd;text-align: center;padding:5px;font-family:Proxima Nova;">Old Value</th>
+                    <th style="width:5px; border: 0.5px solid #dddddd;text-align: center;padding:5px;font-family:Proxima Nova;">New Value</th>
+                </tr>
+                <apex:repeat value="{!task}" var="task2">
+                    <tr>
+                        
+                        <td style="width:5px; border: 0.5px solid #FFFFFF;text-align: left;padding:5px;">
+                        
+                            <apex:outputText value="{0,date,MM/dd/yy}"> 
+                                <apex:param value="{!task2.CreatedDate}"/>
+                            </apex:outputText>
+                            
+                        </td>
+                        
+                        <td style="width:5px; border: 0.5px solid #FFFFFF;text-align: left;padding:5px;">{!task2.parent.name}</td>
+                        <td style="width:5px; border: 0.5px solid #FFFFFF;text-align: left;padding:5px;">{!task2.field}</td>
+                        <td style="width:5px; border: 0.5px solid #FFFFFF;text-align: left;padding:5px;">{!task2.createdby.name}</td>
+                       
+                        
+                        <td style="border: 0.5px solid #FFFFFF;text-align: left;padding:5px;">
+                        <apex:outputPanel rendered="{!if(contains(task2.field,'Date'), true, false)}">
+                        <apex:outputText value="{0,date,MM/dd/yy}"> 
+                                <apex:param value="{!task2.OldValue}"/>
+                            </apex:outputText>
+                        </apex:outputPanel>
+                        <apex:outputPanel rendered="{!if(not(contains(task2.field,'Date')), true, false)}">
+                        {!task2.OldValue}
+                        </apex:outputPanel>
+                        </td>
+                        <td style="border: 0.5px solid #FFFFFF;text-align: left;padding:5px;">
+                        <apex:outputPanel rendered="{!if(contains(task2.field,'Date'), true, false)}">
+                        <apex:outputText value="{0,date,MM/dd/yy}"> 
+                                <apex:param value="{!task2.OldValue}"/>
+                            </apex:outputText>
+                        </apex:outputPanel>
+                        <apex:outputPanel rendered="{!if(not(contains(task2.field,'Date')), true, false)}">
+                        {!task2.NewValue}
+                        </apex:outputPanel>
+                        
+                        </td>
+                      
+                    </tr>
+                </apex:repeat>
+            </table>
+
+            <h4 style="text-align:left;">Uploaded Documents</h4>
+            
+            <table style="border-collapse: collapse;width:100%;">
+                <tr>
+                    <th style="width:5px; border: 0.5px solid #dddddd;text-align: center;padding:5px;font-family:Proxima Nova;">Date</th>
+                    <th style="width:5px; border: 0.5px solid #dddddd;text-align: center;padding:5px;font-family:Proxima Nova;">Title</th>
+                    <th style="width:5px; border: 0.5px solid #dddddd;text-align: center;padding:5px;font-family:Proxima Nova;">Uploaded By</th>
+                    <th style="width:5px; border: 0.5px solid #dddddd;text-align: center;padding:5px;font-family:Proxima Nova;">Notes</th>
+                </tr>
+                <apex:repeat value="{!File}" var="task3">                    
+                    <tr>
+                        <td style="width:5px; border: 0.5px solid #FFFFFF;text-align: left;padding:5px;">
+                            <apex:outputText value="{0,date,MM/dd/yy}"> 
+                                <apex:param value="{!task3.CreatedDate}"/>
+                            </apex:outputText>
+                        </td>
+                        <td style="width:5px; border: 0.5px solid #FFFFFF;text-align: left;padding:5px;">{!task3.name}</td>
+                        <td style="width:5px; border: 0.5px solid #FFFFFF;text-align: left;padding:5px;">{!task3.createdby.name}</td>
+                        <td style="width:5px; border: 0.5px solid #FFFFFF;text-align: left;padding:5px;">{!task3.Description__c}</td>
+                    </tr>                    
+                </apex:repeat>
+            </table>
+
+            <h4 style="text-align:left;">Notes</h4>
+            
+            <table style="border-collapse: collapse;width:100%;">
+                <tr>
+                    <th style="width:5px; border: 0.5px solid #dddddd;text-align: center;padding:5px;font-family:Proxima Nova;">Date</th>
+                    <th style="width:5px; border: 0.5px solid #dddddd;text-align: center;padding:5px;font-family:Proxima Nova;">Title</th>
+                    <th style="width:5px; border: 0.5px solid #dddddd;text-align: center;padding:5px;font-family:Proxima Nova;">Note</th>
+                    <th style="width:5px; border: 0.5px solid #dddddd;text-align: center;padding:5px;font-family:Proxima Nova;">Created By</th>
+                </tr>
+                <apex:repeat value="{!notes}" var="note">                    
+                    <tr>
+                        <td style="width:5px; border: 0.5px solid #FFFFFF;text-align: left;padding:5px;">
+                            <apex:outputText value="{0,date,MM/dd/yy}"> 
+                                <apex:param value="{!note.CreatedDate}"/>
+                            </apex:outputText>
+                        </td>
+                        <td style="width:5px; border: 0.5px solid #FFFFFF;text-align: left;padding:5px;">{!note.Name}</td>
+                        <td style="width:5px; border: 0.5px solid #FFFFFF;text-align: left;padding:5px;"><apex:outputText value="{!note.Content__c}" escape="false" /></td>
+                        <td style="width:5px; border: 0.5px solid #FFFFFF;text-align: left;padding:5px;">{!note.createdby.name}</td>
+                    </tr>                    
+                </apex:repeat>
+                
+            </table>         
+        </body>
+
+    <!--</html>-->
+    <!--</apex:form>-->
+</apex:page>

@@ -1,0 +1,1414 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Complaint</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Complaints</value>
+    </caseValues>
+    <fields>
+        <label><!-- AKA --></label>
+        <name>AKA__c</name>
+    </fields>
+    <fields>
+        <label><!-- Actual Receive Date --></label>
+        <name>Actual_Receive_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Actual Received Month --></label>
+        <name>Actual_Received_Month__c</name>
+    </fields>
+    <fields>
+        <label><!-- Actual Received Year --></label>
+        <name>Actual_Received_Year__c</name>
+    </fields>
+    <fields>
+        <label><!-- Additional Solid Waste --></label>
+        <name>Additional_Solid_Waste_Checkbox__c</name>
+    </fields>
+    <fields>
+        <label><!-- Agricultural Commissioner --></label>
+        <name>Agricultural_Commissioner__c</name>
+        <relationshipLabel><!-- Complaints (Agricultural Commissioner) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Air Complaint Source Info --></label>
+        <name>Air_Complaint_Source_Info__c</name>
+        <picklistValues>
+            <masterLabel>Asbestos</masterLabel>
+            <translation><!-- Asbestos --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cars</masterLabel>
+            <translation><!-- Cars --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dust</masterLabel>
+            <translation><!-- Dust --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gas Stations</masterLabel>
+            <translation><!-- Gas Stations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Odors</masterLabel>
+            <translation><!-- Odors --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Off Road Equipment</masterLabel>
+            <translation><!-- Off Road Equipment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other Stationary Sources</masterLabel>
+            <translation><!-- Other Stationary Sources --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other Vehicles</masterLabel>
+            <translation><!-- Other Vehicles --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Painting</masterLabel>
+            <translation><!-- Painting --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Smoke</masterLabel>
+            <translation><!-- Smoke --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Trucks</masterLabel>
+            <translation><!-- Trucks --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Air District --></label>
+        <name>Air_District__c</name>
+        <relationshipLabel><!-- Complaints (Air Recommended Routing Partner) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Check this box if you have a general air pollution complaint, which includes open burning, stationary source emissions, fugitive dust emissions, and gasoline nozzles. --></help>
+        <label><!-- Air --></label>
+        <name>Air__c</name>
+    </fields>
+    <fields>
+        <help><!-- If the person submitting the complaint would like to remain anonymous, check this box here. --></help>
+        <label><!-- Anonymous --></label>
+        <name>Anonymous__c</name>
+    </fields>
+    <fields>
+        <label><!-- BDO For Report --></label>
+        <name>BDO_For_Report__c</name>
+    </fields>
+    <fields>
+        <label><!-- Bottles/Cans Recycling --></label>
+        <name>Bottles_Cans_Recycling__c</name>
+    </fields>
+    <fields>
+        <label><!-- CUPA --></label>
+        <name>CUPA__c</name>
+        <relationshipLabel><!-- Complaints (Toxics Recommended Routing Partner) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- CalEnviroScreen Score Percentile Rank --></label>
+        <name>CalEnviroScreen_Score_Percentile_Rank__c</name>
+    </fields>
+    <fields>
+        <label><!-- CalEnviroScreen Score --></label>
+        <name>CalEnviroScreen_Score__c</name>
+    </fields>
+    <fields>
+        <label><!-- Z_CalRecycle Subtype --></label>
+        <name>CalRecycle_Subtype__c</name>
+        <picklistValues>
+            <masterLabel>Facility</masterLabel>
+            <translation><!-- Facility --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Private Residence</masterLabel>
+            <translation><!-- Private Residence --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- CalRecycle --></label>
+        <name>CalRecycle__c</name>
+    </fields>
+    <fields>
+        <label><!-- Census Tract Number --></label>
+        <name>Census_Tract_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Closed Date --></label>
+        <name>Closed_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Complainant Email --></label>
+        <name>Complainant_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Complainant Mailing City --></label>
+        <name>Complainant_Mailing_City__c</name>
+    </fields>
+    <fields>
+        <label><!-- Complainant Mailing State --></label>
+        <name>Complainant_Mailing_State__c</name>
+    </fields>
+    <fields>
+        <label><!-- Complainant Mailing Street --></label>
+        <name>Complainant_Mailing_Street__c</name>
+    </fields>
+    <fields>
+        <label><!-- Complainant Mailing Zip Code --></label>
+        <name>Complainant_Mailing_Zip_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Complainant Mobile Phone --></label>
+        <name>Complainant_Mobile_Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Complainant Phone --></label>
+        <name>Complainant_Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Complainant --></label>
+        <name>Complainant__c</name>
+        <relationshipLabel><!-- Complaints --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Complaint location address or intersection --></help>
+        <label><!-- Complaint Location Address --></label>
+        <name>Complaint_Location_Address__c</name>
+    </fields>
+    <fields>
+        <help><!-- City of the complaint location --></help>
+        <label><!-- Complaint Location City --></label>
+        <name>Complaint_Location_City__c</name>
+    </fields>
+    <fields>
+        <help><!-- County where the complaint occurred --></help>
+        <label><!-- Complaint Location County --></label>
+        <name>Complaint_Location_County__c</name>
+        <picklistValues>
+            <masterLabel>Alameda County</masterLabel>
+            <translation><!-- Alameda County --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Alpine County</masterLabel>
+            <translation><!-- Alpine County --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Amador County</masterLabel>
+            <translation><!-- Amador County --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Butte County</masterLabel>
+            <translation><!-- Butte County --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Calaveras County</masterLabel>
+            <translation><!-- Calaveras County --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Colusa County</masterLabel>
+            <translation><!-- Colusa County --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Contra Costa County</masterLabel>
+            <translation><!-- Contra Costa County --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Del Norte County</masterLabel>
+            <translation><!-- Del Norte County --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>El Dorado County</masterLabel>
+            <translation><!-- El Dorado County --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fresno County</masterLabel>
+            <translation><!-- Fresno County --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Glenn County</masterLabel>
+            <translation><!-- Glenn County --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Humboldt County</masterLabel>
+            <translation><!-- Humboldt County --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Imperial County</masterLabel>
+            <translation><!-- Imperial County --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inyo County</masterLabel>
+            <translation><!-- Inyo County --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kern County</masterLabel>
+            <translation><!-- Kern County --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kings County</masterLabel>
+            <translation><!-- Kings County --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lake County</masterLabel>
+            <translation><!-- Lake County --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lassen County</masterLabel>
+            <translation><!-- Lassen County --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Los Angeles County</masterLabel>
+            <translation><!-- Los Angeles County --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Madera County</masterLabel>
+            <translation><!-- Madera County --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Marin County</masterLabel>
+            <translation><!-- Marin County --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mariposa County</masterLabel>
+            <translation><!-- Mariposa County --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mendocino County</masterLabel>
+            <translation><!-- Mendocino County --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Merced County</masterLabel>
+            <translation><!-- Merced County --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Modoc County</masterLabel>
+            <translation><!-- Modoc County --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mono County</masterLabel>
+            <translation><!-- Mono County --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Monterey County</masterLabel>
+            <translation><!-- Monterey County --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Napa County</masterLabel>
+            <translation><!-- Napa County --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nevada County</masterLabel>
+            <translation><!-- Nevada County --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Orange County</masterLabel>
+            <translation><!-- Orange County --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Placer County</masterLabel>
+            <translation><!-- Placer County --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Plumas County</masterLabel>
+            <translation><!-- Plumas County --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Riverside County</masterLabel>
+            <translation><!-- Riverside County --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sacramento County</masterLabel>
+            <translation><!-- Sacramento County --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>San Benito County</masterLabel>
+            <translation><!-- San Benito County --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>San Bernardino County</masterLabel>
+            <translation><!-- San Bernardino County --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>San Diego County</masterLabel>
+            <translation><!-- San Diego County --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>San Francisco County</masterLabel>
+            <translation><!-- San Francisco County --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>San Joaquin County</masterLabel>
+            <translation><!-- San Joaquin County --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>San Luis Obispo County</masterLabel>
+            <translation><!-- San Luis Obispo County --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>San Mateo County</masterLabel>
+            <translation><!-- San Mateo County --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Santa Barbara County</masterLabel>
+            <translation><!-- Santa Barbara County --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Santa Clara County</masterLabel>
+            <translation><!-- Santa Clara County --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Santa Cruz County</masterLabel>
+            <translation><!-- Santa Cruz County --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Shasta County</masterLabel>
+            <translation><!-- Shasta County --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sierra County</masterLabel>
+            <translation><!-- Sierra County --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Siskiyou County</masterLabel>
+            <translation><!-- Siskiyou County --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Solano County</masterLabel>
+            <translation><!-- Solano County --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sonoma County</masterLabel>
+            <translation><!-- Sonoma County --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Stanislaus County</masterLabel>
+            <translation><!-- Stanislaus County --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sutter County</masterLabel>
+            <translation><!-- Sutter County --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tehama County</masterLabel>
+            <translation><!-- Tehama County --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Trinity County</masterLabel>
+            <translation><!-- Trinity County --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tulare County</masterLabel>
+            <translation><!-- Tulare County --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tuolumne County</masterLabel>
+            <translation><!-- Tuolumne County --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ventura County</masterLabel>
+            <translation><!-- Ventura County --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yolo County</masterLabel>
+            <translation><!-- Yolo County --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yuba County</masterLabel>
+            <translation><!-- Yuba County --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Complaint Location Parcel Number --></label>
+        <name>Complaint_Location_Parcel_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Complaint Location State --></label>
+        <name>Complaint_Location_State__c</name>
+        <picklistValues>
+            <masterLabel>Alabama</masterLabel>
+            <translation><!-- Alabama --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Alaska</masterLabel>
+            <translation><!-- Alaska --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Arizona</masterLabel>
+            <translation><!-- Arizona --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Arkansas</masterLabel>
+            <translation><!-- Arkansas --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>California</masterLabel>
+            <translation><!-- California --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Colorado</masterLabel>
+            <translation><!-- Colorado --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Connecticut</masterLabel>
+            <translation><!-- Connecticut --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Delaware</masterLabel>
+            <translation><!-- Delaware --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Florida</masterLabel>
+            <translation><!-- Florida --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Georgia</masterLabel>
+            <translation><!-- Georgia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hawaii</masterLabel>
+            <translation><!-- Hawaii --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Idaho</masterLabel>
+            <translation><!-- Idaho --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Illinois</masterLabel>
+            <translation><!-- Illinois --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Indiana</masterLabel>
+            <translation><!-- Indiana --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Iowa</masterLabel>
+            <translation><!-- Iowa --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kansas</masterLabel>
+            <translation><!-- Kansas --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kentucky</masterLabel>
+            <translation><!-- Kentucky --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Louisiana</masterLabel>
+            <translation><!-- Louisiana --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Maine</masterLabel>
+            <translation><!-- Maine --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Maryland</masterLabel>
+            <translation><!-- Maryland --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Massachusetts</masterLabel>
+            <translation><!-- Massachusetts --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Michigan</masterLabel>
+            <translation><!-- Michigan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Minnesota</masterLabel>
+            <translation><!-- Minnesota --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mississippi</masterLabel>
+            <translation><!-- Mississippi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Missouri</masterLabel>
+            <translation><!-- Missouri --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Montana</masterLabel>
+            <translation><!-- Montana --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nebraska</masterLabel>
+            <translation><!-- Nebraska --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nevada</masterLabel>
+            <translation><!-- Nevada --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Hampshire</masterLabel>
+            <translation><!-- New Hampshire --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Jersey</masterLabel>
+            <translation><!-- New Jersey --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Mexico</masterLabel>
+            <translation><!-- New Mexico --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New York</masterLabel>
+            <translation><!-- New York --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>North Carolina</masterLabel>
+            <translation><!-- North Carolina --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>North Dakota</masterLabel>
+            <translation><!-- North Dakota --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ohio</masterLabel>
+            <translation><!-- Ohio --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oklahoma</masterLabel>
+            <translation><!-- Oklahoma --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oregon</masterLabel>
+            <translation><!-- Oregon --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pennsylvania</masterLabel>
+            <translation><!-- Pennsylvania --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rhode Island</masterLabel>
+            <translation><!-- Rhode Island --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>South Carolina</masterLabel>
+            <translation><!-- South Carolina --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>South Dakota</masterLabel>
+            <translation><!-- South Dakota --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tennessee</masterLabel>
+            <translation><!-- Tennessee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Texas</masterLabel>
+            <translation><!-- Texas --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Utah</masterLabel>
+            <translation><!-- Utah --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vermont</masterLabel>
+            <translation><!-- Vermont --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Virginia</masterLabel>
+            <translation><!-- Virginia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Washington</masterLabel>
+            <translation><!-- Washington --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>West Virginia</masterLabel>
+            <translation><!-- West Virginia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wisconsin</masterLabel>
+            <translation><!-- Wisconsin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wyoming</masterLabel>
+            <translation><!-- Wyoming --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Zip Code where the complaint occurred --></help>
+        <label><!-- Complaint Location Zip Code --></label>
+        <name>Complaint_Location_Zip_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Complaint Location --></label>
+        <name>Complaint_Location__c</name>
+    </fields>
+    <fields>
+        <label><!-- Complaint Source --></label>
+        <name>Complaint_Source__c</name>
+        <picklistValues>
+            <masterLabel>API</masterLabel>
+            <translation><!-- API --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Email</masterLabel>
+            <translation><!-- Email --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hardcopy Letter</masterLabel>
+            <translation><!-- Hardcopy Letter --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Person</masterLabel>
+            <translation><!-- In Person --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Phone</masterLabel>
+            <translation><!-- Phone --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Self Generated</masterLabel>
+            <translation><!-- Self Generated --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Web</masterLabel>
+            <translation><!-- Web --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Contact Email for notifications --></label>
+        <name>Contact_Email_for_notifications__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Referred --></label>
+        <name>Date_Referred__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date and approximate time of when the occurrence happened --></help>
+        <label><!-- Date and Time of Occurrence --></label>
+        <name>Date_and_Time_of_Occurrence__c</name>
+    </fields>
+    <fields>
+        <label><!-- Days Open Decimal --></label>
+        <name>Days_Open_Decimal__c</name>
+    </fields>
+    <fields>
+        <label><!-- Days Open --></label>
+        <name>Days_Open__c</name>
+    </fields>
+    <fields>
+        <label><!-- Days To Close --></label>
+        <name>Days_To_Close__c</name>
+    </fields>
+    <fields>
+        <label><!-- Days to Refer --></label>
+        <name>Days_to_Refer__c</name>
+    </fields>
+    <fields>
+        <label><!-- Days to Refer or Close --></label>
+        <name>Days_to_Refer_or_Close__c</name>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <help><!-- Bad taste, odors, or contamination in water supplied to your house or business; or concerns about your cityâ€™s water supply system or your municipal water supplier operations. --></help>
+        <label><!-- Drinking Water --></label>
+        <name>Drinking_Water__c</name>
+    </fields>
+    <fields>
+        <help><!-- Does the complaint have to do with Environmental Justice issues? --></help>
+        <label><!-- EJ Complaint --></label>
+        <name>EJ_Complaint__c</name>
+    </fields>
+    <fields>
+        <label><!-- EJ Flag --></label>
+        <name>EJ_Flag__c</name>
+    </fields>
+    <fields>
+        <label><!-- EnviroStor ID --></label>
+        <name>ESTOR_COMPLAINT_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- End of Quarter --></label>
+        <name>End_of_Quarter__c</name>
+    </fields>
+    <fields>
+        <label><!-- End of Year --></label>
+        <name>End_of_Year__c</name>
+    </fields>
+    <fields>
+        <label><!-- External Id --></label>
+        <name>External_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- How did you become aware of the incident --></label>
+        <name>How_did_you_become_aware_of_incident__c</name>
+    </fields>
+    <fields>
+        <label><!-- LEA --></label>
+        <name>LEA__c</name>
+        <relationshipLabel><!-- Complaints (Solid Waste Recommended Routing Partner) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Location Description --></label>
+        <name>Location_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Map Display --></label>
+        <name>Map_Display__c</name>
+    </fields>
+    <fields>
+        <label><!-- Map Link --></label>
+        <name>Map_Link__c</name>
+    </fields>
+    <fields>
+        <help><!-- Stream, river, lake, bay, groundwater basin, or coastal area --></help>
+        <label><!-- Name of Affected Water Source --></label>
+        <name>Name_of_Affected_Water_Source__c</name>
+    </fields>
+    <fields>
+        <label><!-- Nature of Pesticides Report --></label>
+        <name>Nature_of_Pesticides_Report__c</name>
+        <picklistValues>
+            <masterLabel>Pesticide Misuse</masterLabel>
+            <translation><!-- Pesticide Misuse --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Violation of Pesticide Sales</masterLabel>
+            <translation><!-- Violation of Pesticide Sales --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Number of BDOs --></label>
+        <name>Number_of_BDOs__c</name>
+    </fields>
+    <fields>
+        <help><!-- Is this complaint an on-going occurrence? --></help>
+        <label><!-- On-going Occurrence --></label>
+        <name>On_going_Occurrence__c</name>
+    </fields>
+    <fields>
+        <label><!-- Legacy Complaint ID --></label>
+        <name>Original_Complaint_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Other Relationship --></label>
+        <name>Other_Relationship__c</name>
+    </fields>
+    <fields>
+        <help><!-- Examples are misuse of water project grants or loans, or misconduct by wastewater treatment plant operators. --></help>
+        <label><!-- Other Water Related Concerns --></label>
+        <name>Other_Water_Related_Concerns__c</name>
+    </fields>
+    <fields>
+        <help><!-- Mark this check box if the complaint is a pesticides related issue --></help>
+        <label><!-- Pesticides --></label>
+        <name>Pesticides__c</name>
+    </fields>
+    <fields>
+        <label><!-- Other Organizations Referred To --></label>
+        <name>Previous_Organizations__c</name>
+    </fields>
+    <fields>
+        <label><!-- Referred Agencies --></label>
+        <name>Referred_Agencies__c</name>
+    </fields>
+    <fields>
+        <label><!-- Referring Account --></label>
+        <name>Referring_Account__c</name>
+        <relationshipLabel><!-- Complaints (Referring Account) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Referring Agency --></label>
+        <name>Referring_Agency__c</name>
+    </fields>
+    <fields>
+        <label><!-- Person Referring&apos;s Email Address --></label>
+        <name>Referring_Email_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- Name of Person Referring --></label>
+        <name>Referring_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- Used for website to show or hide referral agency fields --></help>
+        <label><!-- Referring --></label>
+        <name>Referring__c</name>
+    </fields>
+    <fields>
+        <label><!-- Refinery --></label>
+        <name>Refinery__c</name>
+    </fields>
+    <fields>
+        <label><!-- Regional Water Board --></label>
+        <name>Regional_Water_Board__c</name>
+    </fields>
+    <fields>
+        <label><!-- Relationship to Responsible Party --></label>
+        <name>Relationship_to_Responsible_Party__c</name>
+        <picklistValues>
+            <masterLabel>Current Employee</masterLabel>
+            <translation><!-- Current Employee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Neighbor</masterLabel>
+            <translation><!-- Neighbor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>None</masterLabel>
+            <translation><!-- None --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Previous Employee</masterLabel>
+            <translation><!-- Previous Employee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tenant</masterLabel>
+            <translation><!-- Tenant --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Reported to CAC? --></label>
+        <name>Reported_to_CAC__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Response Contact --></label>
+        <name>Response_Contact__c</name>
+    </fields>
+    <fields>
+        <label><!-- Response Type Date --></label>
+        <name>Response_Type_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Response Type --></label>
+        <name>Response_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Responsible Party City --></label>
+        <name>Responsible_Party_City__c</name>
+    </fields>
+    <fields>
+        <label><!-- Responsible Party Company --></label>
+        <name>Responsible_Party_Company__c</name>
+    </fields>
+    <fields>
+        <label><!-- Responsible Party Name --></label>
+        <name>Responsible_Party_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Responsible Party Phone --></label>
+        <name>Responsible_Party_Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Responsible Party State --></label>
+        <name>Responsible_Party_State__c</name>
+        <picklistValues>
+            <masterLabel>Alabama</masterLabel>
+            <translation><!-- Alabama --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Alaska</masterLabel>
+            <translation><!-- Alaska --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Arizona</masterLabel>
+            <translation><!-- Arizona --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Arkansas</masterLabel>
+            <translation><!-- Arkansas --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>California</masterLabel>
+            <translation><!-- California --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Colorado</masterLabel>
+            <translation><!-- Colorado --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Connecticut</masterLabel>
+            <translation><!-- Connecticut --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Delaware</masterLabel>
+            <translation><!-- Delaware --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Florida</masterLabel>
+            <translation><!-- Florida --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Georgia</masterLabel>
+            <translation><!-- Georgia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hawaii</masterLabel>
+            <translation><!-- Hawaii --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Idaho</masterLabel>
+            <translation><!-- Idaho --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Illinois</masterLabel>
+            <translation><!-- Illinois --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Indiana</masterLabel>
+            <translation><!-- Indiana --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Iowa</masterLabel>
+            <translation><!-- Iowa --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kansas</masterLabel>
+            <translation><!-- Kansas --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kentucky</masterLabel>
+            <translation><!-- Kentucky --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Louisiana</masterLabel>
+            <translation><!-- Louisiana --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Maine</masterLabel>
+            <translation><!-- Maine --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Maryland</masterLabel>
+            <translation><!-- Maryland --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Massachusetts</masterLabel>
+            <translation><!-- Massachusetts --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Michigan</masterLabel>
+            <translation><!-- Michigan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Minnesota</masterLabel>
+            <translation><!-- Minnesota --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mississippi</masterLabel>
+            <translation><!-- Mississippi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Missouri</masterLabel>
+            <translation><!-- Missouri --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Montana</masterLabel>
+            <translation><!-- Montana --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nebraska</masterLabel>
+            <translation><!-- Nebraska --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nevada</masterLabel>
+            <translation><!-- Nevada --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Hampshire</masterLabel>
+            <translation><!-- New Hampshire --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Jersey</masterLabel>
+            <translation><!-- New Jersey --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Mexico</masterLabel>
+            <translation><!-- New Mexico --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New York</masterLabel>
+            <translation><!-- New York --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>North Carolina</masterLabel>
+            <translation><!-- North Carolina --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>North Dakota</masterLabel>
+            <translation><!-- North Dakota --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ohio</masterLabel>
+            <translation><!-- Ohio --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oklahoma</masterLabel>
+            <translation><!-- Oklahoma --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oregon</masterLabel>
+            <translation><!-- Oregon --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pennsylvania</masterLabel>
+            <translation><!-- Pennsylvania --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rhode Island</masterLabel>
+            <translation><!-- Rhode Island --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>South Carolina</masterLabel>
+            <translation><!-- South Carolina --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>South Dakota</masterLabel>
+            <translation><!-- South Dakota --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tennessee</masterLabel>
+            <translation><!-- Tennessee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Texas</masterLabel>
+            <translation><!-- Texas --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Utah</masterLabel>
+            <translation><!-- Utah --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vermont</masterLabel>
+            <translation><!-- Vermont --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Virginia</masterLabel>
+            <translation><!-- Virginia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Washington</masterLabel>
+            <translation><!-- Washington --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>West Virginia</masterLabel>
+            <translation><!-- West Virginia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wisconsin</masterLabel>
+            <translation><!-- Wisconsin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wyoming</masterLabel>
+            <translation><!-- Wyoming --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Responsible Party Street --></label>
+        <name>Responsible_Party_Street__c</name>
+    </fields>
+    <fields>
+        <label><!-- Responsible Party Zip Code --></label>
+        <name>Responsible_Party_Zip_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sensitive Location --></label>
+        <name>Sensitive_Location__c</name>
+        <picklistValues>
+            <masterLabel>Hospitals/Eldercare Home</masterLabel>
+            <translation><!-- Hospitals/Eldercare Home --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ocean/Lakes/Stream/Riverbed/Wetlands</masterLabel>
+            <translation><!-- Ocean/Lakes/Stream/Riverbed/Wetlands --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Public Parks/State and National Parks</masterLabel>
+            <translation><!-- Public Parks/State and National Parks --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Residences/Apartments</masterLabel>
+            <translation><!-- Residences/Apartments --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>School/Daycare/Churches</masterLabel>
+            <translation><!-- School/Daycare/Churches --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Storm Drain</masterLabel>
+            <translation><!-- Storm Drain --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unknown</masterLabel>
+            <translation><!-- Unknown --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Mark this check box if the complaint is a solid waste issue --></help>
+        <label><!-- Solid Waste --></label>
+        <name>Solid_Waste__c</name>
+    </fields>
+    <fields>
+        <help><!-- Is this a spill complaint? --></help>
+        <label><!-- Spill --></label>
+        <name>Spill__c</name>
+    </fields>
+    <fields>
+        <label><!-- Staff Date --></label>
+        <name>Staff_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Staff --></label>
+        <name>Staff__c</name>
+    </fields>
+    <fields>
+        <help><!-- Under Review: Initial investigation is in progress or trying to Refer
+Transferred:  Complaint has been assigned internally
+Referred:  Complaint has been assigned and confirmed to an external partner
+Closed/Actions Taken:  Closed for Cal EPA --></help>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Closed</masterLabel>
+            <translation><!-- Closed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Open</masterLabel>
+            <translation><!-- Open --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Supervisor Date --></label>
+        <name>Supervisor_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Supervisor --></label>
+        <name>Supervisor__c</name>
+    </fields>
+    <fields>
+        <label><!-- Temp Contact Email --></label>
+        <name>Temp_Contact_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Test Data --></label>
+        <name>Test_Data__c</name>
+    </fields>
+    <fields>
+        <help><!-- Mark this check box if the complaint is a toxic substances related issue --></help>
+        <label><!-- Toxic Substances --></label>
+        <name>Toxic_Substances__c</name>
+    </fields>
+    <fields>
+        <label><!-- Toxics Other Location --></label>
+        <name>Toxics_Other_Location__c</name>
+    </fields>
+    <fields>
+        <help><!-- Does the complaint have to do with Tribal issues? --></help>
+        <label><!-- Tribal Complaint --></label>
+        <name>Tribal_Complaint__c</name>
+    </fields>
+    <fields>
+        <label><!-- Unknown Date of Occurrence --></label>
+        <name>Unknown_Date_of_Occurrence__c</name>
+        <picklistValues>
+            <masterLabel>A Long Time Ago</masterLabel>
+            <translation><!-- A Long Time Ago --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Exact Date</masterLabel>
+            <translation><!-- Exact Date --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In the Last 30 Days</masterLabel>
+            <translation><!-- In the Last 30 Days --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In the Last 7 Days</masterLabel>
+            <translation><!-- In the Last 7 Days --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unknown</masterLabel>
+            <translation><!-- Unknown --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Is this air complaint regarding a fixed structure (building, house etc.) or a Vehicle (trucks, cars, transportation vehicles)? --></help>
+        <label><!-- Vehicle or Stationary --></label>
+        <name>Vehicle_or_Stationary__c</name>
+        <picklistValues>
+            <masterLabel>Stationary Source</masterLabel>
+            <translation><!-- Stationary Source --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vehicle</masterLabel>
+            <translation><!-- Vehicle --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Waste Tires --></label>
+        <name>Waste_Tires__c</name>
+    </fields>
+    <fields>
+        <help><!-- Pollution of waterways and land due to trash, chemicals, and pesticides associated with cannabis cultivation, or use of water for irrigation of cannabis plants or grading, excavation, road construction, and site development. --></help>
+        <label><!-- Water - Cannabis/Marijuana --></label>
+        <name>Water_Cannabis_Marijuana__c</name>
+    </fields>
+    <fields>
+        <help><!-- Problems  or pollution in a stream, river, lake, wetlands, bay, groundwater basin, or the ocean resulting from discharges of polluted water or stormwater, or from other activities such as construction, grading, and excavations. --></help>
+        <label><!-- Water Quality --></label>
+        <name>Water_Quality__c</name>
+    </fields>
+    <fields>
+        <label><!-- Water Rights Number --></label>
+        <name>Water_Right_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Water Rights Description --></label>
+        <name>Water_Rights_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Water Rights Owner --></label>
+        <name>Water_Rights_Owner__c</name>
+        <picklistValues>
+            <masterLabel>Alleged Responsible Party</masterLabel>
+            <translation><!-- Alleged Responsible Party --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Complainant</masterLabel>
+            <translation><!-- Complainant --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Water diversions from a stream, river, or lake, or extractions of groundwater that may be unauthorized or illegal, may be impacting your water rights, may be wasteful and unreasonable use of water, or may be impacting fish, wildlife or habitats. --></help>
+        <label><!-- Water Rights --></label>
+        <name>Water_Rights__c</name>
+    </fields>
+    <fields>
+        <help><!-- Mark this check box if the complaint is a water related issue --></help>
+        <label><!-- Water --></label>
+        <name>Water__c</name>
+    </fields>
+    <fields>
+        <label><!-- Watershed --></label>
+        <name>Watershed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Whistle Blower? --></label>
+        <name>Whistle_Blower__c</name>
+    </fields>
+    <layouts>
+        <layout>Complaints Layout</layout>
+        <sections>
+            <label><!-- Air --></label>
+            <section>Air</section>
+        </sections>
+        <sections>
+            <label><!-- Alleged Responsible Party --></label>
+            <section>Alleged Responsible Party</section>
+        </sections>
+        <sections>
+            <label><!-- Complainant Information --></label>
+            <section>Complainant Information</section>
+        </sections>
+        <sections>
+            <label><!-- Complaint Location Information --></label>
+            <section>Complaint Location Information</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Dates --></label>
+            <section>Dates</section>
+        </sections>
+        <sections>
+            <label><!-- Description --></label>
+            <section>Description</section>
+        </sections>
+        <sections>
+            <label><!-- EnviroStor --></label>
+            <section>EnviroStor</section>
+        </sections>
+        <sections>
+            <label><!-- Location Description --></label>
+            <section>Location Description</section>
+        </sections>
+        <sections>
+            <label><!-- Pesticides --></label>
+            <section>Pesticides</section>
+        </sections>
+        <sections>
+            <label><!-- Referring Details --></label>
+            <section>Referring Details</section>
+        </sections>
+        <sections>
+            <label><!-- Solid Waste/CalRecycle --></label>
+            <section>Solid Waste/CalRecycle</section>
+        </sections>
+        <sections>
+            <label><!-- Special Circumstances --></label>
+            <section>Special Circumstances</section>
+        </sections>
+        <sections>
+            <label><!-- Toxic Substances --></label>
+            <section>Toxic Substances</section>
+        </sections>
+        <sections>
+            <label><!-- Water --></label>
+            <section>Water</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <description><!-- Air Complaint Record Type. --></description>
+        <label><!-- Air --></label>
+        <name>Air</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Parent complaint Record Type.. --></description>
+        <label><!-- Parent --></label>
+        <name>Parent</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Pesticide complaint Record Type. --></description>
+        <label><!-- Pesticides --></label>
+        <name>Pesticides</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Solid waste complaint Record Type. --></description>
+        <label><!-- Solid Waste --></label>
+        <name>Solid_Waste</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Toxic substance complaint Record Type. --></description>
+        <label><!-- Toxic Substance --></label>
+        <name>Toxic_Substance</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Water Complaint Record Type. --></description>
+        <label><!-- Water --></label>
+        <name>Water</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Please do not enter PO Boxes for the Complaint Location Address.  This must be a physical address. --></errorMessage>
+        <name>No_PO_Boxes_for_Complaint_Location</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Print_Complaint --></label>
+        <name>Print_Complaint</name>
+    </webLinks>
+</CustomObjectTranslation>

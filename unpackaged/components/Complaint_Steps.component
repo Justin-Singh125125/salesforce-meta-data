@@ -1,0 +1,38 @@
+<apex:component layout="none">
+	<apex:attribute name="step" description="Current Step" type="Integer" required="false" default="1" />
+
+	<div class="row bs-wizard" >
+		<div class="col-xs-3 bs-wizard-step  {! if(step > 1,'complete','') } {! if(step = 1,'active','')}">
+			<div class="text-center bs-wizard-stepnum">{!$LABEL.COMPLAINT_LBL_Start}</div>
+			<div class="progress">
+				<div class="progress-bar"></div>
+			</div>
+			<a href="#" class="bs-wizard-dot"></a>
+			<div class="bs-wizard-info text-center"></div>
+		</div>
+		<div class="col-xs-3 bs-wizard-step  {! if(step > 1,'complete','disabled') } {! if(step = 2,'active','')}"><!-- complete -->
+			<div class="text-center bs-wizard-stepnum">{!$LABEL.COMPLAINT_LBL_Details}</div>
+			<div class="progress">
+				<div class="progress-bar"></div>
+			</div>
+			<a href="#" class="bs-wizard-dot"></a>
+			<div class="bs-wizard-info text-center"></div>
+		</div>
+		<div class="col-xs-3 bs-wizard-step {! if(step > 2,'complete','disabled') } {! if(step = 3,'active','')}"><!-- complete -->
+			<div class="text-center bs-wizard-stepnum">{!$LABEL.COMPLAINT_LBL_Complete}</div>
+			<div class="progress">
+				<div class="progress-bar"></div>
+			</div>
+			<a href="#" class="bs-wizard-dot"></a>
+			<div class="bs-wizard-info text-center"></div>
+		</div>
+		<div class="col-xs-3 bs-wizard-step  {! if(step > 3,'complete','disabled') } {! if(step = 4,'active','')}"><!-- active -->
+			<div class="text-center bs-wizard-stepnum">{!$LABEL.COMPLAINT_LBL_Confirmation}</div>
+			<div class="progress">
+				<div class="progress-bar"></div>
+			</div>
+			<a href="#" class="bs-wizard-dot"></a>
+			<div class="bs-wizard-info text-center"></div>
+		</div>
+	</div>
+</apex:component>

@@ -1,0 +1,10 @@
+DO NOT REPLY TO THIS MESSAGE. <br/>
+<br/>
+Dear {!Complaints__c.Complainant__r.Name},<br/>
+<br/>
+This message relates to the environmental complaint number {!Complaints__c.Name} you submitted to the California Environmental Protection Agency (CalEPA) on {!Complaints__c.Actual_Receive_Date__c}. Your complaint is being handled by the following agencies: <br/>
+[[IndividualBDOs]]
+<br/>
+Your complaint is still being investigated. We will notify you once the complaint has been closed. <
+<br/>
+Thank you.

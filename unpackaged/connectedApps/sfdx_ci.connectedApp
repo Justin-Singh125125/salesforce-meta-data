@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConnectedApp xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contactEmail>daniel.alden@calepa.ca.gov</contactEmail>
+    <contactPhone>9164456802</contactPhone>
+    <label>sfdx ci</label>
+    <oauthConfig>
+        <callbackUrl>http://localhost:1717/OauthRedirect</callbackUrl>
+        <certificate>MIIDuzCCAqMCFDTKGlbYpZXvK52zcbl5uVqFxFnCMA0GCSqGSIb3DQEBCwUAMIGZMQswCQYDVQQGEwJVUzETMBEGA1UECAwKQ2FsaWZvcm5pYTETMBEGA1UEBwwKU2FjcmFtZW50bzEPMA0GA1UECgwGQ2FsRVBBMQswCQYDVQQLDAJJVDEZMBcGA1UEAwwQQ29tcGxhaW50cyBBZG1pbjEnMCUGCSqGSIb3DQEJARYYY29tcGxhaW50c0BjYWxlcGEuY2EuZ292MB4XDTE4MTExNTIyNTQzNVoXDTE5MTExNTIyNTQzNVowgZkxCzAJBgNVBAYTAlVTMRMwEQYDVQQIDApDYWxpZm9ybmlhMRMwEQYDVQQHDApTYWNyYW1lbnRvMQ8wDQYDVQQKDAZDYWxFUEExCzAJBgNVBAsMAklUMRkwFwYDVQQDDBBDb21wbGFpbnRzIEFkbWluMScwJQYJKoZIhvcNAQkBFhhjb21wbGFpbnRzQGNhbGVwYS5jYS5nb3YwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDbL6ctsWrZWRaMbuzYHTSpzUSwixzVhkHF52cTBCo6uiNK9TZqs328UuSG9SITFAFOrTFlnQjq9CaccFLYX8aUgXIR3dBJVZ6N17570EWccOaHaP4jSVoJZ43VPEYTK96efYvlqM4wwnmy6dTXlTOI+BNUli/RyBZ946Z7V9sB/F/+ipp4ckTyLbTqdDgNMPmA3Q3uWFBaSqiutr2++HLOhepTTebHIKwOodzJcr7mUxcbCxBWzrBXVfrBQeFOYfkjnXwJxZ/eKeCOJorIfVFXsKNBOB9DJnye31+MFLPeexJVXKPi8X6WXOKZXdhf3HQpLRg/J2D2XsD+NRFYpUjBAgMBAAEwDQYJKoZIhvcNAQELBQADggEBAJrZQgkTdjl05EAx0Yrz3PoboUp2Z6yFA5HGGCUUaW/YNPrPz8wUYwhdmtUspDgG29zzk/EHnqjreczdLNFuCN8gcGhVQVdjbKq0aJI+IWTM2lgfjWvcRo2NQqSRNXtDJfLAgdlw2ktS3EFgp1tZ3Mf5ul7q4kVA2ssQ+/s3H56LcqPsqaq35CNq9O3oKmeY7szDjhcv+jVUsOFigidIUeA478hnJa63lbYywfGv6gepHbzJpM6k+FAUWf/xN1auaShbfaavPGbivscEdEWTfKglA1oCmY7Wvf6mDVZvFZGgoHTcgt5k7WI4WUNtqUFZ3QE8ntgeKuRP0P28yC+eW1M=</certificate>
+        <consumerKey>3MVG9ic.6IFhNpPpl4rB4t2aE7zQMcNaDjp2syVxyePXjc1Tehnhob__qlfpuGD6dSkIjboc5X5JyGlaRh4cS</consumerKey>
+        <isAdminApproved>true</isAdminApproved>
+        <scopes>Api</scopes>
+        <scopes>Web</scopes>
+        <scopes>RefreshToken</scopes>
+    </oauthConfig>
+    <permissionSetName>Complaint Management Developer</permissionSetName>
+    <permissionSetName>sfdx ci</permissionSetName>
+</ConnectedApp>

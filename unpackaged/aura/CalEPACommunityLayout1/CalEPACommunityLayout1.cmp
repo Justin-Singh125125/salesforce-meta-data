@@ -1,0 +1,15 @@
+<aura:component implements="forceCommunity:layout" description="CalEPA Content Layout" access="global">
+    <aura:attribute name="header" type="Aura.Component[]" required="false"></aura:attribute>    
+    <aura:attribute name="content" type="Aura.Component[]" required="false"></aura:attribute>    
+    <aura:attribute name="footer" type="Aura.Component[]" required="false"></aura:attribute>    
+    <div id="main-content" class="main-content">
+        <div class="section">
+            {!v.header}                
+        	<div class="main-primary"><!--main-->
+                {!v.content}                
+            </div>
+            {!v.footer}                
+        </div>
+        <span class="return-top"/>
+    </div> 
+</aura:component>

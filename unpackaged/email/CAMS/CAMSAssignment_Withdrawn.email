@@ -1,0 +1,11 @@
+***Assignment Withdrawn***
+
+The following Assignment is has been Withdrawn.
+
+CAMS ID: {!CAMS_Assignment__c.Name} 
+Subject: {!CAMS_Assignment__c.Subject__c} 
+Type: {!CAMS_Assignment__c.Type__c}
+
+
+Please use the following link to view the task in CAMS: 
+{!CAMS_Assignment__c.Link}

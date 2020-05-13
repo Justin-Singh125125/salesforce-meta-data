@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>Complaint_Sharing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Complaint Sharing</label>
+        <sharedTo>
+            <group>Complaint_Management_Users</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Parent</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>DTSC_Evaluator_Complaint_Sharing_Rule</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>DTSC Evaluator Complaint Sharing Rule</label>
+        <sharedTo>
+            <group>DTSC_Evaluators_Complaint_Management</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Parent</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>External_Partner_Portal_Complaint_Sharing_Rule</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>External Partner Portal Complaint Sharing Rule</label>
+        <sharedTo>
+            <group>External_Partner_Portal_Complaints</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Parent</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Share_Complaints_with_Complaint_Management_Public_Group</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Share Complaints with Complaint Management Public Group...</description>
+        <label>Share Complaints with Complaint Management Public Group</label>
+        <sharedTo>
+            <group>Complaint_Management_Users</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Name</field>
+            <operation>startsWith</operation>
+            <value>COMP</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Share_Complaints_with_External_Partner_Portal</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Share Complaints with External Partner Portal..</description>
+        <label>Share Complaints with External Partner Portal</label>
+        <sharedTo>
+            <group>External_Partner_Portal_Complaints</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Name</field>
+            <operation>startsWith</operation>
+            <value>COMP</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+</SharingRules>

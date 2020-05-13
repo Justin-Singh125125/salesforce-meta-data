@@ -1,0 +1,281 @@
+<apex:page applyBodyTag="false"
+cache="false"  applyHTMLTag="false" 
+    docType="HTML-5.0" 
+    id="FindingReferralSelector" 
+    sidebar="false" 
+    showChat="false" 
+    showHeader="false"  
+    standardController="Finding__c" 
+    standardStylesheets="false" 
+    extensions="ExternalPartnerPortalController"
+    action="{!LoadFindingReferralSelector}"> 
+    <apex:composition template="ExternalPartnerLayout">
+        <apex:define name="ExternalPartnerLayoutTitle"></apex:define>
+        <apex:define name="PageCss">
+            <apex:stylesheet value="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css"/>            
+            <style>
+                .messageText h4
+                {
+                    display:none;
+                }
+                .messageText
+                {
+                    color:red;
+                }
+            </style>
+        </apex:define>        
+        <apex:define name="ExternalPartnerLayoutBody">
+            <h2 id="complaintNumber">{!FindingReferralSelectorViewModel.ComplaintNumber}</h2>
+            <div class="group" id="AdditionalSelections">
+                <div class="full-width">
+                    <div class="panel panel-understated">
+                        <div class="panel-heading">
+                            <h4>Please Select Your Agency/Department</h4>
+                        </div>
+                        <div class="panel-body" id="table_container">
+                            <apex:form id="AccountSelectionForm" html-role="form">    
+                                <apex:inputHidden value="{!FindingReferralSelectorViewModel.ComplaintId}" html-class="complaintId"/>
+                                <apex:inputHidden value="{!FindingReferralSelectorViewModel.AccountId}" html-class="accountId"/>
+                                <div class="group">
+                                    <div class="full-width"> 
+                                        <apex:actionFunction name="RedirectToExternalPartnerAccountCreation" action="{!RedirectToExternalPartnerAccountCreation}" />
+                                        <div id="Loading" class="pull-left">
+                                            <img src="http://www.oldnavy.com/products/res/images/spinner.gif" />
+                                            Loading
+                                        </div>
+                                        <a id="AccountNotFound" href="#" class="btn pull-right" style="color: red;"><span class="ca-gov-icon-important"></span> Click here if you cannot find your agency</a> 
+                                    </div>
+                                </div>
+                                <div class="tab-group">
+                                    <span class="ca-gov-icon-favorite"></span>
+                                    <input id="TypeFilter" type="hidden" value="All"/>
+                                    <!-- Nav tabs - NOTE: UNIQUE ID IS REQUIRED -->
+                                    <ul id="homeTabs" class="nav nav-tabs responsive" role="tablist">
+                                        <li  class="active"><a class="type" href="#All" role="tab" data-toggle="tab">All</a></li>
+                                        <!--<li><a href="#AgWaterSupply" role="tab" data-toggle="tab">Ag Water Supply</a></li>-->
+                                        <li><a class="type" data-type="Air District" href="#AirDistrict" role="tab" data-toggle="tab">Air District</a></li>                                    
+                                        <li><a class="type" data-type="County Agricultural Commissioner" href="#CountyAgriculturalCommissioner" role="tab" data-toggle="tab">Ag Commissioner</a></li>
+                                        <li><a class="type" data-type="CUPA" href="#CUPA" role="tab" data-toggle="tab">CUPA</a></li>
+                                        <li><a class="type" data-type="LEA" href="#LEA" role="tab" data-toggle="tab">LEA</a></li>
+                                        <li><a class="type" data-type="State Water Resources Regional Board" href="#StateWaterResourcesRegionalBoard" role="tab" data-toggle="tab">Regional Water Board</a></li>                                    
+                                        <li><a class="type" data-type="City/Local Agency" href="#CityLocalAgency" role="tab" data-toggle="tab">City/Local Agency</a></li>
+                                        <li><a class="type" data-type="State Agency" href="#StateAgency" role="tab" data-toggle="tab">State Agency</a></li>                                    
+                                        <li><a class="type" data-type="Federal Agency" href="#FederalAgency" role="tab" data-toggle="tab">Federal Agency</a></li>
+                                        <!--<li><a href="#DistrictCityAttorneyOffice" role="tab" data-toggle="tab">District/City Attorney Office</a></li>
+                                        <li><a href="#DivisionofWaterRightsPartnerAgency" role="tab" data-toggle="tab">Division of Water Rights Partner Agency</a></li>
+                                        <li><a href="#DoD" role="tab" data-toggle="tab">DoD</a></li>
+                                        <li><a href="#LocalLawEnforcement" role="tab" data-toggle="tab">Local Law Enforcement</a></li>
+                                        <li><a href="#LPA" role="tab" data-toggle="tab">LPA</a></li>
+                                        <li><a href="#MS4" role="tab" data-toggle="tab">MS4</a></li>
+                                        <li><a href="#OWTS" role="tab" data-toggle="tab">OWTS</a></li>
+                                        <li><a href="#SmallWaterSupplier" role="tab" data-toggle="tab">Small Water Supplier</a></li>
+                                        <li><a href="#SWRCBDivisionorOffice" role="tab" data-toggle="tab">SWRCB Division or Office</a></li>
+                                        <li><a href="#UrbanWaterSupplier" role="tab" data-toggle="tab">Urban Water Supplier</a></li>
+                                        <li><a href="#VectorControl" role="tab" data-toggle="tab">Vector Control</a></li>
+                                        <li><a href="#WasteWater" role="tab" data-toggle="tab">Waste Water</a></li>
+                                        <li><a href="#WaterSupplier" role="tab" data-toggle="tab">Water Supplier</a></li>-->
+                                    </ul>
+                                    <!-- Tab panes -->
+                                    <div class="tab-content responsive">
+                                        <!--Left Blank on Purpose -->
+                                    </div>
+                                    <div class="full-width" style="justify; text-justify: inter-word; padding-top: 5px;">
+                                        Filter:&nbsp;&nbsp;<input type="text" id="TextFilter"/>
+                                        <span class="pull-right">
+                                            <a href="#"  id="ALL-Letter" class="letter" data-letter="ALL">ALL</a>&nbsp;&nbsp;|&nbsp;
+                                            <a href="#"  id="A-Letter" class="letter" data-letter="A">A</a>&nbsp;&nbsp;|&nbsp;
+                                            <a href="#"  id="B-Letter" class="letter" data-letter="B">B</a>&nbsp;&nbsp;|&nbsp;
+                                            <a href="#"  id="C-Letter" class="letter" data-letter="C">C</a>&nbsp;&nbsp;|&nbsp;
+                                            <a href="#"  id="D-Letter" class="letter" data-letter="D">D</a>&nbsp;&nbsp;|&nbsp;
+                                            <a href="#"  id="E-Letter" class="letter" data-letter="E">E</a>&nbsp;&nbsp;|&nbsp;
+                                            <a href="#"  id="F-Letter" class="letter" data-letter="F">F</a>&nbsp;&nbsp;|&nbsp;
+                                            <a href="#"  id="G-Letter" class="letter" data-letter="G">G</a>&nbsp;&nbsp;|&nbsp;
+                                            <a href="#"  id="H-Letter" class="letter" data-letter="H">H</a>&nbsp;&nbsp;|&nbsp;
+                                            <a href="#"  id="I-Letter" class="letter" data-letter="I">I</a>&nbsp;&nbsp;|&nbsp;
+                                            <a href="#"  id="J-Letter" class="letter" data-letter="J">J</a>&nbsp;&nbsp;|&nbsp;
+                                            <a href="#"  id="K-Letter" class="letter" data-letter="K">K</a>&nbsp;&nbsp;|&nbsp;
+                                            <a href="#"  id="L-Letter" class="letter" data-letter="L">L</a>&nbsp;&nbsp;|&nbsp;
+                                            <a href="#"  id="M-Letter" class="letter" data-letter="M">M</a>&nbsp;&nbsp;|&nbsp;
+                                            <a href="#"  id="N-Letter" class="letter" data-letter="N">N</a>&nbsp;&nbsp;|&nbsp;
+                                            <a href="#"  id="O-Letter" class="letter" data-letter="O">O</a>&nbsp;&nbsp;|&nbsp;
+                                            <a href="#"  id="P-Letter" class="letter" data-letter="P">P</a>&nbsp;&nbsp;|&nbsp;
+                                            <a href="#"  id="Q-Letter" class="letter" data-letter="Q">Q</a>&nbsp;&nbsp;|&nbsp;
+                                            <a href="#"  id="R-Letter" class="letter" data-letter="R">R</a>&nbsp;&nbsp;|&nbsp;
+                                            <a href="#"  id="S-Letter" class="letter" data-letter="S">S</a>&nbsp;&nbsp;|&nbsp;
+                                            <a href="#"  id="T-Letter" class="letter" data-letter="T">T</a>&nbsp;&nbsp;|&nbsp;
+                                            <a href="#"  id="U-Letter" class="letter" data-letter="U">U</a>&nbsp;&nbsp;|&nbsp;
+                                            <a href="#"  id="V-Letter" class="letter" data-letter="V">V</a>&nbsp;&nbsp;|&nbsp;
+                                            <a href="#"  id="W-Letter" class="letter" data-letter="W">W</a>&nbsp;&nbsp;|&nbsp;
+                                            <a href="#"  id="X-Letter" class="letter" data-letter="X">X</a>&nbsp;&nbsp;|&nbsp;
+                                            <a href="#"  id="Y-Letter" class="letter" data-letter="Y">Y</a>&nbsp;&nbsp;|&nbsp;
+                                            <a href="#"  id="Z-Letter" class="letter" data-letter="Z">Z</a>
+                                            <input id="LetterFilter" type="hidden" value="ALL" />
+                                        </span>
+                                    </div>
+                                    <table id="AccountTable" class="table table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th></th>
+                                                <th>Agency Name</th>
+                                            </tr>
+                                        </thead>
+                                    </table>                                        
+                                    <div class="full-width">
+                                        <a id="PreviousPage" href="#" class="pull-left">&laquo; Previous Page</a>
+                                        <input id="PageNumber" type="hidden" value="0"/>
+                                        <input id="TotalPages" type="hidden"/>
+                                        <a id="NextPage" href="#" class="pull-right">Next Page &raquo;</a>
+                                    </div>
+                                </div>                                
+                                <apex:actionFunction name="SelectAccount" action="{!SelectAccount}" />
+                            </apex:form> 
+                        </div>
+                    </div>
+                </div> 
+            </div>
+        </apex:define>
+        <apex:define name="ExternalPartnerLayoutPageScriptIncludes">
+            <apex:includeScript value="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"/>
+        </apex:define>
+        <apex:define name="ExternalPartnerLayoutPageScripts">
+            <script>
+             $(document).ready(function() 
+                {
+                    $("#Loading").hide();
+                    redrawTable();
+                    function redrawTable()
+                    {
+                        var letter = $("#LetterFilter").val();
+                        var pageNumber = $("#PageNumber").val();
+                        var filter = $("#TextFilter").val();
+                        var type = $("#TypeFilter").val();
+                        $("#Loading").show();
+                        Visualforce.remoting.Manager.invokeAction('{!$RemoteAction.ExternalPartnerPortalController.GetAccounts}', letter, pageNumber, filter, type,
+                            function(result, event)
+                            {
+                                if (event.status) 
+                                {
+                                    if($("#PageNumber").val() == '0')
+                                    {
+                                        $("#PreviousPage" ).hide();
+                                    }
+                                    else
+                                    {
+                                        $( "#PreviousPage" ).show();
+                                    }
+                                    $("#TotalPages").val(result.TotalPages);
+                                    if($("#PageNumber").val() == Number($("#TotalPages").val() -1))
+                                    {
+                                        $("#NextPage" ).hide();
+                                    }
+                                    else
+                                    {
+                                        $( "#NextPage" ).show();
+                                    }
+                                    LoadAccountsTable(result.Accounts);                                                                        
+                                } 
+                                else 
+                                {
+                                    $("#ContactError").text(event.message);
+                                }
+                            }, 
+                            {escape: true}
+                        );
+                    }
+                    $(document).on('click', '.letter', function(event) 
+                    {
+                        event.preventDefault();
+                        $("#LetterFilter").val($(this).data('letter'));
+                        $("#PageNumber").val(0);                                             
+                        redrawTable();
+                    }); 
+                    $(document).on('click', '#PreviousPage', function(event) 
+                    {
+                        event.preventDefault();
+                        var pageNumber = Number($("#PageNumber").val());
+                        if(pageNumber > 0)
+                        {
+                            pageNumber = pageNumber - 1;
+                            $("#PageNumber").val(pageNumber);
+                            redrawTable();
+                        }
+                    }); 
+                    $(document).on('click', '#NextPage', function(event) 
+                    {
+                        event.preventDefault();
+                        var pageNumber = Number($("#PageNumber").val());
+                        var totalPages = Number($("#TotalPages").val() -1);
+                        if(pageNumber < totalPages)
+                        {
+                            pageNumber = pageNumber + 1;
+                            $("#PageNumber").val(pageNumber);
+                            redrawTable();
+                        }
+                    }); 
+                    $(document).on('keyup', '#TextFilter', function(event) 
+                    {
+                        $("#PageNumber").val(0);
+                        redrawTable();
+                    }); 
+                    $(document).on('click', '.type', function(event) 
+                    {
+                        event.preventDefault();
+                        $("#LetterFilter").val("ALL");                        
+                        $("#PageNumber").val(0);
+                        $("#TypeFilter").val($(this).data('type'));
+                        redrawTable();
+                    }); 
+                    $(document).on('click', '.SelectAccount', function(event) 
+                    {
+                        event.preventDefault();
+                        $(".accountId").val($(this).data('id'));
+                        SelectAccount();
+                    }); 
+                    $(document).on('click', '#AccountNotFound', function(event) 
+                    {
+                        event.preventDefault();
+                        RedirectToExternalPartnerAccountCreation();
+                    });                     
+                });     
+                function LoadAccountsTable(accounts)
+                {
+                    $('#AccountTable').DataTable( {
+                        destroy: true,
+                        paging:   false,
+                        ordering: false,
+                        info:     false,
+                        filter: false,                                        
+                        data: accounts,
+                        columns: 
+                        [
+                            { 
+                                title: "", 
+                                data: "Id",
+                                render: function ( data, type, row ) 
+                                {
+                                    return '<a class="SelectAccount" href=\'#\' data-id=\'' + data + '\'>Select</a>';
+                                }
+                            },
+                            { 
+                                title: "Agency Name", 
+                                data: "Name",
+                                render: function ( data, type, row ) 
+                                {
+                                    var parser = new DOMParser;
+                                    var mystring = parser.parseFromString(data,'text/html').body.textContent;
+                                    var find = $("#TextFilter").val();
+                                    var regex = new RegExp(find, "gi");
+                                    //return mystring.replace(regex, "<span style='font-weight: bold;'>" + $("#TextFilter").val() + "</span>");
+                                    return mystring.replace(regex, function replace(match) { 
+                                            return "<span style='font-weight: bold;'>" + match + "</span>"; 
+                                    });
+                                }
+                            },
+                        ]
+                    } );
+                    $("#Loading").hide();
+                }          
+            </script>
+        </apex:define>
+    </apex:composition> 
+</apex:page>

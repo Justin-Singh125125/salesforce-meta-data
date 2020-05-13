@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Business User wants to Change a Facility Name</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Change a Facility Name</name>
+    <style>none</style>
+    <subject>To Change a Facility Name</subject>
+    <textOnly>“In order to change a facility name, you will need to start a new “Facility Information” submittal element and change the facility name field in the “Business Activities” form. Then, submit the Facility Information submittal element. The name change will take place once the submittal has been approved by the regulatory agency. I have included an outline of this process for you, below.
+
+
+How to Change a Facility Name:
+
+
+Sign-in to CERS Business.
+Select the “Start/Edit Submittal” button for the facility in-question – from the “Facilities” section of the Home page.
+Select the “Start” button for the “Facility Information” submittal element section.
+Start a new Facility Information submittal element.
+Select the “Business Activities” form link.
+Select the “Edit” button to edit the “Business Activities” form.
+Select the small “Edit” button, next to “Facility Name”, below the “Site Identification” section. (Located at the top of the Business Activities form.)
+Enter a new facility name; Then, select the “Done” button.
+Select the “Save” button – from the top or bottom of the Business Activities form – to save changes to the facility name.
+Submit the “Facility Information” submittal element, when completed/ready.
+
+
+After you have submitted the Facility Information submittal element, you will then need to notify the regulatory agency, regarding the facility name change. Once the Facility Information submittal has been approved by the regulatory agency, the new facility name will then be reflected in CERS. ”</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

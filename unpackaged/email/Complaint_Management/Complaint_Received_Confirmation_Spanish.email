@@ -1,0 +1,36 @@
+<center>
+<table border="0" width="600" cellspacing="5" cellpadding="5">
+    <tbody>
+        <tr>
+            <td>
+            <p>NO RESPONDA A ESTE MENSAJE.</p>
+            <p>Gracias por enviar su queja del medio ambiente a CalEPA.</p>
+            <p>NOTA: Si su queja es una emergencia, por favor llame al 911 inmediatamente.Para notificaciones de derrame de materiales peligrosos o de desbordamiento de alcantarillado, llame al Centro de Alerta del Estado (State Warning Center) al 1-800-852-7550.</p>
+            <div><hr size="3" width="100%" />
+            </div>
+            <p>Estimado Reclamante,</p>
+            <p>La Agencia de Protecci&oacute;n Ambiental de California (California Environmental Protection Agency o CalEPA) recibi&oacute; su queja el{!Complaints__c.CreatedDate}. Su queja ser&aacute; referida a la agencia apropiada para su investigaci&oacute;n. Sun&uacute;mero de seguimiento de queja es {!Complaints__c.Name}.</p>
+            <p>Un resumen de la informaci&oacute;n que usted proporcion&oacute; se proporciona a continuaci&oacute;n. Si necesita corregir cualquier informaci&oacute;n o tiene alguna pregunta sobre su queja, por favor env&iacute;e su solicitud o preguntas a complaints@calepa.ca.gov.</p>
+            <p>Gracias por tomarse el tiempo para notificarnos de su preocupaci&oacute;n.</p>
+            <p>Descripci&oacute;n: {!Complaints__c.Description__c}</p>
+            <p>Fecha/Hora del suceso: {!Complaints__c.Date_and_Time_of_Occurrence__c}</p>
+            <p>Direcci&oacute;n del sitio: {!Complaints__c.Complaint_Location_Address__c}</p>
+            <p>{!Complaints__c.Complaint_Location_City__c},{!Complaints__c.Complaint_Location_Zip_Code__c}</p>
+            <p>Descripci&oacute;n de la ubicaci&oacute;n (si se proporciona): {!Complaints__c.Location_Description__c}</p>
+            <p>Nombre de persona como parte responsable: {!Complaints__c.Responsible_Party_Name__c}</p>
+            <p>Nombre de la empresa como parte responsable: {!Complaints__c.Responsible_Party_Company__c}</p>
+            <p>Direcci&oacute;n de la parte responsable:</p>
+            <p>{!Complaints__c.Responsible_Party_Street__c}</p>
+            <p>{!Complaints__c.Responsible_Party_City__c},{!Complaints__c.Responsible_Party_State__c} {!Complaints__c.Responsible_Party_Zip_Code__c}</p>
+            <p>Su informaci&oacute;n.</p>
+            <p>Correo electr&oacute;nico: {!Complaints__c.Complainant_Email2__c}</p>
+            <p>Tel&eacute;fono de casa: {!Complaints__c.Complainant_Phone2__c}</p>
+            <p>Tel&eacute;fono m&oacute;vil: {!Complaints__c.Complainant_Mobile_Phone__c}</p>
+            <p>Su direcci&oacute;n:</p>
+            <p>{!Complaints__c.Complainant_Mailing_Street__c}</p>
+            <p>{!Complaints__c.Complainant_Mailing_City__c},{!Complaints__c.Complainant_Mailing_State__c} {!Complaints__c.Complainant_Mailing_Zip_Code__c}</p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<div data-mce-bogus="all" unselectable="on" data-mce-resize="false" data-mce-style="cursor: row-resize; margin: 0; padding: 0; position: absolute; left: 64.5px; top: 935px; height: 4px; width: 634px; " data-row="0">&nbsp;</div></center>

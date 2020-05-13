@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Complaints__c$Name</field>
+    </columns>
+    <columns>
+        <field>Complaints__c.Complaint_Assignments__r$Name</field>
+    </columns>
+    <columns>
+        <field>Complaints__c$Status__c</field>
+    </columns>
+    <columns>
+        <field>Complaints__c$CreatedDate</field>
+    </columns>
+    <description>AirNon-Referred Assignments Older Than 7</description>
+    <filter>
+        <criteriaItems>
+            <column>Complaints__c.Complaint_Assignments__r$Status__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Referred,Closed</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>AirNon-Referred Assignments Older Than 7</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Complaints_with_Assignments__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>false</showSubTotals>
+    <sortColumn>Complaints__c$CreatedDate</sortColumn>
+    <sortOrder>Desc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>Complaints__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

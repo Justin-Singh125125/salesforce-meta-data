@@ -1,0 +1,41 @@
+<messaging:emailTemplate subject="New CAMS Task for {!relatedTo.CAMS_Assignment__r.Type__c} CAMS ID:  {!relatedTo.CAMS_Assignment__r.Name}, Task ID:  {!relatedTo.Name})" recipientType="User" relatedToType="CAMS_Task__c">
+    <messaging:htmlEmailBody >
+        <html>
+            <body style="font-family:arial;">
+                <p>
+                    ***New Task Notification***
+                </p>
+                <p>
+                    The following Task has been assigned to you/your Program
+                </p>
+                <p>            
+                    Request from:  {!relatedTo.CAMS_Assignment__r.BDO__c}<br/>
+                    CAMS ID:  {!relatedTo.CAMS_Assignment__r.Name}<br/>  
+                    Task ID:  {!relatedTo.Name}<br/>  
+                    Type: {!relatedTo.CAMS_Assignment__r.Type__c}  <br/>
+                    Subject:  {!relatedTo.CAMS_Assignment__r.Subject__c}<br/>  
+                    <apex:outputPanel rendered="{!IF(relatedTo.Assigned_To__c == null , false , true)}">
+                        Assigned To:  {!relatedTo.Assigned_To__r.Name}<br/>  
+                    </apex:outputPanel>  
+                    Due Date:
+                    <apex:outputText value="{0, date, MM/dd/yyyy}">
+                        <apex:param value="{!relatedTo.Due_Date__c}" /> 
+                    </apex:outputText>
+                    <br/>
+                    Urgent:  {!relatedTo.Urgent__c}<br/>  
+                    Confidential:  {!relatedTo.Confidential__c}<br/>
+                </p>
+                <p>
+                    Instructions:  {!relatedTo.Instructions__c}<br/>  
+                </p>
+                <p>                 
+                    Please use the following link to view the Task in CAMS:
+                </p>
+                <p>                 
+                    <a href="{!LEFT($Api.Enterprise_Server_URL_300, FIND('/services',$Api.Enterprise_Server_URL_300))+'/'+relatedto.Id}">{!LEFT($Api.Enterprise_Server_URL_300, FIND('/services',$Api.Enterprise_Server_URL_300))+'/'+relatedto.Id}</a>
+                </p>
+
+            </body>
+        </html>
+    </messaging:htmlEmailBody>
+</messaging:emailTemplate>

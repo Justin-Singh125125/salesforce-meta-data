@@ -1,0 +1,15 @@
+<apex:component layout="none" >
+	<apex:attribute name="title" description="Site Header Title" default="Environmental Complaint System" type="String" required="false"/>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" id="header">
+        <div class="container">
+            <div class="navbar-header"> 
+                <a class="navbar-brand" href="http://www.calepa.ca.gov/">
+                    <img src="{! $Resource.CalEPA_Logo }" class="img-responsive" alt="CalEPA" /> 
+                </a>
+                <a id="headerTitle" href="{! $site.prefix }/" class="navbar-brand hidden-xs">{! title }</a>
+                
+            </div> 
+        </div>
+    </nav>
+</apex:component>

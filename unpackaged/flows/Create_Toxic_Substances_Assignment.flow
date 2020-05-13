@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <decisions>
+        <name>Check_if_Flows_are_Disabled</name>
+        <label>Check if Flows are Disabled</label>
+        <locationX>156</locationX>
+        <locationY>47</locationY>
+        <defaultConnectorLabel>[Default Outcome]</defaultConnectorLabel>
+        <rules>
+            <name>Flow_Is_Not_Disabled</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>AreFlowsDisabled</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Find_Toxics_Assignment</targetReference>
+            </connector>
+            <label>Flow Is Not Disabled</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Determine_Toxics_Region</name>
+        <label>Determine Toxics Region</label>
+        <locationX>592</locationX>
+        <locationY>301</locationY>
+        <defaultConnectorLabel>[Default Outcome]</defaultConnectorLabel>
+        <rules>
+            <name>Is_Unknown</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>ComplaintCounty</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ComplaintCounty</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue></stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Find_Toxics_Unknown_Group</targetReference>
+            </connector>
+            <label>Is Unknown</label>
+        </rules>
+        <rules>
+            <name>Is_Northern</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>ComplaintCounty</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Los Angeles County</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ComplaintCounty</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Ventura County</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ComplaintCounty</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Santa Barbara County</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ComplaintCounty</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Orange County</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ComplaintCounty</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Riverside County</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ComplaintCounty</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Imperial County</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ComplaintCounty</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>San Diego County</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ComplaintCounty</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>San Bernardino County</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Find_Toxics_Northern_Group</targetReference>
+            </connector>
+            <label>Is Northern</label>
+        </rules>
+        <rules>
+            <name>Is_Southern</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>ComplaintCounty</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Los Angeles County</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ComplaintCounty</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Ventura County</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ComplaintCounty</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Santa Barbara County</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ComplaintCounty</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Orange County</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ComplaintCounty</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Riverside County</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ComplaintCounty</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Imperial County</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ComplaintCounty</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>San Diego County</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ComplaintCounty</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>San Bernardino County</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Find_Toxics_Southern_Group</targetReference>
+            </connector>
+            <label>Is Southern</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Does_Toxic_Assignment_Exists</name>
+        <label>Does Toxic Assignment Exists</label>
+        <locationX>594</locationX>
+        <locationY>181</locationY>
+        <defaultConnectorLabel>[Default Outcome]</defaultConnectorLabel>
+        <rules>
+            <name>Toxic_Assignment_Does_Not_Exist</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>AssignmentId</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Determine_Toxics_Region</targetReference>
+            </connector>
+            <label>Toxic Assignment Does Not Exist</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Does_Toxics_Northern_Group_Exist</name>
+        <label>Does Toxics Northern Group Exist</label>
+        <locationX>352</locationX>
+        <locationY>377</locationY>
+        <defaultConnectorLabel>[Default Outcome]</defaultConnectorLabel>
+        <rules>
+            <name>Toxics_Northern_Group_Exists</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>GroupId</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Create_Complaint_Assignment</targetReference>
+            </connector>
+            <label>Toxics Northern Group Exists</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Does_Toxics_Southern_Group_Exist</name>
+        <label>Does Toxics Southern Group Exist</label>
+        <locationX>597</locationX>
+        <locationY>481</locationY>
+        <defaultConnectorLabel>[Default Outcome]</defaultConnectorLabel>
+        <rules>
+            <name>Toxics_Southern_Group_Exists</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>GroupId</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Create_Complaint_Assignment</targetReference>
+            </connector>
+            <label>Toxics Southern Group Exists</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Does_Toxics_Unknown_Group_Exists</name>
+        <label>Does Toxics Unknown Group Exists</label>
+        <locationX>905</locationX>
+        <locationY>375</locationY>
+        <defaultConnector>
+            <targetReference>Create_Complaint_Assignment</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>[Default Outcome]</defaultConnectorLabel>
+        <rules>
+            <name>Toxics_Unknown_Group_Does_Not_Exist</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>GroupId</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <label>Toxics Unknown Group Does Not Exist</label>
+        </rules>
+    </decisions>
+    <formulas>
+        <name>AreFlowsDisabled</name>
+        <dataType>Boolean</dataType>
+        <expression>{!$Setup.Disable_All_Flows__c.Value__c}</expression>
+    </formulas>
+    <interviewLabel>Create Toxic Substances Assignment {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Create Toxic Substances Assignment</label>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <name>Create_Complaint_Assignment</name>
+        <label>Create Complaint Assignment</label>
+        <locationX>594</locationX>
+        <locationY>676</locationY>
+        <assignRecordIdToReference>AssignmentId</assignRecordIdToReference>
+        <inputAssignments>
+            <field>Complaint__c</field>
+            <value>
+                <elementReference>ComplaintId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Group__c</field>
+            <value>
+                <elementReference>GroupId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status__c</field>
+            <value>
+                <stringValue>New</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Type__c</field>
+            <value>
+                <stringValue>Toxic Substances</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Complaint_Assignment__c</object>
+    </recordCreates>
+    <recordLookups>
+        <name>Find_Toxics_Assignment</name>
+        <label>Find Toxics Assignment</label>
+        <locationX>593</locationX>
+        <locationY>97</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Does_Toxic_Assignment_Exists</targetReference>
+        </connector>
+        <filters>
+            <field>Complaint__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>ComplaintId</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Type__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Toxic Substances</stringValue>
+            </value>
+        </filters>
+        <object>Complaint_Assignment__c</object>
+        <outputAssignments>
+            <assignToReference>AssignmentId</assignToReference>
+            <field>Id</field>
+        </outputAssignments>
+    </recordLookups>
+    <recordLookups>
+        <name>Find_Toxics_Northern_Group</name>
+        <label>Find Toxics Northern Group</label>
+        <locationX>335</locationX>
+        <locationY>274</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Does_Toxics_Northern_Group_Exist</targetReference>
+        </connector>
+        <filters>
+            <field>Lookup_Value__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Department of Toxic Substances Control - Northern</stringValue>
+            </value>
+        </filters>
+        <object>Complaint_Assignment_Group__c</object>
+        <outputAssignments>
+            <assignToReference>GroupId</assignToReference>
+            <field>Id</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>OwnerId</assignToReference>
+            <field>OwnerId</field>
+        </outputAssignments>
+    </recordLookups>
+    <recordLookups>
+        <name>Find_Toxics_Southern_Group</name>
+        <label>Find Toxics Southern Group</label>
+        <locationX>597</locationX>
+        <locationY>391</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Does_Toxics_Southern_Group_Exist</targetReference>
+        </connector>
+        <filters>
+            <field>Lookup_Value__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Department of Toxic Substances Control - Southern</stringValue>
+            </value>
+        </filters>
+        <object>Complaint_Assignment_Group__c</object>
+        <outputAssignments>
+            <assignToReference>GroupId</assignToReference>
+            <field>Id</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>OwnerId</assignToReference>
+            <field>OwnerId</field>
+        </outputAssignments>
+    </recordLookups>
+    <recordLookups>
+        <name>Find_Toxics_Unknown_Group</name>
+        <label>Find Toxics Unknown Group</label>
+        <locationX>904</locationX>
+        <locationY>275</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Does_Toxics_Unknown_Group_Exists</targetReference>
+        </connector>
+        <filters>
+            <field>Lookup_Value__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Department of Toxic Substances Control</stringValue>
+            </value>
+        </filters>
+        <object>Complaint_Assignment_Group__c</object>
+        <outputAssignments>
+            <assignToReference>GroupId</assignToReference>
+            <field>Id</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>OwnerId</assignToReference>
+            <field>OwnerId</field>
+        </outputAssignments>
+    </recordLookups>
+    <startElementReference>Check_if_Flows_are_Disabled</startElementReference>
+    <status>Active</status>
+    <variables>
+        <name>AssignmentId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>ComplaintCounty</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>ComplaintId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>FaultEmailAddress</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>FeedItemId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>GroupId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>OwnerId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

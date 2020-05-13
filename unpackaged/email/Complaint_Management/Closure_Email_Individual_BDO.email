@@ -1,0 +1,11 @@
+<tr>
+                    <td style="width:30%; vertical-align: middle;padding-bottom: 25px;">
+                            [[BDO Logo]]
+                    </td>
+                    <td style="width:70%; vertical-align: middle;padding-bottom: 25px;">
+                        <div style="font-size: 120%;">{!Complaint_Assignment__c.Group__c.Name}</div>
+                        <a href="mailto:{!Complaint_Assignment__c.Owner.Email}">{!Complaint_Assignment__c.Owner.Name}</a><br/>
+                        <span style="font-weight:bold;">Closure Notes:</span><br/>
+[[CalculatedClosureNote]]
+                    </td>
+                </tr>

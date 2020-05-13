@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Email sent as an update to the complainant</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Check-In Email</name>
+    <style>none</style>
+    <subject>Update regarding your environmental complaint</subject>
+    <textOnly>DO NOT REPLY TO THIS MESSAGE.
+
+Dear {!Complaints__c.Complainant__r.Name},
+
+This message relates to the environmental complaint number {!Complaints__c.Name} you submitted to the California Environmental Protection Agency (CalEPA) on {!Complaints__c.Actual_Receive_Date__c}. Your complaint is being handled by the following agencies:
+[[IndividualBDOs]]
+Your complaint is still being investigated. We will notify you once the complaint has been closed. &lt;
+Thank you.</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

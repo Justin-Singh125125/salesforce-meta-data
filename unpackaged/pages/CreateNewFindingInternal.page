@@ -1,0 +1,310 @@
+<apex:page standardController="Finding__c" 
+extensions="FindingController"
+cache="false" 
+action="{!LoadSFDCCreateNewFinding}"
+>
+<head>
+    <apex:includeScript value="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" />
+</head>
+    <apex:pageMessages /> 
+    <apex:form id="CreateFindingForm" >
+        <apex:pageBlock title="Create a new Finding">
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Save" action="{!SFDCSaveNewFinding}"/>
+                <apex:commandButton value="Cancel" action="{!SFDCCancelNewFinding}"  immediate="true"/>               
+            </apex:pageBlockButtons>            
+            <apex:pageBlockSection columns="2" title="Information">
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel for="{!$Component.Complaint__c}" value="Complaint" />
+                    <apex:actionRegion >
+                        <apex:inputField id="complaint" value="{!SFDCCreateNewFindingViewModel.Finding.Complaint__c}" styleClass="ComplaintNumber">
+                        </apex:inputField>
+                    </apex:actionRegion>
+                </apex:pageBlockSectionItem>                
+            </apex:pageBlockSection>
+             <apex:pageBlockSection columns="2" title="Contact Information (If Prepared By External Partner)">
+             <apex:pageBlockSectionItem >
+                    <apex:outputLabel for="{!$Component.Referral__c}" value="Referral" />
+                    <apex:actionRegion >
+                        <apex:inputField id="referral" value="{!SFDCCreateNewFindingViewModel.Finding.Referral__c}"  styleClass="ReferralNumber">
+                        </apex:inputField>
+                    </apex:actionRegion>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel for="{!$Component.Contact}" value="Contact" />
+                    <apex:actionRegion >
+                        <apex:inputField id="contact" value="{!SFDCCreateNewFindingViewModel.Finding.Contact__c}" styleClass="ContactName">
+                        </apex:inputField>
+                    </apex:actionRegion>
+                </apex:pageBlockSectionItem>                
+            </apex:pageBlockSection>
+            <apex:pageBlockSection columns="2" title="Secondary Referral">
+                <apex:pageBlockSectionItem >
+                        <apex:outputLabel for="{!SFDCCreateNewFindingViewModel.Finding.Secondary_Referral__c}" value="Did you refer this to another agency?" />
+                        <apex:actionRegion >
+                            <apex:inputField id="SecondaryReferral" value="{!SFDCCreateNewFindingViewModel.Finding.Secondary_Referral__c}" styleClass="SecondaryReferral">
+                            </apex:inputField>
+                        </apex:actionRegion>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                        <apex:outputLabel for="{!SFDCCreateNewFindingViewModel.Finding.Referral_Agency__c}" value="Who Did You Refer it to?" styleClass="ReferralAgencyLabel" />
+                        <apex:actionRegion >
+                            <apex:inputField id="ReferralAgency" value="{!SFDCCreateNewFindingViewModel.Finding.Referral_Agency__c}" styleClass="ReferralAgency">
+                            </apex:inputField>
+                        </apex:actionRegion>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem labelStyleClass="DateOfReferralLabel" dataStyleClass="DateOfReferral">
+                        <apex:outputLabel for="{!SFDCCreateNewFindingViewModel.Finding.Date_of_Referral__c}" value="Date of Referral" />
+                        <apex:actionRegion >
+                            <apex:inputField id="DateOfReferral" value="{!SFDCCreateNewFindingViewModel.Finding.Date_of_Referral__c}" styleClass="DateOfReferralInput">
+                            </apex:inputField>
+                        </apex:actionRegion>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection columns="2" title="Inspection Information">
+                <apex:pageBlockSectionItem >
+                            <apex:outputLabel for="{!SFDCCreateNewFindingViewModel.Finding.Site_Visit_Conducted__c}" value="Did you conduct a site visit?" />
+                            <apex:actionRegion >
+                                <apex:inputField id="SiteVisitConducted" value="{!SFDCCreateNewFindingViewModel.Finding.Site_Visit_Conducted__c}" styleClass="SiteVisitConducted" >
+                                </apex:inputField>
+                            </apex:actionRegion>
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem labelStyleClass="DateOfSiteVisitLabel" dataStyleClass="DateOfSiteVisit">
+                        <apex:outputLabel for="{!SFDCCreateNewFindingViewModel.Finding.Date_of_Site_Visit__c}" value="Date of Site Visit" />
+                        <apex:actionRegion >
+                            <apex:inputField id="DateOfSiteVisit" value="{!SFDCCreateNewFindingViewModel.Finding.Date_of_Site_Visit__c}" styleClass="DateOfSiteVisit">
+                            </apex:inputField>
+                        </apex:actionRegion>
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem >
+                        <apex:outputLabel for="{!SFDCCreateNewFindingViewModel.Finding.Reason_for_No_Site_Visit__c}" value="Why didn't you conduct a site visit?" styleClass="ReasonForNoSiteVisitLabel" />
+                        <apex:actionRegion >
+                            <apex:inputField id="ReasonForNoSiteVisit" value="{!SFDCCreateNewFindingViewModel.Finding.Reason_for_No_Site_Visit__c}" styleClass="ReasonForNoSiteVisit">
+                            </apex:inputField>
+                        </apex:actionRegion>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                        <apex:outputLabel for="{!SFDCCreateNewFindingViewModel.Finding.Other_Reason_for_No_Site_Visit__c}" value="Other" styleClass="OtherReasonForNoSiteVisitLabel" />
+                        <apex:actionRegion >
+                            <apex:inputField id="OtherReasonForNoSiteVisit" value="{!SFDCCreateNewFindingViewModel.Finding.Other_Reason_for_No_Site_Visit__c}" styleClass="OtherReasonForNoSiteVisit">
+                            </apex:inputField>
+                        </apex:actionRegion>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection columns="2" title="Compliance and Enforcement Information">
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel for="{!SFDCCreateNewFindingViewModel.Finding.Violations_or_Compliance_Issues__c}" value="Did you find violations or compliance issues?" />
+                    <apex:actionRegion >
+                        <apex:inputField id="ViolationsOrComplianceIssues" value="{!SFDCCreateNewFindingViewModel.Finding.Violations_or_Compliance_Issues__c}" styleClass="ViolationsOrComplianceIssues">
+                        </apex:inputField>
+                    </apex:actionRegion>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <!--Intentionally left blank-->
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel for="{!SFDCCreateNewFindingViewModel.Finding.Summary_of_Violations_and_enforcement__c}" value="Summary of violations and enforcement action taken" styleClass="SummaryOfViolationsAndEnforcementLabel" />
+                    <apex:actionRegion >
+                        <apex:inputField id="SummaryOfViolationsAndEnforcement" value="{!SFDCCreateNewFindingViewModel.Finding.Summary_of_Violations_and_enforcement__c}" styleClass="SummaryOfViolationsAndEnforcement">
+                        </apex:inputField>
+                    </apex:actionRegion>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <!--Intentionally left blank-->
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel for="{!SFDCCreateNewFindingViewModel.Finding.Violations_Related_to_Complaint__c}" value="Were the violations related to the complaint?" styleClass="ViolationsRelatedToComplaintLabel" />
+                    <apex:actionRegion >
+                        <apex:inputField id="SummaryOfViolationsAndEnforcement" value="{!SFDCCreateNewFindingViewModel.Finding.Violations_Related_to_Complaint__c}" styleClass="ViolationsRelatedToComplaint">
+                        </apex:inputField>
+                    </apex:actionRegion>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <!--Intentionally left blank-->
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel for="{!SFDCCreateNewFindingViewModel.Finding.Is_Enforcement_Complete__c}" value="Is enforcement complete?" />
+                    <apex:actionRegion >
+                        <apex:inputField id="IsEnforcementComplete" value="{!SFDCCreateNewFindingViewModel.Finding.Is_Enforcement_Complete__c}" styleClass="IsEnforcementComplete">
+                        </apex:inputField>
+                    </apex:actionRegion>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <!--Intentionally left blank-->
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel for="{!SFDCCreateNewFindingViewModel.Finding.On_Going_Enforcement__c}" value="Describe any on-going enforcement efforts" styleClass="OnGoingEnforcementLabel" />
+                    <apex:actionRegion >
+                        <apex:inputField id="OnGoingEnforcement" value="{!SFDCCreateNewFindingViewModel.Finding.On_Going_Enforcement__c}" styleClass="OnGoingEnforcement">
+                        </apex:inputField>
+                    </apex:actionRegion>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+   <script>
+        $j = jQuery.noConflict();
+        $j(document).ready(function() 
+        {
+            if($j( ".SecondaryReferral option:selected" ).text()=='Yes')
+            {
+                $j('.ReferralAgencyLabel').show();
+                $j('.ReferralAgency').show();
+                $j('.DateOfReferralLabel').show();
+                $j('.DateOfReferral').show();
+            }
+            else
+            {
+                $j('.ReferralAgencyLabel').hide();
+                $j('.ReferralAgency').hide();
+                $j('.DateOfReferralLabel').hide();
+                $j('.DateOfReferral').hide();
+            }
+            if($j( ".SiteVisitConducted option:selected" ).text()=='Yes')
+                {
+                   $j('.DateOfSiteVisit').show();
+                   $j('.DateOfSiteVisitLabel').show();
+                   $j('.ReasonForNoSiteVisitLabel').hide();
+                   $j('.ReasonForNoSiteVisit').hide();                   
+                   $j('.OtherReasonForNoSiteVisit').hide();
+                }
+                else
+                {
+                    if($j( ".SiteVisitConducted option:selected" ).text()=='No')
+                    {
+                        $j('.DateOfSiteVisit').hide();
+                        $j('.DateOfSiteVisitLabel').hide();
+                        $j('.ReasonForNoSiteVisitLabel').show();
+                        $j('.ReasonForNoSiteVisit').show();
+                    }
+                    else
+                    {
+                        $j('.DateOfSiteVisit').hide();
+                        $j('.DateOfSiteVisitLabel').hide();
+                        $j('.ReasonForNoSiteVisitLabel').hide();
+                        $j('.ReasonForNoSiteVisit').hide();     
+                    }
+                }
+                 if($j( ".ReasonForNoSiteVisit option:selected" ).text()=='Other')
+                {
+                    $j('.OtherReasonForNoSiteVisitLabel').show();
+                   $j('.OtherReasonForNoSiteVisit').show();
+                }
+                else
+                {
+                $j('.OtherReasonForNoSiteVisitLabel').hide();
+                   $j('.OtherReasonForNoSiteVisit').hide();
+                }
+                 if($j( ".ViolationsOrComplianceIssues option:selected" ).text()=='Yes')
+                {
+                        $j('.SummaryOfViolationsAndEnforcementLabel').show();
+                        $j('.SummaryOfViolationsAndEnforcement').show();
+                        $j('.ViolationsRelatedToComplaintLabel').show();
+                        $j('.ViolationsRelatedToComplaint').show();
+                }
+                else
+                {
+                    $j('.SummaryOfViolationsAndEnforcementLabel').hide();
+                    $j('.SummaryOfViolationsAndEnforcement').hide();
+                    $j('.ViolationsRelatedToComplaintLabel').hide();
+                    $j('.ViolationsRelatedToComplaint').hide();
+                }
+                if($j( ".IsEnforcementComplete option:selected" ).text()=='No')
+                {
+                        $j('.OnGoingEnforcementLabel').show();
+                        $j('.OnGoingEnforcement').show();
+                }
+                else
+                {
+                    $j('.OnGoingEnforcementLabel').hide();
+                    $j('.OnGoingEnforcement').hide();
+                }
+            $j(document).on('change', '.SecondaryReferral', function() {
+                if($j( ".SecondaryReferral option:selected" ).text()=='Yes')
+                {
+                    $j('.ReferralAgencyLabel').show();
+                    $j('.ReferralAgency').show();
+                    $j('.DateOfReferralLabel').show();
+                    $j('.DateOfReferral').show();
+                }
+                else
+                {
+                    $j('.ReferralAgencyLabel').hide();
+                    $j('.ReferralAgency').hide();
+                    $j('.DateOfReferralLabel').hide();
+                    $j('.DateOfReferral').hide();
+                }
+            });
+            $j(document).on('change', '.SiteVisitConducted', function() {
+                if($j( ".SiteVisitConducted option:selected" ).text()=='Yes')
+                {
+                   $j('.DateOfSiteVisit').show();
+                   $j('.DateOfSiteVisitLabel').show();
+                   $j('.ReasonForNoSiteVisitLabel').hide();
+                   $j('.ReasonForNoSiteVisit').hide();  
+                   $j('.OtherReasonForNoSiteVisit').hide();                 
+                   $j('.OtherReasonForNoSiteVisitLabel').hide();
+                }
+                else
+                {
+                    if($j( ".SiteVisitConducted option:selected" ).text()=='No')
+                    {
+                        $j('.DateOfSiteVisit').hide();
+                        $j('.DateOfSiteVisitLabel').hide();
+                        $j('.ReasonForNoSiteVisitLabel').show();
+                        $j('.ReasonForNoSiteVisit').show();
+                    }
+                    else
+                    {
+                        $j('.DateOfSiteVisit').hide();
+                        $j('.DateOfSiteVisitLabel').hide();
+                        $j('.ReasonForNoSiteVisitLabel').hide();
+                        $j('.ReasonForNoSiteVisit').hide();     
+                    }
+                }
+            });
+            $j(document).on('change', '.ReasonForNoSiteVisit', function() {
+                if($j( ".ReasonForNoSiteVisit option:selected" ).text()=='Other')
+                {
+                    $j('.OtherReasonForNoSiteVisitLabel').show();
+                   $j('.OtherReasonForNoSiteVisit').show();
+                }
+                else
+                {
+                $j('.OtherReasonForNoSiteVisitLabel').hide();
+                   $j('.OtherReasonForNoSiteVisit').hide();
+                }
+            });
+            $j(document).on('change', '.ViolationsOrComplianceIssues', function() {
+                if($j( ".ViolationsOrComplianceIssues option:selected" ).text()=='Yes')
+                {
+                        $j('.SummaryOfViolationsAndEnforcementLabel').show();
+                        $j('.SummaryOfViolationsAndEnforcement').show();
+                        $j('.ViolationsRelatedToComplaintLabel').show();
+                        $j('.ViolationsRelatedToComplaint').show();
+                }
+                else
+                {
+                    $j('.SummaryOfViolationsAndEnforcementLabel').hide();
+                    $j('.SummaryOfViolationsAndEnforcement').hide();
+                    $j('.ViolationsRelatedToComplaintLabel').hide();
+                    $j('.ViolationsRelatedToComplaint').hide();
+                }
+            });
+            $j(document).on('change', '.IsEnforcementComplete', function() {
+                if($j( ".IsEnforcementComplete option:selected" ).text()=='No')
+                {
+                        $j('.OnGoingEnforcementLabel').show();
+                        $j('.OnGoingEnforcement').show();
+                }
+                else
+                {
+                    $j('.OnGoingEnforcementLabel').hide();
+                    $j('.OnGoingEnforcement').hide();
+                }
+            });
+        });
+    </script>
+</apex:page>

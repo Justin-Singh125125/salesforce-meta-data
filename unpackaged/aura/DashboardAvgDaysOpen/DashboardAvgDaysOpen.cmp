@@ -1,0 +1,26 @@
+<aura:component implements="flexipage:availableForAllPageTypes" controller="DashboardAvgDaysOpenController">
+    <ltng:require scripts="{!join(',',$Resource.gaugePlugin)}"/>
+    <aura:handler name="init" value="{!this}" action="{!c.init}" />    
+    <div class="slds-panel slds-size_full slds-is-open" aria-hidden="false">
+        <div class="slds-panel__header">
+            <h2 class="slds-panel__header-title slds-text-heading_small slds-truncate" title="Panel Header">
+                Average Days Open
+            </h2>
+            <lightning:select aura:id="bdo" name="bdo" onchange="{! c.reloadStats }">
+                    <option value="All">All</option>
+                    <option value="Air">Air</option>
+                    <option value="Solid Waste">Solid Waste</option>
+                    <option value="Pesticides">Pesticides</option>
+                    <option value="Toxic Substances">Toxic Substances</option>
+                    <option value="Water">Water</option>
+                    <option value="Multi-BDO">Multi-BDO</option>
+                </lightning:select>
+        </div>
+        <div class="slds-panel__body">
+            <div id="preview">
+                <canvas width="380" height="150" id="foo"></canvas>
+                <div id="preview-textfield" class="reset" style="font-size: 41px;"></div>
+            </div>
+        </div>    
+    </div>
+</aura:component>

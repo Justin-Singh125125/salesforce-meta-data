@@ -1,0 +1,3 @@
+<p>
+    Complaint {!Complaint_Assignment__c.Complaint__c} has been assigned to DPR. Please click <a href="{!Complaint_Assignment__c.Link}">here</a> to view the record.
+</p>

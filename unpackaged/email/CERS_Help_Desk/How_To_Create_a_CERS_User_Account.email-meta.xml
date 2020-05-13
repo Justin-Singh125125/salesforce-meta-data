@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Business user inquires as to how to create a CERS user account</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>How To Create a CERS User Account</name>
+    <style>none</style>
+    <subject>How to Create and Activate a New CERS Business User Account</subject>
+    <textOnly>How to Create and Activate a New CERS Business User Account:
+
+
+Open your web browser and navigate to the CERS Central page. (http://cers.calepa.ca.gov)
+Select the “Business Portal Sign In” link from the top of the CERS Central page.
+Select the “Create New Account” button, located below the “New to CERS?” section of the CERS Business Sign In page.
+After completing the web form, select the “Create My Account” button.
+You will then receive an e-mail notification, from CERS, containing an Account Activation Link. Open the link provided in the e-mail message to activate your CERS Business user account.
+Once your account has been activated, you can then return to the CERS Business Sign In page and sign-in to CERS Business, using your username and password.</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

@@ -1,0 +1,200 @@
+<apex:page standardController="CAMS_Assignment__c" applyBodyTag="false" applyHtmlTag="false" showHeader="false" renderAs="pdf"><!--renderAs="pdf"-->
+    <!--<apex:form >-->
+    <!--<html>-->
+        <head>
+            <style type="text/css" media="print">
+            @page:first {            
+                                margin-top: 30px;
+                                margin-bottom: 80px;
+                                
+                                 @top-center {
+                                       content: none;
+                               }
+                               
+                                  @bottom-left {
+                                     content: element(footer);
+                               }
+
+                            }
+                       @page {
+                                
+                                margin-top: 80px;
+                                margin-bottom: 80px;
+                                
+                                 @top-center {
+                                       content: element(header);
+                               }
+                               @bottom-left {
+                                     content: element(footer);
+                               }
+                            }
+                                     div.header {
+                                      page-break-after:avoid;
+                                      page-break-inside:avoid;
+                                      padding: 10px;
+                                      margin:30px;
+                                      
+                                      position: running(header);
+                           }
+                                                           
+                       div.footer {
+                                display: block;
+                             padding: 5px;
+                             margin-bottom: 30px;
+                               position: running(footer);
+                               
+                      }
+                                     
+                    </style>
+            <!--<apex:stylesheet value="{!$Resource.FooterStyleSheet}"> </apex:stylesheet>-->
+            
+        </head>   
+        
+        <div >
+                   <apex:image url="{!$Resource.CalEPALogoGreen}" width="225" height="75" />
+                   <h2 style="text-align:center;">CalEPA Routing Sheet</h2>
+      
+        </div>
+        <div class="header" >
+                
+            <div style="float">
+            <table style="border-collapse:collapse;width: 100%;"><!--font-family:arial,sans-serif;-->
+                <tr>
+                    <td style="border: 0.5px solid #dddddd;text-align: left;padding:5px;" colspan="2">
+                    </td>
+                    <th style="border: 0.5px solid #dddddd;text-align: left;padding:5px;font-family:Proxima Nova;">
+                        CAMS#:
+                    </th>
+                    <td style="border: 0.5px solid #dddddd;text-align: center;padding: 5px;">
+                        {!CAMS_Assignment__c.name}
+                    </td>
+                </tr>
+            </table>       
+            </div>                             
+
+            
+            
+             </div>
+        <div class="footer" style="font-size:10pt;text-align:center;border: 1px solid #dddddd;">
+                Staple this cover sheet to a <b style="color:red;">red </b>folder if the deadline is under 14 days; otherwise, staple it to a <b style="color:blue;">blue</b> folder.
+        </div>
+        
+        <body style="margin-top: 10px;">
+                    
+            <table style="border-collapse:collapse;width: 100%;"><!--font-family:arial,sans-serif;-->
+            
+                <tr>
+                    <td style="border: 0.5px solid #dddddd;text-align: left;padding:5px;" colspan="2">
+                    </td>
+                    <th style="border: 0.5px solid #dddddd;text-align: left;padding:5px;font-family:Proxima Nova;">
+                        CAMS#:
+                    </th>
+                    <td style="border: 0.5px solid #dddddd;text-align: center;padding: 5px;">
+                        {!CAMS_Assignment__c.name}
+                    </td>
+                </tr>
+                <tr>
+                    <th style="border: 0.5px solid #dddddd;text-align: left;width:30%;padding: 5px;font-family:Proxima Nova;">Subject:</th>
+                    <td style="border: 0.5px solid #dddddd;text-align: left;padding: 5px;" colspan="3">{!CAMS_Assignment__c.Subject__c}</td>
+                </tr>
+                <tr>
+                    <th style="border: 0.5px solid #dddddd;text-align:left;padding:5px;font-family:Proxima Nova;">Submitted By:</th>
+                    <td colspan="3" style="border: 0.5px solid #dddddd;text-align:left;padding:5px;">
+                    <!--<apex:outputText value="{0,date,MM/dd/yy}"> 
+                                <apex:param value="{!CAMS_Assignment__c.CreatedDate}"/>
+                            </apex:outputText>-->
+                            {!CAMS_Assignment__c.CreatedBy.Name}
+                    </td>
+                </tr>
+                <tr>
+                    <th style="border: 0.5px solid #dddddd;text-align:left;padding:5px;font-family:Proxima Nova;">BDO:</th>
+                    <td style="border: 0.5px solid #dddddd;text-align: left;padding:5px;" colspan="3">{!CAMS_Assignment__c.BDO__c}</td>
+                </tr>
+                <tr>
+                    <th style="border: 0.5px solid #dddddd;text-align: left;padding:5px;font-family:Proxima Nova;">Division, Office or Program:</th>
+                    <td style="border: 0.5px solid #dddddd;text-align: left;padding:5px;" colspan="3">{!CAMS_Assignment__c.BDO_Suborganization__c}</td>
+                </tr>
+                <tr>
+                    <th style="border: 0.5px solid #dddddd;text-align: left;padding:5px;font-family:Proxima Nova;">Originator Name:</th>
+                    <td style="border: 0.5px solid #dddddd;text-align: left;padding:5px;" colspan="3">{!CAMS_Assignment__c.Originator__r.name}</td>
+                </tr>
+                <tr>
+                    <th style="border: 0.5px solid #dddddd;text-align: left;padding:5px;font-family:Proxima Nova;">Type:</th>
+                   <td style="border: 0.5px solid #dddddd;text-align: left;padding:5px;">{!CAMS_Assignment__c.Type__c}</td>  
+                    <td style="border: 0.5px solid #dddddd;text-align: left;padding:5px;" colspan="2"><b>Governor’s Office Number:&nbsp;</b>{!CAMS_Assignment__c.Governor_s_Office_Number__c}</td>
+                </tr>
+                <tr>
+                    <th style="border: 0.5px solid #dddddd;text-align: left;padding:5px;font-family:Proxima Nova;" rowspan="2">Due Date:</th>
+                    <td style="border: 0.5px solid #dddddd;text-align: left;padding:5px;font-family:Proxima Nova;" rowspan="2">
+                        <apex:outputText value="{0,date,MM/dd/yy}"> 
+                            <apex:param value="{!CAMS_Assignment__c.Due_Date__c}"/>
+                        </apex:outputText>
+                    </td>
+                    <td style="border: 0.5px solid #dddddd;text-align: left;padding:5px;" colspan="2"><b>Urgent:&nbsp;</b>
+                        <apex:outputField value="{!CAMS_Assignment__c.Urgent__c}"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="border: 0.5px solid #dddddd;text-align: left;padding:5px;" colspan="2"><b>Confidential:&nbsp;</b><apex:outputField value="{!CAMS_Assignment__c.Confidential__c}"/></td>
+                </tr>
+                <tr>
+                    <th style="border: 0.5px solid #dddddd;text-align: left;padding:5px;font-family:Proxima Nova;">For Signature of:</th>
+                    <td style="border: 0.5px solid #dddddd;text-align: left;padding:5px;">{!CAMS_Assignment__c.Signature_Of__c}</td>
+                    <th style="border: 0.5px solid #dddddd;text-align: left;padding:5px;font-family:Proxima Nova;">Reply By</th>
+                    <td style="border: 0.5px solid #dddddd;text-align: left;padding:5px;">{!CAMS_Assignment__c.Reply_By__c}</td>
+                </tr>
+                <tr>
+                    <td style="border: 0.5px solid #dddddd;text-align: left;padding:5px;" colspan="4">
+                        <b>Description:&nbsp;</b><apex:outputfield value="{!CAMS_Assignment__c.Description__c}"/>
+                    </td>
+                </tr>
+            </table>
+            <!--Routing Information table-->
+            <h2 style="text-align:center;">Routing Information</h2>
+            
+            <apex:variable var="color" value="white"/>
+            <apex:variable var="count" value="{!1}"/>
+            <table style="border-collapse: collapse;width:100%;">
+                <tr style="background-color: #149fda;">
+                    <th style="border: 0.5px solid #FFFFFF;text-align: center;padding:5px;width:5%"></th>
+                    <th style="width:200px; border: 0.5px solid #FFFFFF;text-align: center;padding:5px;color: #ffffff;font-family:Proxima Nova;">BDO - Division</th>
+                    <th style="width:100px; border: 0.5px solid #FFFFFF;text-align: center;padding:5px;color: #ffffff;font-family:Proxima Nova;">NAME</th>
+                    <th style="width:5px; border: 0.5px solid #FFFFFF;text-align: center;padding:5px;color: #ffffff;font-family:Proxima Nova;">Date Rec'd</th>
+                    <th style="width:5px; border: 0.5px solid #FFFFFF;text-align: center;padding:5px;color: #ffffff;font-family:Proxima Nova;">Due Date</th>
+                    <th style="width:5px; border: 0.5px solid #FFFFFF;text-align: center;padding:5px;color: #ffffff;font-family:Proxima Nova;">Date Comp'd</th>
+                </tr>
+                <apex:repeat value="{!CAMS_Assignment__c.CAMS_Tasks2__r}" var="task">
+                    <tr style="background-color: {!color}">
+                        <td style="border: 0.5px solid #FFFFFF;text-align: left;padding:5px;">{!count}</td>
+                        <td style="width:200px; border: 0.5px solid #FFFFFF;text-align: left;padding:5px;">{!task.BDO__c} - {!task.BDO_Suborganization__c}</td>
+                        <td style="width:100px; border: 0.5px solid #FFFFFF;text-align: left;padding:5px;">{!task.Assigned_To__r.Name}</td>
+                        <td style="width:5px; border: 0.5px solid #FFFFFF;text-align: left;padding:5px;">
+                            <apex:outputText value="{0,date,MM/dd/yy}"> 
+                                <apex:param value="{!task.CreatedDate}"/>
+                            </apex:outputText>
+                        </td>
+                        <td style="width:5px; border: 0.5px solid #FFFFFF;text-align: left;padding:5px;">
+                            <apex:outputText value="{0,date,MM/dd/yy}"> 
+                                <apex:param value="{!task.Due_Date__c}"/>
+                            </apex:outputText>
+                        </td>
+                        <td style="width:5px; border: 0.5px solid #FFFFFF;text-align: left;padding:5px;">
+                            <apex:outputText value="{0,date,MM/dd/yy}"> 
+                                <apex:param value="{!task.Completed_Date__c}"/>
+                            </apex:outputText>
+                        </td>
+                    </tr>
+                    <apex:variable value="{!count+1}" var="count"/>
+                    <apex:variable var="color" value="{!IF(color == 'white', '#dddddd', 'white')}"/>
+                </apex:repeat>
+            </table>
+
+      
+        </body>
+        <div class="footer" style="font-size:10pt;text-align:center;border: 1px solid #dddddd;">
+                Staple this cover sheet to a <b style="color:red;">red </b>folder if the deadline is under 14 days; otherwise, staple it to a <b style="color:blue;">blue</b> folder.
+        </div>
+
+    <!--</html>-->
+    <!--</apex:form>-->
+</apex:page>

@@ -1,0 +1,128 @@
+<messaging:emailTemplate subject="Thank you for submitting an environmental complaint" recipientType="Contact" relatedToType="Complaints__c">
+    <messaging:htmlEmailBody >
+        <table border="0" cellpadding="5" width="600" cellspacing="5" height="400" >
+            <tr valign="top" height="300" >
+                <td style=" background-color:#FFFFFF; color:#000000; bEditID:r3st1; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r2" locked="0" >
+                    <table border="0" cellpadding="5" width="600" cellspacing="5" height="400">
+                        <tbody>
+                            <tr valign="top" height="300">
+                                <td locked="0" style="font-size: 12pt; background-color: rgb(255, 255, 255);">
+                                    <p style="margin-right: 0in; margin-left: 0in; font-size: 12pt; color: rgb(34, 34, 34); font-family: 'Times New Roman', serif;">
+                                        DO NOT REPLY TO THIS MESSAGE.<u></u><u></u>
+                                    </p>
+                                    <h2 style="font-size: 18pt; color: rgb(34, 34, 34); font-family: 'Times New Roman', serif; margin-right: 0in; margin-left: 0in;">
+                                        Thank you for submitting your environmental complaint to CalEPA.<u></u><u></u>
+                                    </h2>
+                                    <p style="margin-right: 0in; margin-left: 0in; font-size: 12pt; color: rgb(34, 34, 34); font-family: 'Times New Roman', serif;">
+                                        <strong><span style="color: red;">If this is an emergency, please dial 911 immediately.</span></strong>&nbsp; For hazardous material spill notification, call the State Warning Center at 1-800-852-7550. &nbsp;
+                                    </p>
+                                    <div class="MsoNormal" align="center" style="font-size: 12pt; color: rgb(34, 34, 34); font-family: 'Times New Roman', serif; margin: 0in 0in 0.0001pt; text-align: center;">
+                                        <hr size="3" width="100%" align="center"></hr>
+                                    </div>
+                                    <p style="margin-right: 0in; margin-left: 0in; font-size: 12pt; color: rgb(34, 34, 34); font-family: 'Times New Roman', serif;">
+                                        Dear&nbsp;{!relatedTo.Complainant__r.Name},&nbsp;<u></u><u></u>
+                                    </p>
+                                    <p style="margin-right: 0in; margin-left: 0in; font-size: 12pt; color: rgb(34, 34, 34);">
+                                        <font face="Times New Roman, Times, serif">
+                                            <br/>
+                                        </font>
+                                    </p>
+                                    <p style="background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;">
+                                        <font face="Times New Roman, Times, serif"><font color="#222222">
+                                            <span style="font-size: 12pt;">The California Environmental Protection Agency (CalEPA) received your complaint on&nbsp;</span><apex:outputText value="{0, date, MM/dd/yyyy}"><apex:param value="{!relatedTo.CreatedDate}" /></apex:outputText><span style="font-size: 12pt;">.&nbsp; Your&nbsp;complaint will be referred to the appropriate agency for investigation.</span></font><span style="color: rgb(34, 34, 34); font-size: 12pt;">&nbsp;&nbsp;</span><font color="#222222"><span style="font-size: 12pt;">Your complaint tracking number is&nbsp;</span></font></font><font color="#222222" face="Times New Roman, Times, serif">{!relatedTo.Name}.
+                                        </font>
+                                    </p>
+                                        <p style="font-size: 12pt; background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;"><span style="color: rgb(34, 34, 34);"><font face="Times New Roman, Times, serif"><br/></font></span>
+                                    </p>
+                                    <p style="margin-right: 0in; margin-left: 0in; font-size: 12pt; color: rgb(34, 34, 34);">
+        
+                                    </p>
+                                    <p style="font-size: 12pt; background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;">
+                                        <span style="color: rgb(34, 34, 34);"><font face="Times New Roman, Times, serif">A summary of the information you provided is provided below.&nbsp; If you need to correct any information or have questions about your complaint, please send your request or questions to complaints@calepa.ca.gov.</font></span>
+                                    </p>
+                                    <p style="font-size: 12pt; background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;">
+                                        <span style="color: rgb(34, 34, 34);"><font face="Times New Roman, Times, serif"><br/></font></span>
+                                    </p>
+                                    <p style="font-size: 12pt; background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;">
+                                        <font color="#222222" face="Times New Roman, Times, serif">Thank you for taking the time to notify us of your concern. &nbsp;</font>
+                                    </p>
+                                    <p style="margin-right: 0in; margin-left: 0in; font-size: 12pt; color: rgb(34, 34, 34); font-family: 'Times New Roman', serif;">
+                                        <br/>
+                                    </p>
+                                    <p style="margin-right: 0in; margin-left: 0in; font-size: 12pt; color: rgb(34, 34, 34); font-family: 'Times New Roman', serif;">
+                                        Description: &nbsp;{!relatedTo.Description__c}
+                                    </p>
+                                    <p style="margin-right: 0in; margin-left: 0in; font-size: 12pt; color: rgb(34, 34, 34); font-family: 'Times New Roman', serif;">
+                                        Date/Time of Occurrence: &nbsp;
+                                        <apex:outputText value="{0, date, MM/dd/yyyy hh:mm a}">
+                                            <apex:param value="{!relatedTo.Date_and_Time_of_Occurrence__c}" /> 
+                                        </apex:outputText>
+                                    </p>
+                                    <p style="margin-right: 0in; margin-left: 0in; font-size: 12pt; color: rgb(34, 34, 34); font-family: 'Times New Roman', serif;">
+                                        Location Address:
+                                    </p>
+                                    <p style="margin-right: 0in; margin-left: 0in; font-size: 12pt;"><font color="#222222" face="Times New Roman, serif">
+                                        {!relatedTo.Complaint_Location_Address__c}</font>
+                                    </p>
+                                    <p style="margin-right: 0in; margin-left: 0in; font-size: 12pt;">
+                                        <font color="#222222" face="Times New Roman, serif">{!relatedTo.Complaint_Location_City__c},&nbsp;{!relatedTo.Complaint_Location_Zip_Code__c}</font>
+                                    </p>
+                                    <p style="margin-right: 0in; margin-left: 0in; font-size: 12pt; color: rgb(34, 34, 34); font-family: 'Times New Roman', serif;">
+                                        Location Description (if provided): &nbsp;{!relatedTo.Location_Description__c}
+                                    </p>
+                                    <p style="margin-right: 0in; margin-left: 0in; font-size: 12pt; color: rgb(34, 34, 34); font-family: 'Times New Roman', serif;">
+                                        <br/>
+                                    </p>
+                                    <p style="margin-right: 0in; margin-left: 0in; font-size: 12pt; color: rgb(34, 34, 34); font-family: 'Times New Roman', serif;">
+                                        Responsible Party Name: &nbsp;{!relatedTo.Responsible_Party_Name__c}
+                                    </p>
+                                    <p style="margin-right: 0in; margin-left: 0in; font-size: 12pt; color: rgb(34, 34, 34); font-family: 'Times New Roman', serif;">
+                                        Responsible Party Company Name: &nbsp;{!relatedTo.Responsible_Party_Company__c}
+                                    </p>
+                                    <p style="margin-right: 0in; margin-left: 0in; font-size: 12pt; color: rgb(34, 34, 34); font-family: 'Times New Roman', serif;">
+                                        Responsible Party Address: &nbsp;
+                                    </p>
+                                    <p style="margin-right: 0in; margin-left: 0in; font-size: 12pt;">
+                                        <font color="#222222" face="Times New Roman, serif">{!relatedTo.Responsible_Party_Street__c}</font>
+                                    </p>
+                                    <p style="margin-right: 0in; margin-left: 0in; font-size: 12pt;"><font color="#222222" face="Times New Roman, serif">
+                                        {!relatedTo.Responsible_Party_City__c},&nbsp;{!relatedTo.Responsible_Party_State__c} &nbsp;{!relatedTo.Responsible_Party_Zip_Code__c}</font>
+                                    </p>
+                                    <p style="margin-right: 0in; margin-left: 0in; font-size: 12pt; color: rgb(34, 34, 34); font-family: 'Times New Roman', serif;">
+                                        <br/>
+                                    </p>
+                                    <p style="margin-right: 0in; margin-left: 0in; font-size: 12pt; color: rgb(34, 34, 34); font-family: 'Times New Roman', serif;">
+                                        Your information:
+                                    </p>
+                                    <p style="margin-right: 0in; margin-left: 0in; font-size: 12pt; color: rgb(34, 34, 34); font-family: 'Times New Roman', serif;">
+                                        Email: &nbsp;{!relatedTo.Complainant__r.PersonEmail}
+                                    </p>
+                                    <p style="margin-right: 0in; margin-left: 0in; font-size: 12pt; color: rgb(34, 34, 34); font-family: 'Times New Roman', serif;">
+                                        Home Phone: &nbsp;{!relatedTo.Complainant__r.Phone}
+                                    </p>
+                                    <p style="margin-right: 0in; margin-left: 0in; font-size: 12pt; color: rgb(34, 34, 34); font-family: 'Times New Roman', serif;">
+                                        Mobile Phone: &nbsp;{!relatedTo.Complainant__r.PersonMobilePhone}
+                                    </p>
+                                    <p style="margin-right: 0in; margin-left: 0in; font-size: 12pt; color: rgb(34, 34, 34); font-family: 'Times New Roman', serif;">
+                                        Your Address:
+                                    </p>
+                                    <p style="margin-right: 0in; margin-left: 0in; font-size: 12pt;">
+                                        <font color="#222222" face="Times New Roman, serif">{!relatedTo.Complainant__r.PersonMailingStreet}</font>
+                                    </p>
+                                    <p style="margin-right: 0in; margin-left: 0in; font-size: 12pt;">
+                                        <font color="#222222" face="Times New Roman, serif">{!relatedTo.Complainant__r.PersonMailingCity},&nbsp;{!relatedTo.Complainant__r.PersonMailingState} &nbsp;{!relatedTo.Complainant__r.PersonMailingPostalCode}</font>
+                                    </p>
+                                    <div>
+                                        <font color="#222222" face="Times New Roman, serif">
+                                            <br/>
+                                        </font>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </messaging:htmlEmailBody>
+</messaging:emailTemplate>

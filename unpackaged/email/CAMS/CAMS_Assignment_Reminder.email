@@ -1,0 +1,34 @@
+<messaging:emailTemplate subject="{!relatedTo.Type__c} - Assignment Approaching Due Date (CAMS ID:  {!relatedTo.Name})" recipientType="User" relatedToType="CAMS_Assignment__c">
+    <messaging:htmlEmailBody >
+        <html>
+            <body style="font-family:arial;">
+                <p>
+                    ***Assignment Approaching Due Date***
+                </p>
+                <p>
+                    The following Assignment is approaching its due date.  
+                </p>
+               <p>            
+                    CAMS ID:  {!relatedTo.Name}<br/>  
+                    Type: {!relatedTo.Type__c}  <br/>
+                    Subject:  {!relatedTo.Subject__c}<br/>  
+                    
+                    Due Date:
+                    <apex:outputText value="{0, date, MM/dd/yyyy}">
+                        <apex:param value="{!relatedTo.Due_Date__c}" /> 
+                    </apex:outputText>
+                    <br/>
+                    Urgent:  {!relatedTo.Urgent__c}<br/>  
+                    Confidential:  {!relatedTo.Confidential__c}<br/>  
+                </p>
+                <p>                 
+                    Please use the following link to view the assignment in CAMS:
+                </p>
+                <p>                 
+                    <a href="{!LEFT($Api.Enterprise_Server_URL_300, FIND('/services',$Api.Enterprise_Server_URL_300))+'/'+relatedto.Id}">{!LEFT($Api.Enterprise_Server_URL_300, FIND('/services',$Api.Enterprise_Server_URL_300))+'/'+relatedto.Id}</a>
+                </p>
+
+            </body>
+        </html>
+    </messaging:htmlEmailBody>
+</messaging:emailTemplate>

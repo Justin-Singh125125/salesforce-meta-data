@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>Object to recognize the different groups that can work on complaints.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Private</externalSharingModel>
+    <fields>
+        <fullName>External_Id__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>true</externalId>
+        <label>External Id</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Lookup_Value__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Lookup Value</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Agency</fullName>
+                    <default>false</default>
+                    <label>Agency</label>
+                </value>
+                <value>
+                    <fullName>Air</fullName>
+                    <default>false</default>
+                    <label>Air</label>
+                </value>
+                <value>
+                    <fullName>Pesticides</fullName>
+                    <default>false</default>
+                    <label>Pesticides</label>
+                </value>
+                <value>
+                    <fullName>Solid Waste/CalRecycle</fullName>
+                    <default>false</default>
+                    <label>Solid Waste/CalRecycle</label>
+                </value>
+                <value>
+                    <fullName>SWRCB - Division of Drinking Water</fullName>
+                    <default>false</default>
+                    <label>SWRCB - Division of Drinking Water</label>
+                </value>
+                <value>
+                    <fullName>SWRCB - Division of Water Quality</fullName>
+                    <default>false</default>
+                    <label>SWRCB - Division of Water Quality</label>
+                </value>
+                <value>
+                    <fullName>SWRCB - Division of Water Rights</fullName>
+                    <default>false</default>
+                    <label>SWRCB - Division of Water Rights</label>
+                </value>
+                <value>
+                    <fullName>SWRCB - Office of Enforcement</fullName>
+                    <default>false</default>
+                    <label>SWRCB - Office of Enforcement</label>
+                </value>
+                <value>
+                    <fullName>SWRCB - Region 1 - North Coast</fullName>
+                    <default>false</default>
+                    <label>SWRCB - Region 1 - North Coast</label>
+                </value>
+                <value>
+                    <fullName>SWRCB - Region 2 - San Francisco Bay</fullName>
+                    <default>false</default>
+                    <label>SWRCB - Region 2 - San Francisco Bay</label>
+                </value>
+                <value>
+                    <fullName>SWRCB - Region 3 - Central Coast</fullName>
+                    <default>false</default>
+                    <label>SWRCB - Region 3 - Central Coast</label>
+                </value>
+                <value>
+                    <fullName>SWRCB - Region 4 - Los Angeles</fullName>
+                    <default>false</default>
+                    <label>SWRCB - Region 4 - Los Angeles</label>
+                </value>
+                <value>
+                    <fullName>SWRCB - Region 5 - Central Valley</fullName>
+                    <default>false</default>
+                    <label>SWRCB - Region 5 - Central Valley</label>
+                </value>
+                <value>
+                    <fullName>SWRCB - Region 6 - Lahontan</fullName>
+                    <default>false</default>
+                    <label>SWRCB - Region 6 - Lahontan</label>
+                </value>
+                <value>
+                    <fullName>SWRCB - Region 7 - Colorado River Basin</fullName>
+                    <default>false</default>
+                    <label>SWRCB - Region 7 - Colorado River Basin</label>
+                </value>
+                <value>
+                    <fullName>SWRCB - Region 8 - Santa Ana</fullName>
+                    <default>false</default>
+                    <label>SWRCB - Region 8 - Santa Ana</label>
+                </value>
+                <value>
+                    <fullName>SWRCB - Region 9 - San Diego</fullName>
+                    <default>false</default>
+                    <label>SWRCB - Region 9 - San Diego</label>
+                </value>
+                <value>
+                    <fullName>Department of Toxic Substances Control</fullName>
+                    <default>false</default>
+                    <label>Department of Toxic Substances Control</label>
+                </value>
+                <value>
+                    <fullName>Water</fullName>
+                    <default>false</default>
+                    <label>Water</label>
+                </value>
+                <value>
+                    <fullName>Department of Toxic Substances Control - Northern</fullName>
+                    <default>false</default>
+                    <label>Department of Toxic Substances Control - Northern</label>
+                </value>
+                <value>
+                    <fullName>Department of Toxic Substances Control - Southern</fullName>
+                    <default>false</default>
+                    <label>Department of Toxic Substances Control - Southern</label>
+                </value>
+                <value>
+                    <fullName>Drinking Water</fullName>
+                    <default>false</default>
+                    <label>Drinking Water</label>
+                </value>
+                <value>
+                    <fullName>Water Rights</fullName>
+                    <default>false</default>
+                    <label>Water Rights</label>
+                </value>
+                <value>
+                    <fullName>DPR</fullName>
+                    <default>false</default>
+                    <label>DPR</label>
+                </value>
+                <value>
+                    <fullName>DTSC - Southern</fullName>
+                    <default>false</default>
+                    <label>DTSC - Southern</label>
+                </value>
+                <value>
+                    <fullName>Region 1</fullName>
+                    <default>false</default>
+                    <label>Region 1</label>
+                </value>
+                <value>
+                    <fullName>Region 2</fullName>
+                    <default>false</default>
+                    <label>Region 2</label>
+                </value>
+                <value>
+                    <fullName>Region 3</fullName>
+                    <default>false</default>
+                    <label>Region 3</label>
+                </value>
+                <value>
+                    <fullName>Region 4</fullName>
+                    <default>false</default>
+                    <label>Region 4</label>
+                </value>
+                <value>
+                    <fullName>Region 5</fullName>
+                    <default>false</default>
+                    <label>Region 5</label>
+                </value>
+                <value>
+                    <fullName>Region 6</fullName>
+                    <default>false</default>
+                    <label>Region 6</label>
+                </value>
+                <value>
+                    <fullName>Region 7</fullName>
+                    <default>false</default>
+                    <label>Region 7</label>
+                </value>
+                <value>
+                    <fullName>Region 8</fullName>
+                    <default>false</default>
+                    <label>Region 8</label>
+                </value>
+                <value>
+                    <fullName>Region 9</fullName>
+                    <default>false</default>
+                    <label>Region 9</label>
+                </value>
+                <value>
+                    <fullName>DTSC</fullName>
+                    <default>false</default>
+                    <label>DTSC</label>
+                </value>
+                <value>
+                    <fullName>CalRecycle</fullName>
+                    <default>false</default>
+                    <label>CalRecycle</label>
+                </value>
+                <value>
+                    <fullName>DTSC - Northern</fullName>
+                    <default>false</default>
+                    <label>DTSC - Northern</label>
+                </value>
+                <value>
+                    <fullName>ARB</fullName>
+                    <default>false</default>
+                    <label>ARB</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Test_Data__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Test Data</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Type__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Air</fullName>
+                    <default>false</default>
+                    <label>Air</label>
+                </value>
+                <value>
+                    <fullName>Pesticides</fullName>
+                    <default>false</default>
+                    <label>Pesticides</label>
+                </value>
+                <value>
+                    <fullName>Solid Waste</fullName>
+                    <default>false</default>
+                    <label>Solid Waste</label>
+                </value>
+                <value>
+                    <fullName>Toxic Substances</fullName>
+                    <default>false</default>
+                    <label>Toxic Substances</label>
+                </value>
+                <value>
+                    <fullName>Water</fullName>
+                    <default>false</default>
+                    <label>Water</label>
+                </value>
+                <value>
+                    <fullName>Agency</fullName>
+                    <default>false</default>
+                    <label>Agency</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Complaint Assignment Group</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>OWNER.ALIAS</columns>
+        <columns>Type__c</columns>
+        <columns>Lookup_Value__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Complaint Assignment Group Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Complaint Assignment Groups</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>Private</sharingModel>
+    <validationRules>
+        <fullName>Type_And_Lookup_Value_Cannot_Be_Changed</fullName>
+        <active>true</active>
+        <description>Type And Lookup Value Cannot Be Changed</description>
+        <errorConditionFormula>AND(NOT($Setup.Disable_All_Validation_Rules__c.Value__c),NOT(ISNEW()),OR(ISCHANGED( Lookup_Value__c),ISCHANGED( Type__c )))</errorConditionFormula>
+        <errorMessage>The Type and Lookup Value fields should not be changed.</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+</CustomObject>

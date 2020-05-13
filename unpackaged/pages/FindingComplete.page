@@ -1,0 +1,28 @@
+<apex:page applyBodyTag="false"  
+    cache="false" 
+    applyHTMLTag="false" 
+    docType="HTML-5.0" 
+    id="FindingComplete" 
+    sidebar="false" 
+    showChat="false" 
+    showHeader="false"  
+    standardController="Finding__c" 
+    standardStylesheets="false" 
+    extensions="ExternalPartnerPortalController">
+    <apex:composition template="ExternalPartnerLayout">
+        <apex:define name="ExternalPartnerLayoutTitle">CalEPA Environmental Complaint External Partner Portal</apex:define>
+        <apex:define name="ExternalPartnerLayoutPageCss">
+        </apex:define>
+        <apex:define name="ExternalPartnerLayoutBody">
+            <apex:form id="FindingCompleteForm">
+                <input id="findingId" type="hidden" value="{!FindingCompleteViewModel.FindingId}"/>
+                <h1>Thank you for providing your complaint findings</h1>
+                <p>We appreciate your continued support of CalEPA’s complaint system.  A copy of your findings form has been emailed to you.  To see other complaints referred to your agency, please visit our &nbsp; <apex:commandlink action="{!GotoLogin}">external partner portal.</apex:commandlink></p>
+            </apex:form>
+        </apex:define>
+        <apex:define name="ExternalPartnerLayoutPageScriptIncludes">
+        </apex:define>
+        <apex:define name="ExternalPartnerLayoutPageScripts">
+        </apex:define>
+    </apex:composition> 
+</apex:page>

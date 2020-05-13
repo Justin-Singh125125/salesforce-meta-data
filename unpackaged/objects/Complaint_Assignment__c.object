@@ -1,0 +1,1059 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>Object to track BDO level status and &quot;ownership&quot;</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Private</externalSharingModel>
+    <fields>
+        <fullName>AKA__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Also Known As</description>
+        <externalId>false</externalId>
+        <label>AKA</label>
+        <length>15</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Closure_Comments__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Closure Comments</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Closure_External_Partner__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Closure External Partner</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Complaint Assignments</relationshipLabel>
+        <relationshipName>Complaint_Assignments</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Closure_Reason__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Closure Reason</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Insufficient Information</fullName>
+                    <default>false</default>
+                    <label>Insufficient Information</label>
+                </value>
+                <value>
+                    <fullName>Outside of Agency&apos;s Jurisdiction</fullName>
+                    <default>false</default>
+                    <label>Outside of Agency&apos;s Jurisdiction</label>
+                </value>
+                <value>
+                    <fullName>Transferred to External Agency</fullName>
+                    <default>false</default>
+                    <label>Transferred to External Agency</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>Investigated by BDO</fullName>
+                    <default>false</default>
+                    <label>Investigated by BDO</label>
+                </value>
+                <value>
+                    <fullName>Investigated by External Agency</fullName>
+                    <default>false</default>
+                    <label>Investigated by External Agency</label>
+                </value>
+                <value>
+                    <fullName>Unsubstantiated</fullName>
+                    <default>false</default>
+                    <label>Unsubstantiated</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Closure_Violations_Found__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Closure Violations Found</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>Yes_No</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Complaint__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Complaint</label>
+        <referenceTo>Complaints__c</referenceTo>
+        <relationshipLabel>Complaint Assignments</relationshipLabel>
+        <relationshipName>Complaint_Assignments</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Date_Closed_Backup__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Date Closed Backup</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Date_Closed__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Date Closed</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Date_Referred__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Date Referred</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Date_to_Under_Review__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Date to Under Review</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Days_Open__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>IF(TEXT( Status__c) &lt;&gt; &apos;Closed&apos;,
+TODAY()- DATEVALUE(CreatedDate), 
+Date_Closed__c - DATEVALUE(CreatedDate) )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Days Open</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Days_To_Process__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(NOT(ISNULL(Date_to_Under_Review__c)),Date_to_Under_Review__c - DATEVALUE(CreatedDate), 0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Days To Process</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Days_to_First_Process__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Days to First Process</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>External_Id__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>true</externalId>
+        <label>External Id</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Group_Type__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>TEXT(Group__r.Type__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Group Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Group__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Group</label>
+        <referenceTo>Complaint_Assignment_Group__c</referenceTo>
+        <relationshipLabel>Complaint Assignments</relationshipLabel>
+        <relationshipName>Complaint_Assignments</relationshipName>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Month_Created__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>TEXT(MONTH(  DATEVALUE( CreatedDate )))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Month Created</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <defaultValue>&apos;New&apos;</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>New</fullName>
+                    <default>false</default>
+                    <label>New</label>
+                </value>
+                <value>
+                    <fullName>Under Review</fullName>
+                    <default>false</default>
+                    <label>Under Review</label>
+                </value>
+                <value>
+                    <fullName>Referred</fullName>
+                    <default>false</default>
+                    <label>Referred</label>
+                </value>
+                <value>
+                    <fullName>Closed</fullName>
+                    <default>false</default>
+                    <label>Closed</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Type__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Type</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Air</fullName>
+                    <default>false</default>
+                    <label>Air</label>
+                </value>
+                <value>
+                    <fullName>Pesticides</fullName>
+                    <default>false</default>
+                    <label>Pesticides</label>
+                </value>
+                <value>
+                    <fullName>Solid Waste</fullName>
+                    <default>false</default>
+                    <label>Solid Waste</label>
+                </value>
+                <value>
+                    <fullName>Toxic Substances</fullName>
+                    <default>false</default>
+                    <label>Toxic Substances</label>
+                </value>
+                <value>
+                    <fullName>Water</fullName>
+                    <default>false</default>
+                    <label>Water</label>
+                </value>
+                <value>
+                    <fullName>Agency</fullName>
+                    <default>false</default>
+                    <label>Agency</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Year_Created__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>TEXT(YEAR(  DATEVALUE( CreatedDate )))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Year Created</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Complaint Assignment</label>
+    <listViews>
+        <fullName>Air_Assignments</fullName>
+        <columns>NAME</columns>
+        <columns>Complaint__c</columns>
+        <columns>Status__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>OWNER.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Group__c</field>
+            <operation>equals</operation>
+            <value>Air Resources Board</value>
+        </filters>
+        <label>Air Assignments</label>
+    </listViews>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Type__c</columns>
+        <columns>Group__c</columns>
+        <columns>OWNER.ALIAS</columns>
+        <columns>Status__c</columns>
+        <columns>CREATED_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>All_DTSC_Assignments</fullName>
+        <booleanFilter>1 OR 2 OR 3</booleanFilter>
+        <columns>NAME</columns>
+        <columns>Complaint__c</columns>
+        <columns>Status__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>OWNER.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Group__c</field>
+            <operation>equals</operation>
+            <value>Department of Toxic Substances Control (Southern)</value>
+        </filters>
+        <filters>
+            <field>Group__c</field>
+            <operation>equals</operation>
+            <value>Department of Toxic Substances Control (Northern)</value>
+        </filters>
+        <filters>
+            <field>Group__c</field>
+            <operation>equals</operation>
+            <value>Department of Toxic Substances Control</value>
+        </filters>
+        <label>All DTSC Assignments</label>
+    </listViews>
+    <listViews>
+        <fullName>CalRecycle_Assignments</fullName>
+        <columns>NAME</columns>
+        <columns>Complaint__c</columns>
+        <columns>Status__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>OWNER.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Group__c</field>
+            <operation>equals</operation>
+            <value>California Department of Resources Recycling and Recovery (CalRecycle)</value>
+        </filters>
+        <label>CalReycle Assignments</label>
+    </listViews>
+    <listViews>
+        <fullName>DPR_Assignments</fullName>
+        <columns>NAME</columns>
+        <columns>Complaint__c</columns>
+        <columns>Status__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>OWNER.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Group__c</field>
+            <operation>equals</operation>
+            <value>Department of Pesticide Regulation</value>
+        </filters>
+        <label>DPR Assignments</label>
+    </listViews>
+    <listViews>
+        <fullName>DTSC_Northern_Assignments</fullName>
+        <columns>NAME</columns>
+        <columns>Complaint__c</columns>
+        <columns>Status__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>OWNER.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Group__c</field>
+            <operation>equals</operation>
+            <value>Department of Toxic Substances Control (Northern)</value>
+        </filters>
+        <label>DTSC Northern Assignments</label>
+    </listViews>
+    <listViews>
+        <fullName>DTSC_Southern_Assignments</fullName>
+        <columns>NAME</columns>
+        <columns>Complaint__c</columns>
+        <columns>Status__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>OWNER.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Group__c</field>
+            <operation>equals</operation>
+            <value>Department of Toxic Substances Control (Southern)</value>
+        </filters>
+        <label>DTSC Southern Assignments</label>
+    </listViews>
+    <listViews>
+        <fullName>DTSC_Unknown_Assignments</fullName>
+        <columns>NAME</columns>
+        <columns>Complaint__c</columns>
+        <columns>Status__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>OWNER.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Group__c</field>
+            <operation>equals</operation>
+            <value>Department of Toxic Substances Control</value>
+        </filters>
+        <label>DTSC Unknown Assignments</label>
+    </listViews>
+    <listViews>
+        <fullName>Division_of_Drinking_Water_Assignments</fullName>
+        <columns>NAME</columns>
+        <columns>Complaint__c</columns>
+        <columns>Status__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>OWNER.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Group__c</field>
+            <operation>equals</operation>
+            <value>State Water Resources Control Board - Division of Drinking Water</value>
+        </filters>
+        <label>Division of Drinking Water Assignments</label>
+    </listViews>
+    <listViews>
+        <fullName>Division_of_Water_Rights_Assignments</fullName>
+        <columns>NAME</columns>
+        <columns>Complaint__c</columns>
+        <columns>Status__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>OWNER.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Group__c</field>
+            <operation>equals</operation>
+            <value>State Water Resources Control Board - Division of Water Rights</value>
+        </filters>
+        <label>Division of Water Rights Assignments</label>
+    </listViews>
+    <listViews>
+        <fullName>My_Complaint_Assignments</fullName>
+        <columns>NAME</columns>
+        <columns>Complaint__c</columns>
+        <columns>Status__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>OWNER.ALIAS</columns>
+        <filterScope>Mine</filterScope>
+        <label>My Complaint Assignments</label>
+        <sharedTo>
+            <group>Complaint_Management_Users</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Open_State_Water_Board</fullName>
+        <columns>NAME</columns>
+        <columns>Complaint__c</columns>
+        <columns>Status__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>Group__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>notEqual</operation>
+            <value>Closed</value>
+        </filters>
+        <filters>
+            <field>Type__c</field>
+            <operation>equals</operation>
+            <value>Water</value>
+        </filters>
+        <filters>
+            <field>Group__c</field>
+            <operation>equals</operation>
+            <value>State Water Resources Control Board</value>
+        </filters>
+        <label>Open State Water Board</label>
+    </listViews>
+    <listViews>
+        <fullName>Open_Toxic_Substances</fullName>
+        <columns>NAME</columns>
+        <columns>Complaint__c</columns>
+        <columns>Status__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>New</value>
+        </filters>
+        <filters>
+            <field>Type__c</field>
+            <operation>equals</operation>
+            <value>Toxic Substances</value>
+        </filters>
+        <label>Open Toxic Substances</label>
+    </listViews>
+    <listViews>
+        <fullName>Open_Toxic_Substances_Southern</fullName>
+        <columns>NAME</columns>
+        <columns>Complaint__c</columns>
+        <columns>Status__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Group__c</field>
+            <operation>equals</operation>
+            <value>Department of Toxic Substances Control (Southern)</value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>New</value>
+        </filters>
+        <label>Open Toxic Substances Southern</label>
+    </listViews>
+    <listViews>
+        <fullName>Open_Water_Assignments</fullName>
+        <columns>NAME</columns>
+        <columns>Complaint__c</columns>
+        <columns>Status__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>Group__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Type__c</field>
+            <operation>equals</operation>
+            <value>Water</value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>New</value>
+        </filters>
+        <label>Open Water Assignments</label>
+    </listViews>
+    <listViews>
+        <fullName>Region_1_Assignments</fullName>
+        <columns>NAME</columns>
+        <columns>Complaint__c</columns>
+        <columns>Status__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>OWNER.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Group__c</field>
+            <operation>equals</operation>
+            <value>State of California North Coast Regional Water Quality Control Board</value>
+        </filters>
+        <label>Region 1 Assignments</label>
+    </listViews>
+    <listViews>
+        <fullName>Region_2_Assignments</fullName>
+        <columns>NAME</columns>
+        <columns>Complaint__c</columns>
+        <columns>Status__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>OWNER.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Group__c</field>
+            <operation>equals</operation>
+            <value>State of California San Francisco Bay Regional Water Quality Control Board</value>
+        </filters>
+        <label>Region 2 Assignments</label>
+    </listViews>
+    <listViews>
+        <fullName>Region_3_Assignments</fullName>
+        <columns>NAME</columns>
+        <columns>Complaint__c</columns>
+        <columns>Status__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>OWNER.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Group__c</field>
+            <operation>equals</operation>
+            <value>State of California Central Coast Regional Water Quality Control Board</value>
+        </filters>
+        <label>Region 3 Assignments</label>
+    </listViews>
+    <listViews>
+        <fullName>Region_4_Assignments</fullName>
+        <columns>NAME</columns>
+        <columns>Complaint__c</columns>
+        <columns>Status__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>OWNER.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Group__c</field>
+            <operation>equals</operation>
+            <value>State of California Los Angeles Regional Water Quality Control Board</value>
+        </filters>
+        <label>Region 4 Assignments</label>
+    </listViews>
+    <listViews>
+        <fullName>Region_5_Assignments</fullName>
+        <columns>NAME</columns>
+        <columns>Complaint__c</columns>
+        <columns>Status__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>OWNER.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Group__c</field>
+            <operation>equals</operation>
+            <value>State of California Central Valley Regional Water Quality Control Board</value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>New</value>
+        </filters>
+        <label>Region 5 Assignments</label>
+    </listViews>
+    <listViews>
+        <fullName>Region_5_Under_Review_Assignments</fullName>
+        <columns>NAME</columns>
+        <columns>Complaint__c</columns>
+        <columns>Status__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>OWNER.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Group__c</field>
+            <operation>equals</operation>
+            <value>State of California Central Valley Regional Water Quality Control Board</value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Under Review</value>
+        </filters>
+        <label>Region 5 Under Review Assignments</label>
+    </listViews>
+    <listViews>
+        <fullName>Region_6_Assignments</fullName>
+        <columns>NAME</columns>
+        <columns>Complaint__c</columns>
+        <columns>Status__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>OWNER.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Group__c</field>
+            <operation>equals</operation>
+            <value>State of California Lahontan Regional Water Quality Control Board</value>
+        </filters>
+        <label>Region 6 Assignments</label>
+    </listViews>
+    <listViews>
+        <fullName>Region_7_Assignments</fullName>
+        <columns>NAME</columns>
+        <columns>Complaint__c</columns>
+        <columns>Status__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>OWNER.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Group__c</field>
+            <operation>equals</operation>
+            <value>State of California Colorado River Regional Water Quality Control Board</value>
+        </filters>
+        <label>Region 7 Assignments</label>
+    </listViews>
+    <listViews>
+        <fullName>Region_8_Assignments</fullName>
+        <columns>NAME</columns>
+        <columns>Complaint__c</columns>
+        <columns>Status__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>OWNER.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Group__c</field>
+            <operation>equals</operation>
+            <value>State of California Santa Ana Regional Water Quality Control Board</value>
+        </filters>
+        <label>Region 8 Assignments</label>
+    </listViews>
+    <listViews>
+        <fullName>Region_9</fullName>
+        <columns>NAME</columns>
+        <columns>Complaint__c</columns>
+        <columns>Status__c</columns>
+        <columns>CREATED_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Group__c</field>
+            <operation>equals</operation>
+            <value>State of California San Diego Regional Water Quality Control Board</value>
+        </filters>
+        <label>Region 9</label>
+    </listViews>
+    <listViews>
+        <fullName>Region_9_Assignments</fullName>
+        <columns>NAME</columns>
+        <columns>Complaint__c</columns>
+        <columns>Status__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>OWNER.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Group__c</field>
+            <operation>equals</operation>
+            <value>State of California San Diego Regional Water Quality Control Board</value>
+        </filters>
+        <label>Region 9 Assignments</label>
+    </listViews>
+    <listViews>
+        <fullName>State_Water_Board_Assignments</fullName>
+        <columns>NAME</columns>
+        <columns>Complaint__c</columns>
+        <columns>Status__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>OWNER.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Group__c</field>
+            <operation>equals</operation>
+            <value>State Water Resources Control Board</value>
+        </filters>
+        <label>State Water Board Assignments</label>
+    </listViews>
+    <listViews>
+        <fullName>Toxic_Substances_Southern</fullName>
+        <columns>NAME</columns>
+        <columns>Complaint__c</columns>
+        <columns>Status__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Group__c</field>
+            <operation>equals</operation>
+            <value>Department of Toxic Substances Control (Southern)</value>
+        </filters>
+        <label>Toxic Substances Southern</label>
+    </listViews>
+    <nameField>
+        <displayFormat>CA-{00000}</displayFormat>
+        <label>Complaint Assignment Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Complaint Assignments</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>Private</sharingModel>
+    <validationRules>
+        <fullName>Closure_Info_Only_Edited_If_Closed</fullName>
+        <active>true</active>
+        <description>Prevent closure information from being changed when not closed.</description>
+        <errorConditionFormula>AND(NOT($Setup.Disable_All_Validation_Rules__c.Value__c),TEXT(Status__c)  &lt;&gt; &apos;Closed&apos;,OR( 
+ISCHANGED(Closure_Reason__c ), 
+ISCHANGED(Closure_Violations_Found__c  ) ,
+ISCHANGED(Closure_External_Partner__c ), 
+ISCHANGED(Closure_Comments__c )))</errorConditionFormula>
+        <errorMessage>You cannot change closure information if the status is not closed.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Closure_Must_Have_Reason</fullName>
+        <active>true</active>
+        <description>Must Have Closure Reason When Closing A Complaint Assignment</description>
+        <errorConditionFormula>AND(NOT($Setup.Disable_All_Validation_Rules__c.Value__c),ISPICKVAL(Status__c , &quot;Closed&quot;) &amp;&amp; ISPICKVAL(Closure_Reason__c, &quot;&quot;))</errorConditionFormula>
+        <errorMessage>You must provide a closure reason when closing a complaint assignment.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Inv_By_BDO_Must_Answer_Violations</fullName>
+        <active>true</active>
+        <description>If Complaint Assignment Closure Reason is &quot;Investigated by BDO&quot;, Must Provide an answer to Violations Found Question</description>
+        <errorConditionFormula>AND(NOT($Setup.Disable_All_Validation_Rules__c.Value__c),ISPICKVAL( Closure_Reason__c , &quot;Investigated By BDO&quot;),OR( ISPICKVAL( Closure_Violations_Found__c , &quot;&quot;), ISBLANK( Closure_Comments__c )))</errorConditionFormula>
+        <errorMessage>You must select whether or not there were violations or provide closure comments if you select &quot;Investigated By BDO&quot; as a Closure Reason.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Inv_By_Ext_Agy_Ext_Part</fullName>
+        <active>true</active>
+        <description>If the Closure Reason is Investigated By External Agency You Must Provide an External Partner.</description>
+        <errorConditionFormula>AND(NOT($Setup.Disable_All_Validation_Rules__c.Value__c),ISPICKVAL( Closure_Reason__c , &quot;Investigated By External Agency&quot;) &amp;&amp; ISBLANK( Closure_External_Partner__c ))</errorConditionFormula>
+        <errorMessage>You must select the External Partner if you select &quot;Investigated By External Agency&quot; as a Closure Reason.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Inv_By_Ext_Agy_Vio_Found</fullName>
+        <active>true</active>
+        <description>If the Closure Reason is &quot;Investigated By External Agency&quot;, you must provide whether or not violations were found.</description>
+        <errorConditionFormula>AND(NOT($Setup.Disable_All_Validation_Rules__c.Value__c),ISPICKVAL( Closure_Reason__c , &quot;Investigated By External Agency&quot;) &amp;&amp; ISPICKVAL( Closure_Violations_Found__c , &apos;&apos; ))</errorConditionFormula>
+        <errorMessage>You must select whether or not violations were found if you select &quot;Investigated By External Agency&quot; as a Closure Reason.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Other_Must_Provide_Comments</fullName>
+        <active>true</active>
+        <description>If the Closure Reason is Other, Must Provide Closure Comments</description>
+        <errorConditionFormula>AND(NOT($Setup.Disable_All_Validation_Rules__c.Value__c),ISPICKVAL( Closure_Reason__c , &quot;Other&quot;) &amp;&amp; ISBLANK( Closure_Comments__c ))</errorConditionFormula>
+        <errorMessage>You must provide Closure Comments if you select &quot;Other&quot; as a Closure Reason.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Prevent_Certain_Fields_From_Being_Change</fullName>
+        <active>true</active>
+        <description>The Complaint, Type, and Group fields should not be changed.</description>
+        <errorConditionFormula>AND(NOT($Setup.Disable_All_Validation_Rules__c.Value__c),NOT(ISNEW()),OR(ISCHANGED( Complaint__c ),ISCHANGED( Type__c ),ISCHANGED( Group__c )))</errorConditionFormula>
+        <errorMessage>The Complaint Number, Assignment Type, and Complaint Assignment Group fields cannot be changed.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Proper_Status_Flow_Closed_To_New</fullName>
+        <active>true</active>
+        <description>Cannot go back to New from Closed</description>
+        <errorConditionFormula>AND(NOT($Setup.Disable_All_Validation_Rules__c.Value__c),PRIORVALUE(Status__c ) = &apos;Closed&apos;,Text(Status__c) = &apos;New&apos;)</errorConditionFormula>
+        <errorMessage>You cannot move the status backwards from Closed to New.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Proper_Status_Flow_Closed_To_Referred</fullName>
+        <active>true</active>
+        <description>Cannot go back to Referred from Closed</description>
+        <errorConditionFormula>AND(NOT($Setup.Disable_All_Validation_Rules__c.Value__c),PRIORVALUE(Status__c ) = &apos;Closed&apos;,Text(Status__c) = &apos;Referred&apos;)</errorConditionFormula>
+        <errorMessage>You cannot move the status backwards from Closed to Referred.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Proper_Status_Flow_Closed_To_Under_Revie</fullName>
+        <active>true</active>
+        <description>Cannot go back to Under Review From Closed</description>
+        <errorConditionFormula>AND(NOT($Setup.Disable_All_Validation_Rules__c.Value__c),PRIORVALUE(Status__c ) = &apos;Closed&apos;,Text(Status__c) = &apos;Under Review&apos;)</errorConditionFormula>
+        <errorMessage>You cannot move the status backwards from Closed to Under Review.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Proper_Status_Flow_Referred_To_New</fullName>
+        <active>true</active>
+        <description>Cannot go back to New from Referred</description>
+        <errorConditionFormula>AND(NOT($Setup.Disable_All_Validation_Rules__c.Value__c),PRIORVALUE(Status__c ) = &apos;Referred&apos;,Text(Status__c) = &apos;New&apos;)</errorConditionFormula>
+        <errorMessage>You cannot move the status backwards from Referred to New.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Proper_Status_Flow_Referred_To_Under_Rev</fullName>
+        <active>true</active>
+        <description>Cannot go back to Under Review From Referred</description>
+        <errorConditionFormula>AND(NOT($Setup.Disable_All_Validation_Rules__c.Value__c),PRIORVALUE(Status__c ) = &apos;Referred&apos;,Text(Status__c) = &apos;Under Review&apos;)</errorConditionFormula>
+        <errorMessage>You cannot move the status backwards from Referred to Under Review.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Proper_Status_Flow_Under_Review_To_New</fullName>
+        <active>true</active>
+        <description>Cannot go back to New from Under Review</description>
+        <errorConditionFormula>AND(NOT($Setup.Disable_All_Validation_Rules__c.Value__c),PRIORVALUE(Status__c ) = &apos;Under Review&apos;,Text(Status__c) = &apos;New&apos;)</errorConditionFormula>
+        <errorMessage>You cannot move the status backwards from Under Review to New.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Transferred_Must_Select_Account</fullName>
+        <active>true</active>
+        <description>If the Closure Reason is Transferred To External Agency You Must Provide External Partner</description>
+        <errorConditionFormula>AND(NOT($Setup.Disable_All_Validation_Rules__c.Value__c),ISPICKVAL( Closure_Reason__c , &quot;Transferred to External Agency&quot;) &amp;&amp; ISBLANK( Closure_External_Partner__c ))</errorConditionFormula>
+        <errorMessage>You must the External Partner if you select &quot;Transferred to External Agency&quot; as a Closure Reason.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Type_and_Group_Must_Match</fullName>
+        <active>true</active>
+        <description>The type of the group must match the type of the assignment.</description>
+        <errorConditionFormula>Group_Type__c  &lt;&gt;  Text(Type__c)</errorConditionFormula>
+        <errorMessage>The type of the group must match the type of the assignment.</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+</CustomObject>

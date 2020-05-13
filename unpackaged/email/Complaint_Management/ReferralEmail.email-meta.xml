@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>ReferralEmail</name>
+    <style>none</style>
+    <subject>An Environmental Complaint has been Referred to Your Agency</subject>
+    <textOnly>Dear {!ReferralEmailViewModel.ReferredToContactName},
+Attached is information regarding a complaint received by CalEPA through its online complaint system. We are referring this complaint to you for your investigation.
+{!ReferralEmailViewModel.Message}
+When you have completed your investigation, please click here to provide information on your findings.
+To view all complaints referred to your agency, please visit our External Partner Portal.
+Complaint Number: {!ReferralEmailViewModel.ComplaintNumber}
+
+Complaint Id: {!ReferralEmailViewModel.ComplaintId}
+We appreciate your continued support.  Please feel free to contact {!ReferralEmailViewModel.FromName} at {!ReferralEmailViewModel.FromEmail} or complaints@calepa.ca.gov with any questions.
+Sincerely,
+
+
+{!ReferralEmailViewModel.FromName}</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

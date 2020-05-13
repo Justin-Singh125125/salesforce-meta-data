@@ -1,0 +1,661 @@
+<apex:page id="ComplaintPDF"   
+cache="false" 
+applyBodyTag="false" 
+applyHtmlTag="false" 
+docType="HTML-5.0" 
+showChat="false" 
+showHeader="false" 
+sidebar="false" 
+standardController="Complaints__c" 
+standardStylesheets="false"
+extensions="ComplaintPDFController"
+action="{!LoadComplaintPDF}">
+    <html>
+        <head>
+            <style> 
+                @page 
+                {
+                    size: letter;
+                }
+                h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6 
+                {
+                    font-family: "Source Sans Pro", sans-serif;
+                    font-weight: 400;
+                    line-height: 1.1;
+                    color: inherit;
+                }
+                
+                hr.hr-understated 
+                {
+                    border: none;
+                    border-bottom-style: dotted;
+                    border-bottom-width: 2px;
+                    border-bottom-color: #cccccc;
+                }
+                
+                hr 
+                {
+                    margin-top: 22px;
+                    margin-bottom: 22px;
+                    border: 0;
+                    border-top: 1px solid #cccccc;
+                }
+                
+                hr 
+                {
+                    box-sizing: content-box;
+                    height: 0;
+                }
+                
+                table 
+                {
+                    font-family: "Source Sans Pro", sans-serif;
+                    font-size: 85%;
+                    /*border: 1px solid black;*/
+                    empty-cells: show;
+                }
+                td
+                {
+                    width: 1.75in;
+                    /*border: 1px solid black;*/
+                }
+                tr
+                {
+                }
+                label
+                {
+                    font-weight: bold;
+                }
+            </style>
+        </head>
+        <body>
+            <h2>
+                Complaint Report
+            </h2>
+            <h3>{!ComplaintDetailsViewModel.ComplaintNumber}</h3> 
+            <hr class="hr-understated"/>
+            <h4>Complaint Information</h4>
+            <table>
+                <tbody> 
+                    <tr>
+                        <td>
+                            <label>Complaint Number</label>
+                        </td>
+                        <td>
+                            {!ComplaintDetailsViewModel.ComplaintNumber}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="Field-Title">Date of Occurrence</label>
+                        </td>
+                        <td>
+                            {!ComplaintDetailsViewModel.DateAndTimeOfOccurrence}
+                        </td>
+                        <td>
+                            <label class="Field-Title">On-going Occurrence</label>
+                        </td>
+                        <td>
+                            {!ComplaintDetailsViewModel.OnGoingOccurrence}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="Field-Title">Spill</label>
+                        </td>
+                        <td>
+                            {!ComplaintDetailsViewModel.Spill}
+                        </td>
+                        <td>
+                            <label class="Field-Title">Refinery</label>
+                        </td>
+                        <td>
+                            {!ComplaintDetailsViewModel.Refinery}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="Field-Title">EJ Complaint</label>
+                        </td>
+                        <td>
+                            {!ComplaintDetailsViewModel.EJComplaint}
+                        </td>
+                        <td>
+                            <label class="Field-Title">Tribal Complaint</label>
+                        </td>
+                        <td>
+                            {!ComplaintDetailsViewModel.TribalComplaint}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <apex:outputPanel rendered="{!ComplaintDetailsViewModel.ReferredToCalEPA}">
+                <table>
+                    <tbody> 
+                        <tr>
+                            <td>
+                                <label>Referring Agency</label>
+                            </td>
+                            <td colspan="3">
+                                {!ComplaintDetailsViewModel.ReferringAgency}
+                            </td>                            
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>Referrer Name</label>    
+                            </td>
+                            <td>
+                                {!ComplaintDetailsViewModel.ReferringName}
+                            </td>
+                            <td>
+                                <label>Referrer Email</label>    
+                            </td>
+                            <td>
+                                {!ComplaintDetailsViewModel.ReferringEmailAddress}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </apex:outputPanel>
+            <apex:outputPanel rendered="{!ComplaintDetailsViewModel.HasPreviousOrganizations}">
+                <table>
+                    <tbody> 
+                        <tr>
+                            <td colspan="4">
+                                <label>The complainant previously contacted the following organization(s)</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="4">
+                                {!ComplaintDetailsViewModel.PreviousOrganizations}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label></label>    
+                            </td>
+                            <td>
+                    
+                            </td>
+                            <td>
+                                <label></label>    
+                            </td>
+                            <td>
+                    
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>                
+            </apex:outputPanel>
+            <hr class="hr-understated"/>
+            <h4>Complainant Information</h4>
+            <apex:outputPanel rendered="{!ComplaintDetailsViewModel.IsAnonymous}">
+                <table>
+                    <tbody> 
+                        <tr>
+                            <td>
+                                <label>Anonymous Submission</label>
+                            </td>
+                            <td>
+                                {!ComplaintDetailsViewModel.AnonymousSubmission}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </apex:outputPanel>
+            <apex:outputPanel rendered="{!ComplaintDetailsViewModel.IsAnonymous == false}">
+                <table>
+                    <tbody> 
+                        <tr>
+                            <td>
+                                <label>First Name</label>
+                            </td>
+                            <td>
+                                {!ComplaintDetailsViewModel.ComplainantFirstName}
+                            </td>
+                            <td>
+                                <label>Last Name</label>    
+                            </td>
+                            <td>
+                                {!ComplaintDetailsViewModel.ComplainantLastName}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>Complainant Street</label>    
+                            </td>
+                            <td>
+                                {!ComplaintDetailsViewModel.ComplainantStreet}
+                            </td>
+                            <td>
+                                <label>Complainant City</label>    
+                            </td>
+                            <td>
+                                {!ComplaintDetailsViewModel.ComplainantCity}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>Complainant State</label>    
+                            </td>
+                            <td>
+                                {!ComplaintDetailsViewModel.ComplainantState}
+                            </td>
+                            <td>
+                                <label>Complainant Zip Code</label>    
+                            </td>
+                            <td>
+                                {!ComplaintDetailsViewModel.ComplainantZipCode}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>Complainant Phone</label>
+                            </td>
+                            <td>
+                                {!ComplaintDetailsViewModel.ComplainantPhone}
+                            </td>
+                            <td>
+                                <label>Complainant Mobile</label>    
+                            </td>
+                            <td>
+                                {!ComplaintDetailsViewModel.ComplainantMobile}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>Complainant Email</label>    
+                            </td>
+                            <td colspan="3">
+                                {!ComplaintDetailsViewModel.ComplainantEmail}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </apex:outputPanel>
+            <hr class="hr-understated"/>            
+            <h4>Complaint Location</h4>
+            <table>
+                <tbody> 
+                    <tr>
+                        <td>
+                            <label>Address</label>
+                        </td>
+                        <td>
+                            {!ComplaintDetailsViewModel.ComplaintLocationStreet}
+                        </td>
+                        <td>
+                            <label>City</label>    
+                        </td>
+                        <td>
+                            {!ComplaintDetailsViewModel.ComplaintLocationCity}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>County</label>    
+                        </td>
+                        <td>
+                            {!ComplaintDetailsViewModel.ComplaintLocationCounty}
+                        </td>
+                        <td>
+                            <label>State</label>    
+                        </td>
+                        <td>
+                            {!ComplaintDetailsViewModel.ComplaintLocationState}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>Zip Code</label>    
+                        </td>
+                        <td>
+                            {!ComplaintDetailsViewModel.ComplaintLocationZipCode}
+                        </td>
+                        <td>
+                            <label></label>    
+                        </td>
+                        <td>
+                
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>Latitude</label>    
+                        </td>
+                        <td>
+                            {!ComplaintDetailsViewModel.Latitude}
+                        </td>
+                        <td>
+                            <label>Longitude</label>    
+                        </td>
+                        <td>
+                            {!ComplaintDetailsViewModel.Longitude}
+                        </td>
+                    </tr>                    
+                    <tr>
+                        <td colspan="4">
+                            <label>Location Description</label>    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">
+                            {!ComplaintDetailsViewModel.LocationDescription}
+                        </td>
+                    </tr>                    
+                </tbody>
+            </table>
+            <hr class="hr-understated"/>   
+            <h4>Alleged Responsible Party</h4>
+            <table>
+                <tbody> 
+                    <tr>
+                        <td>
+                            <label>Name</label>
+                        </td>
+                        <td colspan="3">
+                            {!ComplaintDetailsViewModel.ResponsiblePartyName}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>Company</label>    
+                        </td>
+                        <td colspan="3">
+                            {!ComplaintDetailsViewModel.ResponsiblePartyCompany}
+                        </td>
+                    </tr>                    
+                    <tr>
+                        <td>
+                            <label>Address</label>    
+                        </td>
+                        <td colspan="3">
+                            {!ComplaintDetailsViewModel.ResponsiblePartyAddress}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>City</label>    
+                        </td>
+                        <td>
+                            {!ComplaintDetailsViewModel.ResponsiblePartyCity}
+                        </td>                    
+                        <td>
+                            <label>State</label>    
+                        </td>
+                        <td>
+                            {!ComplaintDetailsViewModel.ResponsiblePartyState}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>Zip Code</label>    
+                        </td>
+                        <td>
+                            {!ComplaintDetailsViewModel.ResponsiblePartyZipCode}
+                        </td>
+                    </tr>                    
+                    <tr>
+                        <td>
+                            <label>Phone</label>    
+                        </td>
+                        <td>
+                            {!ComplaintDetailsViewModel.ResponsiblePartyPhone}
+                        </td>
+                    </tr>                    
+                </tbody>
+            </table>
+            <hr class="hr-understated"/>
+            <h4>Complaint Description</h4>
+            <apex:outputText value="{!ComplaintDetailsViewModel.ComplaintDescription}" escape="false" style="font-family:'Source Sans Pro', sans-serif;font-size: 85%;" /> 
+<!--            <table>
+                <tbody> 
+                    <tr>
+                        <td colspan="3">
+                            <div>{!ComplaintDetailsViewModel.ComplaintDescription}</div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>       -->     
+            <hr class="hr-understated"/>         
+            <h4>{!ComplaintDetailsViewModel.AreaOfConcernLabel}</h4>
+            <apex:outputPanel rendered="{!ComplaintDetailsViewModel.IsAir}">
+                <label style="font-weight: normal; font-size: 110%; font-family: 'Source Sans Pro', 'sans-serif';">Air</label>
+                <table>
+                    <tbody> 
+                        <tr>
+                            <td>
+                                <label>Vehicle or Stationary</label>
+                            </td>
+                            <td>
+                                {!ComplaintDetailsViewModel.VehicleOrStationary}
+                            </td>
+                            <td>
+                                <label>Air Complaint Source Info</label>    
+                            </td>
+                            <td>
+                                {!ComplaintDetailsViewModel.AirComplaintSourceInfo}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <hr style="margin-left:20px; margin-right: 20px; border-top: 1px dotted #8c8b8b;    border-bottom: 1px dotted #fff;"/>
+            </apex:outputPanel>
+            <apex:outputPanel rendered="{!ComplaintDetailsViewModel.IsSolidWasteCalRecycle}">
+                <label style="font-weight: normal; font-size: 110%; font-family: 'Source Sans Pro', 'sans-serif';">Solid Waste</label>
+                <table>
+                    <tbody> 
+                        <tr>
+                            <td>
+                                <label>Bottles/Cans Recycling</label>
+                            </td>
+                            <td>
+                                {!ComplaintDetailsViewModel.BottlesCansRecycling}
+                            </td>
+                            <td>
+                                <label>Waste Tires</label>    
+                            </td>
+                            <td>
+                                {!ComplaintDetailsViewModel.WasteTires}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>Additional Solid Waste</label>
+                            </td>
+                            <td>
+                                {!ComplaintDetailsViewModel.AdditionalSolidWaste}
+                            </td>
+                        </tr>                        
+                    </tbody>
+                </table>
+                <hr style="margin-left:20px; margin-right: 20px; border-top: 1px dotted #8c8b8b;    border-bottom: 1px dotted #fff;"/>
+            </apex:outputPanel>            
+            <apex:outputPanel rendered="{!ComplaintDetailsViewModel.IsPesticides}">
+                <label style="font-weight: normal; font-size: 110%; font-family: 'Source Sans Pro', 'sans-serif';">Pesticides</label>
+                <table>
+                    <tbody> 
+                        <tr>
+                            <td>
+                                <label>Nature of Pesticides Report</label>
+                            </td>
+                            <td>
+                                 {!ComplaintDetailsViewModel.NatureOfPesticidesReport}
+                            </td>
+                            <td>
+                                <label>Reported to CAC</label>    
+                            </td>
+                            <td>
+                                {!ComplaintDetailsViewModel.ReportedToCAC}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <hr style="margin-left:20px; margin-right: 20px; border-top: 1px dotted #8c8b8b;    border-bottom: 1px dotted #fff;"/>
+            </apex:outputPanel> 
+            <apex:outputPanel rendered="{!ComplaintDetailsViewModel.IsToxicSubstances}">
+                <label style="font-weight: normal; font-size: 110%; font-family: 'Source Sans Pro', 'sans-serif';">Toxic Substances</label>
+                <table>
+                    <tbody> 
+                        <tr>
+                            <td>
+                                <label>How did you become aware of the incident</label>
+                            </td>
+                            <td>
+                                 {!ComplaintDetailsViewModel.HowDidYouBecomeAwareOfTheIncident}
+                            </td>
+                            <td>
+                                <label>Reported to CAC</label>    
+                            </td>
+                            <td>
+                                {!ComplaintDetailsViewModel.ReportedToCAC}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>Sensitive Location</label>
+                            </td>
+                            <td>
+                                {!ComplaintDetailsViewModel.SensitiveLocation}
+                            </td>
+                            <td>
+                                <label>Relationship to Responsible Party</label>    
+                            </td>
+                            <td>
+                                {!ComplaintDetailsViewModel.RelationshipToResponsibleParty}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <hr style="margin-left:20px; margin-right: 20px; border-top: 1px dotted #8c8b8b;    border-bottom: 1px dotted #fff;"/>
+            </apex:outputPanel> 
+            <apex:outputPanel rendered="{!ComplaintDetailsViewModel.IsWater}">
+                <label style="font-weight: normal; font-size: 110%; font-family: 'Source Sans Pro', 'sans-serif';">Water</label>
+                <table>
+                    <tbody> 
+                        <tr>
+                            <td>
+                                <label>Watershed</label>
+                            </td>
+                            <td>
+                                 {!ComplaintDetailsViewModel.Watershed}
+                            </td>
+                            <td>
+                                <label>Name of Affected Water Source</label>
+                            </td>
+                            <td>
+                                {!ComplaintDetailsViewModel.NameOfAffectedWaterSource}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>Drinking Water</label>
+                            </td>
+                            <td>
+                                {!ComplaintDetailsViewModel.DrinkingWater}
+                            </td>
+                            <td>
+                                <label>Cannabis/Marijuana</label>    
+                            </td>
+                            <td>
+                                {!ComplaintDetailsViewModel.WaterCannabisMarijuana}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>Water Quality</label>
+                            </td>
+                            <td>
+                                {!ComplaintDetailsViewModel.WaterQuality}
+                            </td>
+                            <td>
+                                <label>Other Water Related Concern</label>    
+                            </td>
+                            <td>
+                                {!ComplaintDetailsViewModel.OtherWaterRelatedConcerns}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>Water Rights</label>
+                            </td>
+                            <td>
+                                {!ComplaintDetailsViewModel.WaterRights}
+                            </td>
+                        </tr>                        
+                        <apex:outputPanel rendered="{!ComplaintDetailsViewModel.IsWaterRights}">
+                            <tr>
+                                <td>
+                                    <label>Water Rights Number</label>
+                                </td>
+                                <td>
+                                    {!ComplaintDetailsViewModel.WaterRightsNumber}
+                                </td>
+                                <td>
+                                    <label>Water Rights Owner</label>
+                                </td>
+                                <td>
+                                    {!ComplaintDetailsViewModel.WaterRightsOwner}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label>Water Rights Description</label>
+                                </td>
+                                <td>
+                                    {!ComplaintDetailsViewModel.WaterRightsDescription}
+                                </td>
+                            </tr>                            
+                        </apex:outputPanel>
+                    </tbody>
+                </table>
+                <hr style="margin-left:20px; margin-right: 20px; border-top: 1px dotted #8c8b8b;    border-bottom: 1px dotted #fff;"/>
+            </apex:outputPanel> 
+            <hr class="hr-understated"/> 
+            <apex:outputPanel rendered="{!ComplaintDetailsViewModel.Attachments.size > 0}">
+                <h4>Attachments</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <apex:repeat value="{!ComplaintDetailsViewModel.Attachments}" var="attachment" id="attachmentRepeat"> 
+                            <tr>
+                                <td>
+                                    <a href="{!URLFOR($Action.Attachment.Download, attachment.Id)}">{!attachment.Name}</a>
+                                </td>
+                            </tr>
+                        </apex:repeat>
+                    </tbody>
+                </table>
+            </apex:outputPanel>
+            <apex:outputPanel rendered="{!ComplaintDetailsViewModel.Referrals.size > 0}">
+                <h4>This Complaint has been Referred to:</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>External Partner</th>
+                            <th>Referred By</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <apex:repeat value="{!ComplaintDetailsViewModel.Referrals}" var="referral" id="referralRepeat">
+                            <tr>
+                                <td>{!referral.External_Partner__r.Name}</td>
+                                <td>{!referral.CreatedBy.BDO__c}</td>
+                                <td>
+                                    <apex:outputText value="{0, date, MM/dd/yyyy}">
+                                        <apex:param value="{!referral.CreatedDate}" /> 
+                                    </apex:outputText>
+                                </td>
+                            </tr>
+                        </apex:repeat>
+                    </tbody>
+                </table>
+            </apex:outputPanel>            
+        </body>
+    </html>
+</apex:page>

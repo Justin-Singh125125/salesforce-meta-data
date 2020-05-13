@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>45.0</apiVersion>
+    <available>true</available>
+    <description>Sent out when the Task/Subtask is Delegated OR when the BDO/Program/Staff assigned field is changed after the Task is delegated (but before completed).</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>CAMS Task Delegation or Assignment</name>
+    <style>none</style>
+    <subject>New CAMS Task for [Type] (CAMS ID:  [CAMS ID], Task ID:  [Task ID])</subject>
+    <type>visualforce</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

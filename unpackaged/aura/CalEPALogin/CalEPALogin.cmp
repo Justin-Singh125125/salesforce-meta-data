@@ -1,0 +1,32 @@
+<aura:component controller="CalEPALoginController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <!-- REQUIRED SLDS CSS -->
+    <!-- Username and Password -->
+    <aura:attribute name="Username" type="String" default='dalden@gmail.com'/>
+    <aura:attribute name="Password" type="String" default='fjdklfjdskl'/>
+    <aura:attribute name="ResetUsername" type="String" />
+    <aura:attribute name="mylabel" type="String"/>
+    <aura:attribute name="mylabel1" type="String"/>
+    <!--create a component attributs -->
+    <aura:attribute name="Spinner" type="boolean" default="false"/>
+    <aura:attribute name="isVisible" type="boolean" default="true"/>
+    <!--loading spinner start... style=Brand Medium (blue dots)-->
+    <aura:if isTrue="{!v.Spinner}">
+        <div aura:id="spinnerId" class="slds-spinner_container">
+            <div class="slds-spinner--brand slds-spinner slds-spinner--large slds-is-relative" role="alert">
+                <span class="slds-assistive-text">Loading</span>
+                <div class="slds-spinner__dot-a"></div>
+                <div class="slds-spinner__dot-b"></div>
+            </div>
+        </div>
+    </aura:if>
+    <div class="form-group">
+        <label for="exampleInputEmail" class="form-control-label"><span class="required-label">*</span> Email address</label>
+        <ui:inputEmail aura:id="email" class="form-control" value="{!v.Username}"/>  
+    </div>
+    <div class="form-group">
+        <label class="form-control-label"><span class="required-label">*</span> Password</label>
+        <ui:inputSecret  aura:id="password" class="form-control" value="{!v.Password}"/>  
+    </div>
+    <button type="submit" class="btn btn-default" onclick="{!c.login}">Submit</button>
+    <ui:outputRichText value="{!v.mylabel}"/>
+</aura:component>

@@ -1,0 +1,129 @@
+<apex:page applyBodyTag="false" 
+    cache="false" 
+    applyHTMLTag="false" 
+    docType="HTML-5.0" 
+    id="ExternalPartnerRequestAccess" 
+    sidebar="false" 
+    showChat="false" 
+    showHeader="false"  
+    standardController="Finding__c" 
+    standardStylesheets="false"  
+    extensions="ExternalPartnerPortalController"
+    action="{!LoadExternalPartnerRequestAccess}"> 
+    <apex:composition template="ExternalPartnerLayout">
+        <apex:define name="ExternalPartnerLayoutTitle"></apex:define>
+        <apex:define name="ExternalPartnerLayoutPageCss">
+            <style>
+                .messageText h4
+                {
+                    display:none;
+                }
+                .messageText
+                {
+                    color:red;
+                } 
+            </style>
+        </apex:define>
+        <apex:define name="UtilityLinks"></apex:define>
+        <apex:define name="NavListIcons"></apex:define>
+        <apex:define name="ExternalPartnerLayoutBody">
+            <div class="group">
+                <div class="full-width">
+                    <div class="panel panel-understated">
+                        <div class="panel-heading">
+                            <h4>To register, please provide the following information</h4> 
+                        </div>
+                        <div class="panel-body">
+                            <apex:form id="RequestAccessForm" html-role="form">
+								<div class="form-group">
+                                   <div class="half">
+                                       <label>First Name</label>
+                                   </div>
+                                   <div class="half">
+                                       <label>Last Name</label>
+                                   </div>
+                                </div>                                
+                                <div class="form-group">
+                                   <div class="half">
+                                       <apex:inputText value="{!ExternalPartnerRequestAccessViewModel.FirstName}" styleClass="form-control FirstName" html-placeholder="Enter your first name" html-autocomplete="off"/><!--value="{!ExternalPartnerRequestAccessViewModel.EmailAddress}" -->
+                                   </div>
+                                   <div class="half">
+                                       <apex:inputText value="{!ExternalPartnerRequestAccessViewModel.LastName}" styleClass="form-control LastName" html-placeholder="Enter your last name" html-autocomplete="off"/><!--value="{!ExternalPartnerRequestAccessViewModel.EmailAddress}" -->
+                                   </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="full-width" style="margin-top:10px;">
+                                       <label>Email</label>
+                                    </div>                                        
+                                </div>                                
+                                <div class="form-group">
+                                    <div class="full-width" >
+                                   		<apex:inputText value="{!ExternalPartnerRequestAccessViewModel.EmailAddress}" styleClass="form-control EmailAddress" html-placeholder="Enter your email address" html-autocomplete="off"/>
+                                    </div>                                        
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-10">
+                                    </div>                                       
+                                    <div class="col-md-1" style="margin-top:10px;">
+                                        <input id="RequestAccessButton" type="button" value="Submit" class="btn btn-secondary pull-right" />
+                                        <apex:actionFunction name="RequestAccess" action="{!SubmitAccessRequest}" />
+                                    </div>
+                                        <div class="col-md-1" style="margin-top:10px;">
+                                        <input id="CancelButton" type="button" value="Cancel" class="btn btn-secondary pull-right" />
+                                        <apex:actionFunction name="Cancel" action="{!GotoLogin}" />
+                                    </div>
+                                    <div class="col-md-12">
+                                        <p id="RequestAccessError" style="color:red;"></p>
+                                        <apex:outputLabel value="{!PageErrorMessage}" html-class="PageErrorMessage" style="color: red;"/>
+                                    </div>
+                                </div>
+                            </apex:form>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+        </apex:define> 
+        <apex:define name="ExternalPartnerLayoutPageScriptIncludes"></apex:define>
+        <apex:define name="ExternalPartnerLayoutPageScripts">
+            <script>
+                $(document).ready(function() 
+                {
+                    $(document).on('click', '#RequestAccessButton', function(event) 
+                    {
+                        event.preventDefault();
+                        $(".FirstName").css('border-color', '');;
+                        $(".LastName").css('border-color', '');;
+                        $(".EmailAddress").css('border-color', '');;
+                        if($(".FirstName" ).val() == '')
+                        {
+                            $('#RequestAccessError').text('Please Provide Your first name.');
+                            $(".FirstName").css('border-color', 'red');;
+                            $('.FirstName').focus();
+                            return false;
+                        }
+                        if($(".LastName" ).val() == '')
+                        {
+                            $('#RequestAccessError').text('Please Provide Your last name.');
+                            $(".LastName").css('border-color', 'red');;
+                            $('.LastName').focus();
+                            return false;
+                        }
+                        if($(".EmailAddress" ).val() == '')
+                        {
+                            $('#RequestAccessError').text('Please provide your email address.');
+                            $(".EmailAddress").css('border-color', 'red');;
+                            $('.EmailAddress').focus();
+                            return false;
+                        }
+                        RequestAccess();
+                    });
+                    
+                    $(document).on('click', '#CancelButton', function(event) 
+                    { 
+                        Cancel();
+                    });
+                });
+            </script>
+        </apex:define>
+    </apex:composition> 
+</apex:page>

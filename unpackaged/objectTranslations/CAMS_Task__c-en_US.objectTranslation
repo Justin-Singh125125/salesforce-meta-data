@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Task</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Tasks</value>
+    </caseValues>
+    <fields>
+        <label><!-- Assigned By --></label>
+        <name>Assigned_By__c</name>
+    </fields>
+    <fields>
+        <label><!-- Assigned To --></label>
+        <name>Assigned_To__c</name>
+        <relationshipLabel><!-- Tasks --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Assignment BDO Name --></label>
+        <name>Assignment_BDO_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Division, Office or Program --></label>
+        <name>BDO_Suborganization__c</name>
+        <picklistValues>
+            <masterLabel>Agriculture</masterLabel>
+            <translation><!-- Agriculture --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chief Information Officer</masterLabel>
+            <translation><!-- Chief Information Officer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Climate Policy</masterLabel>
+            <translation><!-- Climate Policy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Communications</masterLabel>
+            <translation><!-- Communications --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Director</masterLabel>
+            <translation><!-- Director --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Environmental Justice and Tribal</masterLabel>
+            <translation><!-- Environmental Justice and Tribal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Environmental Policy</masterLabel>
+            <translation><!-- Environmental Policy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Executive Office</masterLabel>
+            <translation><!-- Executive Office --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fiscal and Admin Programs</masterLabel>
+            <translation><!-- Fiscal and Admin Programs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Health and Public Policy</masterLabel>
+            <translation><!-- Health and Public Policy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Law Enforcement and Counsel</masterLabel>
+            <translation><!-- Law Enforcement and Counsel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Legal Office</masterLabel>
+            <translation><!-- Legal Office --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Legislative Affairs</masterLabel>
+            <translation><!-- Legislative Affairs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Legislative Office</masterLabel>
+            <translation><!-- Legislative Office --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PRA</masterLabel>
+            <translation><!-- PRA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Secretary</masterLabel>
+            <translation><!-- Secretary --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Travel</masterLabel>
+            <translation><!-- Travel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Undersecretary</masterLabel>
+            <translation><!-- Undersecretary --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unified Program</masterLabel>
+            <translation><!-- Unified Program --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Assigned BDO --></label>
+        <name>BDO__c</name>
+        <picklistValues>
+            <masterLabel>ARB</masterLabel>
+            <translation><!-- ARB --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Agency</masterLabel>
+            <translation><!-- Agency --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CalRecycle</masterLabel>
+            <translation><!-- CalRecycle --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPR</masterLabel>
+            <translation><!-- DPR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DTSC</masterLabel>
+            <translation><!-- DTSC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OEHHA</masterLabel>
+            <translation><!-- OEHHA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SWRCB</masterLabel>
+            <translation><!-- SWRCB --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- BDO and Division, Office or Program --></label>
+        <name>BDO_and_Division_Office_or_Program__c</name>
+    </fields>
+    <fields>
+        <label><!-- Assignment --></label>
+        <name>CAMS_Assignment__c</name>
+        <relationshipLabel><!-- Tasks --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Closed Date --></label>
+        <name>Closed_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Completed Date --></label>
+        <name>Completed_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Confidential --></label>
+        <name>Confidential__c</name>
+    </fields>
+    <fields>
+        <label><!-- Due Date --></label>
+        <name>Due_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Final Outcome --></label>
+        <name>Final_Outcome__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Declined</masterLabel>
+            <translation><!-- Declined --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Withdrawn</masterLabel>
+            <translation><!-- Withdrawn --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Flag Logged In User Assigned To --></label>
+        <name>Flag_Logged_In_User_Assigned_To__c</name>
+    </fields>
+    <fields>
+        <label><!-- Flag Logged In User Program --></label>
+        <name>Flag_Logged_In_User_Program__c</name>
+    </fields>
+    <fields>
+        <label><!-- Flag Logged In User --></label>
+        <name>Flag_Logged_In_User__c</name>
+    </fields>
+    <fields>
+        <help><!-- Instructions for CAMS Task --></help>
+        <label><!-- Instructions --></label>
+        <name>Instructions__c</name>
+    </fields>
+    <fields>
+        <label><!-- Internal Tracking ID --></label>
+        <name>Internal_Tracking_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- My Tasks --></label>
+        <name>My_Tasks__c</name>
+    </fields>
+    <fields>
+        <label><!-- Owner --></label>
+        <name>Owner_Display__c</name>
+    </fields>
+    <fields>
+        <label><!-- Predecessor --></label>
+        <name>Predecessor__c</name>
+        <relationshipLabel><!-- Tasks --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Reason for Back to Requester/Assigned --></label>
+        <name>Reason__c</name>
+    </fields>
+    <fields>
+        <label><!-- Related To --></label>
+        <name>Related_To__c</name>
+        <relationshipLabel><!-- Child Tasks --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Status Date --></label>
+        <name>Status_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Back to Assigned</masterLabel>
+            <translation><!-- Back to Assigned --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Back to Requestor</masterLabel>
+            <translation><!-- Back to Requestor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Completed</masterLabel>
+            <translation><!-- Completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Delegated</masterLabel>
+            <translation><!-- Delegated --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Governor&apos;s Office</masterLabel>
+            <translation><!-- Governor&apos;s Office --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending</masterLabel>
+            <translation><!-- Pending --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Withdrawn</masterLabel>
+            <translation><!-- Withdrawn --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- SubTasks Completed --></label>
+        <name>SubTasks_Completed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Subject --></label>
+        <name>Subject__c</name>
+    </fields>
+    <fields>
+        <label><!-- Task Link --></label>
+        <name>Task_Link__c</name>
+    </fields>
+    <fields>
+        <label><!-- Task Type --></label>
+        <name>Task_Type__c</name>
+        <picklistValues>
+            <masterLabel>Concurrent</masterLabel>
+            <translation><!-- Concurrent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sequential</masterLabel>
+            <translation><!-- Sequential --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Test Data --></label>
+        <name>Test_Data__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Urgent --></label>
+        <name>Urgent__c</name>
+    </fields>
+    <layouts>
+        <layout>CAMS Task Layout</layout>
+        <sections>
+            <label><!-- Assignment --></label>
+            <section>Assignment</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- New Section --></label>
+            <section>New Section</section>
+        </sections>
+        <sections>
+            <label><!-- Task --></label>
+            <section>Task</section>
+        </sections>
+        <sections>
+            <label><!-- Workflow --></label>
+            <section>Workflow</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <label><!-- Create Child Task --></label>
+        <name>Create_Child_Task</name>
+    </quickActions>
+    <recordTypes>
+        <label><!-- Concurrent --></label>
+        <name>Concurrent</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Sequential --></label>
+        <name>Sequential</name>
+    </recordTypes>
+    <sharingReasons>
+        <label><!-- Assignment Creator --></label>
+        <name>Assignment_Creator</name>
+    </sharingReasons>
+    <sharingReasons>
+        <label><!-- Assignment Owner --></label>
+        <name>Assignment_Owner</name>
+    </sharingReasons>
+    <sharingReasons>
+        <label><!-- Sibling Task Owner --></label>
+        <name>Sibling_Task_Owner</name>
+    </sharingReasons>
+    <sharingReasons>
+        <label><!-- Task Owner Group --></label>
+        <name>Task_Owner_Group</name>
+    </sharingReasons>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- You must select a BDO and a Division, Office, or Program. --></errorMessage>
+        <name>BDO_OR_Subdivision_Needed</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- If User is Agency, Assigned BDO must be Agency --></errorMessage>
+        <name>BDO_User_Agency</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- BDO users can only assign Agency tasks to the Executive Office or Fiscal and Admin Services --></errorMessage>
+        <name>BDO_User_Agency2</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Completed date cannot be a future date.  It can be today&apos;s date or in the past. --></errorMessage>
+        <name>Completed_Date_Cannot_Be_In_The_Future</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Completed date is required if task is completed. --></errorMessage>
+        <name>Completed_Date_Is_Required_If_Completed</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Completed Date can only be entered if Status is Completed or Withdrawn --></errorMessage>
+        <name>Completed_Date_Must_Be_Empty_If_Not_Comp</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You cannot have a Predecessor when Task Type = Concurrent --></errorMessage>
+        <name>Concurrent</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Due Date is Required --></errorMessage>
+        <name>Due_Date_is_Required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Reason is needed when sending Back to Assigned --></errorMessage>
+        <name>Reason_Needed_For_Back_to_Assigned</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Reason is needed when sending Back to Requester --></errorMessage>
+        <name>Reason_Needed_For_Back_to_Requester</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- If the Task Type = Sequential, please pick a Predecessor --></errorMessage>
+        <name>Sequential</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Sequential tasks cannot be delegated until the Predecessor is completed. --></errorMessage>
+        <name>Sequential_cannot_be_delegated</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Status date cannot be a future date.  It can be today&apos;s date or in the past. --></errorMessage>
+        <name>Status_Date_Cannot_Be_In_The_Future</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- BDO must be the same as the Related Task BDO --></errorMessage>
+        <name>SubTask_BDO_Related_Task</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please choose your BDO or Agency --></errorMessage>
+        <name>Task_BDO_User</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- CAUTION : Task Due Date cannot be later than Assignment Due Date or the Related Task Due Date --></errorMessage>
+        <name>Task_Due_Date</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Complete_Task --></label>
+        <name>Complete_Task</name>
+    </webLinks>
+</CustomObjectTranslation>

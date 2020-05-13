@@ -1,0 +1,1081 @@
+<apex:page applyBodyTag="false"     
+    cache="false" 
+    applyHTMLTag="false" 
+    docType="HTML-5.0" 
+    id="FindingCreate" 
+    sidebar="false"  
+    showChat="false" 
+    showHeader="false"  
+    standardController="Finding__c" 
+    standardStylesheets="false" 
+    extensions="ExternalPartnerPortalController"
+    action="{!LoadCreate}">
+    <apex:composition template="ExternalPartnerLayout">
+        <apex:define name="ExternalPartnerLayoutTitle">CalEPA Environmental Complaint External Partner Portal</apex:define>
+        <apex:define name="ExternalPartnerLayoutPageCss">        
+        </apex:define>
+        <apex:define name="ExternalPartnerLayoutBody">
+        <apex:form id="CreateFindingsForm" html-role="form">                
+                <h3>Findings Form for {!CreateFindingsViewModel.ComplaintName} <small><apex:commandLink target="_blank" action="{!ViewComplaintDetails}" value="View Complaint Details" id="theCommandLink"/></small></h3>
+                <apex:inputhidden value="{!CreateFindingsViewModel.ExternalPartnerId}" html-class="ExternalPartner" />
+                <apex:inputhidden value="{!CreateFindingsViewModel.ReferralId}" html-class="ReferralId" />
+                <apex:inputhidden value="{!CreateFindingsViewModel.ComplaintId}" html-class="ComplaintId" />
+                <div class="form-group full-width">
+                    <div class="form-group">
+                        <p class="help-block">CalEPA has referred the above complaint to your agency for review and investigation, as your agency deems appropriate. Once you have completed the investigation, determined that your agency will not or cannot investigate, or referred to another agency for investigation, please complete the findings form fields below.  The information you enter in this form is not automatically shared with complainants. However, we typically provide them your agency’s contact information so that they can receive additional information from you about your investigation.</p>
+                    </div>
+                </div>
+                <div class="form-group full-width">
+                    <div class="panel panel-overstated">
+                        <div class="panel-heading">
+                            <h3><span class="ca-gov-icon-info"></span> Contact Information</h3>
+                        </div>
+                        <div class="panel-body">
+                            <div class="form-group">
+                                <label><span class="required-label">*</span>Agency</label><br/>
+                                <span id='AgencyName'><apex:outputText value="{!CreateFindingsViewModel.ExternalPartnerName}"/></span>
+                                <a href="#" id="ChangeAccount">Change</a>
+                                <apex:actionFunction name="RedirectToFindingAccountSelector" action="{!RedirectToFindingAccountSelector}" />
+                            </div>
+                            <div class="form-group">
+                                <label><span class="required-label">*</span> Your Name</label>
+                                <apex:inputhidden value="{!CreateFindingsViewModel.ContactId}" html-class="ContactId" />
+                                <select id="ContactName" class="form-control contact-name">
+                                    <apex:repeat value="{!CreateFindingsViewModel.Contacts}" var="contact" id="theRepeat">
+                                        <option value="{!contact.Value}">{!contact.Label}</option>
+                                    </apex:repeat>
+                                </select>
+                                <label id="ContactError" style="color:red;"></label>
+                            </div>
+                            <div class="group" id="ContactInformationGroup">
+                                <div class="form-group half">
+                                    <label><span class="required-label">*</span> First Name</label>
+                                    <input type="text" class="form-control" id="FirstName"/>
+                                    <label id="FirstNameError" style="color: red;"></label>
+                                </div>
+                                <div class="form-group half">
+                                    <label><span class="required-label">*</span> Last Name</label>
+                                    <input type="text" class="form-control" id="LastName" />
+                                    <label id="LastNameError" style="color: red;"></label>
+                                </div>
+                                <div class="form-group full-width">
+                                    <label><span class="required-label">*</span> Email</label>
+                                    <input type="email" class="form-control" id="Email"/>
+                                    <label id="EmailError" style="color: red;"></label>
+                                </div>
+                                <div class="form-group half">
+                                    <label for="Phone"> Phone:  </label>
+                                    <input type="text" class="form-control" id="Phone" />
+                                </div>
+                                <div class="form-group half">
+                                    <label for="Title"> Title:  </label>
+                                    <input type="text" class="form-control" id="Title" />
+                                </div>
+                                <div class="form-group full-width">
+                                    <button id="EditContact" type="submit" class="btn btn-secondary active pull-right">Edit Contact Information</button>
+                                    <button id="CancelSaveContact" type="submit" class="btn btn-default active pull-right">Cancel</button>
+                                    <button id="SaveContact" type="submit" class="btn btn-secondary active pull-right">Save Contact Information</button>
+                                    <label id="UpdateError" class="pull-right" style="color:red;"></label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group full-width">
+                    <div class="panel panel-overstated">
+                        <div class="panel-heading">
+                            <h3><span class="ca-gov-icon-info"></span> Secondary Referral</h3>
+                        </div>
+                        <div class="panel-body">
+                            <div class="form-group">
+                                <label for="exampleInputEmail"><span class="required-label">*</span> Did you refer this to another agency?</label>
+                                <apex:selectList value="{!CreateFindingsViewModel.SecondaryReferral}" styleClass="form-control SecondaryReferral" multiselect="false" size="1">
+                                    <apex:selectOption itemValue=""/>
+                                    <apex:selectOption itemValue="Yes"/>
+                                    <apex:selectOption itemValue="No"/>
+                                </apex:selectList>
+                                <label id="SecondaryReferralError" style="color:red;"></label>
+                            </div>
+                            <div class="group" id="SecondaryReferralAdditional">
+                                <div class="form-group half">
+                                    <label><span class="required-label">*</span> Who Did You Refer To?:</label>
+                                    <apex:inputText value="{!CreateFindingsViewModel.ReferralAgency}" styleClass="form-control ReferralAgency"/>
+                                    <label id="ReferralAgencyError" style="color:red;"></label>
+                                </div>
+                                <div class="form-group half">
+                                    <label><span class="required-label">*</span> Date of Referral:</label>
+                                    <apex:inputText value="{!CreateFindingsViewModel.DateOfReferral}" styleClass="form-control DateOfReferral" html-data-mask="00/00/0000"/>
+                                    <label id="DateOfReferralError" style="color:red;"></label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group full-width">
+                    <div class="panel panel-overstated">
+                        <div class="panel-heading">
+                            <h3><span class="ca-gov-icon-info"></span> Inspection Information</h3>
+                        </div>
+                        <div class="panel-body">
+                            <div class="form-group">
+                                <label for="exampleInputEmail"><span class="required-label">*</span> Did you conduct a site visit?  </label>
+                                <apex:selectList value="{!CreateFindingsViewModel.SiteVisitConducted}" styleClass="form-control SiteVisit" multiselect="false" size="1">
+                                    <apex:selectOption itemValue=""/>
+                                    <apex:selectOption itemValue="Yes"/>
+                                    <apex:selectOption itemValue="No"/>
+                                </apex:selectList>
+                                <label id="SiteVisitError" style="color:red;"></label>                                
+                            </div>
+                            <div class="group" id="SiteVisitAdditionalYes">
+                                <div class="form-group full-width">
+                                    <label><span class="required-label">*</span> Date of Site Visit:</label>
+                                    <apex:inputText value="{!CreateFindingsViewModel.DateOfSiteVisit}" styleClass="form-control DateOfSiteVisit" html-data-mask="00/00/0000"/>
+                                    <label id="DateOfSiteVisitError" style="color:red;"></label>                                
+                                </div>
+                            </div>
+                            <div class="group" id="SiteVisitAdditionalNo">
+                                <div class="form-group full-width">
+                                    <label><span class="required-label">*</span> Why didn't you conduct a site visit?:</label>
+                                    <apex:selectList value="{!CreateFindingsViewModel.ReasonForNoSiteVisit}" styleClass="form-control ReasonForNoSiteVisit" multiselect="false" size="1">
+                                        <apex:selectOption itemValue=""/>
+                                        <apex:selectOption itemValue="Complaint is outside agency jurisdiction"/>
+                                        <apex:selectOption itemValue="Complaint lacked sufficient information"/>
+                                        <apex:selectOption itemValue="Complaint was referred to another agency for handling"/>
+                                        <apex:selectOption itemValue="Other"/>
+                                    </apex:selectList>
+                                    <label id="ReasonForNoSiteVisitError" style="color:red;"></label>                                
+                                </div>
+                            </div>
+                            <div class="group" id="ReasonForNoSiteVisitOther">
+                                <div class="form-group full-width">
+                                    <label><span class="required-label">*</span> Other Reason:</label>
+                                    <apex:inputTextArea value="{!CreateFindingsViewModel.OtherReasonForNoSiteVisit}" styleClass="form-control OtherReasonForNoSiteVisit"/>
+                                    <label id="OtherReasonForNoSiteVisitError" style="color:red;"></label>                                
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group full-width">
+                    <div class="panel panel-overstated">
+                        <div class="panel-heading">
+                            <h3><span class="ca-gov-icon-info"></span> Compliance and Enforcement Information</h3>
+                        </div>
+                        <div class="panel-body">
+                            <div class="form-group">
+                                <label><span class="required-label">*</span> Did you find violations or compliance issues?  </label>
+                                <apex:selectList value="{!CreateFindingsViewModel.ViolationsOrComplianceIssues}" styleClass="form-control ViolationsOrComplianceIssues" multiselect="false" size="1">
+                                    <apex:selectOption itemValue=""/>
+                                    <apex:selectOption itemValue="Yes"/>
+                                    <apex:selectOption itemValue="No"/>
+                                </apex:selectList>  
+                                <label id="ViolationsOrComplianceIssuesError" style="color:red;"></label>
+                            </div>
+                            <div class="group" id="SummaryOfViolationsAndEnforcementAdditional">
+                                <div class="form-group  full-width">
+                                    <label><span class="required-label">*</span> Summary of Violations and Enforcement Action Taken </label>
+                                    <apex:inputTextArea value="{!CreateFindingsViewModel.SummaryOfViolationsAndEnforcement}" styleClass="form-control SummaryOfViolationsAndEnforcement"/>
+                                    <label id="SummaryOfViolationsAndEnforcementIssuesError" style="color:red;"></label>
+                                </div>
+                                <div class="form-group full-width">
+                                    <label><span class="required-label">*</span> Were the violations related to the complaint?</label>
+                                    <apex:selectList value="{!CreateFindingsViewModel.ViolationsRelatedToComplaint}" styleClass="form-control ViolationsRelatedToComplaint" multiselect="false" size="1">
+                                        <apex:selectOption itemValue=""/>
+                                        <apex:selectOption itemValue="Yes"/>
+                                        <apex:selectOption itemValue="No"/>
+                                    </apex:selectList>  
+                                    <label id="ViolationsRelatedToComplaintError" style="color:red;"></label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label><span class="required-label">*</span> Is enforcement complete?   </label>
+                                <apex:selectList value="{!CreateFindingsViewModel.IsEnforcementComplete}" styleClass="form-control IsEnforcementComplete" multiselect="false" size="1">
+                                        <apex:selectOption itemValue=""/>
+                                        <apex:selectOption itemValue="Yes"/>
+                                        <apex:selectOption itemValue="No"/>
+                                </apex:selectList>
+                                <label id="IsEnforcementCompleteError" style="color:red;"></label>  
+                            </div>
+                            <div class="group" id="IsEnforcementCompleteAdditional">
+                                <div class="form-group  full-width">
+                                    <label><span class="required-label">*</span> Describe Any On-Going Enforcement Efforts: </label>
+                                    <apex:inputTextArea value="{!CreateFindingsViewModel.OnGoingEnforcement}" styleClass="form-control OnGoingEnforcement"/>
+                                    <label id="OnGoingEnforcementError" style="color:red;"></label>  
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group full-width">
+                    <div class="panel panel-overstated">
+                        <div class="panel-heading">
+                            <h3><span class="ca-gov-icon-info"></span> File Attachments</h3>
+                        </div>
+                        <div class="panel-body">
+                            <div class="form-group">
+                                <label> Each file must be less than 25 MB.  If you need to upload a file that is greater than 25MB, contact <a href="mailto:complaints@calepa.ca.gov">complaints@calepa.ca.gov</a>. </label>
+                                <input id="documents" type="file"  name="documents[]" multiple="true"/> <!---->
+                                <apex:inputhidden value="{!CreateFindingsViewModel.ContentDocumentIds}" id="ContentDocumentIds" html-class="ContentDocumentIds"/>
+                                <apex:inputhidden value="{!CreateFindingsViewModel.AttachmentUploadServiceURL}" html-class="AttachmentUploadServiceURL"/>
+                            </div>
+                            <div class="form-group">
+                                <label id="UploadError" style="color:red;"></label>
+                            </div>
+                            <div class="form-group">
+                                <table id="documentTable" class="table table-striped">
+                                    <thead> 
+                                        <tr>
+                                            <th>Filename</th>
+                                            <th>Size</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody> 
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>                
+                <div class="form-group full-width">
+                    <apex:outputLabel value="{!PageErrorMessage}" html-class="PageErrorMessage" style="color: red;"/>
+                    <input id="SaveButton" type="button" value="Save" class="btn btn-secondary pull-right" />
+                    <apex:actionFunction name="Save" action="{!Save}" />
+                </div>      
+            </apex:form>
+            <div class="clearfix"></div>
+        </apex:define>
+        <apex:define name="ExternalPartnerLayoutPageScriptIncludes">
+            <apex:includeScript value="{!URLFOR($Resource.Jquery_Mask_Plugin, '/jQuery-Mask-Plugin-master/src/jquery.mask.js')}"/>
+        </apex:define>
+        <apex:define name="ExternalPartnerLayoutPageScripts">
+            <script>
+                $(document).ready(function() 
+                {
+                    $(document).on('click', '#ChangeAccount', function(event) 
+                    {
+                        event.preventDefault();
+                        RedirectToFindingAccountSelector();
+                    }); 
+
+                    //Start Contact Information
+                    if($(".ContactId").val() != '')
+                    {
+                        $('#ContactName option[value="' + $(".ContactId").val() + '"]').prop('selected', true);
+
+                    }
+                    if($( "#ContactName option:selected" ).val()!='')
+                    {
+                        var contactId = $( "#ContactName option:selected" ).val();
+                        Visualforce.remoting.Manager.invokeAction('{!$RemoteAction.ExternalPartnerPortalController.GetContact}', contactId, 
+                            function(result, event)
+                            {
+                            
+                                if (event.status) 
+                                {
+                                    $("#FirstName").val(result.FirstName);
+                                    $("#LastName").val(result.LastName);
+                                    $("#Email").val(result.Email);
+                                    $("#Title").val(result.Title);
+                                    $("#Phone").val(result.Phone);
+                                    $("#FirstName").prop('readonly', true);
+                                    $("#LastName").prop('readonly', true);
+                                    $("#Email").prop('readonly', true);
+                                    $("#Title").prop('readonly', true);
+                                    $("#Phone").prop('readonly', true);
+                                    $('#ContactInformationGroup').show();                            
+                                } 
+                                else 
+                                {
+                                    $("#ContactError").text(event.message);
+                                }
+                            }, 
+                            {escape: true}
+                        );                        
+                    }
+                    else
+                    {
+                        $('#ContactInformationGroup').hide();
+                    }
+                    $("#SaveContact").hide();
+                    $("#CancelSaveContact").hide();
+                    $(document).on('change', '#ContactName', function() 
+                    {
+                        if($( "#ContactName option:selected" ).val()!='' && $( "#ContactName option:selected" ).text()!='')
+                        {
+                            $("#SaveContact").hide();
+                            $("#EditContact").show();
+                            var contactId = $( "#ContactName option:selected" ).val();
+                            $('.ContactId').val(contactId);
+                            Visualforce.remoting.Manager.invokeAction('{!$RemoteAction.ExternalPartnerPortalController.GetContact}', contactId, 
+                                function(result, event)
+                                {
+                                    if (event.status) 
+                                    {
+                                        $("#FirstName").val(result.FirstName);
+                                        $("#LastName").val(result.LastName);
+                                        $("#Email").val(result.Email);
+                                        $("#Title").val(result.Title);
+                                        $("#Phone").val(result.Phone);
+                                        $("#FirstName").prop('readonly', true);
+                                        $("#LastName").prop('readonly', true);
+                                        $("#Email").prop('readonly', true);
+                                        $("#Title").prop('readonly', true);
+                                        $("#Phone").prop('readonly', true);
+                                        $('#ContactInformationGroup').show();                            
+                                    } 
+                                    else 
+                                    {
+                                        $("#ContactError").text(event.message);
+                                    }
+                                }, 
+                                {escape: true}
+                            );
+                        }
+                        else
+                        {
+                            if($( "#ContactName option:selected" ).val()!='' && $( "#ContactName option:selected" ).text()=='')
+                            {
+                                $('#ContactInformationGroup').hide();
+                            }
+                            else
+                            {
+                                $("#FirstName").val('');
+                                $("#LastName").val('');
+                                $("#Email").val('');
+                                $("#Title").val('');
+                                $("#Phone").val('');
+                                $("#FirstName").prop('readonly', false);
+                                $("#LastName").prop('readonly', false);
+                                $("#Email").prop('readonly', false);
+                                $("#Title").prop('readonly', false);
+                                $("#Phone").prop('readonly', false);
+                                $("#SaveContact").show();
+                                $("#EditContact").hide();
+                                $('#ContactInformationGroup').show();
+                            }
+                        }
+                    });
+                    $(document).on('click', '#EditContact', function() 
+                    {
+                        $("#FirstName").prop('readonly', false);
+                        $("#LastName").prop('readonly', false);
+                        $("#Email").prop('readonly', false);
+                        $("#Title").prop('readonly', false);
+                        $("#Phone").prop('readonly', false);
+                        $("#EditContact").hide();
+                        $("#SaveContact").show();
+                        $("#CancelSaveContact").show();
+                        return false;
+                    });
+                    $(document).on('click', '#SaveContact', function() 
+                    {
+
+                        $("#FirstName").css('border-color', '#ccc');;
+                        $("#FirstName").text('');
+                        $("#FirstNameError").text('');
+                        $("#LastName").css('border-color', '#ccc');;
+                        $("#LastName").text('');
+                        $("#LastNameError").text('');
+                        $("#Email").css('border-color', '#ccc');;
+                        $("#Email").text('');
+                        $("#EmailError").text('');
+                        $("#UpdateError").text('');
+                        var contactId = $( "#ContactName option:selected" ).val();
+                        var firstName =  $("#FirstName").val();
+                        var lastName = $("#LastName").val();
+                        var email = $("#Email").val(); 
+                        var phone = $("#Phone").val(); 
+                        var title = $("#Title").val();
+                        var accountId = $( ".ExternalPartner" ).val();
+                        var errorFound = false;
+                        if(firstName == '')
+                        {
+                            $("#FirstName").css('border-color', 'red');;
+                            $("#FirstNameError").text('First Name is Required.');
+                            errorFound = true;
+                        }
+                        
+                        if(lastName == '')
+                        {
+                            $("#LastName").css('border-color', 'red');;
+                            $("#LastNameError").text('Last Name is Required.');
+                            errorFound = true;
+                        }
+
+                        if(email == '')
+                        {
+                            $("#Email").css('border-color', 'red');;
+                            $("#EmailError").text('Email is Required.');
+                            errorFound = true;
+                        }
+                        else
+                        {
+                            if(!ValidateEmail(email))
+                            {
+                                $("#Email").css('border-color', 'red');;
+                                $("#EmailError").text('Invalid Email Address.');
+                                errorFound = true;
+                            }
+                        }
+                        if(errorFound)
+                        {
+                            return false;
+                        }
+                        Visualforce.remoting.Manager.invokeAction('{!$RemoteAction.ExternalPartnerPortalController.UpdateContact}', contactId, firstName, lastName, email, phone, title, accountId,
+                            function(result, event)
+                            {
+                                if (event.status) 
+                                {
+                                    $("#FirstName").prop('readonly', true);
+                                    $("#LastName").prop('readonly', true);
+                                    $("#Email").prop('readonly', true);
+                                    $("#Title").prop('readonly', true);
+                                    $("#Phone").prop('readonly', true);
+                                    $("#EditContact").show();
+                                    $("#SaveContact").hide();
+                                    $("#CancelSaveContact").hide();
+                                    var email = $("#Email").val();
+                                    var accountId = $( ".ExternalPartner" ).val();                                    
+                                    Visualforce.remoting.Manager.invokeAction('{!$RemoteAction.ExternalPartnerPortalController.GetContactsByAccount}', accountId, 
+                                        function(result, event)
+                                        {
+                                            if (event.status) 
+                                            {
+                                                $('#ContactName').find('option').remove();                                                
+                                                $('#ContactName').append($("<option></option>").attr("value",'').text(''));
+                                                $.each(result, function (i, item) 
+                                                {
+                                                    if(item.Email == $("#Email").val())
+                                                    {
+                                                        $('#ContactName').append($('<option>', { 
+                                                            value: item.Id,
+                                                            text : item.Name,
+                                                            selected: 'selected' 
+                                                        }));
+                                                        $('.ContactId').val(item.Id);
+                                                    }
+                                                    else
+                                                    {
+                                                        $('#ContactName').append($('<option>', { 
+                                                            value: item.Id,
+                                                            text : item.Name                                                            
+                                                        }));
+                                                    }
+                                                }); 
+                                                $('#ContactName').append($("<option></option>").attr("value",'').text('I am a new contact'));
+                                                alert('New Contact Saved.'); 
+                                            } 
+                                            else 
+                                            {
+                                                $("#UpdateError").text(event.message);
+                                            }
+                                        }, 
+                                        {escape: true}
+                                    );
+                                } 
+                                else 
+                                {
+                                    $("#UpdateError").text(event.message);
+                                }
+                            }, 
+                            {escape: true}
+                        );
+                        return false;
+                    });
+
+                    function ValidateEmail(email) 
+                    {
+                        var re = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+                        return re.test(email);
+                    }
+
+
+                    $(document).on('click', '#CancelSaveContact', function() 
+                    {
+                        $("#FirstName").prop('readonly', true);
+                        $("#LastName").prop('readonly', true);
+                        $("#Email").prop('readonly', true);
+                        $("#Title").prop('readonly', true);
+                        $("#Phone").prop('readonly', true);
+                        $("#EditContact").show();
+                        $("#SaveContact").hide();
+                        $("#CancelSaveContact").hide();
+                        return false;
+                    });
+                    //End Contact Information
+                    
+                    //Start Secondary Referral
+                    if($( ".SecondaryReferral option:selected" ).val()=='Yes')
+                    {
+                        $('#SecondaryReferralAdditional').show();
+                    }
+                    else
+                    {
+                        $('#SecondaryReferralAdditional').hide();
+                    }
+                    $(document).on('change', '.SecondaryReferral', function() 
+                    {
+                        if($( ".SecondaryReferral option:selected" ).val()=='Yes')
+                        {
+                            $('#SecondaryReferralAdditional').show();
+                        }
+                        else
+                        {
+                            $('#SecondaryReferralAdditional').hide();
+                        }
+                    });
+                    $('.DateOfReferral').mask("00/00/0000", {placeholder: "mm/dd/yyyy"});
+                    $('.DateOfReferral').on('change', function() 
+                    {
+                        if($('.DateOfReferral').val().length < 0 || $('.DateOfReferral').val().length > 11)
+                        {
+                            $("#DateOfReferralError").text('Invalid Date.  Please enter the date in MM/DD/YYYY format.');
+                            $('.DateOfReferral').focus();
+                            $(".DateOfReferral").css('border-color', 'red');
+                        }
+                    });
+                    //End Secondary Referral
+                    
+                    //Start Inspection Information
+                    if($( ".SiteVisit option:selected" ).val()=='Yes')
+                    {
+                        $('#SiteVisitAdditionalYes').show();
+                        $('#SiteVisitAdditionalNo').hide();
+                        $('#ReasonForNoSiteVisitOther').hide();
+                    }
+                    else
+                    {
+                        if($( ".SiteVisit option:selected" ).val()=='No')
+                        {
+                            $('#SiteVisitAdditionalNo').show();
+                            $('#SiteVisitAdditionalYes').hide();
+                            if($( ".ReasonForNoSiteVisit option:selected" ).val()=='Other')
+                            {
+                                $('#ReasonForNoSiteVisitOther').show();
+                            }
+                            else
+                            {
+                                $('#ReasonForNoSiteVisitOther').hide();
+                            }
+                        }
+                        else
+                        {
+                            $('#SiteVisitAdditionalNo').hide();
+                            $('#SiteVisitAdditionalYes').hide();
+                        }
+                    }
+                    $(document).on('change', '.SiteVisit', function() 
+                    {
+                        if($( ".SiteVisit option:selected" ).val()=='Yes')
+                        {
+                            $('#SiteVisitAdditionalYes').show();
+                            $('#SiteVisitAdditionalNo').hide();
+                            $('#ReasonForNoSiteVisitOther').hide();
+                        }
+                        else
+                        {
+                            if($( ".SiteVisit option:selected" ).val()=='No')
+                            {
+                                $('#SiteVisitAdditionalNo').show();
+                                $('#SiteVisitAdditionalYes').hide();
+                            }
+                            else
+                            {
+                                $('#SiteVisitAdditionalNo').hide();
+                                $('#SiteVisitAdditionalYes').hide();
+                            }
+                        }
+                    });
+                    if($( ".ReasonForNoSiteVisit option:selected" ).val()=='Other')
+                    {
+                        $('#ReasonForNoSiteVisitOther').show();
+                    }
+                    else
+                    {
+                        $('#ReasonForNoSiteVisitOther').hide();
+                    }
+                    $(document).on('change', '.ReasonForNoSiteVisit', function() 
+                    {
+                        if($( ".ReasonForNoSiteVisit option:selected" ).val()=='Other')
+                        {
+                            $('#ReasonForNoSiteVisitOther').show();
+                        }
+                        else
+                        {
+                            $('#ReasonForNoSiteVisitOther').hide();
+                        }
+                    });
+
+                    $('.DateOfSiteVisit').mask("00/00/0000", {placeholder: "mm/dd/yyyy"});
+                    $('.DateOfSiteVisit').on('change', function() 
+                    {
+                        if($('.DateOfSiteVisit').val().length < 0 || $('.DateOfSiteVisit').val().length > 11)
+                        {
+                            $("#DateOfSiteVisitError").text('Invalid Date.  Please enter the date in MM/DD/YYYY format.');
+                            $('.DateOfSiteVisit').focus();
+                            $(".DateOfSiteVisit").css('border-color', 'red');
+                        }
+                    });
+
+                    //End Inspection Information
+
+                    //Start Compliance and Enforcement Information
+
+                    if($( ".ViolationsOrComplianceIssues option:selected" ).val()=='Yes')
+                    {
+                        $('#SummaryOfViolationsAndEnforcementAdditional').show();
+                    }
+                    else
+                    {
+                        $('#SummaryOfViolationsAndEnforcementAdditional').hide();
+                    }
+                    $(document).on('change', '.ViolationsOrComplianceIssues', function() 
+                    {
+                        if($( ".ViolationsOrComplianceIssues option:selected" ).val()=='Yes')
+                        {
+                            $('#SummaryOfViolationsAndEnforcementAdditional').show();
+                        }
+                        else
+                        {
+                            $('#SummaryOfViolationsAndEnforcementAdditional').hide();
+                        }
+                    });
+
+                    //
+                    if($( ".IsEnforcementComplete option:selected" ).val()=='No')
+                    {
+                        $('#IsEnforcementCompleteAdditional').show();
+                    }
+                    else
+                    {
+                        $('#IsEnforcementCompleteAdditional').hide();
+                    }
+                    $(document).on('change', '.IsEnforcementComplete', function() 
+                    {
+                        if($( ".IsEnforcementComplete option:selected" ).val()=='No')
+                        {
+                            $('#IsEnforcementCompleteAdditional').show();
+                        }
+                        else
+                        {
+                            $('#IsEnforcementCompleteAdditional').hide();
+                        }
+                    });
+
+                    //End Compliance and Enforcement Information
+
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    //Start File Attachments
+                    Visualforce.remoting.Manager.invokeAction('{!$RemoteAction.ExternalPartnerPortalController.GetAttachments}', $(".ContentDocumentIds").val(), 
+                        function(result, event)
+                        {
+                            if (event.status) 
+                            {
+                                BindTable(result);
+                            } 
+                            else 
+                            {
+                                console.log(event.message);
+                            }
+                        }, 
+                        {escape: true}
+                    );
+                    function BindTable(result)
+                    {
+                        $("#documentTable").find('tbody').empty();
+                        if(result.length > 0)
+                        {
+                            $.each(result, function (i, item) 
+                            { 
+                                var bodyLengthInMB = (item.BodyLength / (1024*1024)).toFixed(2);
+                                $("#documentTable").find('tbody').append($('<tr>')
+                                    .append($('<td>').append(item.Name))
+                                    .append($('<td>').append(bodyLengthInMB + ' MB'))
+                                    .append($('<td>').append($('<button>').attr('class','btn btn-secondary active removeDocument').attr('data-id',item.Id).text('Remove'))));
+                            });
+                        }
+                        else
+                        {
+                            $("#documentTable").hide();
+                        }
+                    }
+                    
+                    $('#documents').on('change', function() 
+                    {
+                        $("#SaveButton").addClass( "disabled" );
+                        $("#SaveButton").prop('disabled', true);
+                        $("#SaveButton").prop('disabled', true);
+                        $("#documents").prop('disabled', true);                        
+                        $("#UploadError").text('');
+                        var files = this.files;
+                        for (var i = 0; i < files.length; ++i) 
+                        {
+                            if (valid(files[i])) 
+                            {
+                                fileWorker(files[i]);
+                            }
+                            else 
+                            {
+                                var maxFileSizeInMB = (maxFileSize / (1024*1024)).toFixed(2);
+                                var fileSizeInMB = (files[i].size / (1024*1024)).toFixed(2);
+                                alert("Maximum accepted file size is " + maxFileSizeInMB + " MB, your file size is " + fileSizeInMB + " MB.  If you need to upload a file that is greater than 25MB, contact complaints@calepa.ca.gov.");
+                                $("#documents").val("");
+                            }
+                        }
+                    });
+
+                    var maxFileSize = 26214400;
+
+                    function valid(file) 
+                    {
+                        return (file.size <= maxFileSize);
+                    }
+
+                    function fileWorker(file) 
+                    {
+                        var fileReader = new FileReader();
+                        fileReader.onloadend = function(event) 
+                        {
+                            /* Base 64 encode the file before sending it */
+                            var payload = window.btoa(this.result);  
+                            var positionIndex = 0;
+                            var documentName = file.name;
+                            var documentType = file.type;
+                            var documentId = null;
+                            $.ajax({
+                                    url: $('.AttachmentUploadServiceURL').val() + '?Name=' + encodeURIComponent(documentName) + '&ContentType=' + encodeURIComponent(documentType),
+                                    type: "POST",
+                                    data: file,
+                                    crossDomain: true,
+                                    processData: false,
+                                    contentType: documentType,
+                                    success: function(response) {
+                                        if($(".ContentDocumentIds").val() == '')
+                                        {
+                                            $(".ContentDocumentIds").val(response);
+                                        }
+                                        else
+                                        {
+                                            $(".ContentDocumentIds").val($(".ContentDocumentIds").val() + ',' + response);
+                                        }
+                                        $("#documents").val("");
+                                        $("#documents").prop('disabled', false);
+                                        $("#SaveButton").prop('disabled', false);
+                                        $("#SaveButton").removeClass( "disabled" );
+                                        $('#documentTable').show();                                                                    
+                                        Visualforce.remoting.Manager.invokeAction('{!$RemoteAction.ExternalPartnerPortalController.GetAttachments}', $(".ContentDocumentIds").val(), 
+                                            function(result, event)
+                                            {                                                
+                                                if (event.status) 
+                                                {
+                                                    BindTable(result);
+                                                } 
+                                                else 
+                                                {                                                
+                                                    console.log(event.message);
+                                                }
+                                            }, 
+                                            {escape: true}
+                                        );
+                                    },
+                                    error: function (xhr, ajaxOptions, thrownError) {
+                                        $("#SaveButton").prop('disabled', false);
+                                        $("#SaveButton").removeClass( "disabled" );
+                                        if(thrownError == 'Server Error')
+                                        {
+                                            $("#UploadError").text("There was an issue uploading your file.  Submit the findings without the attachment and send the file to complaints@calepa.ca.gov.  Please include the complaint number in the subject.");
+                                        }
+                                        else
+                                        {
+                                            $("#UploadError").text(thrownError);
+                                        }
+                                  }
+                                    
+                            }); 
+                        }
+                        fileReader.onerror = function(event) 
+                        {                         
+                            alert("There was an error reading the file.  Please try again.");
+                        }
+                        fileReader.onabort = function(event) 
+                        {                            
+                            alert("There was an error reading the file.  Please try again.");
+                        }
+                        fileReader.readAsBinaryString(file);  //Read the body of the file
+                    }
+                    
+                    function BindTable(result)
+                    {
+                        $("#documentTable").find('tbody').empty();
+                        if(result.length > 0)
+                        {
+                            $.each(result, function (i, item) 
+                            { 
+                                // Id,Title,ContentSize,FileType,Description
+                                var bodyLengthInMB = (item.ContentSize / (1024*1024)).toFixed(2);
+                                $("#documentTable").find('tbody').append($('<tr>')
+                                    .append($('<td>').append(item.Title))
+                                    .append($('<td>').append(bodyLengthInMB + ' MB'))
+                                    .append($('<td>').append($('<button>').attr('class','btn btn-secondary active removeDocument').attr('data-id',item.Id).text('Remove'))));
+                            });
+                        }
+                        else
+                        {
+                            $("#documentTable").hide();
+                        }
+                    }
+
+                    $(document).on('click', '.removeDocument', function(event) 
+                    {
+                        event.preventDefault();
+                        var documentId = $(this).data('id');
+                        Visualforce.remoting.Manager.invokeAction('{!$RemoteAction.ExternalPartnerPortalController.RemoveAttachment}', documentId, 
+                            function(result, event)
+                            {
+                                if (event.status) 
+                                {
+                                    //documentId
+                                    $(".ContentDocumentIds").val($(".ContentDocumentIds").val().replace(documentId + ',',''))
+                                    $(".ContentDocumentIds").val($(".ContentDocumentIds").val().replace(documentId,''))
+                                    Visualforce.remoting.Manager.invokeAction('{!$RemoteAction.ExternalPartnerPortalController.GetAttachments}', $(".ContentDocumentIds").val(), 
+                                        function(result, event)
+                                        {
+                                            if (event.status) 
+                                            {
+                                                BindTable(result);
+                                            } 
+                                            else 
+                                            {
+                                                console.log(event.message);
+                                            }
+                                        }, 
+                                        {escape: true}
+                                    );
+                                } 
+                                else 
+                                {
+                                    console.log(event.message);
+                                }
+                            }, 
+                            {escape: true}
+                        );
+
+
+
+                    });
+                    //End File Documents
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    //Start Validation
+
+                    $(document).on('click', '#SaveButton', function(event) 
+                    {
+                        event.preventDefault();
+                        $("#ContactError").text('');
+                        $("#SecondaryReferralError").text('');
+                        $("#ReferralAgencyError").text('');
+                        $("#DateOfReferralError").text('');
+                        $("#SiteVisitError").text('');
+                        $("#DateOfSiteVisitError").text('');
+                        $("#ReasonForNoSiteVisitError").text('');
+                        $("#OtherReasonForNoSiteVisitError").text('');
+                        $("#ViolationsOrComplianceIssuesError").text('');
+                        $("#SummaryOfViolationsAndEnforcementIssuesError").text('');
+                        $("#ViolationsRelatedToComplaintError").text('');
+                        $("#IsEnforcementCompleteError").text('');
+                        $("#OnGoingEnforcementError").text('');
+                        $("#ContactName").css('border-color', '#ccc');;
+                        $(".SecondaryReferral").css('border-color', '#ccc');;
+                        $(".ReferralAgency").css('border-color', '#ccc');;
+                        $(".DateOfReferral").css('border-color', '#ccc');;
+                        $(".SiteVisit").css('border-color', '#ccc');;
+                        $(".DateOfSiteVisit").css('border-color', '#ccc');;
+                        $(".ReasonForNoSiteVisit").css('border-color', '#ccc');;
+                        $(".OtherReasonForNoSiteVisit").css('border-color', '#ccc');;
+                        $(".ViolationsOrComplianceIssues").css('border-color', '#ccc');;
+                        $(".SummaryOfViolationsAndEnforcement").css('border-color', '#ccc');;
+                        $(".ViolationsRelatedToComplaint").css('border-color', '#ccc');;
+                        $(".IsEnforcementComplete").css('border-color', '#ccc');;
+                        $(".OnGoingEnforcement").css('border-color', '#ccc');;
+
+                        var errorFound = false;
+                        if($('.IsEnforcementComplete').val()=='No')
+                        {
+                            if($('.OnGoingEnforcement').val()=='')
+                            {
+                                $("#OnGoingEnforcementError").text('Please Describe Any On-Going Enforcement Efforts.');
+                                $('.OnGoingEnforcement').focus();
+                                $(".OnGoingEnforcement").css('border-color', 'red');;
+                                errorFound = true;
+                            }
+                        }
+                        if($('.IsEnforcementComplete').val()=='')
+                        {
+                            $("#IsEnforcementCompleteError").text('Please select yes or no.');
+                            $('.IsEnforcementComplete').focus();
+                            $(".IsEnforcementComplete").css('border-color', 'red');;
+                            errorFound = true;
+                        }
+                        if($('.ViolationsOrComplianceIssues').val()=='Yes')
+                        {
+                           if($('.ViolationsRelatedToComplaint').val()=='')
+                            {
+                                $("#ViolationsRelatedToComplaintError").text('Please select yes or no.');
+                                $('.ViolationsRelatedToComplaint').focus();
+                                $(".ViolationsRelatedToComplaint").css('border-color', 'red');;
+                                errorFound = true;
+                            }
+                        }
+                        if($('.ViolationsOrComplianceIssues').val()=='Yes')
+                        {
+                           if($('.SummaryOfViolationsAndEnforcement').val()=='')
+                            {
+                                $("#SummaryOfViolationsAndEnforcementIssuesError").text('Please Provide a Summary of Violations and Enforcement Action Taken.');
+                                $('.SummaryOfViolationsAndEnforcement').focus();
+                                $(".SummaryOfViolationsAndEnforcement").css('border-color', 'red');;
+                                errorFound = true;
+                            }
+                        }
+                        if($('.ViolationsOrComplianceIssues').val()=='')
+                        {
+                            $("#ViolationsOrComplianceIssuesError").text('Please select yes or no.');
+                            $('.ViolationsOrComplianceIssues').focus();
+                            $(".ViolationsOrComplianceIssues").css('border-color', 'red');;
+                            errorFound = true;
+                        }
+                        if($('.ReasonForNoSiteVisit').val()=='Other')
+                        {
+                           if($('.OtherReasonForNoSiteVisit').val()=='')
+                            {
+                                $("#OtherReasonForNoSiteVisitError").text('Please Provide Why There Was No Site Visit.');
+                                $('.OtherReasonForNoSiteVisit').focus();
+                                $(".OtherReasonForNoSiteVisit").css('border-color', 'red');;
+                                errorFound = true;
+                            }
+                        }
+                        if($('.SiteVisit').val()=='No')
+                        {
+                            if($('.ReasonForNoSiteVisit').val()=='')
+                            {
+                                $("#ReasonForNoSiteVisitError").text('Please Provide Why There Was No Site Visit.');
+                                $('.ReasonForNoSiteVisit').focus();
+                                $(".ReasonForNoSiteVisit").css('border-color', 'red');;
+                                errorFound = true;
+                            }
+                        }
+                        if($('.SiteVisit').val()=='Yes')
+                        {
+                            if($('.DateOfSiteVisit').val()=='')
+                            {
+                                $("#DateOfSiteVisitError").text('Please Provide the Date of the Site Visit.');
+                                $('.DateOfSiteVisit').focus();
+                                $(".DateOfSiteVisit").css('border-color', 'red');;
+                                errorFound = true;
+                            }
+                            else
+                            {
+                                var mydate = new Date($('.DateOfSiteVisit').val());
+                                if (!(mydate instanceof Date && !isNaN(mydate.valueOf()))) 
+                                {  
+                                    $("#DateOfSiteVisitError").text('Invalid Date.  Please enter the date in MM/DD/YYYY format.');
+                                    $('.DateOfSiteVisit').focus();
+                                    $(".DateOfSiteVisit").css('border-color', 'red');;
+                                    errorFound = true;
+                                }
+                            }
+                        }
+                        if($('.SiteVisit').val()=='')
+                        {
+                            $("#SiteVisitError").text('Please select yes or no.');
+                            $('.SiteVisit').focus();
+                            $(".SiteVisit").css('border-color', 'red');;
+                            errorFound = true;
+                        }
+                        if($('.SecondaryReferral').val()=='Yes')
+                        {
+                            if($('.ReferralAgency').val()=='')
+                            {
+                                $("#ReferralAgencyError").text('Please Provide Who You Referred To.');
+                                $('.ReferralAgency').focus();
+                                $(".ReferralAgency").css('border-color', 'red');;
+                                errorFound = true;
+                            }
+                            if($('.DateOfReferral').val()=='')
+                            {
+                                $("#DateOfReferralError").text('Please provide the Date of Referral.');
+                                $('.DateOfReferral').focus();
+                                $(".DateOfReferral").css('border-color', 'red');;
+                                errorFound = true;
+                            }
+                            else
+                            {
+                                var mydate = new Date($('.DateOfReferral').val());
+                                if (!(mydate instanceof Date && !isNaN(mydate.valueOf()))) 
+                                {  
+                                    $("#DateOfReferralError").text('Invalid Date.  Please enter the date in MM/DD/YYYY format.');
+                                    $('.DateOfReferral').focus();
+                                    $(".DateOfReferral").css('border-color', 'red');;
+                                    errorFound = true;
+                                }
+                            }
+                        }
+                        if($('#ContactName').val()=='')
+                        {
+                            $("#ContactError").text('Please select a contact.');
+                            $('#ContactName').focus();
+                            $("#ContactName").css('border-color', 'red');;
+                            errorFound = true;
+                        }
+                        if($('.SecondaryReferral').val()=='')
+                        {
+                            $("#SecondaryReferralError").text('Please select yes or no.');
+                            $('.SecondaryReferral').focus();
+                            $(".SecondaryReferral").css('border-color', 'red');;
+                            errorFound = true;
+                        }
+            
+                        if(errorFound)
+                        {
+                            return false;
+                        }                        
+                        Save();
+                    });
+                    //End Validation
+                });
+            </script>
+        </apex:define>
+    </apex:composition> 
+</apex:page>

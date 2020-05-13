@@ -1,0 +1,63 @@
+<aura:component implements="force:lightningQuickActionWithoutHeader,force:hasRecordId" controller="CAMSCreateSubtaskController" >
+   <aura:attribute name="Task" type="CAMS_Task__c" default="{ 'sobjectType': 'CAMS_Task__c' }"/>
+   <aura:attribute name="hasErrors" type="Boolean" description="Indicate whether there were failures or not" />
+   <aura:attribute name="errors" type="string" />
+   <aura:attribute name="recordId" type="Id" />
+   <aura:handler name="init" value="{!this}" action="{!c.init}" />
+   <aura:handler name="change" value="{!v.Task.BDO__c}" action="{!c.updateBDOSuborganization}"/>
+   <aura:handler name="change" value="{!v.Task.BDO_Suborganization__c}" action="{!c.updateAssignedTo}"/>
+   <div class="slds-page-header" role="banner">
+      <p class="slds-text-heading--label">New Child Task</p>
+   </div>
+   <br/>
+   <aura:if isTrue="{!v.hasErrors}">
+      <!-- Load error -->
+      <div class="userCreateError">
+         <ui:message title="Error" severity="error" closable="true">
+                {!v.errors}
+         </ui:message>
+      </div>
+   </aura:if>
+   <div class="slds-form--stacked">
+      <div class="slds-form-element">
+         <label class="slds-form-element__label" for="BDO">BDO: </label>
+         <div class="slds-form-element__control">
+            <ui:inputSelect class="slds-input" aura:id="BDO" value="{!v.Task.BDO__c}" required="true"/> <!--keydown="{!c.updateNickname}" updateOn="keydown"-->
+         </div>
+      </div>
+      <div class="slds-form-element">
+         <label class="slds-form-element__label" for="Suborganization">Division, Office or Program: </label>
+         <div class="slds-form-element__control">
+            <ui:inputSelect class="slds-input" aura:id="Suborganization" value="{!v.Task.BDO_Suborganization__c}" required="true" />
+         </div>
+      </div>
+      <div class="slds-form-element">
+         <label class="slds-form-element__label" for="AssignedTo">Assigned To: </label>
+         <div class="slds-form-element__control">
+            <ui:inputSelect class="slds-input" aura:id="AssignedTo" value="{!v.Task.Assigned_To__c}" required="false" />
+         </div>
+      </div>
+      <div class="slds-form-element">
+         <label class="slds-form-element__label" for="DueDate">Due Date:</label>
+         <div class="slds-form-element__control">
+            <ui:inputDate class="slds-input" aura:id="DueDate" value="{!v.Task.Due_Date__c}" required="true" displayDatePicker="true" format="MM/dd/yyyy"/>
+         </div>
+      </div>
+      <div class="slds-form-element">
+        <label class="slds-form-element__label" for="Status">Status: </label>
+        <div class="slds-form-element__control">
+            <ui:inputSelect class="slds-input" aura:id="Status" value="{!v.Task.Status__c}" required="true" />
+        </div>
+        </div>
+      <div class="slds-form-element">
+            <label class="slds-form-element__label" for="Instructions">Instructions:</label>
+            <div class="slds-form-element__control">
+               <ui:inputTextArea class="slds-input" aura:id="Instructions" value="{!v.Task.Instructions__c}"/>
+            </div>
+         </div>
+      <div class="slds-form-element" style="text-align:right;">
+         <ui:button class="slds-button slds-button--neutral" press="{!c.cancel}" label="Cancel" />
+         <ui:button class="slds-button slds-button--brand" press="{!c.save}" label="Save" />
+      </div>
+   </div>
+</aura:component>

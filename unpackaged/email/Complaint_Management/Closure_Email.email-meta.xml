@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Main body of the email that is sent when a complaint is closed.</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Closure Email</name>
+    <style>none</style>
+    <subject>Your environmental complaint has been closed</subject>
+    <textOnly>Gavin Newsom
+Governor
+Jared Blumenfeld
+Secretary for Environmental Protection
+
+
+
+{!Complaints__c.Closed_Date__c}
+
+
+{!Complaints__c.Complainant__c.Name}
+
+{!Complaints__c.Complainant__c.PersonMailingAddressStreet}
+
+{!Complaints__c.Complainant__c.PersonMailingCity}, {!Complaints__c.Complainant__c.PersonMailingState}  {!Complaints__c.Complainant__c.PersonMailingPostalCode}
+
+
+Subject: Your environmental complaint has been closed
+
+Dear {!Complaints__c.Complainant__c.Name}:
+
+
+This message relates to the environmental complaint {!Complaints__c.Name} you submitted to CalEPA on {!Complaints__c.Actual_Recieve_Date__c}.  Your complaint has been closed.
+
+Your complaint was handled by the following agencies:
+
+
+[[IndividualBDOs]]
+
+If you would like more information, please contact the listed agencies directly.
+
+Sincerely,
+
+
+CalEPA Complaint Management
+
+complaints@calepa.ca.gov</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

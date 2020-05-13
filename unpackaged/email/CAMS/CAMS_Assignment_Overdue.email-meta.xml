@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>45.0</apiVersion>
+    <available>true</available>
+    <description>Sent out to queue/user when Assignment is passed due date</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>CAMS Assignment Overdue</name>
+    <style>none</style>
+    <subject>- Assignment is Overdue (CAMS ID:  )</subject>
+    <type>visualforce</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

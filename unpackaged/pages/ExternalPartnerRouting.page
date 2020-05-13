@@ -1,0 +1,3 @@
+<apex:page showHeader="true" cache="false"  sidebar="true" standardController="Finding__c" extensions="ExternalPartnerPortalController" action="{!Routing}"> 
+     
+</apex:page>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>AccountEdit</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>AccountEdits</value>
+    </caseValues>
+    <fields>
+        <label><!-- AccountName --></label>
+        <name>AccountName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Name Updated --></label>
+        <name>Account_Name_Updated__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account --></label>
+        <name>Account__c</name>
+        <relationshipLabel><!-- AccountEdits --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- City Updated --></label>
+        <name>City_Updated__c</name>
+    </fields>
+    <fields>
+        <label><!-- City --></label>
+        <name>City__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fax Updated --></label>
+        <name>Fax_Updated__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fax --></label>
+        <name>Fax__c</name>
+    </fields>
+    <fields>
+        <label><!-- Phone Updated --></label>
+        <name>Phone_Updated__c</name>
+    </fields>
+    <fields>
+        <label><!-- Phone --></label>
+        <name>Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Record Type Id Updated --></label>
+        <name>Record_Type_Id_Updated__c</name>
+    </fields>
+    <fields>
+        <label><!-- Record Type Id --></label>
+        <name>Record_Type_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Street Address Updated --></label>
+        <name>Street_Address_Updated__c</name>
+    </fields>
+    <fields>
+        <label><!-- Street Address --></label>
+        <name>Street_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- Test Data --></label>
+        <name>Test_Data__c</name>
+    </fields>
+    <fields>
+        <label><!-- Website Updated --></label>
+        <name>Website_Updated__c</name>
+    </fields>
+    <fields>
+        <label><!-- Website --></label>
+        <name>Website__c</name>
+    </fields>
+    <fields>
+        <label><!-- Zip Updated --></label>
+        <name>Zip_Updated__c</name>
+    </fields>
+    <fields>
+        <label><!-- Zip --></label>
+        <name>Zip__c</name>
+    </fields>
+    <startsWith>Vowel</startsWith>
+</CustomObjectTranslation>

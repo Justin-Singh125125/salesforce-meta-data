@@ -1,0 +1,62 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" controller="CAMSFileUploadController" >
+    <aura:attribute name="Document" type="ContentDocument" default="{ 'sobjectType': 'ContentDocument' }"/>    
+    <aura:attribute name="final" type="Boolean" description='Is final version of document.' />
+    <aura:attribute name="isOpen" type="Boolean" default="false"/>
+    <aura:attribute name="hasErrors" type="Boolean" description="Indicate whether there were failures or not" />
+    <aura:attribute name="errors" type="string" />
+    <aura:attribute name="uploading" type="Boolean" default="false" />
+    <aura:attribute name="recordId" type="Id" />
+    <aura:attribute name="progress" type="Integer" default="0"/>
+    <div style="width:100%; text-align: right;">
+        <lightning:button label="New File" title="Open New File Dialog" onclick="{! c.openModel }" />
+    </div>
+    <aura:if isTrue="{!v.isOpen}">        
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <lightning:buttonIcon iconName="utility:close" onclick="{! c.closeModel }" alternativeText="close" variant="bare-inverse" class="slds-modal__close"/>
+                    <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">New File</h2>
+                </header>
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                    <aura:if isTrue="{!v.hasErrors}">
+                        <div class="userCreateError">
+                            <ui:message title="Error" severity="error" closable="true">
+                                    {!v.errors}
+                            </ui:message>
+                        </div>
+                    </aura:if>
+                    <div class="slds-form--stacked">
+                        <div class="slds-form-element">
+                            <label class="slds-form-element__label" for="Description">Description:</label>
+                            <div class="slds-form-element__control">
+                                <ui:inputTextArea class="slds-input" aura:id="Description" value="{!v.Document.Description}"/>
+                            </div>
+                        </div>
+                        <div class="slds-form-element">
+                            <label class="slds-form-element__label" for="Description">Final:</label>
+                            <div class="slds-form-element__control">
+                                <ui:inputCheckbox aura:id="Final" value="{!v.final}"/>
+                            </div>
+                        </div>                        
+                        <div class="slds-form-element">
+                            <label class="slds-form-element__label" for="File">File: </label>
+                            <div class="slds-form-element__control">
+                                <input aura:id="file" type="file" id="file-upload-input-01" />
+                            </div>
+                        </div>                        
+                        <div class="slds-form-element">
+                            <aura:if isTrue="{!v.uploading}">
+                                <lightning:progressBar aura:id="Progress" value="{! v.progress }" />
+                            </aura:if>
+                        </div>                        
+                    </div>
+                </div>
+                <footer class="slds-modal__footer">
+                    <lightning:button variant="neutral" label="Cancel" title="Cancel" onclick="{! c.closeModel }"/> 
+                    <lightning:button variant="brand" label="Save" title="Save" onclick="{! c.save }"/>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </aura:if>
+</aura:component>

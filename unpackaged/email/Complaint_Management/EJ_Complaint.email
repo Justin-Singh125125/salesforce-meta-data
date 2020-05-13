@@ -1,0 +1,6 @@
+This email is to inform you that a new EJ Complaint has been filed in the city of {!Complaints__c.Complaint_Location_City__c}, {!Complaints__c.Complaint_Location_County__c}.
+
+Complaint No: {!Complaints__c.Name}
+Description:  {!Complaints__c.Description__c}
+
+Full complaint can be located here: {!Complaints__c.Link}

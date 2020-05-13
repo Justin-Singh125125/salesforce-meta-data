@@ -1,0 +1,338 @@
+<apex:page applyBodyTag="false" applyHTMLTag="false"
+           docType="HTML-5.0" 
+           sidebar="false"
+           showChat="false"
+           showHeader="false"
+           standardController="Complaints__c"
+           standardStylesheets="false" 
+           extensions="ComplaintController" 
+           language="{!currentLanguage}" >
+    
+    
+    <!-- Everything goes in the composition inside of the apex:define tags  -->
+    <apex:composition template="Template">
+        <apex:define name="title">{!$Label.COMPLAINT_LBL_Confirmation}</apex:define>
+        <apex:define name="styles">
+            <!--<link rel="stylesheet" href="css/page-specific-styles.css" />-->
+        </apex:define>
+        <!--
+Only override the header region if you need to pass in custom attributes to the header component.
+<apex:define name="header">
+<c:JCMC_Header customAttribute="custom value" />
+</apex:define>
+-->
+        <apex:define name="body">
+            <div class="row">
+                
+                <div class="col-xs-12">
+                    <h1 class="text-center">
+                        {!$Label.COMPLAINT_Environmental_Complaint_System}
+                    </h1>
+                </div>
+            </div>
+            <c:Complaint_Steps step="4" />
+            <apex:form styleclass="form ">
+                <div class="row">
+                    <p class="lead text-success text-center">
+                        {!$LABEL.COMPLAINT_LBL_Thank_you_for_your_comments_Your_complaint_has_been_logged} 
+                    </p>
+                    <div class="alert alert-dismissible alert-success  col-xs-12 text-center">
+                        <span class="h4">{!$LABEL.COMPLAINT_LBL_Complaint} #<span id="complaintNumber">{!complaint.Name}</span>  &nbsp;&nbsp; {!$LABEL.COMPLAINT_LBL_Submitted} &nbsp; {!submittedDate}</span>
+                    </div>
+                    <p class="lead text-success text-center"> 
+                        {!$LABEL.COMPLAINT_LBL_Please_Reference_This_Complaint_Number_during}  
+                    </p>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 ">  
+                        <h2>{!$LABEL.COMPLAINT_LBL_Contact_Information}</h2>  
+                    </div>
+                    <div class="col-xs-12 col-md-6 text-right" style="{! IF(complaint.Anonymous__c,'','display:none;')}"> 
+                        <label  class=" lead">{!$LABEL.COMPLAINT_LBL_Anonymous}</label>  
+                    </div>
+                    <div class="col-xs-12 col-md-6" style="{! IF(complaint.Anonymous__c,'','display:none;')}"> 
+                        <p class="lead">
+                            
+                            <i class="fa {! if(complaint.Anonymous__c,'fa-check-square','fa-square') }"></i>
+                        </p>
+                        
+                    </div>
+                    <div class="col-xs-12 col-md-6 text-right" style="{! IF(complaint.Anonymous__c,'display:none;','')}"> 
+                        <label class="lead">{!$LABEL.COMPLAINT_LBL_Receive_Updates} &nbsp; 
+                            
+                        </label>
+                    </div>
+                    <div class="col-xs-12 col-md-6" style="{! IF(complaint.Anonymous__c,'display:none;','')}"> 
+                        <p class="lead">
+                            <i class="fa {! if(account.PersonHasOptedOutOfEmail,'fa-check-square','fa-square') }"></i> 
+                        </p>
+                    </div>
+                </div>
+                <apex:outputPanel rendered="{!!complaint.Anonymous__c}" styleClass="row"> 
+                                        <div class="col-xs-12 col-md-6">
+                                            
+                    </div>
+                    <div class="col-xs-12 col-md-6"> 
+                        <div class="row">
+                            <label class="control-label col-xs-12">
+                                {!$Label.COMPLAINT_LBL_Name}
+                            </label>
+                            
+                            <div class="col-xs-6">
+                                <apex:outputText id="accountFirstName" styleClass="form-control-static" value="{! firstName }" /> 
+                            </div>
+                            <div class="col-xs-6">
+                                <apex:outputText id="accountLastName" styleClass="form-control-static" value="{! lastName }" /> 
+                            </div>
+                        </div>  
+                        <div class="form-group">
+                            <label class="control-label">{!$Label.COMPLAINT_LBL_Confirmation_Address}</label>
+                            <div class="form-control-static">
+                                <apex:outputText value="{!account.PersonMailingStreet}" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-xs-12 col-sm-4">
+                                <label class="control-label">{!$Label.COMPLAINT_LBL_Confirmation_City}</label>
+                                <div class="form-control-static">                                
+                                    <apex:outputText value="{!account.PersonMailingCity}"  />
+                                </div>
+                            </div>
+                            <div class="form-group col-xs-12 col-sm-5">
+                                <label class="control-label">{!$Label.COMPLAINT_LBL_Confirmation_State}</label>
+                                <div class="form-control-static">
+                                    <apex:outputText styleClass="form-control-static" value="{!account.PersonMailingState}"  />
+                                </div>
+                            </div>
+                            <div class="form-group col-xs-12 col-sm-3">
+                                <label class="control-label">{!$Label.COMPLAINT_LBL_Confirmation_Zip}</label>
+                                <div class="form-control-static">
+                                    <apex:outputText value="{!account.PersonMailingPostalCode}"/>
+                                </div>
+                            </div>
+                        </div> 
+                    </div>
+                    <div class="col-xs-12 col-md-6 col-md-push-6">
+                        <div class="form-group">
+                            <label class="control-label">
+                                {!$Label.COMPLAINT_LBL_Complaintant_Home_Phone}
+                            </label>
+                            <div class="">
+                                <apex:outputText styleClass="form-control-static" value="{!account.PersonHomePhone}" />
+                                
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">
+                                {!$Label.COMPLAINT_LBL_Complaintant_Mobile_Phone}
+                            </label>
+                            <div class="">
+                                <apex:outputText styleClass="form-control-static" value="{!account.PersonMobilePhone}" />
+                                
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">{!$Label.COMPLAINT_LBL_Complaintant_Email_Address}</label>
+                            <div class="">
+                                <apex:outputText id="email"  styleClass="form-control-static" value="{!account.PersonEmail}" />
+                                
+                            </div>
+                        </div>
+                    </div>
+                </apex:outputPanel>
+                
+                
+                
+                <hr/>
+                <div class="row"> 
+                    <div class="col-xs-12 ">
+                        <h2>{!$Label.COMPLAINT_LBL_Confirmation_Complaint_Description}</h2>
+                    </div>
+                    <div class="col-xs-12 col-md-6 col-md-offset-6">
+                        <apex:outputText value="{! Complaint.Description__c }" styleClass="form-control-static" />
+                    </div> 
+                </div>
+                <hr/>
+                <div class="row">
+                    <fieldgroup>
+                        <div class="col-xs-12">
+                            <h2>{!$Label.COMPLAINT_LBL_Confirmation_Complaint_Location}</h2>
+                        </div>
+                        <div class="col-xs-12 col-lg-6 col-lg-offset-6">
+                            <div class="embed-responsive embed-responsive-4by3" id="map" style="display:none;">
+                                
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-lg-6 col-lg-offset-6">
+                            
+                            <div class="form-group">
+                                
+                                <label class="control-label">{!$Label.COMPLAINT_LBL_Confirmation_Address}</label>
+                                <div class="form-control-static">
+                                    <apex:outputText value="{! Complaint.Complaint_Location_Address__c }" /> 
+                                </div>
+                                
+                            </div>
+                            <div class="row">
+                                <apex:outputPanel styleclass="form-group col-xs-12 col-sm-4" layout="block" rendered="{! Complaint.Complaint_Location_City__c != ''}">
+                                    <label class="control-label">{!$Label.COMPLAINT_LBL_Confirmation_City}</label>
+                                    <div class="form-control-static">
+                                        <apex:outputText value="{! Complaint.Complaint_Location_City__c }"/>
+                                    </div>
+                                </apex:outputPanel>
+                                <div class="form-group col-xs-12 col-sm-5">
+                                    <label class="control-label">{!$Label.COMPLAINT_LBL_Confirmation_State}</label>
+    
+                                <div class="form-control-static">
+                                        <apex:outputText value="{! Complaint.Complaint_Location_State__c }" />
+                                        
+                                    </div>
+                                </div>
+                                <apex:outputPanel styleclass="form-group col-xs-12 col-sm-3" layout="block" rendered="{! Complaint.Complaint_Location_Zip_Code__c != '' }">
+                                    <label class="control-label">{!$Label.COMPLAINT_LBL_Confirmation_Zip}</label>
+                                    
+                                    <div class="form-control-static">
+                                    <apex:outputText value="{! Complaint.Complaint_Location_Zip_Code__c }"  />
+                                    </div>
+                                </apex:outputPanel>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">{!$Label.COMPLAINT_LBL_Confirmation_Location_Description}</label>
+                                
+                                <div class="form-control-static">
+                                    <apex:outputText value="{! Complaint.Location_Description__c }"   />
+                                </div>
+                            </div>
+                        </div>  
+                    </fieldgroup>
+                </div>
+                <hr/>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h2>{!$Label.COMPLAINT_LBL_Confirmation_Responsible_Party}</h2>
+                    </div> 
+                    <div class="col-xs-12 col-lg-6 col-lg-push-6">
+                        <div class="row">
+                            <apex:outputPanel styleclass="form-group col-xs-12 col-sm-6" layout="block" rendered="{! Complaint.Responsible_Party_Name__c != '' }">
+                                <label class="control-label">{!$Label.COMPLAINT_LBL_Confirmation_Responsible_Person_Name}</label>
+                                
+                                <div class="form-control-static">
+                                <apex:outputText value="{! Complaint.Responsible_Party_Name__c }"/>
+                                </div>
+                            </apex:outputPanel>      
+                            <apex:outputPanel styleclass="form-group col-xs-12 col-sm-6" layout="block" rendered="{! Complaint.Responsible_Party_Company__c != '' }">
+                                <label class="control-label">{!$Label.COMPLAINT_LBL_Confirmation_Responsible_Company_Name}</label>
+                                <div class="form-control-static">
+                                <apex:outputText value="{! Complaint.Responsible_Party_Company__c }" />
+                                </div>
+                                
+                            </apex:outputPanel>
+                        </div>
+                        <br />
+                        
+                        <apex:outputPanel rendered="{!if(sameAddress == 'true',true,false)}" styleClass="row" id="responsibleAddress" layout="block">
+                            <apex:outputPanel styleClass="form-group col-xs-12" layout="block" rendered="{! Complaint.Responsible_Party_Street__c != '' }">
+                                <label class="control-label">{!$Label.COMPLAINT_LBL_Confirmation_Responsible_Party_Address}</label> 
+                                <div class="form-control-static">
+                                    <apex:outputText value="{! Complaint.Responsible_Party_Street__c }" />
+                                </div>
+                            </apex:outputPanel>
+                            <apex:outputPanel styleClass="form-group col-xs-12 col-sm-4" layout="block" rendered="{! Complaint.Responsible_Party_City__c != '' }">
+                                <label class="control-label">{!$Label.COMPLAINT_LBL_Confirmation_Responsible_Party_City}</label>
+                                <div class="form-control-static">
+                                    <apex:outputText value="{! Complaint.Responsible_Party_City__c }" />
+                                </div>
+                            </apex:outputPanel>
+                            
+                            <div class="form-group col-xs-12 col-sm-5">
+                                <label class="control-label">{!$Label.COMPLAINT_LBL_Confirmation_Responsible_Party_State}</label>
+                                <div class="form-control-static">
+                                    <apex:outputText value="California"/>
+                                </div>
+                            </div>
+                            
+                            <apex:outputPanel styleClass="form-group col-xs-12 col-sm-3" layout="block" rendered="{! Complaint.Responsible_Party_Zip_Code__c  != '' }">
+                                <label class="control-label">{!$Label.COMPLAINT_LBL_Confirmation_Responsible_Party_Zip}</label>
+                                <div class="form-control-static">                                
+                                    <apex:outputText value="{! Complaint.Responsible_Party_Zip_Code__c }"/>
+                                </div>
+                            </apex:outputPanel>
+                        </apex:outputPanel>
+                    </div>
+                </div>
+                <hr/>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h2>{!$Label.COMPLAINT_LBL_Confirmation_Date_Of_Occurence}</h2>
+                    </div>
+                    <div class="col-xs-12 col-lg-6">
+                        <p class="lead text-right">{!$Label.COMPLAINT_LBL_Confirmation_Date_Of_Occurrence_Approx_Time}</p>
+                    </div>
+                    <div class="col-xs-12 col-lg-6">
+                        <div class="form-group"> 
+                            <div class="" id="dateOfOccurence">
+                                
+                                <div class="form-control-static ">
+                                <apex:outputField id="dateOfOccurence" value="{! Complaint.Date_and_Time_of_Occurrence__c}" />
+                                </div>
+                                
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="col-xs-12 col-lg-6">
+                        <div class="form-group text-right">
+                            <label class="lead ">
+                                {!$LABEL.COMPLAINT_LBL_Confirmation_Ongoing_Occurrence}
+                            </label> 
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-lg-6">
+                        <p class="lead">                        
+                            <i class="fa {! if(complaint.On_going_Occurrence__c ,'fa-check-square','fa-square') }"  data-toggle="tooltip" title="{! if(complaint.On_going_Occurrence__c ,'Yes','No') }" data-placement="right"></i> 
+                        </p>
+                    </div>
+                </div>
+                <hr/>
+                <div class="row">
+                    <div class="col-xs-12 text-center">
+                        
+                        <a class="btn btn-primary btn-lg" href="http://www.calepa.ca.gov/">
+                            <i class="fa fa-arrow-left"></i> &nbsp; {!$LABEL.COMPLAINT_LBL_Confirmation_Back_To_Call_EPA}
+                        </a>
+                        
+                    </div>
+                </div>
+            </apex:form>
+        </apex:define>
+        <apex:define name="scripts">
+            <script>
+                
+            function initMap() {
+                console.log('initMap');
+                var myLat = Number('{!complaint.Complaint_Location__Latitude__s}');
+                var myLng = Number('{!complaint.Complaint_Location__Longitude__s}');
+                console.log('myLat ' + myLat);
+                var myLatLng = {lat: myLat, lng: myLng};
+                
+                var map = new google.maps.Map(document.getElementById('map'), {
+                    zoom: 13,
+                    center: myLatLng
+                });
+                
+                var marker = new google.maps.Marker({
+                    position: myLatLng,
+                    map: map,
+                    draggable:false,
+                    animation: google.maps.Animation.DROP,
+                    title: 'Location pinned'
+                });
+            }
+            
+            </script>
+            <script async="async" defer="defer" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDK1GaD-iYa7OS3mTh8RAc1KfzVaUWVzng&callback=initMap"></script>
+        </apex:define>
+    </apex:composition>
+    
+    
+</apex:page>

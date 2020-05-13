@@ -1,0 +1,15 @@
+<aura:component implements="flexipage:availableForAllPageTypes" controller="DashboardCompsWithEnforcementController">
+     <aura:attribute name="data" type="Object"/>
+     <aura:attribute name="columns" type="List"/>
+     <aura:handler name="init" value="{! this }" action="{! c.init }"/>
+     <div class="slds-panel slds-size_full slds-is-open" aria-hidden="false">
+            <div class="slds-panel__header">
+                <h2 class="slds-panel__header-title slds-text-heading_small slds-truncate" title="Panel Header">
+                        Complaints With Enforcement Action
+                </h2>
+            </div>
+            <div class="slds-panel__body slds-scrollable--y" style="height: 300px">
+                <lightning:datatable keyField="id" data="{! v.data }" columns="{! v.columns }" hideCheckboxColumn="true"/>
+            </div>    
+        </div>
+</aura:component>

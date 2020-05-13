@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Closure Email Spanish</name>
+    <style>none</style>
+    <subject>Su queja del medio ambiente se ha cerrado</subject>
+    <textOnly>NO ENVÍE RESPUESTA A ESTE MENSAJE.
+
+Estimado(a) {!Complaints__c.Complainant__r.Name},
+
+Este mensaje es en relación a la queja ambiental número {!Complaints__c.Name} que usted presentó ante la Agencia para la Protección Ambiental de California (California Environmental Protection Agency, o CalEPA) el día {!Complaints__c.Actual_Receive_Date__c}. Su queja ha sido turnada a las siguientes dependencias:
+[[IndividualBDOs]]
+
+
+Aún estamos investigando su queja. Le informaremos cuando la queja haya quedado resuelta.
+
+Gracias.</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

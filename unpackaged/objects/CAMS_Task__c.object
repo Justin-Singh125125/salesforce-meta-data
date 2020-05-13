@@ -1,0 +1,1566 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>CAMS_Task_Lightning_Page</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>CAMS_Task_Compact_Layout</compactLayoutAssignment>
+    <compactLayouts>
+        <fullName>CAMS_Task_Compact_Layout</fullName>
+        <fields>Name</fields>
+        <fields>CAMS_Assignment__c</fields>
+        <fields>BDO_and_Division_Office_or_Program__c</fields>
+        <fields>Assigned_To__c</fields>
+        <fields>Status__c</fields>
+        <fields>Predecessor__c</fields>
+        <label>CAMS Task Compact Layout</label>
+    </compactLayouts>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>Task associated to CAMS Assignment.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Private</externalSharingModel>
+    <fields>
+        <fullName>Assigned_By__c</fullName>
+        <defaultValue>CASE($User.BDO__c, 
+&quot;ARB&quot;, &quot;ARB&quot;, 
+&quot;CalRecycle&quot;,&quot;CalRecycle&quot;, 
+&quot;DTSC&quot;,&quot;DTSC&quot;, 
+&quot;DPR&quot;,&quot;DPR&quot;, 
+&quot;SWRCB&quot;,&quot;SWRCB&quot;, 
+&quot;OEHHA&quot;,&quot;OEHHA&quot;, 
+&quot;Agency&quot;) &amp; 
+CASE( $User.CAMS_Role__c , 
+&quot;Coordinator&quot;, &quot;Coordinator&quot;, 
+&quot;Assignor&quot;,&quot;Assignor&quot;, 
+&quot;Reviewer&quot;,&quot;Reviewer&quot;, 
+&quot;Executive&quot;,&quot;Executive&quot;, 
+&quot;Agency&quot;) &amp; 
+CASE( $User.CAMS_Division_Program__c , 
+&quot;Executive Office&quot;,&quot;Executive Office&quot;, 
+&quot;Legal Office&quot;,&quot;Legal Office&quot;, 
+&quot;Legislative Office&quot;,&quot;Legislative Office&quot;, 
+&quot;Travel&quot;,&quot;Travel&quot;, 
+&quot;Director&quot;,&quot;Director&quot;, 
+&quot;Chief Deputy Director&quot;,&quot;Chief Deputy Director&quot;, 
+&quot;Communications&quot;,&quot;Communications&quot;, 
+&quot;Climate Policy&quot;,&quot;Climate Policy&quot;, 
+&quot;Environmental Policy&quot;,&quot;Environmental Policy&quot;, 
+&quot;Health and Public Policy&quot;,&quot;Health and Public Policy&quot;, 
+&quot;Legislative Affairs&quot;,&quot;Legislative Affairs&quot;, 
+&quot;Law Enforcement and Counsel&quot;,&quot;Law Enforcement and Counsel&quot;, 
+&quot;Environmental Justice and Tribal&quot;,&quot;Environmental Justice and Tribal&quot;, 
+&quot;Fiscal and Admin Programs&quot;,&quot;Fiscal and Admin Programs&quot;, 
+&quot;Unified Program&quot;,&quot;Unified Program&quot;, 
+&quot;Chief Information Officer&quot;,&quot;Chief Information Officer&quot;, 
+&quot;PRA&quot;,&quot;PRA&quot;, 
+&quot;All&quot;)</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Assigned By</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Assigned_To__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Assigned To</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Tasks</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Assignment_BDO_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>text(CAMS_Assignment__r.BDO__c)</formula>
+        <label>Assignment BDO Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BDO_Suborganization__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Division, Office or Program</label>
+        <required>true</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>BDO__c</controllingField>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Undersecretary</fullName>
+                    <default>false</default>
+                    <label>Undersecretary</label>
+                </value>
+                <value>
+                    <fullName>Communications</fullName>
+                    <default>false</default>
+                    <label>Communications</label>
+                </value>
+                <value>
+                    <fullName>Climate Policy</fullName>
+                    <default>false</default>
+                    <label>Climate Policy</label>
+                </value>
+                <value>
+                    <fullName>Environmental Policy</fullName>
+                    <default>false</default>
+                    <label>Environmental Policy</label>
+                </value>
+                <value>
+                    <fullName>Health and Public Policy</fullName>
+                    <default>false</default>
+                    <label>Health and Public Policy</label>
+                </value>
+                <value>
+                    <fullName>Legislative Affairs</fullName>
+                    <default>false</default>
+                    <label>Legislative Affairs</label>
+                </value>
+                <value>
+                    <fullName>Law Enforcement and Counsel</fullName>
+                    <default>false</default>
+                    <label>Law Enforcement and Counsel</label>
+                </value>
+                <value>
+                    <fullName>Environmental Justice and Tribal</fullName>
+                    <default>false</default>
+                    <label>Environmental Justice and Tribal</label>
+                </value>
+                <value>
+                    <fullName>Fiscal and Admin Programs</fullName>
+                    <default>false</default>
+                    <label>Fiscal and Admin Programs</label>
+                </value>
+                <value>
+                    <fullName>Unified Program</fullName>
+                    <default>false</default>
+                    <label>Unified Program</label>
+                </value>
+                <value>
+                    <fullName>Chief Information Officer</fullName>
+                    <default>false</default>
+                    <label>Chief Information Officer</label>
+                </value>
+                <value>
+                    <fullName>PRA</fullName>
+                    <default>false</default>
+                    <label>PRA</label>
+                </value>
+                <value>
+                    <fullName>Director</fullName>
+                    <default>false</default>
+                    <label>Director</label>
+                </value>
+                <value>
+                    <fullName>Travel</fullName>
+                    <default>false</default>
+                    <label>Travel</label>
+                </value>
+                <value>
+                    <fullName>Executive Office</fullName>
+                    <default>false</default>
+                    <label>Executive Office</label>
+                </value>
+                <value>
+                    <fullName>Legislative Office</fullName>
+                    <default>false</default>
+                    <label>Legislative Office</label>
+                </value>
+                <value>
+                    <fullName>Legal Office</fullName>
+                    <default>false</default>
+                    <label>Legal Office</label>
+                </value>
+                <value>
+                    <fullName>Secretary</fullName>
+                    <default>false</default>
+                    <label>Secretary</label>
+                </value>
+                <value>
+                    <fullName>Agriculture</fullName>
+                    <default>false</default>
+                    <label>Agriculture</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Agency</controllingFieldValue>
+                <valueName>Communications</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Agency</controllingFieldValue>
+                <valueName>Climate Policy</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Agency</controllingFieldValue>
+                <valueName>Environmental Policy</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Agency</controllingFieldValue>
+                <valueName>Health and Public Policy</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Agency</controllingFieldValue>
+                <valueName>Legislative Affairs</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Agency</controllingFieldValue>
+                <valueName>Law Enforcement and Counsel</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Agency</controllingFieldValue>
+                <valueName>Environmental Justice and Tribal</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Agency</controllingFieldValue>
+                <valueName>Fiscal and Admin Programs</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Agency</controllingFieldValue>
+                <valueName>Unified Program</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Agency</controllingFieldValue>
+                <valueName>Chief Information Officer</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Agency</controllingFieldValue>
+                <valueName>PRA</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Agency</controllingFieldValue>
+                <controllingFieldValue>ARB</controllingFieldValue>
+                <controllingFieldValue>SWRCB</controllingFieldValue>
+                <valueName>Executive Office</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Agency</controllingFieldValue>
+                <valueName>Agriculture</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>ARB</controllingFieldValue>
+                <controllingFieldValue>CalRecycle</controllingFieldValue>
+                <controllingFieldValue>DPR</controllingFieldValue>
+                <controllingFieldValue>OEHHA</controllingFieldValue>
+                <controllingFieldValue>SWRCB</controllingFieldValue>
+                <valueName>Travel</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>ARB</controllingFieldValue>
+                <controllingFieldValue>OEHHA</controllingFieldValue>
+                <controllingFieldValue>SWRCB</controllingFieldValue>
+                <valueName>Legislative Office</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>ARB</controllingFieldValue>
+                <controllingFieldValue>SWRCB</controllingFieldValue>
+                <valueName>Legal Office</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>CalRecycle</controllingFieldValue>
+                <controllingFieldValue>DPR</controllingFieldValue>
+                <controllingFieldValue>DTSC</controllingFieldValue>
+                <controllingFieldValue>OEHHA</controllingFieldValue>
+                <valueName>Director</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>BDO__c</fullName>
+        <defaultValue>CASE($User.BDO__c, 
+&quot;ARB&quot;, &quot;ARB&quot;, 
+&quot;CalRecycle&quot;,&quot;CalRecycle&quot;, 
+&quot;DTSC&quot;,&quot;DTSC&quot;, 
+&quot;DPR&quot;,&quot;DPR&quot;, 
+&quot;SWRCB&quot;,&quot;SWRCB&quot;, 
+&quot;OEHHA&quot;,&quot;OEHHA&quot;,
+&quot;Agency&quot;)</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Assigned BDO</label>
+        <required>true</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Agency</fullName>
+                    <default>false</default>
+                    <label>Agency</label>
+                </value>
+                <value>
+                    <fullName>ARB</fullName>
+                    <default>false</default>
+                    <label>ARB</label>
+                </value>
+                <value>
+                    <fullName>CalRecycle</fullName>
+                    <default>false</default>
+                    <label>CalRecycle</label>
+                </value>
+                <value>
+                    <fullName>DPR</fullName>
+                    <default>false</default>
+                    <label>DPR</label>
+                </value>
+                <value>
+                    <fullName>DTSC</fullName>
+                    <default>false</default>
+                    <label>DTSC</label>
+                </value>
+                <value>
+                    <fullName>OEHHA</fullName>
+                    <default>false</default>
+                    <label>OEHHA</label>
+                </value>
+                <value>
+                    <fullName>SWRCB</fullName>
+                    <default>false</default>
+                    <label>SWRCB</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>BDO_and_Division_Office_or_Program__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>TEXT(BDO__c) + &apos; &apos; + TEXT(BDO_Suborganization__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>BDO and Division, Office or Program</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CAMS_Assignment__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Lookup for CAMS Assignment.</description>
+        <externalId>false</externalId>
+        <label>Assignment</label>
+        <referenceTo>CAMS_Assignment__c</referenceTo>
+        <relationshipLabel>Tasks</relationshipLabel>
+        <relationshipName>CAMS_Tasks2</relationshipName>
+        <required>true</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Closed_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Closed Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Completed_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Completed Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Confidential__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>if(CAMS_Assignment__r.Confidential__c,&apos;Yes&apos;,&apos;No&apos;)</formula>
+        <label>Confidential</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Due_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <description>CAMS Task Due Date</description>
+        <externalId>false</externalId>
+        <label>Due Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Final_Outcome__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Final Outcome</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Approved</fullName>
+                    <default>false</default>
+                    <label>Approved</label>
+                </value>
+                <value>
+                    <fullName>Withdrawn</fullName>
+                    <default>false</default>
+                    <label>Withdrawn</label>
+                </value>
+                <value>
+                    <fullName>Declined</fullName>
+                    <default>false</default>
+                    <label>Declined</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Flag_Logged_In_User_Assigned_To__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>IF( OR($Profile.Name = &quot;System Administrator&quot;,$Profile.Name = &quot;System Admin&quot; ), 1, IF( ($User.FirstName &amp; &apos; &apos; &amp; $User.LastName) = (Assigned_To__r.FirstName &amp; &apos; &apos; &amp; Assigned_To__r.LastName) , 1 , 0) )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Flag Logged In User Assigned To</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Flag_Logged_In_User_Program__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>IF( OR($Profile.Name = &quot;System Administrator&quot;,$Profile.Name = &quot;System Admin&quot; ), 1, IF( $User.Division = TEXT( BDO_Suborganization__c ) , 1 , 0) )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Flag Logged In User Program</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Flag_Logged_In_User__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This is used in the Report - to get all the Assignments records where logged in User&apos;s BDO field value matches with the BDO field value in the Assignment records.</description>
+        <externalId>false</externalId>
+        <formula>IF( OR($Profile.Name = &quot;System Administrator&quot;,$Profile.Name = &quot;System Admin&quot; ), 1, IF( TEXT($User.BDO__c) =  TEXT(BDO__c), 1 , 0) )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Flag Logged In User</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Instructions__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Instructions for CAMS Task</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Instructions for CAMS Task</inlineHelpText>
+        <label>Instructions</label>
+        <length>32768</length>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Internal_Tracking_ID__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Internal Tracking ID</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>My_Tasks__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>Assigned_To__r.Alias =  $User.Alias</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>My Tasks</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Owner_Display__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>IF(BEGINS(OwnerId, &apos;005&apos;),  Owner:User.FirstName + &apos; &apos; + Owner:User.LastName ,  Owner:Queue.QueueName )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Owner</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Predecessor__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Predecessor on the CAMS Task</description>
+        <externalId>false</externalId>
+        <label>Predecessor</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>CAMS_Task__c.CAMS_Assignment__c</field>
+                <operation>equals</operation>
+                <valueField>$Source.CAMS_Assignment__c</valueField>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>CAMS_Task__c</referenceTo>
+        <relationshipLabel>Tasks</relationshipLabel>
+        <relationshipName>CAMS_Tasks3</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Reason__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Reason for Back to Requester/Assigned</label>
+        <length>32768</length>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Related_To__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Related To</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>CAMS_Task__c.CAMS_Assignment__r.Id</field>
+                <operation>equals</operation>
+                <valueField>$Source.CAMS_Assignment__c</valueField>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>CAMS_Task__c</referenceTo>
+        <relationshipLabel>Child Tasks</relationshipLabel>
+        <relationshipName>Tasks</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Status_Date__c</fullName>
+        <defaultValue>TODAY()</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Status Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <defaultValue>&quot;Pending&quot;</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Status for CAMS Task</description>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Pending</fullName>
+                    <default>true</default>
+                    <label>Pending</label>
+                </value>
+                <value>
+                    <fullName>Delegated</fullName>
+                    <default>false</default>
+                    <label>Delegated</label>
+                </value>
+                <value>
+                    <fullName>Governors Office</fullName>
+                    <default>false</default>
+                    <label>Governor&apos;s Office</label>
+                </value>
+                <value>
+                    <fullName>Back to Requestor</fullName>
+                    <default>false</default>
+                    <label>Back to Requestor</label>
+                </value>
+                <value>
+                    <fullName>Back to Assigned</fullName>
+                    <default>false</default>
+                    <label>Back to Assigned</label>
+                </value>
+                <value>
+                    <fullName>Withdrawn</fullName>
+                    <default>false</default>
+                    <label>Withdrawn</label>
+                </value>
+                <value>
+                    <fullName>Completed</fullName>
+                    <default>false</default>
+                    <label>Completed</label>
+                </value>
+                <value>
+                    <fullName>Back to BDO</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Back to BDO</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>SubTasks_Completed__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>SubTasks Completed</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Subject__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>CAMS_Assignment__r.Subject__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Subject</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Task_Link__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>HYPERLINK(&quot;https://calepa--camsdev1.lightning.force.com/lightning/r/CAMS_Task__c/&quot; &amp;  Id  &amp; &quot;/view&quot;, &quot;Click Here&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Task Link</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Task_Type__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Task Type</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Concurrent</fullName>
+                    <default>true</default>
+                    <label>Concurrent</label>
+                </value>
+                <value>
+                    <fullName>Sequential</fullName>
+                    <default>false</default>
+                    <label>Sequential</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Test_Data__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Test Data</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Type__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>CAMS_Assignment__r.Type__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Urgent__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>if(CAMS_Assignment__r.Urgent__c, &apos;Yes&apos;,&apos;No&apos;)</formula>
+        <label>Urgent</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Task</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>Type__c</columns>
+        <columns>CAMS_Assignment__c</columns>
+        <columns>NAME</columns>
+        <columns>Related_To__c</columns>
+        <columns>Predecessor__c</columns>
+        <columns>Owner_Display__c</columns>
+        <columns>Assigned_To__c</columns>
+        <columns>BDO_and_Division_Office_or_Program__c</columns>
+        <columns>Task_Type__c</columns>
+        <columns>Status__c</columns>
+        <columns>Due_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CAMS_Assignment__c</field>
+            <operation>greaterThan</operation>
+        </filters>
+        <label>All Tasks</label>
+    </listViews>
+    <listViews>
+        <fullName>All_Open_Tasks</fullName>
+        <columns>CAMS_Assignment__c</columns>
+        <columns>NAME</columns>
+        <columns>Related_To__c</columns>
+        <columns>Owner_Display__c</columns>
+        <columns>Assigned_To__c</columns>
+        <columns>BDO_and_Division_Office_or_Program__c</columns>
+        <columns>Task_Type__c</columns>
+        <columns>Status__c</columns>
+        <columns>Due_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>notEqual</operation>
+            <value>Withdrawn,Completed</value>
+        </filters>
+        <label>All Open Tasks</label>
+    </listViews>
+    <listViews>
+        <fullName>My_Open_Tasks</fullName>
+        <columns>CAMS_Assignment__c</columns>
+        <columns>NAME</columns>
+        <columns>Owner_Display__c</columns>
+        <columns>Assigned_To__c</columns>
+        <columns>BDO_and_Division_Office_or_Program__c</columns>
+        <columns>Task_Type__c</columns>
+        <columns>Status__c</columns>
+        <columns>Due_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>My_Tasks__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>notEqual</operation>
+            <value>Withdrawn,Completed</value>
+        </filters>
+        <label>My Open Tasks</label>
+    </listViews>
+    <listViews>
+        <fullName>Open_Tasks_for_Assigners</fullName>
+        <columns>NAME</columns>
+        <columns>BDO__c</columns>
+        <columns>Assigned_To__c</columns>
+        <columns>BDO_Suborganization__c</columns>
+        <columns>CAMS_Assignment__c</columns>
+        <columns>Assignment_BDO_Name__c</columns>
+        <columns>Status__c</columns>
+        <columns>Type__c</columns>
+        <columns>BDO_and_Division_Office_or_Program__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Flag_Logged_In_User_Program__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>notEqual</operation>
+            <value>Withdrawn,Completed</value>
+        </filters>
+        <label>Open Tasks for Assigners</label>
+    </listViews>
+    <listViews>
+        <fullName>Open_Tasks_for_Coordinators</fullName>
+        <columns>NAME</columns>
+        <columns>CAMS_Assignment__c</columns>
+        <columns>BDO__c</columns>
+        <columns>Assigned_To__c</columns>
+        <columns>Assignment_BDO_Name__c</columns>
+        <columns>BDO_Suborganization__c</columns>
+        <columns>Status__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Flag_Logged_In_User__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>notEqual</operation>
+            <value>Withdrawn,Completed</value>
+        </filters>
+        <label>Open Tasks for Coordinators</label>
+    </listViews>
+    <listViews>
+        <fullName>Open_Tasks_for_Executives</fullName>
+        <booleanFilter>1 AND 2 AND 3</booleanFilter>
+        <columns>NAME</columns>
+        <columns>CAMS_Assignment__c</columns>
+        <columns>BDO__c</columns>
+        <columns>Assigned_To__c</columns>
+        <columns>Assignment_BDO_Name__c</columns>
+        <columns>BDO_Suborganization__c</columns>
+        <columns>Status__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Flag_Logged_In_User__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>notEqual</operation>
+            <value>Withdrawn,Completed</value>
+        </filters>
+        <filters>
+            <field>Flag_Logged_In_User_Assigned_To__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>Open Tasks for Executives</label>
+    </listViews>
+    <listViews>
+        <fullName>Open_Tasks_for_Reviewers</fullName>
+        <booleanFilter>1 AND 2 AND 3</booleanFilter>
+        <columns>NAME</columns>
+        <columns>CAMS_Assignment__c</columns>
+        <columns>BDO__c</columns>
+        <columns>Assigned_To__c</columns>
+        <columns>Assignment_BDO_Name__c</columns>
+        <columns>BDO_Suborganization__c</columns>
+        <columns>Status__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Flag_Logged_In_User__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>notEqual</operation>
+            <value>Withdrawn,Completed</value>
+        </filters>
+        <filters>
+            <field>Flag_Logged_In_User_Assigned_To__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>Open Tasks for Reviewers</label>
+    </listViews>
+    <nameField>
+        <displayFormat>Task-{00000}</displayFormat>
+        <label>CAMS Task</label>
+        <trackHistory>true</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Tasks</pluralLabel>
+    <recordTypes>
+        <fullName>Concurrent</fullName>
+        <active>false</active>
+        <label>Concurrent</label>
+        <picklistValues>
+            <picklist>BDO_Suborganization__c</picklist>
+            <values>
+                <fullName>Chief Information Officer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Climate Policy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Communications</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Director</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Environmental Justice and Tribal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Environmental Policy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Executive Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fiscal and Admin Programs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Health and Public Policy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Law Enforcement and Counsel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Legal Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Legislative Affairs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Legislative Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PRA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Secretary</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Travel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Undersecretary</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unified Program</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>BDO__c</picklist>
+            <values>
+                <fullName>ARB</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Agency</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CalRecycle</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DTSC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OEHHA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SWRCB</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Final_Outcome__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Declined</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Withdrawn</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Delegated</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Governors Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Withdrawn</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Task_Type__c</picklist>
+            <values>
+                <fullName>Concurrent</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Sequential</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Sequential</fullName>
+        <active>false</active>
+        <label>Sequential</label>
+        <picklistValues>
+            <picklist>BDO_Suborganization__c</picklist>
+            <values>
+                <fullName>Chief Information Officer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Climate Policy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Communications</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Director</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Environmental Justice and Tribal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Environmental Policy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Executive Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fiscal and Admin Programs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Health and Public Policy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Law Enforcement and Counsel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Legal Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Legislative Affairs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Legislative Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PRA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Secretary</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Travel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Undersecretary</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unified Program</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>BDO__c</picklist>
+            <values>
+                <fullName>ARB</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Agency</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CalRecycle</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DTSC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OEHHA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SWRCB</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Final_Outcome__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Declined</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Withdrawn</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Delegated</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Governors Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Withdrawn</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Task_Type__c</picklist>
+            <values>
+                <fullName>Concurrent</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Sequential</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <excludedStandardButtons>New</excludedStandardButtons>
+        <searchResultsAdditionalFields>CAMS_Assignment__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Related_To__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Task_Type__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>BDO__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>BDO_Suborganization__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Assigned_To__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Status__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Due_Date__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Private</sharingModel>
+    <sharingReasons>
+        <fullName>Assignment_Creator__c</fullName>
+        <label>Assignment Creator</label>
+    </sharingReasons>
+    <sharingReasons>
+        <fullName>Assignment_Owner__c</fullName>
+        <label>Assignment Owner</label>
+    </sharingReasons>
+    <sharingReasons>
+        <fullName>Sibling_Task_Owner__c</fullName>
+        <label>Sibling Task Owner</label>
+    </sharingReasons>
+    <sharingReasons>
+        <fullName>Task_Owner_Group__c</fullName>
+        <label>Task Owner Group</label>
+    </sharingReasons>
+    <validationRules>
+        <fullName>BDO_OR_Subdivision_Needed</fullName>
+        <active>false</active>
+        <errorConditionFormula>OR( ISBLANK(TEXT(BDO__c)  ) , ISBLANK(TEXT(BDO_Suborganization__c)) )</errorConditionFormula>
+        <errorMessage>You must select a BDO and a Division, Office, or Program.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>BDO_User_Agency</fullName>
+        <active>false</active>
+        <description>If User is Agency, Assigned BDO must be Agency</description>
+        <errorConditionFormula>AND( text($User.BDO__c) = &apos;Agency&apos;,text(BDO__c) = &apos;Agency&apos;)</errorConditionFormula>
+        <errorDisplayField>BDO__c</errorDisplayField>
+        <errorMessage>If User is Agency, Assigned BDO must be Agency</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>BDO_User_Agency2</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND( text($User.BDO__c) &lt;&gt; &apos;Agency&apos;,TEXT(BDO__c)=&apos;Agency&apos;,NOT( text( BDO_Suborganization__c ) = &apos;Executive Office&apos;  || text(BDO_Suborganization__c) = &apos;Fiscal and Admin Programs&apos;))</errorConditionFormula>
+        <errorMessage>BDO users can only assign Agency tasks to the Executive Office or Fiscal and Admin Services</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Completed_Date_Cannot_Be_In_The_Future</fullName>
+        <active>true</active>
+        <errorConditionFormula>Completed_Date__c  &gt; TODAY()</errorConditionFormula>
+        <errorMessage>Completed date cannot be a future date.  It can be today&apos;s date or in the past.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Completed_Date_Is_Required_If_Completed</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(ISBLANK(Completed_Date__c),TEXT( Status__c )=&apos;Completed&apos;, NOT(ISCHANGED(Status__c)))</errorConditionFormula>
+        <errorMessage>Completed date is required if task is completed.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Completed_Date_Must_Be_Empty_If_Not_Comp</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(NOT(ISBLANK(Completed_Date__c)),TEXT( Status__c )&lt;&gt;&apos;Completed&apos;,TEXT( Status__c )&lt;&gt;&apos;Withdrawn&apos;)</errorConditionFormula>
+        <errorMessage>Completed Date can only be entered if Status is Completed or Withdrawn</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Concurrent</fullName>
+        <active>true</active>
+        <description>If Con, can&apos;t have Pred</description>
+        <errorConditionFormula>ISPICKVAL( Task_Type__c , &apos;Concurrent&apos;)  &amp;&amp; Not(IsBlank( Predecessor__c ))</errorConditionFormula>
+        <errorMessage>You cannot have a Predecessor when Task Type = Concurrent</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Due_Date_is_Required</fullName>
+        <active>true</active>
+        <errorConditionFormula>ISBLANK(Due_Date__c )</errorConditionFormula>
+        <errorDisplayField>Due_Date__c</errorDisplayField>
+        <errorMessage>Due Date is Required</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Reason_Needed_For_Back_to_Assigned</fullName>
+        <active>true</active>
+        <description>Reason needed for back to Requester</description>
+        <errorConditionFormula>AND(TEXT(Status__c)=&apos;Back to Assigned&apos;,ISBLANK(Reason__c))</errorConditionFormula>
+        <errorMessage>Reason is needed when sending Back to Assigned</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Reason_Needed_For_Back_to_Requester</fullName>
+        <active>true</active>
+        <description>Reason needed for back to Requester</description>
+        <errorConditionFormula>AND(TEXT(Status__c)=&apos;Back to Requestor&apos;,ISBLANK(Reason__c))</errorConditionFormula>
+        <errorMessage>Reason is needed when sending Back to Requester</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Sequential</fullName>
+        <active>true</active>
+        <description>Must have a Pres if Seq</description>
+        <errorConditionFormula>ISPICKVAL(Task_Type__c, &apos;Sequential&apos;)  &amp;&amp; IsBlank( Predecessor__c )</errorConditionFormula>
+        <errorMessage>If the Task Type = Sequential, please pick a Predecessor</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Sequential_cannot_be_delegated</fullName>
+        <active>true</active>
+        <errorConditionFormula>ISPICKVAL(Task_Type__c, &apos;Sequential&apos;) &amp;&amp; 
+ISPICKVAL( Predecessor__r.Status__c , &apos;Pending&apos;) &amp;&amp; 
+ISPICKVAL( Status__c , &apos;Delegated&apos;)</errorConditionFormula>
+        <errorMessage>Sequential tasks cannot be delegated until the Predecessor is completed.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Status_Date_Cannot_Be_In_The_Future</fullName>
+        <active>true</active>
+        <errorConditionFormula>Status_Date__c  &gt; TODAY()</errorConditionFormula>
+        <errorMessage>Status date cannot be a future date.  It can be today&apos;s date or in the past.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>SubTask_BDO_Related_Task</fullName>
+        <active>true</active>
+        <description>SubTask must be the same as the Related Task</description>
+        <errorConditionFormula>text(BDO__c)  &lt;&gt;  text(Related_To__r.BDO__c) &amp;&amp;  Not(IsBlank(Related_To__c))</errorConditionFormula>
+        <errorDisplayField>BDO__c</errorDisplayField>
+        <errorMessage>BDO must be the same as the Related Task BDO</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Task_BDO_User</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND($Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+$Profile.Name &lt;&gt; &quot;System Admin&quot;,text($User.BDO__c) &lt;&gt; &apos;Agency&apos;, text( BDO__c ) &lt;&gt; text($User.BDO__c),text( BDO__c ) &lt;&gt; &apos;Agency&apos; )</errorConditionFormula>
+        <errorDisplayField>BDO__c</errorDisplayField>
+        <errorMessage>Please choose your BDO or Agency</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Task_Due_Date</fullName>
+        <active>true</active>
+        <description>Task due date can be no later than Assignment due date.</description>
+        <errorConditionFormula>if(ISBLANK( Related_To__c ), Due_Date__c  &gt; CAMS_Assignment__r.Due_Date__c, Due_Date__c  &gt;  Related_To__r.Due_Date__c)</errorConditionFormula>
+        <errorDisplayField>Due_Date__c</errorDisplayField>
+        <errorMessage>CAUTION : Task Due Date cannot be later than Assignment Due Date or the Related Task Due Date</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+    <webLinks>
+        <fullName>Complete_Task</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Complete Task</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>!REQUIRESCRIPT(&quot;/soap/ajax/29.0/connection.js&quot;)}
+
+// identify the record
+var t = new sforce.SObject(&quot;CAMS_Task__c&quot;);
+t.id = &quot;{!CAMS_Task__c.Id}&quot;;
+t.Status__c = &apos;Completed&apos;;
+// save the change
+sforce.connection.update([t]);
+
+//refresh the page
+window.location.reload();</url>
+    </webLinks>
+</CustomObject>

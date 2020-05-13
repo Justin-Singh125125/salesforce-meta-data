@@ -1,0 +1,59 @@
+<html xmlns="http://www.w3.org/1999/xhtml">    
+    <head>
+        <title>
+            Thank You for Submitting Your Findings
+        </title>
+        <style>
+            .EmailHeader  
+            {
+                text-align: center;
+            }
+            .Executive
+            {
+                font-size:85%;
+                margin: 0px 0px 0px 0px;
+            }
+            .Executive-Name
+            {
+                font-weight: bold; 
+            }
+            .Executive-Title
+            {
+                font-style: italic;  
+            }
+            .Main-Title
+            {
+                text-align: center; 
+                font-weight:bold;
+            }
+        </style>
+    </head> 
+    <body style="font-family: 'Arial', sans-serif; font-size:12px; width:100%">
+        <div height="100%" id="bodyTable" style="width:500px; text-align:center; margin: 25px 25px 25px 25px; position: fixed;">
+            <table border="0" cellpadding="0" cellspacing="0" id="EmailHeader" style="width:100%;">
+                <tr>
+                    <td style="width:50%; text-align: right; color: green; font-size: smaller;">
+                        <p class="Executive Executive-Name">Gavin Newsom</p>
+                        <p class="Executive Executive-Title">Governor</p>
+                        <p class="Executive Executive-Name">Jared Blumenfeld</p>
+                        <p class="Executive Executive-Title">Secretary for Environmental Protection</p>
+                    </td>
+                </tr>
+            </table>
+            <div style="text-align:left;">
+                <div>Dear&nbsp;{!Finding__c.Contact__c},</div>
+                <div>&nbsp;</div>
+                <div>Thank you for submitting your findings for Complaint {!Finding__c.Complaint__c}. Attached is a copy for your records.</div>
+                <div>&nbsp;</div>
+                <div>We appreciate your continued support.&nbsp; Please feel free to contact&nbsp; <a href='mailto:complaints@calepa.ca.gov'>complaints@calepa.ca.gov</a> with any questions.</div>
+                <div>&nbsp;</div>
+                <div>Sincerely,</div>
+                <br/>
+                <br/>
+                <div>
+                    <span style="color: #222222; font-family: arial, sans-serif;">California Environmental Protection Agency</span>
+                </div>
+            </div>
+        </div> 
+    </body>
+</html>

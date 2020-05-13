@@ -1,0 +1,197 @@
+<apex:page applyBodyTag="false" 
+  applyHtmlTag="false" 
+  controller="Layout2017Controller2" 
+  docType="HTML-5.0" 
+  id="JCMC" 
+  cache="false" 
+  showChat="false" 
+  showHeader="false" 
+  sidebar="false" 
+  standardStylesheets="false">
+    <!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+    <!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+    <!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+    <!--[if IE 9]>    <html class="no-js ie9 oldie" lang="en"> <![endif]-->
+    <!--[if (gt IE 9)]><!-->
+    <html class="no-js" lang="en">
+    <!--<![endif]-->
+    <head>
+        <meta charset="utf-8"/>
+        <title>
+            <apex:insert name="title" />
+        </title>
+        <meta name="Author" content="California Environmental Protection Agency" />
+        <meta name="Description" content="California Environmental Protection Agency" />
+        <meta name="Keywords" content="California, government, environment" />
+        <!-- Use highest compatibility mode -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="HandheldFriendly" content="True"/>
+        <!-- for Blackberry, AvantGo -->
+        <meta name="MobileOptimized" content="320"/>
+        <!-- for Windows mobile -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0"/>
+        <!-- Google Fonts -->
+        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700' rel='stylesheet' type='text/css'/>
+        <!-- For all browsers -->
+        <apex:stylesheet value="{!URLFOR($Resource.Layout2017v2, '/css/cagov.core.css')}"/>
+        <apex:stylesheet value="{!URLFOR($Resource.Layout2017v2, '/css/colorscheme-oceanside.css')}"/>
+        <apex:stylesheet value="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css"/>
+        <apex:stylesheet value="{!URLFOR($Resource.Layout2017v2, '/css/custom.css')}"/>
+        <apex:insert name="PageCss">
+        </apex:insert>
+        
+        <!-- selectivizr.com, emulates CSS3 pseudo-classes and attribute selectors in Internet Explorer 6-8 -->
+        <!--[if (lt IE 9) & (!IEMobile)]>
+        <apex:includeScript value="{!URLFOR($Resource.Layout2017v2, '/js/libs/selectivizr-min.js')}"/>
+        <![endif]-->
+        <!--End selectivizr.com-->
+
+        <!-- modernizr.com, feature detection -->
+        <apex:includeScript value="{!URLFOR($Resource.Layout2017v2, '/js/libs/modernizr-2.0.6.min.js')}"/>
+        <apex:includeScript value="{!URLFOR($Resource.Layout2017v2, '/js/libs/modernizr-extra.min.js')}"/>
+        <!--End modernizr.com-->
+        <link rel="shortcut icon" href="{!URLFOR($Resource.Layout2017v2,'/favicon.ico')}"/>
+        
+        <!-- ClearType for Mobile IE -->
+        <!--[if IE]>
+        <meta http-equiv="cleartype" content="on">
+        <<!doctype html>
+        <html lang="en" endif="">
+        <head>
+            <meta charset="UTF-8">
+            <title>Document</title>
+        </head>
+        <body>
+
+        </body>
+        </html>
+        <![endif]-->
+        <!--End ClearType-->
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+        <apex:includeScript value="{!URLFOR($Resource.Layout2017v2, '/js/libs/html5shiv.min.js')}"/>        
+        <apex:includeScript value="{!URLFOR($Resource.Layout2017v2, '/js/libs/respond.min.js')}"/>
+        <![endif]-->        
+        <!--End HTML5 shim and Respond.js-->
+        <!-- Include Google Analytics -->
+    </head>
+    <body>
+        <header role="banner" id="header" class="global-header fixed">
+            <div id="skip-to-content"><a href="#main-content">Skip to Main Content</a></div>
+            <!-- Settings Bar -->
+            <!-- Alert Banner -->
+            <!--start utility-header -->
+            <div class="utility-header">
+                <div class="container">
+                    <div class="group">
+                        <div class="half">
+                        </div>
+                        <div class="half settings-links">
+                            <apex:insert name="UtilityLinks">
+                                <!--Insert Utility Links Here-->
+                            </apex:insert>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--end utility-header -->
+            <!-- Include Branding -->
+            <!--start branding -->
+            <!-- header branding -->
+            <div class="branding">
+                <div class="header-cagov-logo">
+                    <a href="http://www.ca.gov"  target="_blank">
+                        <apex:image url="{!URLFOR($Resource.Layout2017v2, '/images/Ca-Gov-Logo-Gold.svg')}" alt="State of California Logo"/>
+                    </a>
+                </div>
+                <div class="header-organization-banner">
+                    <a href="http://www.calepa.ca.gov"  target="_blank">
+                        <apex:image url="{!URLFOR($Resource.Layout2017v2, '/images/LogoGreenSm.jpg')}" alt="CalEPA Logo"/>
+                    </a>
+                </div>
+            </div>
+            <!--end branding -->
+            <!-- Include Mobile Controls -->
+            <!--start mobile-controls -->
+            <!-- mobile navigation controls -->
+            <div class="mobile-controls">
+                <span class="mobile-control toggle-menu">
+                    <span class="ca-gov-icon-menu" aria-hidden="true"></span>
+                    <span class="sr-only">Menu</span>
+                </span>
+                <span class="mobile-control-group mobile-header-icons">
+                    <!-- Add more mobile controls here. These will be on the right side of the mobile page header section -->
+                </span>
+                <span class="mobile-control-group mobile-menu-icons">
+                    <!-- Add more mobile controls here. These will be on the top right section of the expanded mobile menu -->
+                </span>
+            </div>
+            <!--end mobile-controls -->
+            <div class="navigation-search">
+                <!-- Top Level Navigation Only -->
+                <nav id="navigation" class="main-navigation singlelevelnav auto-highlight">
+                    <apex:insert name="NavListIcons">
+                        <!--Insert Nav List Icons Here-->
+                    </apex:insert>                    
+                </nav>
+                <!--end navigation -->
+            </div>
+        </header>
+        <div id="main-content" class="main-content">
+            <div class="section">
+                <main class="main-primary">
+                    <div class="group">
+                        <apex:insert name="Body">
+                            <h1>This is the template, the body is overwritten by each individual page.</h1>
+                        </apex:insert>
+                    </div>
+                </main>
+            </div>
+        </div>
+        <!--start global-footer -->
+        <!-- Global Footer -->
+        <footer id="footer" class="global-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="three-quarters">
+                        <ul class="footer-links">
+                            <li><a href="#skip-to-content">Back to Top</a></li>
+                            <li><a href="http://www.calepa.ca.gov/privacy-policy/" target="_blank">Privacy Policy</a></li>
+                            <li><a href="http://www.calepa.ca.gov/accessibility/" target="_blank">Accessibility</a></li>
+                            <li><a href="mailto:complaints@calepa.ca.gov">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Copyright Statement -->
+            <div class="copyright">
+                <div class="container">
+                    Copyright &copy;
+                    <script>document.write(new Date().getFullYear())</script> State of California
+                </div>
+            </div>
+        </footer>
+        <!-- Extra Decorative Content -->
+        <div class="decoration-last">&nbsp;</div>
+
+        <!--end global-footer -->
+        <!--start scripts -->
+        <apex:includeScript value="{!URLFOR($Resource.Layout2017v2, '/js/libs/jquery-1.11.1.min.js')}"/>
+        <apex:includeScript value="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"/>
+        <apex:insert name="PageScriptIncludes">
+        </apex:insert>
+        <!-- Load template core -->
+        <apex:includeScript value="{!URLFOR($Resource.Layout2017v2, '/js/cagov.core.js')}"/>
+        <script>
+            $(document).ready(function () {
+                // Backward compatability fix for removing wrapper on new "sections"
+                $('.main-primary > .section').closest('div.wrapper').removeClass('wrapper');
+            });
+        </script>
+        <apex:insert name="PageScripts">
+        </apex:insert>
+        <!--end scripts -->
+        </body>
+    </html> 
+</apex:page>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>CalEPA Matching</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>CalEPA Matchings</value>
+    </caseValues>
+    <fields>
+        <label><!-- False Positive --></label>
+        <name>False_Positive__c</name>
+    </fields>
+    <fields>
+        <label><!-- Object --></label>
+        <name>Object__c</name>
+    </fields>
+    <fields>
+        <label><!-- Record 1 Link --></label>
+        <name>Record_1_Link__c</name>
+    </fields>
+    <fields>
+        <label><!-- Record 1 Name --></label>
+        <name>Record_1_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Record 1 --></label>
+        <name>Record_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Record 2 Link --></label>
+        <name>Record_2_Link__c</name>
+    </fields>
+    <fields>
+        <label><!-- Record 2 Name --></label>
+        <name>Record_2_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Record 2 --></label>
+        <name>Record_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Set --></label>
+        <name>Set__c</name>
+    </fields>
+    <layouts>
+        <layout>CalEPA Matching Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <label><!-- False Positive --></label>
+        <name>False_Positive</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Merge --></label>
+        <name>Merge</name>
+    </quickActions>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

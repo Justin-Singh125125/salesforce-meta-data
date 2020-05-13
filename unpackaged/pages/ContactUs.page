@@ -1,0 +1,32 @@
+<apex:page applyBodyTag="false"  
+    cache="false" 
+    applyHTMLTag="false" 
+    docType="HTML-5.0" 
+    id="ContactUs" 
+    sidebar="false" 
+    showChat="false" 
+    showHeader="false"  
+    standardController="Finding__c" 
+    standardStylesheets="false" 
+    extensions="ExternalPartnerPortalController">
+    <apex:composition template="ExternalPartnerLayout">
+        <apex:define name="ExternalPartnerLayoutTitle">CalEPA Environmental Complaint External Partner Portal</apex:define>
+        <apex:define name="ExternalPartnerLayoutPageCss">
+        </apex:define>
+        <apex:define name="ExternalPartnerLayoutBody">            
+            <div class="panel panel-understated">
+                <div class="panel-heading">
+                    <h4>Contact Us</h4>
+                </div>
+                <div class="panel-body">
+                    <p>For support or any questions email us at <a href="mailto:complaints@calepa.ca.gov">complaints@calepa.ca.gov</a></p>
+                    <p>Support is provided from 7am-4pm Monday through Friday (excluding State of California holidays).</p>
+                </div>
+            </div>
+        </apex:define>
+        <apex:define name="ExternalPartnerLayoutPageScriptIncludes">
+        </apex:define>
+        <apex:define name="ExternalPartnerLayoutPageScripts">
+        </apex:define>
+    </apex:composition> 
+</apex:page>

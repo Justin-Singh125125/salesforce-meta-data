@@ -1,0 +1,3 @@
+<design:component label="CalEPA">
+    <design:attribute name="Colorscheme" datasource="Eureka,Mono,Oceanside,Orange County,Paso Robles,Santa Barbara,Sacramento,Sierra,Trinity" default="Oceanside" />
+</design:component>

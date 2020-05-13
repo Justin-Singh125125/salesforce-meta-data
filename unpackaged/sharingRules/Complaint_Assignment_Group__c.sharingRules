@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingOwnerRules>
+        <fullName>Complaint_Assignment_Group_Sharing_Rule</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Complaint Assignment Group Sharing Rule</label>
+        <sharedTo>
+            <group>Complaint_Management_Users</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>Complaint_Management_Users</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>DTSC_Evaluator_Complaint_Assignment_Group_Sharing_Rule</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>DTSC Evaluator Complaint Assignment Group Sharing Rule</label>
+        <sharedTo>
+            <group>DTSC_Evaluators_Complaint_Management</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>Complaint_Management_Users</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>External_Partner_Portal_Sharing</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>External Partner Portal Sharing</label>
+        <sharedTo>
+            <group>External_Partner_Portal_Complaints</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>Complaint_Management_Users</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

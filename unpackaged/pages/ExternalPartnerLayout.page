@@ -1,0 +1,153 @@
+<apex:page applyBodyTag="false"    
+    applyHTMLTag="false" 
+    cache="false" 
+    docType="HTML-5.0" 
+    id="ExternalPartnerLayout" 
+    sidebar="false" 
+    showChat="false" 
+    showHeader="false"   
+    standardController="Finding__c" 
+    standardStylesheets="false"  
+    extensions="ExternalPartnerPortalController"> 
+    <apex:composition template="Layout2017v2"> 
+        <apex:define name="ExternalPartnerLayoutTitle">
+            <apex:insert name="title">
+            </apex:insert>
+        </apex:define>
+        <apex:define name="ExternalPartnerLayoutPageCss">
+            <apex:insert name="PageCss">
+            </apex:insert>
+        </apex:define>
+        <apex:define name="UtilityLinks">
+            <apex:pageBlock rendered="{!Authentication.IsLoggedIn}">
+                <ul class="utility-links ">
+                    <li>
+                        <div class="btn-group">
+                            <button type="button" class="btn dropdown-toggle AccountDropDownButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color:#046B99; font-size:13.92px; padding: 3px 0; border-width:0px;">
+                                {!Authentication.ExternalPartnerName} <span class="caret"></span>
+                            </button>
+                             <ul class="dropdown-menu">                                
+                                <li>
+                                    <a id="AccountProfileLink" href="#">Agency Profile</a>
+                                        <apex:form >
+                                        <apex:actionFunction name="LoadAccountProfile" action="{!ExternalPartnerAccountProfile}" /> 
+                                    </apex:form>  
+                                </li>
+                                <apex:outputText value="{0}" escape="false" rendered="{!(Authentication.ExternalPartnerSize > 1)}"> 
+                                    <apex:param value="<li><a id='ChangeAccount' href='#'>Change Agency</a></li>"/> 
+                                </apex:outputText>
+                                <apex:form >
+                                        <apex:actionFunction name="ChangeAccount" action="{!ExternalPartnerAccountSelector}" />
+                                </apex:form>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="btn-group">
+                            <button type="button" class="btn dropdown-toggle ContactDropDownButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color:#046B99; font-size:13.92px; padding: 3px 0; border-width:0px;">
+                                {!Authentication.UsersName} <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a id="ContactProfileLink" href="#">My Profile</a>
+                                    <apex:form >
+                                        <apex:actionFunction name="LoadContactProfile" action="{!ExternalPartnerContactProfile}" /> 
+                                    </apex:form>    
+                                </li>
+                                <li>
+                                    <a id="LogoutLink" href="#">Log Out</a>
+                                    <apex:form >
+                                        <apex:actionFunction name="Logout" action="{!Logout}" /> 
+                                    </apex:form>    
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </apex:pageBlock>
+        </apex:define>
+        <apex:define name="NavListIcons">
+            <apex:pageBlock rendered="{!Authentication.IsLoggedIn}">
+                <ul id="nav_list" class="top-level-nav">                       
+                    <li class="nav-item">
+                        <apex:outputLink html-class="first-level-link" value="/ExternalPartnerLandingScreen"><span class="ca-gov-icon-home" aria-hidden="true"></span>Home</apex:outputLink>
+                    </li>
+                    <li class="nav-item">
+                        <apex:outputLink html-class="first-level-link" value="https://calepa.ca.gov/enforcement/complaints/faqs/" target="_blank" ><span class="ca-gov-icon-question-fill" aria-hidden="true"></span>FAQs</apex:outputLink>
+                    </li>
+                    <li class="nav-item">
+                        <apex:outputLink value="/ContactUs" html-class="first-level-link" target="_blank"><span class="ca-gov-icon-contact-us" aria-hidden="true"></span>Contact Us</apex:outputLink>
+                    </li>
+                </ul>
+            </apex:pageBlock>
+            <apex:pageBlock rendered="{!(!Authentication.IsLoggedIn)}">
+                <ul id="nav_list" class="top-level-nav">                       
+                    <li class="nav-item">
+                        <apex:outputLink html-class="first-level-link" value="/ExternalPartnerLogin"><span class="ca-gov-icon-home" aria-hidden="true"></span>Home</apex:outputLink>
+                    </li>
+                    <li class="nav-item">
+                        <apex:outputLink html-class="first-level-link" value="https://calepa.ca.gov/enforcement/complaints/faqs/" target="_blank" ><span class="ca-gov-icon-question-fill" aria-hidden="true"></span>FAQs</apex:outputLink>
+                    </li>
+                    <li class="nav-item">
+                        <apex:outputLink html-class="first-level-link" value="/ContactUs"  target="_blank"><span class="ca-gov-icon-contact-us" aria-hidden="true"></span>Contact Us</apex:outputLink>
+                    </li>
+                </ul>
+            </apex:pageBlock>
+        </apex:define>
+        <apex:define name="Body">
+            <h1 id="ExternalPartnerLayoutTitle">Complaint External Partner Portal</h1>
+            <apex:insert name="ExternalPartnerLayoutBody">
+            </apex:insert>
+        </apex:define>
+        <apex:define name="PageScriptIncludes">
+            <apex:insert name="ExternalPartnerLayoutPageScriptIncludes">
+            </apex:insert>
+        </apex:define>
+        <apex:define name="PageScripts">
+            <script>
+                $(document).ready(function() 
+                {                    
+                    $('#ChangeAccount').click(function(event) 
+                    {
+                        event.preventDefault();
+                        ChangeAccount();
+                    });
+                    $('#HomeLink').click(function(event) 
+                    {
+                        event.preventDefault();
+                        Home();
+                    });
+                    $('#ReferralsLink').click(function(event) 
+                    {
+                        event.preventDefault();
+                        Referrals();
+                    });
+                    $('#LogoutLink').click(function(event) 
+                    {
+                        event.preventDefault();
+                        Logout();
+                    });
+                    $('#GotoLoginLink').click(function(event) 
+                    {
+                        event.preventDefault();
+                        GotoLogin();
+                    });
+                    $('#ContactProfileLink').click(function(event) 
+                    {
+                        event.preventDefault();
+                        LoadContactProfile();
+                    });
+                    $('#AccountProfileLink').click(function(event) 
+                    {
+                        event.preventDefault();
+                        LoadAccountProfile();
+                    });
+                    $('.active').removeClass('active');
+                    $('.focus').removeClass('focus');
+                });
+            </script>
+            <apex:insert name="ExternalPartnerLayoutPageScripts">
+            </apex:insert>
+        </apex:define>
+    </apex:composition> 
+</apex:page>

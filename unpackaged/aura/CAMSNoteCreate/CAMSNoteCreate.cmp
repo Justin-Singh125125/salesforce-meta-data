@@ -1,0 +1,49 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" controller="CAMSNoteCreateController" >
+    <aura:attribute name="isOpen" type="boolean" default="false"/>
+    <aura:attribute name="hasErrors" type="Boolean" description="Indicate whether there were failures or not" />
+    <aura:attribute name="errors" type="string" />
+    <aura:attribute name="recordId" type="Id" />
+    <aura:attribute name="subject" type="string" />
+    <aura:attribute name="content" type="string" />
+    <div style="width:100%; text-align: right;">
+        <lightning:button label="New Note" title="Open New File Dialog" onclick="{! c.openModel }" />
+    </div>
+    <aura:if isTrue="{!v.isOpen}">        
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <lightning:buttonIcon iconName="utility:close" onclick="{! c.closeModel }" alternativeText="close" variant="bare-inverse" class="slds-modal__close"/>
+                    <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">New Note</h2>
+                </header>
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                    <aura:if isTrue="{!v.hasErrors}">
+                        <div class="userCreateError">
+                            <ui:message title="Error" severity="error" closable="true">
+                                    {!v.errors}
+                            </ui:message>
+                        </div>
+                    </aura:if>
+                    <div class="slds-form--stacked">
+                        <div class="slds-form-element">
+                            <label class="slds-form-element__label" for="Title">Subject: </label>
+                            <div class="slds-form-element__control">
+                                <ui:inputText class="slds-input" aura:id="Title" value="{!v.subject}" required="true"/>
+                            </div>
+                        </div>
+                        <div class="slds-form-element">
+                                <label class="slds-form-element__label" for="Title">&nbsp;</label>
+                            <div class="slds-form-element__control">
+                                <lightning:inputRichText value="{!v.content}"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <footer class="slds-modal__footer">
+                    <lightning:button variant="neutral" label="Cancel" title="Cancel" onclick="{! c.closeModel }"/> 
+                    <lightning:button variant="brand" label="Save" title="Save" onclick="{! c.save }"/>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </aura:if>
+</aura:component>

@@ -1,0 +1,19 @@
+<aura:component implements="forceCommunity:searchInterface" access="global">
+    <div class="container">
+		<div class="search-wrapper">
+            <form class="search-form">
+                <div class="search-input-wrapper">
+                    <!--
+                    <input class="search-input search-textfield height-50 border-0 p-x-sm w-100" type="text" placeholder="My Search"/>
+                    
+    				<input type="hidden" name="language" value="en" />
+					-->
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="searchTerm" />
+                    	<button class="btn btn-primary" onclick="{! c.gotoURL }" >Search</button>    
+        			</div>
+                </div>
+            </form>
+        </div>    
+	</div>
+</aura:component>

@@ -1,0 +1,13 @@
+NO ENVÍE RESPUESTA A ESTE MENSAJE. <br/>
+<br/>
+Estimado(a) {!Complaints__c.Complainant__r.Name}, <br/>
+<br/>
+Este mensaje es en relación a la queja ambiental número {!Complaints__c.Name} que usted presentó ante la Agencia para la Protección Ambiental de California (California Environmental Protection Agency, o CalEPA) el día {!Complaints__c.Actual_Receive_Date__c}. Su queja ha sido turnada a las siguientes dependencias: 
+<br/>
+[[IndividualBDOs]]
+<br/>
+ <br/>
+<br/>
+Aún estamos investigando su queja. Le informaremos cuando la queja haya quedado resuelta. <br/>
+<br/>
+Gracias.

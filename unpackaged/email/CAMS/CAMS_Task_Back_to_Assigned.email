@@ -1,0 +1,37 @@
+<messaging:emailTemplate subject="Additional Information/Edits Requested for {!relatedTo.CAMS_Assignment__r.Type__c} (CAMS ID:  {!relatedTo.CAMS_Assignment__r.Name})" recipientType="User" relatedToType="CAMS_Task__c">
+    <messaging:htmlEmailBody >
+        <html>
+            <body style="font-family:arial;">
+                <p>
+                    ***Additional Information/Edits Requested***
+                </p>
+                <p>
+                    Additional information/edits have been requested.  Please review the request and update as appropriate:
+                </p>
+                <p>            
+                    Request by:  {!relatedTo.LastModifiedBy.Name}<br/>
+                    CAMS ID:  {!relatedTo.CAMS_Assignment__r.Name}<br/>  
+                    Task ID:  {!relatedTo.Name}<br/>  
+                    Type: {!relatedTo.CAMS_Assignment__r.Type__c}  <br/>
+                    Subject:  {!relatedTo.CAMS_Assignment__r.Subject__c}<br/>  
+                    Due Date:
+                    <apex:outputText value="{0, date, MM/dd/yyyy}">
+                        <apex:param value="{!relatedTo.Due_Date__c}" /> 
+                    </apex:outputText>
+                    <br/>
+                </p>
+                <p>
+                    Reason for Back to Requestor/Assigned:<br/>
+                    {!relatedTo.Reason__c}<br/>  
+                </p>
+                <p>                 
+                    Please use the following link to view the Task in CAMS:
+                </p>
+                <p>                 
+                    <a href="{!LEFT($Api.Enterprise_Server_URL_300, FIND('/services',$Api.Enterprise_Server_URL_300))+'/'+relatedto.Id}">{!LEFT($Api.Enterprise_Server_URL_300, FIND('/services',$Api.Enterprise_Server_URL_300))+'/'+relatedto.Id}</a>
+                </p>
+
+            </body>
+        </html>
+    </messaging:htmlEmailBody>
+</messaging:emailTemplate>

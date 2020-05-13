@@ -1,0 +1,3 @@
+<p>
+A new complaint has been assigned to you. Please click <a href="{!Complaint_Assignment__c.Link}">here</a> to view the record.
+</p>

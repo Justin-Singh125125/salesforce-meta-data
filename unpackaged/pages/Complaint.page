@@ -1,0 +1,245 @@
+<apex:page applyBodyTag="false" applyHTMLTag="false"
+           docType="HTML-5.0" 
+           id="Complaint"
+           sidebar="false"
+           showChat="false"
+           showHeader="false"
+           standardController="Complaints__c"
+           standardStylesheets="false" 
+           extensions="ComplaintController"
+           language="{!currentLanguage}">
+    
+    <!-- Everything goes in the composition inside of the apex:define tags  -->
+    <apex:composition template="Template">
+        
+        <apex:define name="title">{! $LABEL.COMPLAINT_TXT_Complaint_page_title }</apex:define>
+        <apex:define name="styles">
+            <!--<link rel="stylesheet" href="css/page-specific-styles.css" />-->
+        </apex:define>
+        <apex:define name="body">
+            
+            <apex:form id="theForm" styleclass="form form-horizontal">    
+                
+                <c:Complaint_Steps />
+                <p class="lead text-center">
+                    
+                </p> 
+                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingOne">
+                            <div class="form-group text-center">
+                                    <span style="font-size:larger;">{! $LABEL.COMPLAINT_LBL_Language_Preference }</span>
+                                <div id='languageSelect' class="">
+                                    <apex:inputcheckbox html-data-toggle="toggle" html-data-on="English" html-data-off="Spanish" value="{!langaugeEnglish}" onchange="switchLanguage();" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingFour">
+                            <h4 class="text-center text-uppercase">
+                                <a id="selectAnImageToReportAProblem" class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">{! $LABEL.COMPLAINT_LBL_Report_Problem}</a>
+                                &nbsp; 
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                    <i class="fa fa-check-square indicator"></i>
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseFour" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingFour">
+                            <div class="panel-body">
+                                <div class="row form-group {! IF(displayMessage,'has-error','')} ">
+                                    
+                                    <div class="col-xs-12">
+                                        <h2 class="text-center"></h2>
+                                        <!--<p class="lead text-center" id="MoreThanOneSelection">
+                                            {! $LABEL.COMPLAINT_LBL_More_Than_One_Selection }
+                                        </p>-->
+                                    </div> 
+                                
+                                    <div class="col-xs-12">
+                                        <apex:outputPanel rendered="{!displayMessage}" styleClass="alert alert-dismissible alert-danger col-xs-12 text-center">
+                                            <apex:messages />
+                                        </apex:outputPanel>
+                                    </div>
+                                    <div class="col-xs-6 col-sm-4 col-lg-4 text-center text-center">
+                                        <apex:outputLabel for="{! $component.air }" value="{! $LABEL.COMPLAINT_LBL_Air } " styleClass="checkbox-label" id="airLabel">
+                                            &nbsp;&nbsp;
+                                            
+                                            <input id ="air" class="complaint-choice" type="radio" name="pollution" value="air"/>
+                                       
+                                            &nbsp;&nbsp; <i id="airToolTip" class="fa fa-question-circle" title="{! $LABEL.COMPLAINT_HELP_Air }" data-toggle="tooltip" data-placement="top"></i>
+                                            <img src="{! $Resource.Air_Image }" class="img-responsive" />
+
+                                        </apex:outputLabel>
+                                    </div>
+                                    <div class="col-xs-6 col-sm-4 col-lg-4 text-center">
+                                        <apex:outputLabel for="{! $component.water }" value="{! $LABEL.COMPLAINT_LBL_Water } " styleClass="checkbox-label">
+                                            &nbsp;&nbsp; 
+                                            
+                                            <input id ="water" class="complaint-choice" type="radio" name="pollution" value="water"/>
+                                     
+                                            &nbsp;&nbsp; <i class="fa fa-question-circle" title="{! $LABEL.COMPLAINT_HELP_Water }" data-toggle="tooltip" data-placement="top"></i>
+                                            <img src="{! $Resource.Water_Image }" class="img-responsive" />
+
+                                        </apex:outputLabel>
+                                    </div>
+                                    <div class="col-xs-6 col-sm-4 col-lg-4 text-center">
+                                        <apex:outputLabel for="{! $component.toxic }" value="{! $LABEL.COMPLAINT_LBL_Toxic } " styleClass="checkbox-label">
+                                            &nbsp;&nbsp; 
+                                            
+                                           <input id ="toxic" class="complaint-choice" type="radio" name="pollution" value="toxic"/>
+                               
+                                            &nbsp;&nbsp; <i class="fa fa-question-circle" title="{! $LABEL.COMPLAINT_HELP_Toxic_Substance }" data-toggle="tooltip" data-placement="top"></i>
+                                            <img src="{! $Resource.Toxic_Image }" class="img-responsive" />
+
+                                        </apex:outputLabel>
+                                    </div> 
+                                    <div class="col-xs-6 col-sm-4   col-sm-offset-2 text-center">
+                                        <apex:outputLabel for="{! $component.pesticide }" value="{! $LABEL.COMPLAINT_LBL_Pesticides } " styleClass="checkbox-label">
+                                            &nbsp;&nbsp; 
+                                            
+                                            <input id ="pesticide" class="complaint-choice" type="radio" name="pollution" value="pesticide"/>
+                                            
+                                         
+                                            &nbsp;&nbsp; <i class="fa fa-question-circle" title="{! $LABEL.COMPLAINT_HELP_Pesticides }" data-toggle="tooltip" data-placement="top"></i>
+                                            <img src="{!$Resource.pesticide_image}"  class="img-responsive" />
+                                        </apex:outputLabel>
+                                    </div>
+                                    <div class="col-xs-6  col-xs-offset-3 col-sm-offset-0  col-sm-4 col-md-4 text-center">
+                                        <apex:outputLabel for="{! $component.waste }" value="{! $LABEL.COMPLAINT_LBL_Solid_Waste } " styleClass="checkbox-label">
+                                            &nbsp;&nbsp; 
+                                            
+                                            <input id ="waste" class="complaint-choice" type="radio" name="pollution" value="waste"/>
+                                     
+                                            &nbsp;&nbsp; <i class="fa fa-question-circle" title="{! $LABEL.COMPLAINT_HELP_Solid_Waste }" data-toggle="tooltip" data-placement="top"></i>
+                                            <img src="{! $Resource.Solid_Waste_Image}" class="img-responsive" />
+                                        </apex:outputLabel>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingOne">
+                            <h4 class="text-center text-uppercase">
+                                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                    {!$LABEL.COMPLAINT_LBL_Emergency}</a>
+                                    &nbsp;
+                                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                    <i class="fa fa-square indicator"></i>
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                            <div class="panel-body">
+                                <div class="row margin-three-em half-window-tall">
+                                    <div class="col-xs-12 col-sm-6 text-center">
+                                        <apex:outputText escape="false" value="{! $LABEL.COMPLAINT_TXT_For_Emergency} " />
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6 text-center">
+                                        <apex:outputText escape="false" value="{! $LABEL.COMPLAINT_TXT_For_Hazmat }" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingTwo">
+                            <h4 class="text-center text-uppercase">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    {! $LABEL.COMPLAINT_LBL_Report_Water_Waste } </a>
+                                &nbsp; 
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    <i class="fa fa-square indicator"></i>
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                            <div class="panel-body">
+                                <div class="row margin-three-em half-window-tall">
+                                    <div class="col-xs-12 text-center">
+                                        <apex:outputText escape="false" value="{! $LABEL.COMPLAINT_TXT_Report_Water_Waste }" />
+                                        
+                                    </div>        
+                                </div>   
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingThree">
+                            <h4 class="text-center text-uppercase">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    {! $LABEL.COMPLAINT_LBEL_Regarding_Prop65 }</a>
+                                &nbsp; 
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    <i class="fa fa-square indicator"></i>
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                            <div class="panel-body">
+                                <div class="row margin-three-em half-window-tall">
+                                    <div class="col-xs-12 text-center">
+                                        <apex:outputText escape="false" value="{! $LABEL.COMPLAINT_TXT_Regarding_Prop65 }" />
+                                    </div>        
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" id="detailsbutton">
+                    <div class="col-xs-12 col-sm-3">
+                    &nbsp;
+                    </div>
+                    <div class="col-xs-12 col-sm-3">
+                       &nbsp;
+                        
+                    </div>
+                    <div class="col-xs-12 col-sm-6 text-right">
+                        <br/> 
+                        <!--<apex:commandbutton action="{!step2}" styleclass="btn btn-primary btn-lg btn-next" value="{! $Label.COMPLAINT_BTN_Complaint_Details }" />-->
+                         <apex:commandlink action="{!step2}" > <!-- onclick="validateForm(this, nextStep);" -->
+                            <button class="btn btn-primary btn-lg" id="complaintDetailsButton">
+                                {!$LABEL.COMPLAINT_BTN_Complaint_Details} &nbsp; <i class="fa fa-arrow-right"></i>
+                            </button>
+                        </apex:commandlink>
+                                
+                        
+                    </div>
+                </div>
+                <apex:actionFunction name="showEmergency" id="emergencyAction" action="{!emeregency}" rerender="theForm" >
+                    
+                </apex:actionFunction>
+                <apex:actionFunction name="switchLanguage" id="languageAction" action="{!switchLanguage}" rerender="theForm" oncomplete="" />
+                
+                
+            </apex:form>
+        </apex:define>
+        <apex:define name="scripts">
+            <!-- ALL, yes ALL custom javascript for the page should go here otherwise it will get executed out of order -->
+            
+            <script type="text/javascript">
+            
+            //right now this serves as a test case for what the user selects and just consoles it
+            $(".complaint-choice").on("click", function(){
+            
+            	var choice = $('input[name=pollution]:checked').val();
+                
+                console.log(choice);
+            })
+            
+                function toggleIndicator(e) {
+                    $(e.target)
+                        .prev('.panel-heading')
+                        .find('i.indicator')
+                        .toggleClass('fa-square fa-check-square');
+                    
+                };
+                function switchLanaugeJS(){
+                        console.log('switching');
+                    }
+ 
+            </script>
+        </apex:define>
+    </apex:composition>
+</apex:page>

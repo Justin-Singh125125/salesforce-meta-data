@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>45.0</apiVersion>
+    <available>true</available>
+    <description>Sent out to remind task assigned queue/user that due date is approaching.</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>CAMS Task Reminder</name>
+    <style>none</style>
+    <subject>Task for [Type] Approaching Due Date (CAMS ID:  [CAMS ID], Task ID:  [Task ID])</subject>
+    <type>visualforce</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

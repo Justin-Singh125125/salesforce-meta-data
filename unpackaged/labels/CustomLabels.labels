@@ -1,0 +1,1557 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>COMPLAINT_ANON_TEXT</fullName>
+        <categories>ComplaintContact</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Complaint Anonymous Description</shortDescription>
+        <value>&lt;p&gt;Providing your personal information is voluntary.  However, if you do not provide personal information, such as your name, address or telephone number, we may not be able to contact you if we need further information to fully investigate your complaint, nor will we be able to inform you of any resolution to your complaint.  CalEPA will maintain confidentiality of your personal information to the extent allowed by law.  For more information about the use and potential disclosure of your personal information, please review our &lt;a href=&quot;http://www.calepa.ca.gov/Privacy.htm&quot; target=&quot;_blank&quot;&gt;privacy policy&lt;/a&gt;.&lt;/p&gt;</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_BNT_Dismiss</fullName>
+        <categories>complaint pages</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_BNT_Dismiss</shortDescription>
+        <value>Dismiss</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_BNT_Previous</fullName>
+        <categories>complaint pages</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_BNT_Previous</shortDescription>
+        <value>Previous</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_BTN_Almost_Done</fullName>
+        <categories>complaintdetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_BTN_Almost Done</shortDescription>
+        <value>Almost Done</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_BTN_Browse</fullName>
+        <categories>complaintdetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_BTN_Browse</shortDescription>
+        <value>Browse</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_BTN_Complaint_Details</fullName>
+        <categories>complaint</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_BTN_Complaint_Details</shortDescription>
+        <value>Complaint Details</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_BTN_Submit</fullName>
+        <categories>complaintcontact</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_BTN_Submit</shortDescription>
+        <value>Submit</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_Do_you_wish_to_remain_anonymous</fullName>
+        <categories>ComplaintContact</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Do you wish to remain anonymous?</shortDescription>
+        <value>Do you wish to remain anonymous?</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_ERR_Captcha</fullName>
+        <categories>complaint</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_ERR_Captcha</shortDescription>
+        <value>Please enter the text that matches the captcha displayed.</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_ERR_Email_Address</fullName>
+        <categories>complaintcontroller</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_ERR_Email_Address</shortDescription>
+        <value>Please enter email address.</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_ERR_Email_Confirm</fullName>
+        <categories>complaintcontroller</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_ERR_Email_Confirm</shortDescription>
+        <value>Email address does not match</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_ERR_First_Name</fullName>
+        <categories>complaintcontroller</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_ERR_First_Name</shortDescription>
+        <value>Please enter first name</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_ERR_Last_Name</fullName>
+        <categories>complaintcontroller</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_ERR_Last_Name</shortDescription>
+        <value>Please enter last name</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_ERR_POBox</fullName>
+        <categories>complaintdetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT ERR POBox</shortDescription>
+        <value>Please do not enter a P.O. Box</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_Environmental_Complaint_System</fullName>
+        <categories>Complaint</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Environmental Complaint System</shortDescription>
+        <value>Environmental Complaint System</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_HELP_Air</fullName>
+        <categories>complaint</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_HELP_Air</shortDescription>
+        <value>Check this box if you have general air pollution complaint, which includes open burning, stationary source emissions, fugitive dust emissions, and gasoline nozzles OR complaints concerning smoking vehicles, idling commercial vehicles near a school, and idling or smoking locomotive engines.</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_HELP_Cannabis_Marijuana</fullName>
+        <categories>complaintdetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_HELP_Cannabis_Marijuana</shortDescription>
+        <value>Pollution of waterways and land due to trash, chemicals, and pesticides associated with cannabis cultivation, or use of water for irrigation of cannabis plants or grading, excavation, road construction, and site development.</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_HELP_Pesticides</fullName>
+        <categories>complaint</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_HELP_Pesticides</shortDescription>
+        <value>Check this box if your complaint involves the improper sale, transportation, storage, or use of pesticide products. If your complaint deals with pesticide waste that has been improperly disposed or stored, please check the box indicating Toxic Substances.</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_HELP_Solid_Waste</fullName>
+        <categories>complaint</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_HELP_Solid_Waste</shortDescription>
+        <value>Check this box if you have a complaint regarding a solid waste facility (or garbage landfill). A solid waste facility may receive, handle or dispose of solid or liquid wastes, including garbage, trash, refuse, paper, rubbish, ashes, industrial wastes, demolition and construction wastes, abandoned vehicles and vehicle parts, waste tires, discarded home and industrial appliances, sewage sludge which is not a hazardous waste, manure, or vegetable or animal wastes. You may also check this box if you have a complaint about a used oil recycler, an electronic waste recycler, or household hazardous waste. </value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_HELP_Toxic_Substance</fullName>
+        <categories>complaint</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_HELP_Toxic_Substance</shortDescription>
+        <value>Check this box if your complaint concerns illegal disposal or handling of hazardous waste. This includes illegal disposal, storage, transportation, or treatment of hazardous chemical waste, waste oil, waste antifreeze, waste fluorescent light tubes, electronic wastes, waste pesticides and waste paint. Please check this box for complaints concerning commercial hazardous waste management facilities, hazardous waste transporters, and hazardous waste recyclers.</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_HELP_Water</fullName>
+        <categories>complaint</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_HELP_Water</shortDescription>
+        <value>Check this box if your complaint involves potential violations of water quality or water rights laws related to rivers, lakes, streams, groundwater or the ocean. These violations may include pollution or illegal discharges of pollutants or chemicals, violations of water quality permits,  water rights permits or licenses, illegal water diversions, water diversions impacting fisheries or habitats, leaking underground storage tanks,  erosion and other polluted storm water runoff, pollution from regulated facilities and open lands, drinking water quality, activities associated with cannabis cultivation or other agricultural and ranching practices, sewer overflows, and sewage treatment plant operation violations.</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_HELP_Water_Quality</fullName>
+        <categories>complaintdetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_HELP_Water_Quality</shortDescription>
+        <value>Problems or pollution in a stream, river, lake, wetlands, bay, groundwater basin, or the ocean resulting from discharges of polluted water or stormwater, or from other activities such as construction, grading, and excavations.</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_HELP_Water_Rights</fullName>
+        <categories>complaintdetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_HELP_Water_Rights</shortDescription>
+        <value>Water diversions from a stream, river, or lake, or extractions of groundwater that may be unauthorized or illegal, may be impacting your water rights, may be wasteful and unreasonable use of water, or may be impacting fish, wildlife or habitats.</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBEL_Regarding_Prop65</fullName>
+        <categories>complaint</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBEL_Regarding_Prop65</shortDescription>
+        <value>IS THIS REGARDING PROPOSITION  65?</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Action</fullName>
+        <categories>complaintdetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Action</shortDescription>
+        <value>Action</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Additional_Information</fullName>
+        <categories>complaintdetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Additional_Information</shortDescription>
+        <value>Additional Information</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Additional_Solid_Waste</fullName>
+        <categories>complaintdetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Additional_Solid_Waste</shortDescription>
+        <value>Additional solid waste?</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Address</fullName>
+        <categories>complaintdetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Address</shortDescription>
+        <value>Address</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Air</fullName>
+        <categories>complaint</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Air</shortDescription>
+        <value>Air</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Air_Complaint_Source</fullName>
+        <categories>complaintdetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Air_Complaint_Source</shortDescription>
+        <value>Air Complaint Source?</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Anonymous</fullName>
+        <categories>confirmation</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Anonymous</shortDescription>
+        <value>Anonymous?</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Are_You_Making_A_Referral</fullName>
+        <categories>complaintcontact</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Are_You_Making_A_Referral</shortDescription>
+        <value>Are you making a referral to CalEPA from another governmental agency?</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Are_You_Reporting_a_Spill</fullName>
+        <categories>complaintdetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Are_You_Reporting_a_Spill</shortDescription>
+        <value>Are you reporting a Spill?</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Attach_Files</fullName>
+        <categories>complaintdetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Attach_Files</shortDescription>
+        <value>Attach Files</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Bottles_And_Cans_Recycling</fullName>
+        <categories>complaintdetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Bottles_And_Cans_Recycling</shortDescription>
+        <value>Bottles and cans recycling?</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_CAC_Directory</fullName>
+        <categories>complaintdetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_CAC_Directory</shortDescription>
+        <value>CAC Directory</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Cannabis_Marijuana</fullName>
+        <categories>complaintdetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Cannabis_Marijuana</shortDescription>
+        <value>Cannabis/Marijuana cultivation? </value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Captcha</fullName>
+        <categories>complaint</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Captcha</shortDescription>
+        <value>Captcha</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_City</fullName>
+        <categories>complaintdetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_City</shortDescription>
+        <value>City</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Complaint</fullName>
+        <categories>complaintdetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Complaint</shortDescription>
+        <value>Complaint</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Complaint_Description</fullName>
+        <categories>complaintdetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Complaint_Description</shortDescription>
+        <value>Complaint Description</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Complaint_Location</fullName>
+        <categories>complaintdetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Complaint_Location</shortDescription>
+        <value>Complaint Location</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Complaintant_Address</fullName>
+        <categories>complaintcontact</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Complaintant_Address</shortDescription>
+        <value>Address</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Complaintant_City</fullName>
+        <categories>complaintcontact</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Complaintant_City</shortDescription>
+        <value>City</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Complaintant_Confirm_Email_Address</fullName>
+        <categories>complaintcontact</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Complaintant_Confirm_Email_Address</shortDescription>
+        <value>Confirm Email Address</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Complaintant_Email_Address</fullName>
+        <categories>complaintcontact</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Complaintant_Email_Address</shortDescription>
+        <value>Email Address</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Complaintant_Home_Phone</fullName>
+        <categories>complaintcontact</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Complaintant_Home_Phone</shortDescription>
+        <value>Home Phone</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Complaintant_Mobile_Phone</fullName>
+        <categories>complaintcontact</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Complaintant_Mobile_Phone</shortDescription>
+        <value>Mobile</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Complaintant_State</fullName>
+        <categories>complaintcontact</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Complaintant_State</shortDescription>
+        <value>State</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Complaintant_Zip</fullName>
+        <categories>complaintcontact</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Complaintant_Zip</shortDescription>
+        <value>Zip</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Complete</fullName>
+        <categories>complaint pages</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Complete</shortDescription>
+        <value>Complete</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Confirmation</fullName>
+        <categories>complaint pages</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Confirmation</shortDescription>
+        <value>Confirmation</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Confirmation_Address</fullName>
+        <categories>confirmation</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Confirmation_Address</shortDescription>
+        <value>Address</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Confirmation_Back_To_Call_EPA</fullName>
+        <categories>confirmation</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Confirmation_Back_To_Call_EPA</shortDescription>
+        <value>Back to Cal EPA (http://www.calepa.ca.gov/)</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Confirmation_City</fullName>
+        <categories>confirmation</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Confirmation_City</shortDescription>
+        <value>City</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Confirmation_Complaint_Description</fullName>
+        <categories>confirmation</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Confirmation_Complaint_Description</shortDescription>
+        <value>Complaint Description</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Confirmation_Complaint_Location</fullName>
+        <categories>confirmation</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Confirmation_Complaint_Location</shortDescription>
+        <value>Complaint Location</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Confirmation_Date_Of_Occurence</fullName>
+        <categories>confirmation</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Confirmation_Date_Of_Occurence</shortDescription>
+        <value>Date of Occurrence</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Confirmation_Date_Of_Occurrence_Approx_Time</fullName>
+        <categories>confirmation</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Confirmation_Date_Of_Occurrence_&amp;_Approx_Time</shortDescription>
+        <value>Date of Occurrence &amp; Approximate Time</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Confirmation_Location_Description</fullName>
+        <categories>confirmation</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Confirmation_Location_Description</shortDescription>
+        <value>Location Description</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Confirmation_Ongoing_Occurrence</fullName>
+        <categories>confirmation</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Confirmation_Ongoing_Occurrence</shortDescription>
+        <value>Ongoing Occurrence?</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Confirmation_Responsible_Company_Name</fullName>
+        <categories>confirmation</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Confirmation_Responsible_Company_Name</shortDescription>
+        <value>Responsible Company Name</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Confirmation_Responsible_Party</fullName>
+        <categories>confirmation</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Confirmation_Responsible_Party</shortDescription>
+        <value>Responsible Party</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Confirmation_Responsible_Party_Address</fullName>
+        <categories>confirmation</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Confirmation_Responsible_Party_Address</shortDescription>
+        <value>Address</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Confirmation_Responsible_Party_City</fullName>
+        <categories>confirmation</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Confirmation_Responsible_Party_City</shortDescription>
+        <value>City</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Confirmation_Responsible_Party_State</fullName>
+        <categories>confirmation</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Confirmation_Responsible_Party_State</shortDescription>
+        <value>State</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Confirmation_Responsible_Party_Zip</fullName>
+        <categories>confirmation</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Confirmation_Responsible_Party_Zip</shortDescription>
+        <value>Zip</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Confirmation_Responsible_Person_Name</fullName>
+        <categories>confirmation</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Confirmation_Responsible_Person_Name</shortDescription>
+        <value>Responsible Person Name</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Confirmation_State</fullName>
+        <categories>confirmation</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Confirmation_State</shortDescription>
+        <value>State</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Confirmation_Zip</fullName>
+        <categories>confirmation</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Confirmation_Zip</shortDescription>
+        <value>Zip</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Contact_Information</fullName>
+        <categories>confirmation</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Contact_Information</shortDescription>
+        <value>Contact Information</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Date_Of_Occurance</fullName>
+        <categories>complaintdetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Date_Of_Occurence</shortDescription>
+        <value>Date of Occurrence</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Date_Of_Occurence_And_Approximate_Time</fullName>
+        <categories>complaintdetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Date_Of_Occurence_And_Approximate_Time</shortDescription>
+        <value>Date of Occurrence &amp; Approximate Time</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Details</fullName>
+        <categories>complaint pages</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Details</shortDescription>
+        <value>Details</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Do_You_Wish_To_Receive_Further_Updates</fullName>
+        <categories>complaintcontact</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Do_You_Wish_To_Receive_Further_Updates</shortDescription>
+        <value>Do you wish to receive further updates regarding this complaint?</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Do_You_Wish_To_Remain_Anonymous</fullName>
+        <categories>complaintcontact</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Do_You_Wish_To_Remain_Anonymous</shortDescription>
+        <value>Do you wish to remain anonymous?</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Document_Name</fullName>
+        <categories>complaintdetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Document_Name</shortDescription>
+        <value>Document Name</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Drinking_Water</fullName>
+        <categories>complaintdetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Drinking_Water</shortDescription>
+        <value>Drinking water?</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Email_Of_Person_Referring</fullName>
+        <categories>complaintcontact</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Email_Of_Person_Referring</shortDescription>
+        <value>Email of Person from Referring External Agency*</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Emergency</fullName>
+        <categories>complaint</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Emergency</shortDescription>
+        <value>IS THIS AN EMERGENCY?</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_First_Name</fullName>
+        <categories>complaintcontact</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_First_Name</shortDescription>
+        <value>First Name</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_For_Water_Quality_Or_Water_Rights</fullName>
+        <categories>complaintdetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_For_Water_Quality_Or_Water_Rights</shortDescription>
+        <value>For Water Quality or Water Rights Concerns, please provide one of the following (if known):</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Have_You_Contacted_Your_Local_County_Ag</fullName>
+        <categories>complaintdetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Have_You_Contacted_Your_Local_County_Ag</shortDescription>
+        <value>Have you contacted your local County Agricultural Commissioner&apos;s (CAC) office?</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_How_Did_You_Become_Aware_of</fullName>
+        <categories>complaintdetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_How_Did_You_Become_Aware_of</shortDescription>
+        <value>How did you become aware of the incident?</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_If_You_Previously_Submitted</fullName>
+        <categories>complaintdetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_If_You_Previously_Submitted</shortDescription>
+        <value>If you previously submitted this complaint, please indicate the organization(s) or local government entity you contacted.</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Is_The_Complaint_Near_A_Sensitive_Location</fullName>
+        <categories>complaintdetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Is_The_Complaint_Near_A_Sensitive_Location</shortDescription>
+        <value>Is the complaint near a sensitive location?</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Is_This_Complaint_Related_To_A_Refinery</fullName>
+        <categories>complaintdetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Is_This_Complaint_Related_To_A_Refinery</shortDescription>
+        <value>Is this complaint related to a Refinery?</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Language_Preference</fullName>
+        <categories>complaint</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Language_Preference</shortDescription>
+        <value>Language Preference/Preferencia de Idioma</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Last_Name</fullName>
+        <categories>complaintcontact</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Last_Name</shortDescription>
+        <value>Last Name</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_List_Organizations_that</fullName>
+        <categories>complaintdetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_List_Organizations_that</shortDescription>
+        <value>List organizations that you have previously reported this problem to.</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Location_Description</fullName>
+        <categories>complaintdetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Location_Description</shortDescription>
+        <value>Location Description</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Map_Instructions</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Map_Insturctions</shortDescription>
+        <value>Fill in address above or move pin to complaint location</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_More_Than_One_Selection</fullName>
+        <categories>complaint</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_More_Than_One_Selection</shortDescription>
+        <value>More than one may be selected</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Name</fullName>
+        <categories>complaintcontact</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Name</shortDescription>
+        <value>Name</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Name_Of_Affected_Water_Source</fullName>
+        <categories>complaintdetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Name_Of_Affected_Water_Source</shortDescription>
+        <value>Name of affected water source</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Name_Of_Person_Referring</fullName>
+        <categories>complaintcontact</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Name_Of_Person_Referring</shortDescription>
+        <value>Name of Person from Referring External Agency (If Applicable)</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Nature_Of_Report</fullName>
+        <categories>complaintdetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Nature_Of_Report</shortDescription>
+        <value>Nature of report</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Ongoing_Occurrence</fullName>
+        <categories>complaintdetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Ongoing_Occurrence</shortDescription>
+        <value>Ongoing Occurrence?</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Other_Locations</fullName>
+        <categories>complaintdetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Other_Locations</shortDescription>
+        <value>Other location</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Other_Relationship</fullName>
+        <categories>complaintdetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Other_Relationship</shortDescription>
+        <value>Other relationship</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Parcel_Number</fullName>
+        <categories>complaintdetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Parcel_Number</shortDescription>
+        <value>Parcel number</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Pesticide_Misuse</fullName>
+        <categories>complaintdetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Pesticide_Misuse</shortDescription>
+        <value>Pesitcide Misuse, Violation of Pesticide Sales</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Pesticides</fullName>
+        <categories>complaint</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Pesticides</shortDescription>
+        <value>Pesticides</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Place_Pin_On_Map</fullName>
+        <categories>complaintdetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_TXT_Place_Pin_On_Map</shortDescription>
+        <value>Place Pin on Map at Above Address</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Please_Include_Any_Relevant_Images_Or_Docs</fullName>
+        <categories>complaintdetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Please_Include_Any_Relevant_Images_Or_Docs</shortDescription>
+        <value>Please include any relevant images or documents.</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Please_Reference_This_Complaint_Number_during</fullName>
+        <categories>confirmation</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Please_Reference_This_Complaint_Number_during</shortDescription>
+        <value>Please reference this complaint number during any future correspondence regarding this complaint.</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Privacy</fullName>
+        <categories>complaintdetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Privacy</shortDescription>
+        <value>Privacy</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Privacy_Notice</fullName>
+        <categories>complaintcontact</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Privacy_Notice</shortDescription>
+        <value>Providing your personal information to us is voluntary. However, if you do not provide personal information, such as your name, address or telephone number, we may not be able to contact you if we need further information to fully investigate your complaint, nor will we be able to inform you of any resolution to your complaint. CalEPA will maintain confidentiality of your personal information to the extent allowed by law. For more information about the use and potential disclosure of your personal information, please review our privacy policy.</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Privacy_Notice_Regarding_Information_Collection</fullName>
+        <categories>complaintcontact</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Privacy_Notice_Regarding_Information_Collection</shortDescription>
+        <value>Privacy Notice Regarding Information Collection</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Receive_Updates</fullName>
+        <categories>confirmation</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Receive_Updates</shortDescription>
+        <value>Receive updates regarding this complaint?</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Referral_Agency</fullName>
+        <categories>complaintcontact</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Referral_Agency</shortDescription>
+        <value>Referral Agency</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Referring_External_Agency</fullName>
+        <categories>complaintcontact</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Referring_External_Agency</shortDescription>
+        <value>Referring External Agency (If Applicable)</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Relationship_To_Responsible_Party</fullName>
+        <categories>complaintdetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Relationship_To_Responsible_Party</shortDescription>
+        <value>Relationship to responsible party</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Reponsible_Company_Name</fullName>
+        <categories>complaintdetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Reponsible_Company_Name</shortDescription>
+        <value>Responsible Company Name</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Report_Problem</fullName>
+        <categories>complaint</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Report_Problem</shortDescription>
+        <value>SELECT AN IMAGE TO REPORT A PROBLEM</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Report_Water_Waste</fullName>
+        <categories>complaint</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Report_Water_Waste</shortDescription>
+        <value>ARE YOU REPORTING WATER WASTE?</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Responsible_Party</fullName>
+        <categories>complaintdetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Responsible_Party</shortDescription>
+        <value>Responsible Party</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Responsible_Person_Name</fullName>
+        <categories>complaintdetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Responsible_Person_Name</shortDescription>
+        <value>Responsible Person Name</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Rights_Description</fullName>
+        <categories>complaintdetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Rights_Description</shortDescription>
+        <value>Rights description</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Rights_Number</fullName>
+        <categories>complaintdetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Rights_Number</shortDescription>
+        <value>Rights number</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Same_Address_As_The_Above</fullName>
+        <categories>complaintdetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Same_Address_As_The_Above</shortDescription>
+        <value>Same address as above?</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Solid_Waste</fullName>
+        <categories>complaint</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Solid_Waste</shortDescription>
+        <value>Solid Waste</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Start</fullName>
+        <categories>complaint pages</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Start</shortDescription>
+        <value>Start</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_State</fullName>
+        <categories>complaintdetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_State</shortDescription>
+        <value>State</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Submitted</fullName>
+        <categories>confirmation</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Submitted</shortDescription>
+        <value>Submitted:</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Thank_you_for_your_comments_Your_complaint_has_been_logged</fullName>
+        <categories>confirmation</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Thank_you_for_your_comments_Your_complaint_has_been_logged</shortDescription>
+        <value>Thank you for your comments. Your complaint has been logged.</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Timeframe</fullName>
+        <categories>complaintdetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Timeframe</shortDescription>
+        <value>Timeframe</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Toxic</fullName>
+        <categories>complaint</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Toxic</shortDescription>
+        <value>Toxic Substances</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Vehicle_Or_Stationary</fullName>
+        <categories>complaintdetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Vehicle_Or_Stationary</shortDescription>
+        <value>Vehicle or Stationary?</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Waste_Tires</fullName>
+        <categories>complaintdetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Waste_Tires</shortDescription>
+        <value>Waste tires?</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Water</fullName>
+        <categories>complaint</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Water</shortDescription>
+        <value>Water</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Water_Other</fullName>
+        <categories>complaintdetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Water_Other</shortDescription>
+        <value>Other</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Water_Quality</fullName>
+        <categories>complaintdetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Water_Quality</shortDescription>
+        <value>Water quality?</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Water_Rights</fullName>
+        <categories>complaintdetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Water_Rights</shortDescription>
+        <value>Water rights? </value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Water_Rights_Concerns</fullName>
+        <categories>complaintdetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Water_Rights_Concerns</shortDescription>
+        <value>For Water Rights Concerns, please indicate if you (Complainant) or the alleged responsible party have a water right.</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Water_Rights_Owner</fullName>
+        <categories>complaintdetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Water_Rights_Owner</shortDescription>
+        <value>Water rights owner?</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Watershed</fullName>
+        <categories>complaintdetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Watershed</shortDescription>
+        <value>Watershed</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Your_Air_Concern</fullName>
+        <categories>complaintdetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Your_Air_Concern</shortDescription>
+        <value>Your &quot;Air&quot; Concern</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Your_Pesticides_Concern</fullName>
+        <categories>complaintdetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Your_Pesticides_Concern</shortDescription>
+        <value>Your &quot;Pesticides&quot; Concern</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Your_Solid_Waste_Concern</fullName>
+        <categories>complaintdetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Your_Solid_Waste_Concern</shortDescription>
+        <value>Your &quot;Solid Waste&quot; Concern</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Your_Toxics_Concern</fullName>
+        <categories>complaintdetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Your_Toxics_Concern</shortDescription>
+        <value>Your &quot;Toxics&quot; Concern</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Your_Water_Concern</fullName>
+        <categories>complaintdetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Your_Water_Concern</shortDescription>
+        <value>Your &quot;Water&quot; Concern</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Your_Water_Concern_Is_Related_to</fullName>
+        <categories>complaintdetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Your_Water_Concern_Is_Related_to</shortDescription>
+        <value>Your water concern is related to (select all that apply):</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_LBL_Zip</fullName>
+        <categories>complaintdetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_LBL_Zip</shortDescription>
+        <value>Zip</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_PRIVACY_POLICY_1</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT PRIVACY POLICY</shortDescription>
+        <value>&lt;p&gt;California law authorizes the California Environmental Protection Agency (CalEPA) and its boards and departments to take action to enforce requirements to protect public health and the environment.  CalEPA, the boards and departments within CalEPA, and other state and local government agencies with environmental law enforcement authority use your information to ensure environmental complaints brought to the agency’s attention are addressed. &lt;/p&gt;
+ 
+&lt;p&gt;You do not have to provide the personal information requested. However, if you do not wish to provide us the necessary information, we may not be able to investigate your complaint. When providing information or documents, please do not include unrequested personal information, such as Social Security Numbers, Driver&apos;s License Numbers, unnecessary health-related information, and credit card or financial information.&lt;/p&gt;</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_PRIVACY_POLICY_2</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT PRIVACY POLICY</shortDescription>
+        <value>&lt;p&gt;We may share your information with other government agencies as permitted by law to further the investigation of your complaint.  CalEPA must comply with the Public Records Act.  The Act is a law that protects the public’s right to access records of government agencies, including complaints reported to the agency via its website.  However, the Act recognizes each individual’s right to privacy and therefore provides an exemption to protect personal information contained in agency records. CalEPA will release information only as required by the Public Records Act.&lt;/p&gt;&lt;p&gt;This notice is provided pursuant to the Information Practices Act of 1977 (California Civil Code Section 1798.17)&lt;/p&gt;&lt;p&gt;For more information, please review CalEPA’s &lt;a href=&quot;https://calepa.ca.gov/privacy-policy/&quot;&gt;privacy policy&lt;/a&gt;.&lt;/p&gt;</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_PRIVACY_POLICY_3</fullName>
+        <categories>Privacy Policy</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_PRIVACY_POLICY_3</shortDescription>
+        <value>Thank you</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_Privacy</fullName>
+        <categories>template</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_Privacy</shortDescription>
+        <value>Privacy</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_TXT_10MB_Max_File_Size</fullName>
+        <categories>complaintdetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_TXT_10MB_Max_File_Size</shortDescription>
+        <value>10MB Max File Size</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_TXT_Address</fullName>
+        <categories>complaintdetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_TXT_Address</shortDescription>
+        <value>Street Address</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_TXT_Cannabis_Marijuana</fullName>
+        <categories>complaintdetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_TXT_Cannabis_Marijuana</shortDescription>
+        <value>Pollution of waterways and land due to trash, chemicals, and pesticides associated with cannabis cultivation, or use of water for irrigation of cannabis plants or grading, excavation, road construction, and site development.</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_TXT_Captcha</fullName>
+        <categories>complaint</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_TXT_Captcha</shortDescription>
+        <value>Please enter the text displayed into the box to continue</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_TXT_City</fullName>
+        <categories>complaintdetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_TXT_City</shortDescription>
+        <value>City</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_TXT_Company_Name</fullName>
+        <categories>complaintdetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_TXT_Company_Name</shortDescription>
+        <value>Company Name</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_TXT_Complaint</fullName>
+        <categories>complaintdetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_TXT_Complaint</shortDescription>
+        <value>Please describe complaint (What happened, what materials or substances were involved, how much is involved, where did the materials or substances go, who else have you reported this to and what was the outcome? Provide any information that will help our inspectors determine the most timely and effective response. Text only.)</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_TXT_Complaint_Location</fullName>
+        <categories>complaintdetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_TXT_Complaint_Location</shortDescription>
+        <value>Provide information about this complaint. If you do not know the address, please provide a description of the location (like &quot;corner of 1st St. and River Blvd.&quot;) or drop a pin on the map provided below.</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_TXT_Complaint_page_title</fullName>
+        <categories>complaint</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_TXT_Complaint_page_title</shortDescription>
+        <value>New Complaint</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_TXT_Description_of_Location</fullName>
+        <categories>complaintdetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_TXT_Description_of_Location</shortDescription>
+        <value>Location Description</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_TXT_Drinking_Water</fullName>
+        <categories>complaintdetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_TXT_Drinking_Water</shortDescription>
+        <value>Bad taste, odors, or contamination in water supplied to your house or business; or concerns about your city’s water supply system or your municipal water supplier operations.</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_TXT_First</fullName>
+        <categories>complaintcontact</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_TXT_First</shortDescription>
+        <value>First</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_TXT_For_Emergency</fullName>
+        <categories>complaint</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_TXT_For_Emergency</shortDescription>
+        <value>&lt;h2 class=&quot;text-danger&quot;&gt;
+                                            FOR EMERGENCIES
+                                        &lt;/h2&gt;
+                                        &lt;p class=&quot;lead text-danger&quot;&gt;
+                                            CALL 911
+                                        &lt;/p&gt;</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_TXT_For_Hazmat</fullName>
+        <categories>complaint</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_TXT_For_Hazmat</shortDescription>
+        <value>&lt;h2&gt;FOR HAZMAT SPILL OR SEWER OVERFLOW NOTIFICATIONS&lt;/h2&gt;
+                                        &lt;p class=&quot;lead&quot;&gt;
+                                            CALL THE STATE WARNING CENTER&lt;br/&gt;
+                                            &lt;span class=&quot;clearfix visible-lg-block&quot;&gt;&lt;/span&gt; 1-800-852-7550
+                                        &lt;/p&gt;</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_TXT_If_You_Work_For_A_Governmental_Entity</fullName>
+        <categories>complaintcontact</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_TXT_If_You_Work_For_A_Governmental_Entity</shortDescription>
+        <value>If you work for a governmental entity outside of CalEPA and are making a formal agency referral to CalEPA, please provide your information.</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_TXT_Last</fullName>
+        <categories>complaintcontact</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_TXT_Last</shortDescription>
+        <value>Last</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_TXT_MapPin</fullName>
+        <categories>complaintdetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_TXT_MapPin</shortDescription>
+        <value>We are pinning the address you entered on to the map, please validate its location before continuing</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_TXT_Name_Of_Affected_Water_Source</fullName>
+        <categories>complaintdetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_TXT_Name_Of_Affected_Water_Source</shortDescription>
+        <value>Stream, river, lake, bay, groundwater basin, or coastal area</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_TXT_No</fullName>
+        <categories>complaint pages</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_TXT_No</shortDescription>
+        <value>No</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_TXT_Person_Name</fullName>
+        <categories>complaintdetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_TXT_Person_Name</shortDescription>
+        <value>Person Name</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_TXT_Please_Describe_The_Issue_In_as_much</fullName>
+        <categories>complaintdetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_TXT_Please_Describe_The_Issue_In_as_much</shortDescription>
+        <value>Please describe the issue in as much detail as possible.</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_TXT_Regarding_Prop65</fullName>
+        <categories>complaint</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_TXT_Regarding_Prop65</shortDescription>
+        <value>The California Attorney General&apos;s Office enforces Proposition 65, and can be reached at (510) 873-6321 or through their &lt;a href=&quot;https://oag.ca.gov/prop65/contact-us&quot;&gt;contact form&lt;/a&gt;.&lt;br/&gt;
+                                            For general information about Proposition 65, please see the Office of Environmental Health Hazard Assessment’s &lt;a href=&quot;http://www.oehha.ca.gov/prop65/background/p65plain.html&quot;&gt;plain language guide&lt;/a&gt;.
+                                      &lt;/p&gt;</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_TXT_Report_Water_Waste</fullName>
+        <categories>complaint</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_TXT_Report_Water_Waste</shortDescription>
+        <value>&lt;h2&gt;
+                                            Please report Water Waste complaints here:
+                                        &lt;/h2&gt;
+                                        &lt;p class=&quot;lead&quot;&gt;
+                                            &lt;a href=&quot;http://savewater.ca.gov/&quot; target=&quot;_blank&quot;&gt;http://savewater.ca.gov/&lt;/a&gt; &amp;nbsp; &lt;i class=&quot;fa fa-external-link&quot;&gt;&lt;/i&gt;
+                                        &lt;/p&gt;</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_TXT_Responsible_Party</fullName>
+        <categories>complaintdetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_TXT_Responsible_Party</shortDescription>
+        <value>Provide any information about the facility, company, or person who is allegedly responsible for this problem.</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_TXT_Street_address_only_PO_not_allowed</fullName>
+        <categories>complaintdetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_TXT_Street_address_only_PO_not_allowed</shortDescription>
+        <value>Street address only - PO BOXs not allowed</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_TXT_Uploading_File</fullName>
+        <categories>complaintdetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_TXT_Uploading_File</shortDescription>
+        <value>Uploading file</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_TXT_Water_Other</fullName>
+        <categories>complaintdetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_TXT_Water_Other</shortDescription>
+        <value>Examples are misuse of water project grants or loans, or misconduct by wastewater treatment plant operators.</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_TXT_Water_Rights</fullName>
+        <categories>complaintdetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_TXT_Water_Rights</shortDescription>
+        <value>Water diversions from a stream, river, or lake, or extractions of groundwater that may be unauthorized or illegal, may be impacting your water rights, may be wasteful and unreasonable use of water, or may be impacting fish, wildlife or habitats.</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_TXT_Yes</fullName>
+        <categories>complaint pages</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_TXT_Yes</shortDescription>
+        <value>Yes</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_TXT_Zip</fullName>
+        <categories>complaintdetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_TXT_Zip</shortDescription>
+        <value>Zip</value>
+    </labels>
+    <labels>
+        <fullName>COMPLAINT_TXT_sample_email</fullName>
+        <categories>complaint pages</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMPLAINT_TXT_sample_email</shortDescription>
+        <value>you@yourdomain.com</value>
+    </labels>
+    <labels>
+        <fullName>Complaint_About_Link</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Complaint About Link</shortDescription>
+        <value>https://calepa.ca.gov/enforcement/complaints/</value>
+    </labels>
+    <labels>
+        <fullName>Complaint_lbl_About</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>About</shortDescription>
+        <value>About</value>
+    </labels>
+    <labels>
+        <fullName>Complaint_lbl_About_Text1</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Complaint_lbl_About_Text1</shortDescription>
+        <value>&lt;p&gt;&lt;strong&gt;About the Environmental Complaint System&lt;/strong&gt;&lt;/p&gt;
+
+
+
+
+            &lt;p&gt;Welcome to the California Environmental Protection Agency’s (CalEPA’s) online environmental complaint system. This tool allows Californians to
+            report an environmental problem anywhere in the state and provides environmental agencies with valuable information about potential environmental
+            hazards and violations.&lt;/p&gt;
+        
+            &lt;p&gt;If you are aware of suspected illegal or unauthorized activity that might impact California’s environment or the public health, CalEPA would like
+            to know about it. Please use this complaint form to provide all the details you know.&lt;/p&gt;</value>
+    </labels>
+    <labels>
+        <fullName>Complaint_lbl_About_Text2</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Complaint_lbl_About_Text2</shortDescription>
+        <value>&lt;p&gt;Once a complaint is filed, it is routed to the appropriate state or local agencies. If you provide your email address, you will receive an update
+            when it has been referred, including which agency is handling the complaint, and again when the complaint is closed.&lt;/p&gt;
+        
+            &lt;p&gt;You may submit a complaint anonymously. However, if you do not provide your contact information, we will not be able to send you updates on the
+            status of your complaint. For questions or concerns about privacy, please see our &lt;a href=&quot;http://www.calepa.ca.gov/Privacy.htm&quot;&gt;privacy policy&lt;/a&gt;.&lt;/p&gt;</value>
+    </labels>
+    <labels>
+        <fullName>Complaint_lbl_About_Text3</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Complaint_lbl_About_Text3</shortDescription>
+        <value>&lt;p&gt;If you have questions about CalEPA’s complaint system, please send them to
+            &lt;a
+                href=&quot;https://mail.ces.ca.gov/owa/redir.aspx?SURL=rNJpQrXzy54rPHIhB5mOG1FuSOARFL0ZnxvV-Lk5USs6RAVPnGjTCG0AYQBpAGwAdABvADoAYwBvAG0AcABsAGEAaQBuAHQAcwBAAGMAYQBsAGUAcABhAC4AYwBhAC4AZwBvAHYA&amp;amp;URL=mailto%3acomplaints%40calepa.ca.gov&quot;
+                target=&quot;_blank&quot;
+            &gt;
+                complaints@calepa.ca.gov
+            &lt;/a&gt;&lt;/p&gt;
+        
+            &lt;p&gt;Thank you for helping to protect California’s environment!&lt;/p&gt;
+        
+        &lt;p&gt;&lt;strong&gt;Arsenio Mataka&lt;/strong&gt;&lt;/p&gt;
+    
+            &lt;p&gt;Assistant Secretary for Environmental Justice and Tribal Affairs&lt;/p&gt;
+    
+            &lt;p&gt;California Environmental Protection Agency&lt;/p&gt;</value>
+    </labels>
+    <labels>
+        <fullName>Email_Notification_15Day</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Email Notification 15Day</shortDescription>
+        <value>DO NOT REPLY TO THIS MESSAGE.
+
+Dear &lt;:COMPLAINANT:&gt;, 
+
+This message relates to the environmental complaint number &lt;:NUMBER:&gt;  you submitted to the California Environmental Protection Agency (CalEPA) on &lt;:DATE:&gt;.  Your complaint is being handled by the following agencies:
+
+&lt;:OWNER:&gt;
+
+Your complaint is still being investigated.  We will notify you once the complaint has been closed.
+
+Thank you.</value>
+    </labels>
+    <labels>
+        <fullName>Email_Notification_15Day_Subject</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Email_Notification_15Day_Subject</shortDescription>
+        <value>Update regarding your environmental complaint</value>
+    </labels>
+    <labels>
+        <fullName>Email_Notification_Closed</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Email Notification Closed</shortDescription>
+        <value>DO NOT REPLY TO THIS MESSAGE.
+Dear &lt;:COMPLAINANT:&gt;, 
+This message relates to the environmental complaint number &lt;:NUMBER:&gt; you submitted to the California Environmental Protection Agency (CalEPA) on &lt;:DATE:&gt;.  Your complaint has been closed.  Below is a list of agencies that handled your complaint.  If you would like more information, please contact the listed agencies directly.  
+
+&lt;:OWNER:&gt;
+
+Thank you.</value>
+    </labels>
+    <labels>
+        <fullName>Email_Notification_Closed_Subject</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Email_Notification_Closed_Subject</shortDescription>
+        <value>Your environmental complaint has been closed</value>
+    </labels>
+</CustomLabels>

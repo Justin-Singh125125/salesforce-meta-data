@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Referral</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Referrals</value>
+    </caseValues>
+    <fields>
+        <label><!-- Complaint Actual Receive Date --></label>
+        <name>Complaint_Actual_Receive_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Complaint --></label>
+        <name>Complaint__c</name>
+        <relationshipLabel><!-- Referrals --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Created By BDO --></label>
+        <name>Created_By_BDO__c</name>
+    </fields>
+    <fields>
+        <label><!-- External Id --></label>
+        <name>External_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- External Partner Type --></label>
+        <name>External_Partner_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- External Partner --></label>
+        <name>External_Partner__c</name>
+        <relationshipLabel><!-- Referrals --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Message --></label>
+        <name>Message__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number of Contacts --></label>
+        <name>Number_of_Contacts__c</name>
+    </fields>
+    <fields>
+        <label><!-- Previous Id --></label>
+        <name>Previous_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- SelectedContacts --></label>
+        <name>SelectedContacts__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Awaiting Findings</masterLabel>
+            <translation><!-- Awaiting Findings --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Findings Received</masterLabel>
+            <translation><!-- Findings Received --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Test Data --></label>
+        <name>Test_Data__c</name>
+    </fields>
+    <layouts>
+        <layout>Referral Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

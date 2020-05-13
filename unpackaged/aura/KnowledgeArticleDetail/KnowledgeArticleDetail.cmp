@@ -1,0 +1,18 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId"  controller="KnowledgeBaseController" access="global" >
+    <aura:handler name="init" value="{!this}" action="{!c.init}" />    
+    <aura:attribute name="title" type="string" />
+    <aura:attribute name="body" type="string" />
+    <aura:attribute name="CreatedDate" type="Date" />
+    <aura:attribute name="LastModifiedDate" type="Date" />
+    <aura:attribute name="CreatedBy" type="string" />
+    <aura:attribute name="LastModifiedBy" type="string" />
+    <div class="slds-panel slds-size_full slds-is-open" aria-hidden="false">
+        <div class="slds-panel__body">
+    		<div style="margin:10px;">
+        		<div style='font-weight:300; font-size: 40px; padding-bottom:10px;'>{!v.title}</div>
+        		<div style="padding-bottom:20px;">Created : <lightning:formattedDateTime value="{!v.CreatedDate}"/> by {!v.CreatedBy} &nbsp;&nbsp;|&nbsp;&nbsp;Last Updated: <lightning:formattedDateTime value="{!v.LastModifiedDate}"/> by {!v.LastModifiedBy}</div>
+        		<aura:unescapedHtml value="{!v.body}"/>
+            </div>        
+        </div>
+    </div>
+</aura:component>

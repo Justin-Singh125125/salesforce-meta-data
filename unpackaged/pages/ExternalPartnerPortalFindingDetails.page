@@ -1,0 +1,189 @@
+<apex:page applyBodyTag="false"     
+cache="false" 
+    applyHTMLTag="false" 
+    docType="HTML-5.0" 
+    id="ExternalPartnerPortalFindingDetails"  
+    sidebar="false"   
+    showChat="false" 
+    showHeader="false"  
+    standardController="Finding__c"
+    standardStylesheets="false" 
+    extensions="ExternalPartnerPortalController"
+    action="{!LoadExternalPartnerPortalFindingDetails}"> 
+    <apex:composition template="ExternalPartnerLayout">        
+        <apex:define name="ExternalPartnerLayoutTitle">Complaint External Partner Portal</apex:define>
+        <apex:define name="ExternalPartnerLayoutPageCss">        
+        </apex:define>
+        <apex:define name="ExternalPartnerLayoutBody">
+            <apex:form id="FindingDetailForm" html-role="form">                
+                <h2>
+                    Finding Report
+                    <apex:commandLink target="_blank" action="{!ViewFindingPDFPage}" value="" id="theCommandLink" styleClass="ca-gov-icon-pdf"/>
+                </h2>
+                <apex:inputhidden value="{!FindingDetailViewModel.FindingId}"/>
+                <h3>Finding Number:  {!FindingDetailViewModel.FindingName}</h3>  
+                <hr class="hr-understated"/>
+                <h4>Finding Information</h4>
+                <div class="row">
+                    <div class="col-md-3">
+                        <label class="Field-Title">Completed By</label>
+                    </div>
+                    <div class="col-md-3">
+                        <p>{!FindingDetailViewModel.CompletedBy}</p>
+                    </div>
+                    <div class="col-md-3">
+                        <label class="Field-Title">Title</label>
+                    </div>
+                    <div class="col-md-3">
+                        <p>{!FindingDetailViewModel.Title}</p>
+                    </div>
+                </div>        
+                 <div class="row">
+                    <div class="col-md-3">
+                        <label class="Field-Title">Email</label>
+                    </div>
+                    <div class="col-md-3">
+                        <p>{!FindingDetailViewModel.Email}</p>
+                    </div>
+                    <div class="col-md-3">
+                        <label class="Field-Title">Phone</label>
+                    </div>
+                    <div class="col-md-3">
+                        <p>{!FindingDetailViewModel.Phone}</p>
+                    </div>
+                </div>
+                <hr class="hr-understated"/>
+                <h4>Secondary Referral</h4>
+                <div class="row">
+                    <div class="col-md-3">
+                        <label class="Field-Title">Did you refer this to another agency?</label>
+                    </div>
+                    <div class="col-md-9">
+                        <p>{!FindingDetailViewModel.SecondaryReferral}</p>
+                    </div>
+                </div>   
+                <apex:outputPanel rendered="{!FindingDetailViewModel.IsSecondaryReferral}">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label class="Field-Title">Who Did You Refer it to?</label>
+                        </div>
+                        <div class="col-md-3">
+                            <p>{!FindingDetailViewModel.ReferralAgency}</p>
+                        </div>
+                        <div class="col-md-3">
+                            <label class="Field-Title">Date of Referral</label>
+                        </div>
+                        <div class="col-md-3">
+                            <p>{!FindingDetailViewModel.DateOfReferral}</p>
+                        </div>
+                    </div>                                 
+                </apex:outputPanel>  
+                <hr class="hr-understated"/>
+                <h4>Inspection Information</h4>
+                <div class="row">
+                    <div class="col-md-3">
+                        <label class="Field-Title">Did you conduct a site visit?</label>
+                    </div>
+                    <div class="col-md-9">
+                        <p>{!FindingDetailViewModel.SiteVisitConducted}</p>
+                    </div>
+                </div>   
+                <apex:outputPanel rendered="{!FindingDetailViewModel.IsSiteVisit}">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label class="Field-Title">Date of Site Visit</label>
+                        </div>
+                        <div class="col-md-9">
+                            <p>{!FindingDetailViewModel.DateOfSiteVisit}</p>
+                        </div>
+                    </div>                                 
+                </apex:outputPanel>
+                <apex:outputPanel rendered="{!FindingDetailViewModel.IsSiteVisit==false}">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label class="Field-Title">Why didn't you conduct a site visit?</label>
+                        </div>
+                        <div class="col-md-9">
+                            <p>{!FindingDetailViewModel.ReasonForNoSiteVisit}</p>
+                        </div>
+                    </div>                                 
+                </apex:outputPanel>
+                <hr class="hr-understated"/>
+                <h4>Compliance and Enforcement Information</h4>
+                <div class="row">
+                    <div class="col-md-4">
+                        <label class="Field-Title">Did you find violations or compliance issues?</label>
+                    </div>
+                    <div class="col-md-8">
+                        <p>{!FindingDetailViewModel.ViolationsOrComplianceIssues}</p>
+                    </div>
+                </div>
+                <apex:outputPanel rendered="{!FindingDetailViewModel.IsViolationsOrComplianceIssues}">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label class="Field-Title">Summary of Violations and Enforcement Action Taken</label>
+                        </div>
+                        <div class="col-md-8">
+                            <p>{!FindingDetailViewModel.SummaryOfViolationsAndEnforcement}</p>
+                        </div>
+                    </div>                                 
+                     <div class="row">
+                        <div class="col-md-4">
+                            <label class="Field-Title">Were the violations related to the complaint?</label>
+                        </div>
+                        <div class="col-md-8">
+                            <p>{!FindingDetailViewModel.ViolationsRelatedToComplaint}</p>
+                        </div>
+                    </div>       
+                </apex:outputPanel>                   
+                <div class="row">
+                    <div class="col-md-4">
+                        <label class="Field-Title">Is enforcement complete?</label>
+                    </div>
+                    <div class="col-md-8">
+                        <p>{!FindingDetailViewModel.IsEnforcementComplete}</p>
+                    </div>
+                </div>
+                 <apex:outputPanel rendered="{!FindingDetailViewModel.IsIsEnforcementComplete==false}">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label class="Field-Title">Describe Any On-Going Enforcement Efforts</label>
+                        </div>
+                        <div class="col-md-8">
+                            <p>{!FindingDetailViewModel.OnGoingEnforcement}</p>
+                        </div>
+                    </div>                                 
+                </apex:outputPanel>
+                <apex:outputPanel rendered="{!FindingDetailViewModel.Attachments.size > 0}">
+                    <hr class="hr-understated"/>
+                    <h4>Attachments</h4>                                                      
+                    <table class="table table-default">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        <apex:repeat value="{!FindingDetailViewModel.Attachments}" var="attachment" id="attachmentRepeat">
+                            <tr>
+                                <td><a href="{!URLFOR($Action.Attachment.Download, attachment.Id)}">{!attachment.Name}</a></td>
+                            </tr>
+                        </apex:repeat>
+                        </tbody>
+                    </table>
+                </apex:outputPanel>
+                <div class="clearfix"></div>
+            </apex:form>
+        </apex:define>
+        <apex:define name="ExternalPartnerLayoutPageScriptIncludes">
+            <apex:includeScript value="{!URLFOR($Resource.Jquery_Mask_Plugin, '/jQuery-Mask-Plugin-master/src/jquery.mask.js')}"/>
+        </apex:define>
+        <apex:define name="ExternalPartnerLayoutPageScripts">
+            <script>
+                $(document).ready(function() 
+                {
+                });
+            </script>
+        </apex:define>
+    </apex:composition> 
+</apex:page>

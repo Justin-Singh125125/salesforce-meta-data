@@ -1,0 +1,74 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" access="global"  controller="CalEPAMatchingRecordDetailController">
+    <aura:attribute name="recordId" type="Id" />
+    <aura:handler name="init" value="{!this}" action="{!c.init}" />
+    <aura:attribute name="record1Id" type="Id" />
+    <aura:attribute name="record2Id" type="Id" />
+    <aura:attribute name="isAccount" type="boolean" />
+    <div class="slds-panel slds-size_full slds-panel_docked slds-panel_docked-left slds-is-open" aria-hidden="false">
+        <div class="slds-panel__body">
+            <div class="slds-grid slds-gutters">
+            	<div class="slds-col">
+					<div class="slds-text-heading_large"><a href="{!'/one/one.app?#/sObject/'+ v.record1Id + '/view'}" target="_blank">Record 1</a></div>
+                    <aura:if isTrue="{!v.isAccount}">
+                        <lightning:recordViewForm recordId="{!v.record1Id}" objectApiName="Account">
+                            <div class="slds-box">
+                                <lightning:outputField fieldName="Name" />            
+                                <lightning:outputField fieldName="ShippingAddress" />            
+                                <lightning:outputField fieldName="Phone" />                                            
+                                <lightning:outputField fieldName="Website" />                                                                            
+                                <lightning:outputField fieldName="Email_Domain__c" />                                                                                                            
+                                <lightning:outputField fieldName="Description" />        
+                                <lightning:outputField fieldName="CreatedById" /> 
+                                <lightning:outputField fieldName="CreatedDate" />                                 
+                            </div>
+                        </lightning:recordViewForm>
+                        <aura:set attribute="else">
+                            <lightning:recordViewForm recordId="{!v.record1Id}" objectApiName="Contact">
+                                <div class="slds-box">
+                                    <lightning:outputField fieldName="Name" />                                            	
+                                    <lightning:outputField fieldName="ShippingAddress" /> 
+                                    <lightning:outputField fieldName="Phone" />                                            
+                                    <lightning:outputField fieldName="Email" />                                                                                                              
+                                    <lightning:outputField fieldName="Description" />                                                                                                                                                
+                                    <lightning:outputField fieldName="CreatedById" /> 
+                                    <lightning:outputField fieldName="CreatedDate" />                                        
+                                </div>
+                            </lightning:recordViewForm>
+                        </aura:set>            
+                    </aura:if>                                
+              </div>
+              <div class="slds-col">     
+					<div class="slds-text-heading_large"><a href="{!'/one/one.app?#/sObject/'+ v.record2Id + '/view'}" target="_blank">Record 2</a></div>
+                    <aura:if isTrue="{!v.isAccount}">
+                        <lightning:recordViewForm recordId="{!v.record2Id}" objectApiName="Account">
+                            <div class="slds-box">
+                                <lightning:outputField fieldName="Name" /> 
+                                <lightning:outputField fieldName="ShippingAddress" />     
+                                <lightning:outputField fieldName="Phone" />                                            
+                                <lightning:outputField fieldName="Website" />                                                                            
+                                <lightning:outputField fieldName="Email_Domain__c" />  
+                                <lightning:outputField fieldName="Description" />        
+                                <lightning:outputField fieldName="CreatedById" /> 
+                                <lightning:outputField fieldName="CreatedDate" />                                                                                                                                                                        
+                            </div>
+                        </lightning:recordViewForm>
+                        <aura:set attribute="else">
+                            <lightning:recordViewForm recordId="{!v.record2Id}" objectApiName="Contact">
+                                <div class="slds-box">
+                                    <lightning:outputField fieldName="Name" />            
+                                	<lightning:outputField fieldName="ShippingAddress" />                              
+                                    <lightning:outputField fieldName="Phone" />                                            
+                                    <lightning:outputField fieldName="Email" />      
+                                    <lightning:outputField fieldName="Description" />                                                                                                                                                
+                                    <lightning:outputField fieldName="CreatedById" /> 
+                                    <lightning:outputField fieldName="CreatedDate" />                                        
+                                </div>
+                            </lightning:recordViewForm>
+                        </aura:set>            
+                    </aura:if>                                       
+              </div>
+            </div>            
+
+        </div>
+    </div>        
+</aura:component>

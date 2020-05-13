@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Complaint Assignment Group</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Complaint Assignment Groups</value>
+    </caseValues>
+    <fields>
+        <label><!-- External Id --></label>
+        <name>External_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Lookup Value --></label>
+        <name>Lookup_Value__c</name>
+        <picklistValues>
+            <masterLabel>ARB</masterLabel>
+            <translation><!-- ARB --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Agency</masterLabel>
+            <translation><!-- Agency --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Air</masterLabel>
+            <translation><!-- Air --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CalRecycle</masterLabel>
+            <translation><!-- CalRecycle --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPR</masterLabel>
+            <translation><!-- DPR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DTSC</masterLabel>
+            <translation><!-- DTSC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DTSC - Northern</masterLabel>
+            <translation><!-- DTSC - Northern --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DTSC - Southern</masterLabel>
+            <translation><!-- DTSC - Southern --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Department of Toxic Substances Control</masterLabel>
+            <translation><!-- Department of Toxic Substances Control --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Department of Toxic Substances Control - Northern</masterLabel>
+            <translation><!-- Department of Toxic Substances Control - Northern --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Department of Toxic Substances Control - Southern</masterLabel>
+            <translation><!-- Department of Toxic Substances Control - Southern --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Drinking Water</masterLabel>
+            <translation><!-- Drinking Water --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pesticides</masterLabel>
+            <translation><!-- Pesticides --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 1</masterLabel>
+            <translation><!-- Region 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 2</masterLabel>
+            <translation><!-- Region 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 3</masterLabel>
+            <translation><!-- Region 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 4</masterLabel>
+            <translation><!-- Region 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 5</masterLabel>
+            <translation><!-- Region 5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 6</masterLabel>
+            <translation><!-- Region 6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 7</masterLabel>
+            <translation><!-- Region 7 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 8</masterLabel>
+            <translation><!-- Region 8 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Region 9</masterLabel>
+            <translation><!-- Region 9 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SWRCB - Division of Drinking Water</masterLabel>
+            <translation><!-- SWRCB - Division of Drinking Water --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SWRCB - Division of Water Quality</masterLabel>
+            <translation><!-- SWRCB - Division of Water Quality --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SWRCB - Division of Water Rights</masterLabel>
+            <translation><!-- SWRCB - Division of Water Rights --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SWRCB - Office of Enforcement</masterLabel>
+            <translation><!-- SWRCB - Office of Enforcement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SWRCB - Region 1 - North Coast</masterLabel>
+            <translation><!-- SWRCB - Region 1 - North Coast --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SWRCB - Region 2 - San Francisco Bay</masterLabel>
+            <translation><!-- SWRCB - Region 2 - San Francisco Bay --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SWRCB - Region 3 - Central Coast</masterLabel>
+            <translation><!-- SWRCB - Region 3 - Central Coast --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SWRCB - Region 4 - Los Angeles</masterLabel>
+            <translation><!-- SWRCB - Region 4 - Los Angeles --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SWRCB - Region 5 - Central Valley</masterLabel>
+            <translation><!-- SWRCB - Region 5 - Central Valley --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SWRCB - Region 6 - Lahontan</masterLabel>
+            <translation><!-- SWRCB - Region 6 - Lahontan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SWRCB - Region 7 - Colorado River Basin</masterLabel>
+            <translation><!-- SWRCB - Region 7 - Colorado River Basin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SWRCB - Region 8 - Santa Ana</masterLabel>
+            <translation><!-- SWRCB - Region 8 - Santa Ana --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SWRCB - Region 9 - San Diego</masterLabel>
+            <translation><!-- SWRCB - Region 9 - San Diego --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Solid Waste/CalRecycle</masterLabel>
+            <translation><!-- Solid Waste/CalRecycle --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Water</masterLabel>
+            <translation><!-- Water --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Water Rights</masterLabel>
+            <translation><!-- Water Rights --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Test Data --></label>
+        <name>Test_Data__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>Agency</masterLabel>
+            <translation><!-- Agency --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Air</masterLabel>
+            <translation><!-- Air --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pesticides</masterLabel>
+            <translation><!-- Pesticides --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Solid Waste</masterLabel>
+            <translation><!-- Solid Waste --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Toxic Substances</masterLabel>
+            <translation><!-- Toxic Substances --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Water</masterLabel>
+            <translation><!-- Water --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Complaint Assignment Group Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- The Type and Lookup Value fields should not be changed. --></errorMessage>
+        <name>Type_And_Lookup_Value_Cannot_Be_Changed</name>
+    </validationRules>
+</CustomObjectTranslation>

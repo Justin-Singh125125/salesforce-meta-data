@@ -1,0 +1,74 @@
+<apex:page applyBodyTag="false"  
+    applyHTMLTag="false"
+    cache="false"  
+    docType="HTML-5.0" 
+    id="ExternalPartnerAccountSelector" 
+    sidebar="false" 
+    showChat="false" 
+    showHeader="false"  
+    standardController="Finding__c" 
+    standardStylesheets="false"  
+    extensions="ExternalPartnerPortalController"
+     action="{!LoadExternalPartnerAccountSelector}">
+    <apex:composition template="ExternalPartnerLayout">
+        <apex:define name="ExternalPartnerLayoutTitle"></apex:define>
+        <apex:define name="ExternalPartnerLayoutPageCss">
+            <style>
+                .messageText h4
+                {
+                    display:none;
+                }
+                .messageText
+                {
+                    color:red;
+                }
+            </style> 
+        </apex:define>
+        <apex:define name="ExternalPartnerLayoutBody">
+            <div class="group">
+                <div class="full-width">
+                    <div class="panel panel-understated">
+                        <div class="panel-heading">
+                            <h4>Please Select Your Agency/Department</h4>
+                        </div>
+                        <div class="panel-body">
+                            <apex:form id="AgencySelectionForm" html-role="form">
+                                <div class="form-group">
+                                    <apex:selectList value="{!Authentication.ExternalPartnerId}" styleClass="form-control contact-name ExternalPartnerId" multiselect="false" size="1">
+                                        <apex:selectOptions value="{!ExternalPartnerAccountSelectorViewModel.ExternalPartners}"/>
+                                    </apex:selectList>
+                                </div>
+                                <div class="form-group">
+                                    <input id="SelectExternalPartnerButton" type="button" value="Submit" class="btn btn-secondary pull-right" />
+                                    <apex:actionFunction name="SelectExternalPartner" action="{!SelectExternalPartner}" />
+                                    <p id="SelectExternalPartnerError" style="color:red;"></p>
+                                    <apex:outputLabel value="{!PageErrorMessage}" html-class="PageErrorMessage pull-left" style="color: red;"/>
+                                </div>
+                            </apex:form>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+        </apex:define>
+        <apex:define name="ExternalPartnerLayoutPageScriptIncludes"></apex:define>
+        <apex:define name="ExternalPartnerLayoutPageScripts">
+            <script>
+                $(document).ready(function() 
+                {
+                    $(document).on('click', '#SelectExternalPartnerButton', function(event) 
+                    {
+                        event.preventDefault();
+                        if($(".ExternalPartnerId option:selected" ).val() == '')
+                        {
+                            $('#SelectExternalPartnerError').text('Please Select Your Agency/Department');
+                            $(".ExternalPartnerId").css('border-color', 'red');;
+                            $('.ExternalPartnerId').focus();
+                            return false;
+                        }
+                        SelectExternalPartner();
+                    }); 
+                });
+            </script>
+        </apex:define>
+    </apex:composition>
+</apex:page>

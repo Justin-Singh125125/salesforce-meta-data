@@ -1,0 +1,32 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" controller="ComplaintCaseEmailAssociationController">
+	<aura:attribute name="recordId" type="Id" />
+    <aura:attribute name="hasErrors" type="Boolean" description="Indicate whether there were failures or not" />
+    <aura:attribute name="errors" type="string" />
+    <aura:attribute name="selectedLookUpRecord" type="sObject" default="{}"/>
+    <div class="slds-panel slds-size_large slds-panel_docked slds-panel_docked-left slds-is-open" aria-hidden="false">
+        <div class="slds-panel__header">
+            <h2 class="slds-panel__header-title slds-text-heading_small slds-truncate" title="Panel Header">Associate Email With Complaint</h2>
+        </div>
+        <div class="slds-panel__body">
+            <aura:if isTrue="{!v.hasErrors}">
+                <!-- Load error -->
+                <div class="userCreateError">
+                    <ui:message title="Error" severity="error" closable="true">
+                            {!v.errors}
+                    </ui:message>
+                </div>
+            </aura:if>
+            <div class="slds-form--stacked">
+                 <div class="slds-form-element">
+                     <div class="slds-form-element__control">
+                         <c:LightningLookup objectAPIName="Complaints__c" IconName="standard:case" selectedRecord="{!v.selectedLookUpRecord}" label="Complaint"/>
+                     </div>
+                </div>
+                <div class="slds-form-element" style="text-align:right;">                    
+                    <ui:button class="slds-button slds-button--brand" press="{!c.associate}" label="Associate" />
+                    <ui:button class="slds-button slds-button--brand" press="{!c.associateAndClose}" label="Associate and Close" />
+                </div>
+            </div>
+        </div>
+    </div>
+</aura:component>

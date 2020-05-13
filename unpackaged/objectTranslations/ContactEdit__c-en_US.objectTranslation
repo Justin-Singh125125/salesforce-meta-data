@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>ContactEdit</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>ContactEdits</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account Updated --></label>
+        <name>Account_Updated__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account --></label>
+        <name>Account__c</name>
+        <relationshipLabel><!-- ContactEdits --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Contact --></label>
+        <name>Contact__c</name>
+        <relationshipLabel><!-- ContactEdits --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Email Updated --></label>
+        <name>Email_Updated__c</name>
+    </fields>
+    <fields>
+        <label><!-- Email --></label>
+        <name>Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- First Name Updated --></label>
+        <name>First_Name_Updated__c</name>
+    </fields>
+    <fields>
+        <label><!-- First Name --></label>
+        <name>First_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Inactive Updated --></label>
+        <name>Inactive_Updated__c</name>
+    </fields>
+    <fields>
+        <label><!-- Inactive --></label>
+        <name>Inactive__c</name>
+    </fields>
+    <fields>
+        <label><!-- Incorrect Attempt Count Updated --></label>
+        <name>Incorrect_Attempt_Count_Updated__c</name>
+    </fields>
+    <fields>
+        <label><!-- Incorrect Attempt Count --></label>
+        <name>Incorrect_Attempt_Count__c</name>
+    </fields>
+    <fields>
+        <label><!-- IsRegistered --></label>
+        <name>IsRegistered__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Locked Out Updated --></label>
+        <name>Is_Locked_Out_Updated__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Locked Out --></label>
+        <name>Is_Locked_Out__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Registered Updated --></label>
+        <name>Is_Registered_Updated__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Name Updated --></label>
+        <name>Last_Name_Updated__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Name --></label>
+        <name>Last_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- PasswordHash --></label>
+        <name>PasswordHash__c</name>
+    </fields>
+    <fields>
+        <label><!-- Password Hash Updated --></label>
+        <name>Password_Hash_Updated__c</name>
+    </fields>
+    <fields>
+        <label><!-- Phone Updated --></label>
+        <name>Phone_Updated__c</name>
+    </fields>
+    <fields>
+        <label><!-- Phone --></label>
+        <name>Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Record Type Id Updated --></label>
+        <name>Record_Type_Id_Updated__c</name>
+    </fields>
+    <fields>
+        <label><!-- Record Type Id --></label>
+        <name>Record_Type_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reset Code Updated --></label>
+        <name>Reset_Code_Updated__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reset Code --></label>
+        <name>Reset_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Test Data --></label>
+        <name>Test_Data__c</name>
+    </fields>
+    <fields>
+        <label><!-- Time of First Failed Attempt Updated --></label>
+        <name>Time_of_First_Failed_Attempt_Updated__c</name>
+    </fields>
+    <fields>
+        <label><!-- Time of First Failed Attempt --></label>
+        <name>Time_of_First_Failed_Attempt__c</name>
+    </fields>
+    <fields>
+        <label><!-- Title Updated --></label>
+        <name>Title_Updated__c</name>
+    </fields>
+    <fields>
+        <label><!-- Title --></label>
+        <name>Title__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>New Complaint Management Case Notification To Contact</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>New Complaint Management Case Notification To Contact</name>
+    <style>none</style>
+    <subject>You have a new support case! Case #{!Case.CaseNumber}</subject>
+    <textOnly>New Support Case
+
+This confirms that we have received your request for support.
+
+California Environmental Protection Agency Environmental Complaint System
+
+New Support Case
+
+{!Case.Contact}
+This confirms that we have received your request for support.
+In order for us to provide quality service, we have assigned your issue the following Case Number: {!Case.CaseNumber}.  Our support team should contact you within 2 business days.
+If you would like to add comments, please reply to this message, or ensure that {!Case.CaseNumber} is somewhere in the subject or body of the email.
+Thank You,
+CalEPA Complaint Help Desk
+ref:{!Case.Id}</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssignmentRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assignmentRule>
+        <fullName>CalEPA Case Assignment Rule</fullName>
+        <active>true</active>
+        <ruleEntry>
+            <assignedTo>CERS_Technical_Support</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>CERS</value>
+            </criteriaItems>
+            <template>CalEPA_Common/New_Case_Received</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>Complaint_Management_Help_Desk</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Complaint Management</value>
+            </criteriaItems>
+            <template>CalEPA_Common/New_Case_Received</template>
+        </ruleEntry>
+    </assignmentRule>
+</AssignmentRules>

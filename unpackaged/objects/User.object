@@ -1,0 +1,931 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>CallHighlightAction</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CallHighlightAction</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CallHighlightAction</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>DeleteBannerPhotoAction</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>DeleteBannerPhotoAction</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>DeleteBannerPhotoAction</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>EditUserAction</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>EditUserAction</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>EditUserAction</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>EmailHighlightAction</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>EmailHighlightAction</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>EmailHighlightAction</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>FreezeUserAction</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>FreezeUserAction</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>FreezeUserAction</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>LinkToSetupUserDetailAction</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>LinkToSetupUserDetailAction</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>LinkToSetupUserDetailAction</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>ManagePermSetsAction</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>ManagePermSetsAction</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>ManagePermSetsAction</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>PasswordUnlockAction</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>PasswordUnlockAction</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>PasswordUnlockAction</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>ResetPasswordAction</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>ResetPasswordAction</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>ResetPasswordAction</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SmsHighlightAction</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SmsHighlightAction</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SmsHighlightAction</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>UpdateBannerPhotoAction</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>UpdateBannerPhotoAction</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>UpdateBannerPhotoAction</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>UserActivationAction</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>UserActivationAction</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>UserActivationAction</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <enableFeeds>true</enableFeeds>
+    <externalSharingModel>Private</externalSharingModel>
+    <fields>
+        <fullName>Azure_DevOps_Token__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Azure DevOps Token</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Azure_DevOps_Username__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Azure DevOps Username</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BDO__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>BDO</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>ARB</fullName>
+                    <default>false</default>
+                    <label>ARB</label>
+                </value>
+                <value>
+                    <fullName>CalRecycle</fullName>
+                    <default>false</default>
+                    <label>CalRecycle</label>
+                </value>
+                <value>
+                    <fullName>DTSC</fullName>
+                    <default>false</default>
+                    <label>DTSC</label>
+                </value>
+                <value>
+                    <fullName>DPR</fullName>
+                    <default>false</default>
+                    <label>DPR</label>
+                </value>
+                <value>
+                    <fullName>SWRCB</fullName>
+                    <default>false</default>
+                    <label>SWRCB</label>
+                </value>
+                <value>
+                    <fullName>Agency</fullName>
+                    <default>false</default>
+                    <label>Agency</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>OEHHA</fullName>
+                    <default>false</default>
+                    <label>OEHHA</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>CAMS_Division_Program__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>CAMS Division/Program</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>BDO__c</controllingField>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>Agency Secretary</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Agency Secretary</label>
+                </value>
+                <value>
+                    <fullName>Agency Undersecretary</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Agency Undersecretary</label>
+                </value>
+                <value>
+                    <fullName>All</fullName>
+                    <default>false</default>
+                    <label>All</label>
+                </value>
+                <value>
+                    <fullName>Chief Information Officer</fullName>
+                    <default>false</default>
+                    <label>Chief Information Officer</label>
+                </value>
+                <value>
+                    <fullName>Climate Policy</fullName>
+                    <default>false</default>
+                    <label>Climate Policy</label>
+                </value>
+                <value>
+                    <fullName>Communications</fullName>
+                    <default>false</default>
+                    <label>Communications</label>
+                </value>
+                <value>
+                    <fullName>Environmental Justice and Tribal</fullName>
+                    <default>false</default>
+                    <label>Environmental Justice and Tribal</label>
+                </value>
+                <value>
+                    <fullName>Environmental Policy</fullName>
+                    <default>false</default>
+                    <label>Environmental Policy</label>
+                </value>
+                <value>
+                    <fullName>Executive Office</fullName>
+                    <default>false</default>
+                    <label>Executive Office</label>
+                </value>
+                <value>
+                    <fullName>Fiscal and Admin Programs</fullName>
+                    <default>false</default>
+                    <label>Fiscal and Admin Programs</label>
+                </value>
+                <value>
+                    <fullName>Health and Public Policy</fullName>
+                    <default>false</default>
+                    <label>Health and Public Policy</label>
+                </value>
+                <value>
+                    <fullName>Law Enforcement and Counsel</fullName>
+                    <default>false</default>
+                    <label>Law Enforcement and Counsel</label>
+                </value>
+                <value>
+                    <fullName>Legal Office</fullName>
+                    <default>false</default>
+                    <label>Legal Office</label>
+                </value>
+                <value>
+                    <fullName>Legislative Affairs</fullName>
+                    <default>false</default>
+                    <label>Legislative Affairs</label>
+                </value>
+                <value>
+                    <fullName>Legislative Office</fullName>
+                    <default>false</default>
+                    <label>Legislative Office</label>
+                </value>
+                <value>
+                    <fullName>PRA</fullName>
+                    <default>false</default>
+                    <label>PRA</label>
+                </value>
+                <value>
+                    <fullName>Travel</fullName>
+                    <default>false</default>
+                    <label>Travel</label>
+                </value>
+                <value>
+                    <fullName>Unified Program</fullName>
+                    <default>false</default>
+                    <label>Unified Program</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>ARB</controllingFieldValue>
+                <controllingFieldValue>CalRecycle</controllingFieldValue>
+                <controllingFieldValue>DTSC</controllingFieldValue>
+                <controllingFieldValue>SWRCB</controllingFieldValue>
+                <controllingFieldValue>Agency</controllingFieldValue>
+                <controllingFieldValue>DPR</controllingFieldValue>
+                <controllingFieldValue>OEHHA</controllingFieldValue>
+                <valueName>All</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>ARB</controllingFieldValue>
+                <controllingFieldValue>CalRecycle</controllingFieldValue>
+                <controllingFieldValue>DTSC</controllingFieldValue>
+                <controllingFieldValue>SWRCB</controllingFieldValue>
+                <controllingFieldValue>DPR</controllingFieldValue>
+                <controllingFieldValue>OEHHA</controllingFieldValue>
+                <valueName>Executive Office</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>ARB</controllingFieldValue>
+                <controllingFieldValue>SWRCB</controllingFieldValue>
+                <valueName>Legal Office</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>ARB</controllingFieldValue>
+                <controllingFieldValue>SWRCB</controllingFieldValue>
+                <controllingFieldValue>OEHHA</controllingFieldValue>
+                <valueName>Legislative Office</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>ARB</controllingFieldValue>
+                <controllingFieldValue>CalRecycle</controllingFieldValue>
+                <controllingFieldValue>DTSC</controllingFieldValue>
+                <controllingFieldValue>SWRCB</controllingFieldValue>
+                <controllingFieldValue>DPR</controllingFieldValue>
+                <controllingFieldValue>OEHHA</controllingFieldValue>
+                <valueName>Travel</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Agency</controllingFieldValue>
+                <valueName>Chief Information Officer</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Agency</controllingFieldValue>
+                <valueName>Climate Policy</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Agency</controllingFieldValue>
+                <valueName>Communications</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Agency</controllingFieldValue>
+                <valueName>Environmental Justice and Tribal</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Agency</controllingFieldValue>
+                <valueName>Environmental Policy</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Agency</controllingFieldValue>
+                <valueName>Fiscal and Admin Programs</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Agency</controllingFieldValue>
+                <valueName>Health and Public Policy</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Agency</controllingFieldValue>
+                <valueName>Law Enforcement and Counsel</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Agency</controllingFieldValue>
+                <valueName>Legislative Affairs</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Agency</controllingFieldValue>
+                <valueName>PRA</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Agency</controllingFieldValue>
+                <valueName>Unified Program</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>CAMS_Role__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>CAMS Role</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>Assignor</fullName>
+                    <default>false</default>
+                    <label>Assignor</label>
+                </value>
+                <value>
+                    <fullName>Coordinator</fullName>
+                    <default>false</default>
+                    <label>Coordinator</label>
+                </value>
+                <value>
+                    <fullName>Executive</fullName>
+                    <default>false</default>
+                    <label>Executive</label>
+                </value>
+                <value>
+                    <fullName>Reviewer</fullName>
+                    <default>false</default>
+                    <label>Reviewer</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>External_Id__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>true</externalId>
+        <label>External Id</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Is_Complaints_User__c</fullName>
+        <externalId>false</externalId>
+        <formula>CONTAINS(Profile.Name, &apos;Complaint&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Is Complaints User</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>License_Category__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ProfileId=&apos;00ej0000000uJA4&apos;,&apos;Administrator&apos;,
+CASE(Profile.Name, 
+&apos;CAMS Agency Coordinator Platform User&apos;, &apos;Lightning Platform Starter&apos;, 
+&apos;CAMS Agency Executive Platform User&apos;, &apos;Lightning Platform Starter&apos;, 
+&apos;CAMS Agency Reviewer Platform User&apos;, &apos;Lightning Platform Starter&apos;, 
+&apos;CAMS BDO Assigner Platform User&apos;, &apos;Lightning Platform Starter&apos;, 
+&apos;CAMS BDO Coordinator Platform User&apos;, &apos;Lightning Platform Starter&apos;, 
+&apos;CAMS BDO Executive Platform User&apos;, &apos;Lightning Platform Starter&apos;, 
+&apos;CERS Help Desk&apos;, &apos;Service Cloud&apos;, 
+&apos;Complaint Management Agency Platform User&apos;, &apos;Lightning Platform Plus&apos;, 
+&apos;Drinking Water Complaint Management User&apos;, &apos;Lightning Platform Plus&apos;, 
+&apos;DTSC Evaluator Complaint Management User&apos;, &apos;Lightning Platform Plus&apos;, 
+&apos;EZ Protect&apos;, &apos;Lightning Platform Starter&apos;, 
+&apos;Pesticides Complaint Management User&apos;, &apos;Lightning Platform Plus&apos;, 
+&apos;Solid Waste Complaint Management User&apos;, &apos;Lightning Platform Plus&apos;, 
+&apos;System Admin&apos;, &apos;Administrator&apos;, 
+&apos;Toxic Substances Complaint Management User&apos;, &apos;Lightning Platform Plus&apos;, 
+&apos;Toxic Substances Northern Complaint Management User&apos;, &apos;Lightning Platform Plus&apos;, 
+&apos;Toxic Substances Southern Complaint Management User&apos;, &apos;Lightning Platform Plus&apos;, 
+&apos;Water Region 1 Complaint Management User&apos;, &apos;Lightning Platform Plus&apos;, 
+&apos;Water Region 2 Complaint Management User&apos;, &apos;Lightning Platform Plus&apos;, 
+&apos;Water Region 3 Complaint Management User&apos;, &apos;Lightning Platform Plus&apos;, 
+&apos;Water Region 4 Complaint Management User&apos;, &apos;Lightning Platform Plus&apos;, 
+&apos;Water Region 5 Complaint Management User&apos;, &apos;Lightning Platform Plus&apos;, 
+&apos;Water Region 6 Complaint Management User&apos;, &apos;Lightning Platform Plus&apos;, 
+&apos;Water Region 7 Complaint Management User&apos;, &apos;Lightning Platform Plus&apos;, 
+&apos;Water Region 8 Complaint Management User&apos;, &apos;Lightning Platform Plus&apos;, 
+&apos;Water Region 9 Complaint Management User&apos;, &apos;Lightning Platform Plus&apos;, 
+&apos;Water Rights Complaint Management User&apos;, &apos;Lightning Platform Plus&apos;, 
+&apos;Water State Board Complaint Management User&apos;, &apos;Lightning Platform Plus&apos;, 
+&apos;Air Complaint Management User&apos;,&apos;Lightning Platform Plus&apos;,
+&apos;CalEPA Standard Platform User&apos;,&apos;Lightning Platform Plus&apos;,
+&apos;CAMS Agency Assigner Platform User&apos;,&apos;Lightning Platform Starter&apos;, 
+ProfileId))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>License Category</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>License_Type__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>Profile.UserLicense.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>License Type</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ManagerId</fullName>
+        <trackFeedHistory>true</trackFeedHistory>
+        <type>Hierarchy</type>
+    </fields>
+    <fields>
+        <fullName>Test_Data__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Test Data</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <listViews>
+        <fullName>ActiveUsers</fullName>
+        <columns>FULL_NAME</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>CORE.USERS.USERNAME</columns>
+        <columns>CORE.USERS.EMAIL</columns>
+        <columns>CORE.USERS.LAST_LOGIN</columns>
+        <columns>CORE.USER_ROLE.NAME</columns>
+        <columns>License_Type__c</columns>
+        <columns>CORE.PROFILE.NAME</columns>
+        <columns>CORE.USERS.CELL</columns>
+        <columns>CREATED_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CORE.USERS.ACTIVE</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>Active Users</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>AdminUsers</fullName>
+        <columns>FULL_NAME</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>CORE.USERS.USERNAME</columns>
+        <columns>CORE.USERS.LAST_LOGIN</columns>
+        <columns>CORE.USER_ROLE.NAME</columns>
+        <columns>CORE.USERS.ACTIVE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CORE.PROFILE.NAME</field>
+            <operation>equals</operation>
+            <value>System Administrator</value>
+        </filters>
+        <label>Admin Users</label>
+    </listViews>
+    <listViews>
+        <fullName>All_Users</fullName>
+        <columns>FULL_NAME</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>CORE.USERS.USERNAME</columns>
+        <columns>CORE.USERS.LAST_LOGIN</columns>
+        <columns>License_Type__c</columns>
+        <columns>CORE.USERS.ACTIVE</columns>
+        <columns>CORE.PROFILE.NAME</columns>
+        <columns>CORE.USERS.DEPARTMENT</columns>
+        <columns>CORE.USERS.DIVISION</columns>
+        <columns>CREATED_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <label>All Users</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>CAMSARBActiveUsers</fullName>
+        <columns>CORE.USERS.FIRST_NAME</columns>
+        <columns>FULL_NAME</columns>
+        <columns>CORE.USERS.EMAIL</columns>
+        <columns>BDO__c</columns>
+        <columns>CAMS_Division_Program__c</columns>
+        <columns>CAMS_Role__c</columns>
+        <columns>CORE.USERS.LAST_LOGIN</columns>
+        <columns>CORE.USER_ROLE.NAME</columns>
+        <columns>CORE.PROFILE.NAME</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CORE.USERS.ACTIVE</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>BDO__c</field>
+            <operation>equals</operation>
+            <value>ARB</value>
+        </filters>
+        <filters>
+            <field>CORE.USER_ROLE.NAME</field>
+            <operation>equals</operation>
+            <value>CAMS</value>
+        </filters>
+        <label>CAMS ARB Active Users</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>CAMSActiveUsers</fullName>
+        <columns>FULL_NAME</columns>
+        <columns>BDO__c</columns>
+        <columns>CAMS_Division_Program__c</columns>
+        <columns>CAMS_Role__c</columns>
+        <columns>CORE.USERS.USERNAME</columns>
+        <columns>CORE.USERS.EMAIL</columns>
+        <columns>CORE.USERS.LAST_LOGIN</columns>
+        <columns>CORE.USER_ROLE.NAME</columns>
+        <columns>CORE.PROFILE.NAME</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CORE.USERS.ACTIVE</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>CORE.PROFILE.NAME</field>
+            <operation>contains</operation>
+            <value>CAMS</value>
+        </filters>
+        <label>CAMS Active Users</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>CAMSAgencyActiveUsers</fullName>
+        <columns>CORE.USERS.FIRST_NAME</columns>
+        <columns>FULL_NAME</columns>
+        <columns>CORE.USERS.EMAIL</columns>
+        <columns>BDO__c</columns>
+        <columns>CAMS_Division_Program__c</columns>
+        <columns>CAMS_Role__c</columns>
+        <columns>CORE.USERS.LAST_LOGIN</columns>
+        <columns>CORE.USER_ROLE.NAME</columns>
+        <columns>CORE.PROFILE.NAME</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CORE.USERS.ACTIVE</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>BDO__c</field>
+            <operation>equals</operation>
+            <value>Agency</value>
+        </filters>
+        <filters>
+            <field>CORE.USER_ROLE.NAME</field>
+            <operation>equals</operation>
+            <value>CAMS</value>
+        </filters>
+        <label>CAMS Agency Active Users</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>CAMSCalRecycleActiveUsers</fullName>
+        <columns>CORE.USERS.FIRST_NAME</columns>
+        <columns>FULL_NAME</columns>
+        <columns>CORE.USERS.EMAIL</columns>
+        <columns>BDO__c</columns>
+        <columns>CAMS_Division_Program__c</columns>
+        <columns>CAMS_Role__c</columns>
+        <columns>CORE.USERS.LAST_LOGIN</columns>
+        <columns>CORE.USER_ROLE.NAME</columns>
+        <columns>CORE.PROFILE.NAME</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CORE.USERS.ACTIVE</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>BDO__c</field>
+            <operation>equals</operation>
+            <value>CalRecycle</value>
+        </filters>
+        <filters>
+            <field>CORE.USER_ROLE.NAME</field>
+            <operation>equals</operation>
+            <value>CAMS</value>
+        </filters>
+        <label>CAMS CalRecycle Active Users</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>CAMSDPRActiveUsers</fullName>
+        <columns>CORE.USERS.FIRST_NAME</columns>
+        <columns>FULL_NAME</columns>
+        <columns>CORE.USERS.EMAIL</columns>
+        <columns>BDO__c</columns>
+        <columns>CAMS_Division_Program__c</columns>
+        <columns>CAMS_Role__c</columns>
+        <columns>CORE.USERS.LAST_LOGIN</columns>
+        <columns>CORE.USER_ROLE.NAME</columns>
+        <columns>CORE.PROFILE.NAME</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CORE.USERS.ACTIVE</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>BDO__c</field>
+            <operation>equals</operation>
+            <value>DPR</value>
+        </filters>
+        <filters>
+            <field>CORE.USER_ROLE.NAME</field>
+            <operation>equals</operation>
+            <value>CAMS</value>
+        </filters>
+        <label>CAMS DPR Active Users</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>CAMSDTSCActiveUsers</fullName>
+        <columns>CORE.USERS.FIRST_NAME</columns>
+        <columns>FULL_NAME</columns>
+        <columns>CORE.USERS.EMAIL</columns>
+        <columns>BDO__c</columns>
+        <columns>CAMS_Division_Program__c</columns>
+        <columns>CAMS_Role__c</columns>
+        <columns>CORE.USERS.LAST_LOGIN</columns>
+        <columns>CORE.USER_ROLE.NAME</columns>
+        <columns>CORE.PROFILE.NAME</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CORE.USERS.ACTIVE</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>BDO__c</field>
+            <operation>equals</operation>
+            <value>DTSC</value>
+        </filters>
+        <filters>
+            <field>CORE.USER_ROLE.NAME</field>
+            <operation>equals</operation>
+            <value>CAMS</value>
+        </filters>
+        <label>CAMS DTSC Active Users</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>CAMSOEHHAActiveUsers</fullName>
+        <columns>CORE.USERS.FIRST_NAME</columns>
+        <columns>FULL_NAME</columns>
+        <columns>CORE.USERS.EMAIL</columns>
+        <columns>BDO__c</columns>
+        <columns>CAMS_Division_Program__c</columns>
+        <columns>CAMS_Role__c</columns>
+        <columns>CORE.USERS.LAST_LOGIN</columns>
+        <columns>CORE.USER_ROLE.NAME</columns>
+        <columns>CORE.PROFILE.NAME</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CORE.USERS.ACTIVE</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>BDO__c</field>
+            <operation>equals</operation>
+            <value>OEHHA</value>
+        </filters>
+        <filters>
+            <field>CORE.USER_ROLE.NAME</field>
+            <operation>equals</operation>
+            <value>CAMS</value>
+        </filters>
+        <label>CAMS OEHHA Active Users</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>CAMSSWRCBActiveUsers</fullName>
+        <columns>CORE.USERS.FIRST_NAME</columns>
+        <columns>FULL_NAME</columns>
+        <columns>CORE.USERS.EMAIL</columns>
+        <columns>BDO__c</columns>
+        <columns>CAMS_Division_Program__c</columns>
+        <columns>CAMS_Role__c</columns>
+        <columns>CORE.USERS.LAST_LOGIN</columns>
+        <columns>CORE.USER_ROLE.NAME</columns>
+        <columns>CORE.PROFILE.NAME</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CORE.USERS.ACTIVE</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>BDO__c</field>
+            <operation>equals</operation>
+            <value>SWRCB</value>
+        </filters>
+        <filters>
+            <field>CORE.USER_ROLE.NAME</field>
+            <operation>equals</operation>
+            <value>CAMS</value>
+        </filters>
+        <label>CAMS SWRCB Active Users</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Users_that_Havent_Logged_In</fullName>
+        <columns>FULL_NAME</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>CORE.USERS.USERNAME</columns>
+        <columns>CORE.USERS.LAST_LOGIN</columns>
+        <columns>CORE.USER_ROLE.NAME</columns>
+        <columns>CORE.USERS.ACTIVE</columns>
+        <columns>CORE.PROFILE.NAME</columns>
+        <columns>CORE.USERS.DEPARTMENT</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CORE.USERS.ACTIVE</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>CORE.USERS.LAST_LOGIN</field>
+            <operation>equals</operation>
+        </filters>
+        <label>Users that Haven&apos;t Logged In</label>
+        <language>en_US</language>
+    </listViews>
+    <searchLayouts>
+        <lookupDialogsAdditionalFields>FULL_NAME</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>CORE.USER_ROLE.NAME</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>FULL_NAME</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>CORE.USER_ROLE.NAME</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>CORE.USERS.PHONE</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>CORE.USERS.EXTENSION</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>CORE.USERS.CELL</lookupPhoneDialogsAdditionalFields>
+        <searchResultsAdditionalFields>FULL_NAME</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CORE.USERS.TITLE</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CORE.USERS.PHONE</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CORE.USERS.EMAIL</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Read</sharingModel>
+</CustomObject>

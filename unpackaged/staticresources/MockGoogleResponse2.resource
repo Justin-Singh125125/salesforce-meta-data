@@ -1,0 +1,28 @@
+{"results":[{"address_components":[{"long_name":"1600","short_name":"1600","types":["street_number"]},{"long_name":"Pennsylvania Avenue","short_name":"Pennsylvania Ave","types":["route"]},
+{"long_name":"AnyTown","short_name":"AnyTown","types":["locality","political"]},{"long_name":"Madison County","short_name":"Madison County","types":["administrative_area_level_2","political"]}, 
+{"long_name":"Florida","short_name":"FL","types":["administrative_area_level_1","political"]},{"long_name":"United States","short_name":"US","types":["country","political"]},{"long_name":"90210","short_name":"90210",
+"types":["postal_code"]},{"long_name":"2512","short_name":"2512","types":["postal_code_suffix"]}],"formatted_address":"1600 Pennsylvania Ave, AnyTown, FL 90210, USA","geometry":{"location":{"lat":12.34567890,
+"lng":-98.76543210},"location_type":"ROOFTOP","viewport":{"northeast":{"lat":12.34567890,"lng":-98.76543210},"southwest":{"lat":12.34567890,"lng":-98.76543210}}},"place_id":"ChIJ1RRf_d_HmoAR5hh8JvhcSK8","types":
+["street_address"]},{"address_components":[{"long_name":"AnyTown","short_name":"AnyTown","types":["locality","political"]},{"long_name":"Madison County","short_name":"Madison County","types":
+["administrative_area_level_2","political"]},{"long_name":"Florida","short_name":"FL","types":["administrative_area_level_1","political"]},{"long_name":"United States","short_name":"US","types":
+["country","political"]}],"formatted_address":"AnyTown, CA, USA","geometry":{"bounds":{"northeast":{"lat":12.34567890,"lng":-98.76543210},"southwest":{"lat":12.34567890,"lng":-98.76543210}},
+"location":{"lat":12.34567890,"lng":-98.76543210},"location_type":"APPROXIMATE","viewport":{"northeast":{"lat":12.34567890,"lng":-98.76543210},"southwest":{"lat":12.34567890,"lng":-98.76543210}}},
+"place_id":"ChIJOfii4Mu4moAR6Agc02DrDMo","types":["locality","political"]},{"address_components":[{"long_name":"90210","short_name":"90210","types":["postal_code"]},{"long_name":"AnyTown","short_name":
+"AnyTown","types":["locality","political"]},{"long_name":"Madison County","short_name":"Madison County","types":["administrative_area_level_2","political"]},{"long_name":"Florida","short_name":"FL",
+"types":["administrative_area_level_1","political"]},{"long_name":"United States","short_name":"US","types":["country","political"]}],"formatted_address":"AnyTown, CA 90210, USA","geometry":{"bounds":
+{"northeast":{"lat":12.34567890,"lng":-98.76543210},"southwest":{"lat":12.34567890,"lng":-98.76543210}},"location":{"lat":12.34567890,"lng":-98.76543210},"location_type":"APPROXIMATE","viewport":{"northeast":
+{"lat":12.34567890,"lng":-98.76543210},"southwest":{"lat":12.34567890,"lng":-98.76543210}}},"place_id":"ChIJ17JAbM-5moARUhzl_NDjffI","types":["postal_code"]},{"address_components":[{"long_name":"Madison County",
+"short_name":"Madison County","types":["administrative_area_level_2","political"]},{"long_name":"Florida","short_name":"FL","types":["administrative_area_level_1","political"]},{"long_name":"United States",
+"short_name":"US","types":["country","political"]}],"formatted_address":"Madison County, CA, USA","geometry":{"bounds":{"northeast":{"lat":12.34567890,"lng":-98.76543210},"southwest":{"lat":12.34567890,
+"lng":-98.76543210}},"location":{"lat":12.34567890,"lng":-98.76543210},"location_type":"APPROXIMATE","viewport":{"northeast":{"lat":12.34567890,"lng":-98.76543210},"southwest":{"lat":12.34567890,"lng":-98.76543210}}},
+"place_id":"ChIJ2YAlNVPHmoARfxR2QbW1CPI","types":["administrative_area_level_2","political"]},{"address_components":[{"long_name":"Sacramento--Arden-Arcade--Roseville, CA","short_name":
+"Sacramento--Arden-Arcade--Roseville, CA","types":["political"]},{"long_name":"Florida","short_name":"FL","types":["administrative_area_level_1","political"]},{"long_name":"United States","short_name":"US","types":
+["country","political"]}],"formatted_address":"Sacramento--Arden-Arcade--Roseville, CA, CA, USA","geometry":{"bounds":{"northeast":{"lat":12.34567890,"lng":-98.76543210},"southwest":{"lat":12.34567890,"lng":-98.76543210}},
+"location":{"lat":12.34567890,"lng":-98.76543210},"location_type":"APPROXIMATE","viewport":{"northeast":{"lat":12.34567890,"lng":-98.76543210},"southwest":{"lat":12.34567890,"lng":-98.76543210}}},
+"place_id":"ChIJ8_GFKcX9moARRE8t3zzc9X0","types":["political"]},{"address_components":[{"long_name":"Florida","short_name":"FL","types":["administrative_area_level_1","political"]},
+{"long_name":"United States","short_name":"US","types":["country","political"]}],"formatted_address":"Florida, USA","geometry":{"bounds":{"northeast":{"lat":12.34567890,"lng":-98.76543210},
+"southwest":{"lat":12.34567890,"lng":-98.76543210}},"location":{"lat":12.34567890,"lng":-98.76543210},"location_type":"APPROXIMATE","viewport":{"northeast":{"lat":12.34567890,"lng":-98.76543210},
+"southwest":{"lat":12.34567890,"lng":-98.76543210}}},"place_id":"ChIJPV4oX_65j4ARVW8IJ6IJUYs","types":["administrative_area_level_1","establishment","point_of_interest","political"]},{"address_components":
+[{"long_name":"United States","short_name":"US","types":["country","political"]}],"formatted_address":"United States","geometry":{"bounds":{"northeast":{"lat":12.34567890,"lng":-98.76543210},"southwest":
+{"lat":12.34567890,"lng":-98.76543210}},"location":{"lat":12.34567890,"lng":-98.765432101},"location_type":"APPROXIMATE","viewport":{"northeast":{"lat":12.34567890,"lng":-98.76543210},"southwest":
+{"lat":12.34567890,"lng":-98.76543210}}},"place_id":"ChIJCzYy5IS16lQRQrfeQ5K5Oxw","types":["country","political"]}],"status":"OK"}

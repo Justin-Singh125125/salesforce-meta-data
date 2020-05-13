@@ -1,0 +1,180 @@
+<apex:page applyBodyTag="false" applyHTMLTag="false"
+           docType="HTML-5.0" 
+           sidebar="false"
+           showChat="false"
+           showHeader="false"
+           standardController="Complaints__c"
+           standardStylesheets="false" 
+           extensions="ComplaintController">
+    
+    <!-- Everything goes in the composition inside of the apex:define tags  -->
+    <apex:composition template="Template">
+        <apex:define name="title">New Complaint</apex:define>
+        <apex:define name="styles">
+            <!--<link rel="stylesheet" href="css/page-specific-styles.css" />-->
+        </apex:define>
+        <apex:define name="body">
+            <apex:form id="theForm" styleclass="form form-horizontal">               
+                <c:Complaint_Steps />
+                <p class="lead text-center">
+                    Please start with these questions:
+                </p>
+                <div>
+                    
+                    <!-- Nav tabs -->
+                    <ul class="list-unstyled" role="tablist">
+                        <li role="presentation" class="text-center lead">
+                            IS THERE AN EMERGENCY?
+                            <a href="#emergency" aria-controls="emergency" role="tab" data-toggle="tab" class="">Yes</a> 
+                            <!--<apex:inputcheckbox required="true" onclick="showEmergency" html-data-toggle="toggle" html-data-on="Yes" html-data-off="No" html-data-onstyle="danger" />-->
+                        </li>
+                        <li role="presentation" class="text-center lead">ARE YOU REPORTING WATER WASTE?
+                            <a href="#waterwaste" aria-controls="waterwaste" role="tab" data-toggle="tab" class="">Yes</a> 
+                            <!--<apex:inputcheckbox required="true"  html-data-toggle="toggle" html-data-on="Yes" html-data-off="No" html-data-onstyle="primary" />-->
+                        </li>
+                        <li role="presentation" class="text-center lead">IS THIS REGARDING PROP 65?
+                            <a href="#prop65" aria-controls="prop65" role="tab" data-toggle="tab" class="" >Yes</a> 
+                            <!--<apex:inputcheckbox html-data-toggle="toggle" html-data-on="Yes" html-data-off="No" html-data-onstyle="primary" />--></li> 
+                        <li role="presentation" class="text-center lead active">
+                            
+                            <a href="#complaint" class="" aria-controls="complaint" role="tab" data-toggle="tab">Start your Complaint</a> 
+                            <!--<apex:inputcheckbox html-data-toggle="toggle" html-data-on="Yes" html-data-off="No" html-data-onstyle="primary" />--></li> 
+                    </ul>
+                    
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane" id="emergency">
+                            
+                            <div class="row margin-three-em half-window-tall">
+                                <div class="col-xs-6 text-center">
+                                    
+                                    <h2 class="text-danger">
+                                        FOR EMERGENCIES
+                                    </h2>
+                                    <p class="lead text-danger">
+                                        CALL 911
+                                    </p>
+                                </div>
+                                
+                                
+                                
+                                <div class="col-xs-6 text-center">
+                                    
+                                    
+                                    <h2>FOR HAZMAT SPILL NOTIFICATIONS</h2>
+                                    <p class="lead text-danger">
+                                        CALL THE STATE WARNING CENTER 1-800-852-7550
+                                    </p>
+                                </div>
+                            </div>
+                        </div> 
+                        
+                        <div role="tabpanel" class="tab-pane" id="waterwaste"> 
+                            
+                            <div class="row margin-three-em half-window-tall">
+                                <div class="col-xs-12 text-center">
+                                    <h2>
+                                        Please report Water Waste complaints here:
+                                    </h2>
+                                    <p class="lead">
+                                        <a href="{! waterwasteurl }" target="_blank">{! waterwasteurl }</a> &nbsp; <i class="fa fa-external-link"></i>
+                                    </p>
+                                </div>        
+                            </div>      
+                            
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="prop65">
+                            <div class="row margin-three-em half-window-tall">
+                                <div class="col-xs-12 text-center">
+                                    
+                                    <h2>
+                                            Please report Prop 65 issues to OEHAA here:
+                                    </h2>
+                                    <p class="lead">
+                                        <a href="{! prop65Url }" target="_blank">{! prop65Url }</a> &nbsp; <i class="fa fa-external-link"></i>
+                                        
+                                    </p>
+                                </div>        
+                            </div>
+                            
+                        </div>
+                        <div role="tabpanel" class="tab-pane active" id="complaint">
+                            
+                            <div class="row">
+                                
+                                <div class="col-xs-12">
+                                    <h2 class="text-center">Select an image to report a problem</h2>
+                                    <p class="lead text-center">
+                                        More than one may be selected
+                                    </p>
+                                </div> 
+                                <div class="col-xs-12 col-sm-4 col-lg-2 col-lg-offset-1 text-center">
+                                    <apex:outputLabel for="{! $component.air }" value="Air ">
+                                        <img src="http://capacity4dev.ec.europa.eu/airqualitygovernanceintheenpieastcountries/system/files/imagecache/original/images/1416995545_picture_unece.jpg" class="img-responsive" />
+                                        
+                                        &nbsp;
+                                        <apex:inputCheckbox id="air" value="{!complaint.Air__c}" required="required" />
+                                    </apex:outputLabel>
+                                </div>
+                                <div class="col-xs-6 col-sm-4 col-lg-2 text-center">
+                                    <apex:outputLabel for="{! $component.water }" value="Water ">
+                                        <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRSPnhTOe2-f6oGugXtAefrqULatZ7yFW6vd2bXKFNTwcSAEWW4" class="img-responsive" />&nbsp;
+                                        <apex:inputCheckbox id="water" value="{!complaint.Water__c}" />
+                                    </apex:outputLabel>
+                                </div>
+                                <div class="col-xs-6 col-sm-4 col-lg-2 text-center">
+                                    <apex:outputLabel for="{! $component.toxic }" value="Toxic ">
+                                        <img src="http://www.motherjones.com/files/imagecache/master-image-main/legacy/news/featurex/2006/03/runoff_265x347.jpg" class="img-responsive" />&nbsp;
+                                        <apex:inputField id="toxic" value="{!complaint.Toxic_Substances__c}" />
+                                    </apex:outputLabel>
+                                </div>
+                                <div class="col-xs-6 col-sm-4 col-lg-2 text-center">
+                                    <apex:outputLabel for="{! $component.pesticide }" value="Pesticides ">
+                                        <img src="http://www.crpe-ej.org/crpe/images/stories/cases/pesticides/pesticides1.jpg"  class="img-responsive" />&nbsp;
+                                        <apex:inputCheckbox id="pesticide" value="{!complaint.Pesticides__c}" />
+                                    </apex:outputLabel>
+                                </div>
+                                <div class="col-xs-6 col-sm-4 col-lg-2 text-center">
+                                    <apex:outputLabel for="{! $component.waste }" value="Solid Waste ">
+                                        <img src="http://www.thehindu.com/multimedia/dynamic/01110/CB12_TVELLALORE_DU_1110904e.jpg" class="img-responsive" />&nbsp;
+                                        <apex:inputcheckbox id="waste" value="{!complaint.Solid_Waste__c}"  />
+                                    </apex:outputLabel>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <apex:outputPanel rendered="{!displayMessage}" styleClass="alert alert-dismissible alert-danger col-xs-12 text-center">
+                                    <apex:messages />
+                                </apex:outputPanel>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-6">Captcha</div>
+                                <div class="col-xs-6 text-right">
+                                    <apex:commandlink action="{!step2}">
+                                        <button class="btn btn-primary btn-lg">
+                                            Complaint Details &nbsp; <i class="fa fa-arrow-right"></i>
+                                        </button>
+                                    </apex:commandlink>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div> 
+                </div>
+                     
+                
+
+                <apex:actionFunction name="showEmergency" id="emergencyAction" action="{!emeregency}" rerender="theForm" >
+                   
+                </apex:actionFunction>
+            </apex:form>
+        </apex:define>
+        <apex:define name="scripts">
+            <!-- ALL, yes ALL custom javascript for the page should go here otherwise it will get executed out of order -->
+            <script type="text/javascript">
+                
+            </script>
+        
+        </apex:define>
+    </apex:composition>
+</apex:page>

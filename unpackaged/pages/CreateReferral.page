@@ -1,0 +1,88 @@
+<apex:page standardController="Referral__c" 
+extensions="ReferralController"
+cache="false" 
+action="{!LoadCreateReferral}"
+>
+<head> 
+    <apex:includeScript value="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" />
+</head>
+    <apex:pageMessages />
+    <apex:form id="CreateReferralForm">
+        <apex:pageBlock >
+            <apex:pageBlockSection >
+                <h1>Create a new Referral</h1>
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Save" action="{!Save}"/><!--onclick="performValidation('Save')"-->
+                <apex:commandButton value="Save & New" action="{!SaveAndNew}"/><!--onclick="performValidation('SaveAndNew')" -->
+                <apex:commandButton value="Cancel" action="{!Cancel}"/>               
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection columns="1">
+                <apex:pageBlockSectionItem >
+                    <apex:actionRegion >
+                        <apex:inputHidden id="complaint" value="{!CreateReferralViewModel.Referral.Complaint__c}">
+                        </apex:inputHidden>
+                    </apex:actionRegion>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel for="{!$Component.account}" value="External Agency" />
+                    <apex:actionRegion >
+                        <apex:inputField id="account" value="{!CreateReferralViewModel.Referral.External_Partner__c}" onkeydown="return false;"  style="width:400px" >
+                            <apex:actionsupport event="onchange" rerender="CreateReferralForm" />
+                        </apex:inputField>
+                    </apex:actionRegion>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem rendered="{!IF(Contacts.size>0, true, false)}">
+                    <apex:outputLabel for="{!$Component.contact}" value="Send To" />
+                    <apex:actionRegion >
+                        <apex:dataTable value="{!Contacts}" var="Contact" id="ContactTable" rowClasses="odd,even" styleClass="tableClass" style="width:400px">
+                            <apex:column styleClass="checkboxColumn">
+                                <apex:facet name="header"></apex:facet>
+                                <apex:inputCheckbox html-data-value="{!Contact.Id}"/>
+                            </apex:column>
+                            <apex:column >
+                                <apex:facet name="header">Name</apex:facet>
+                                <apex:outputText value="{!Contact.Name}"/>
+                            </apex:column>
+                            <apex:column >
+                                <apex:facet name="header">Title</apex:facet>
+                                <apex:outputText value="{!Contact.Title}"/>
+                            </apex:column> 
+                        </apex:dataTable>                        
+                    </apex:actionRegion>
+                </apex:pageBlockSectionItem>
+
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Message" />
+                    <apex:actionRegion >
+                        <apex:inputTextArea value="{!CreateReferralViewModel.Message}" style="width: 400px;" />
+                    </apex:actionRegion>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+        
+        
+        </apex:pageBlock>
+        <apex:inputText value="{!CreateReferralViewModel.SelectedContacts}" id="selectedContacts" style="display:none;"/>
+        <apex:pageMessages /> 
+    </apex:form>
+   <script>
+        $j = jQuery.noConflict();
+        $j(document).ready(function() 
+        {
+            var contactIds = [];
+            $j(document).on('change', 'input[type="checkbox"]', function() {
+                if (this.checked) 
+                {
+                    contactIds.push($j(this).data('value'));
+                } 
+                else 
+                {
+                    contactIds.pop($j(this).data('value'));
+                }
+                $j("[id$=selectedContacts]").val(contactIds.join(","));
+            });
+        });
+    </script>
+</apex:page>

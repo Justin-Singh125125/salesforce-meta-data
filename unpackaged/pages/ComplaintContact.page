@@ -1,0 +1,317 @@
+<apex:page applyBodyTag="false" applyHTMLTag="false"
+           docType="html-5.0" 
+           id="ComplaintContact"
+           action="{!pageCheck}"
+           sidebar="false"
+           showChat="false"
+           showHeader="false"
+           standardController="Complaints__c"
+           standardStylesheets="false" 
+           extensions="ComplaintController"
+           language="{!currentLanguage}">
+     
+    <!-- Everything goes in the composition inside of the apex:define tags  -->
+    
+    <apex:composition template="Template">
+        <apex:define name="title">{!$Label.COMPLAINT_TXT_Complaint_page_title}</apex:define>
+        <apex:define name="styles">
+            <!--<link rel="stylesheet" href="css/page-specific-styles.css" />-->
+        </apex:define>
+        <!--
+Only override the header region if you need to pass in custom attributes to the header component.
+<apex:define name="header">
+<c:JCMC_Header customAttribute="custom value" />
+</apex:define>
+-->
+        <apex:define name="body">
+ 
+            <c:Complaint_Steps step="3" />
+            
+            <apex:pageMessages ></apex:pageMessages>
+            <apex:form styleclass="form" id="AnonymousForm"  html-data-toggle="validator" html-role="form">
+                
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h2>
+                            {!$LABEL.COMPLAINT_LBL_Referral_Agency}
+                        </h2>
+                    </div>
+                    <div class="col-xs-12 col-md-6">
+                        <p class="lead">
+                            {!$LABEL.COMPLAINT_TXT_If_You_Work_For_A_Governmental_Entity}
+                        </p>
+                    </div>
+                    <div class="col-xs-12 col-md-6">
+                        <div class="form-group" id="referToggle">
+                            <div class="">
+                                <label for="{! $Component.refToggle }" class="lead">{!$LABEL.COMPLAINT_LBL_Are_You_Making_A_Referral} &nbsp;&nbsp;
+                                    <apex:inputHidden id="refH" value="{! complaint.Referring__c }" />
+                                    <apex:outputPanel layout="none" rendered="{!!complaint.Referring__c}">
+                                        <input type="checkbox" id="refToggle" data-toggle="toggle" data-on="{!$Label.COMPLAINT_TXT_Yes}" data-off="{!$Label.COMPLAINT_TXT_No}" onChange="updateReferring(this,'{!$Component.refH}'); return false;" />
+                                    </apex:outputPanel>
+                                    <apex:outputPanel layout="none" rendered="{!complaint.Referring__c}">
+                                        <input type="checkbox" checked="checked" id="refToggle" data-toggle="toggle" data-on="{!$Label.COMPLAINT_TXT_Yes}" data-off="{!$Label.COMPLAINT_TXT_No}" onChange="updateReferring(this,'{!$Component.refH}'); return false;" />
+                                    </apex:outputPanel>
+                                </label>
+                            </div>
+                        </div>
+                        <apex:outputpanel id="refDetails" layout="block">
+                            <apex:outputPanel layout="block" styleClass="ref-details" rendered="{!complaint.Referring__c}" >
+                                <div class="form-group">
+                                    <label class="control-label">{!$Label.COMPLAINT_LBL_Referring_External_Agency}</label>
+                                    <div class="">
+                                        <apex:inputTextArea id="ReferringAgency" styleClass="form-control" html-placeholder="" value="{!complaint.Referring_Agency__c}" html-maxlength="50"></apex:inputTextArea>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">{!$Label.COMPLAINT_LBL_Name_Of_Person_Referring}</label>
+                                    <div class="">
+                                        <apex:inputTextarea id="ReferringName" styleClass="form-control" html-placeholder=" " value="{!complaint.Referring_Name__c}" html-maxlength="50"></apex:inputTextarea> 
+                                    </div>
+                                </div>
+                                <div class="form-group {! IF(AND(OR(complaint.Referring_Agency__c !='',complaint.Referring_Name__c != ''), complaint.Referring_Email_Address__c == ''),'has-error','') }">
+                                    <label class="control-label">{!$Label.COMPLAINT_LBL_Email_Of_Person_Referring}<apex:outputtext value="*" rendered="{! IF(AND(OR(complaint.Referring_Agency__c !='',complaint.Referring_Name__c != ''), complaint.Referring_Email_Address__c == ''),'has-error','') }" />
+                                                                                                                                                </label>
+                                    <div class="">
+                                        <apex:inputField id="referalEmail" styleClass="form-control" html-placeholder=" " value="{!complaint.Referring_Email_Address__c}"></apex:inputField>
+                                        <apex:message for="referalEmail"></apex:message>
+                                    </div>
+                                </div>
+                            </apex:outputPanel>
+                        </apex:outputpanel>
+                    </div>
+                </div>
+                <hr/>
+                <div class="row">
+                    <div class="col-xs-6">
+                        <div class="form-group" id="anonymousToggle">
+                            <div class="input-group input-group-large">
+                                <label for="{! $Component.anonToggle }" class=" lead">{! $Label.COMPLAINT_Do_you_wish_to_remain_anonymous }&nbsp;&nbsp;
+                                    <apex:inputHidden id="anonH" value="{! complaint.Anonymous__c }" />
+                                    <apex:outputPanel layout="none" rendered="{!!complaint.Anonymous__c}">
+                                        <input type="checkbox" id="anonToggle" data-toggle="toggle" data-on="{!$Label.COMPLAINT_TXT_Yes}" data-off="{!$Label.COMPLAINT_TXT_No}" onChange="updateAnonymous(this,'{!$Component.anonH}'); return false;" />
+                                    </apex:outputPanel>
+                                    <apex:outputPanel layout="none" rendered="{!complaint.Anonymous__c}">
+                                        <input type="checkbox" checked="checked" id="anonToggle" data-toggle="toggle" data-on="{!$Label.COMPLAINT_TXT_Yes}" data-off="{!$Label.COMPLAINT_TXT_No}" onChange="updateAnonymous(this,'{!$Component.anonH}'); return false;" />
+                                    </apex:outputPanel>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <apex:outputPanel layout="block" id="anonMessage" styleClass="col-xs-6" style="{! IF(complaint.Anonymous__c,'','display:none;')}">
+                        <apex:outputText value="{! $Label.COMPLAINT_ANON_TEXT }" escape="false"></apex:outputText>
+                    </apex:outputPanel>
+                </div>
+
+                <apex:actionRegion >
+                    <apex:outputPanel layout="block"  id="accountDetails" styleClass="account-details" style="{! IF(complaint.Anonymous__c,'display:none;','')}">
+                        
+                        <div class="row"> 
+                            <div class="col-xs-12 col-lg-6">
+                                <div class="form-group {! IF(AND(OR(fNameError,lNameError), OR(personContact.FirstName =='', contactLastName=='')), 'has-error','')}">
+                                    <div class="row">
+                                        <label class="control-label col-xs-12">
+                                            {!$Label.COMPLAINT_LBL_Name} <span class="has-error">*</span>
+                                        </label>
+                                        <div class="col-xs-6">
+                                            <apex:inputField id="FirstName"  styleClass="form-control" html-placeholder="{!$Label.COMPLAINT_TXT_First}" value="{!personContact.FirstName }" />
+                                            <apex:message for="FirstName"></apex:message>     
+                                        </div>
+                                        <div class="col-xs-6">
+                                            <apex:inputText id="LastName" styleClass="form-control" html-placeholder="{!$Label.COMPLAINT_TXT_Last}" value="{!contactLastName }" />
+                                            <apex:message for="LastName"></apex:message>
+                                        </div>
+                                    </div>  
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="control-label">{!$Label.COMPLAINT_LBL_Complaintant_Address}</label>
+                                    
+                                    <apex:inputField id="PersonMailingStreet" styleClass="form-control" html-placeholder="{!$Label.COMPLAINT_LBL_Complaintant_Address}" value="{!account.PersonMailingStreet}" />
+                                    
+                                    
+                                </div>
+                                <div class="row">
+                                    <div class="form-group col-xs-12 col-sm-4">
+                                        <label class="control-label">{!$Label.COMPLAINT_LBL_Complaintant_City}</label>
+                                        <apex:inputField id="PersonMailingCity" styleClass="form-control" html-placeholder="{!$Label.COMPLAINT_LBL_Complaintant_City}" value="{!account.PersonMailingCity}"  />
+                                        
+                                    </div>
+                                    <div class="form-group col-xs-12 col-sm-5" id="stateSelect">
+                                        <label class="control-label">{!$Label.COMPLAINT_LBL_Complaintant_State}</label>
+                                        <div>
+                                            <apex:selectList id="PersonMailingState" styleClass="selectpicker" value="{!account.PersonMailingState}" multiselect="false" size="1">
+                                                <apex:selectOptions value="{!states}" />
+                                            </apex:selectList>
+                                            
+
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-xs-12 col-sm-3">
+                                        <label class="control-label">{!$Label.COMPLAINT_LBL_Complaintant_Zip}</label>
+                                        
+                                        <apex:inputField id="PersonMailingPostalCode" styleClass="form-control" html-placeholder="{!$Label.COMPLAINT_LBL_Complaintant_Zip}" value="{!account.PersonMailingPostalCode}"/>
+                                    </div>
+                                </div> 
+                            </div>
+                            <div class="col-xs-12 col-lg-6">
+                                <div class="form-group">
+                                    <label class="control-label">
+                                        {!$Label.COMPLAINT_LBL_Complaintant_Home_Phone}
+                                    </label>
+                                    <div class="">
+                                        <apex:inputField id="PersonHomePhone" styleClass="form-control" html-placeholder="000-000-0000" value="{!account.PersonHomePhone}" />
+                                        
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">
+                                        {!$Label.COMPLAINT_LBL_Complaintant_Mobile_Phone}
+                                    </label>
+                                    <div class="">
+                                        <apex:inputField id="PersonMobilePhone" styleClass="form-control" html-placeholder="000-000-0000" value="{!account.PersonMobilePhone}" />
+                                        
+                                    </div>
+                                </div>
+                                <div class="form-group {! IF(AND(displayMessage, OR(account.PersonEmail != complaint.Temp_Contact_Email__c, account.PersonEmail == '') ),'has-error','') }">
+                                    <label class="control-label">{!$Label.COMPLAINT_LBL_Complaintant_Email_Address}</label>
+                                    <div class="">
+                                        <apex:inputField id="email" styleClass="form-control" html-placeholder="{!$Label.COMPLAINT_TXT_sample_email}" value="{!account.PersonEmail}" />
+                                        <apex:message for="email"></apex:message>
+                                    </div>
+                                </div>
+                                <div class="form-group {! IF(AND(displayMessage, OR(account.PersonEmail != complaint.Temp_Contact_Email__c, complaint.Temp_Contact_Email__c=='') ),'has-error','') }">
+                                    <label class="control-label">{!$Label.COMPLAINT_LBL_Complaintant_Confirm_Email_Address} </label>
+                                    <div class="">
+                                        <apex:inputField id="confirmEmail" styleClass="form-control" html-placeholder="{!$Label.COMPLAINT_TXT_sample_email}" value="{!complaint.Temp_Contact_Email__c }" />
+                                        <apex:message for="confirmEmail"></apex:message>
+                                    </div>
+                                </div> 
+                                
+                            </div>
+                            
+                            <apex:outputPanel layout="block" styleClass=""  id="receiveInfo" style="{! IF(complaint.Anonymous__c,'display:none;','')}">
+ 
+                                    <label class="lead col-xs-12 col-md-6" for="{! $component.emailOptOut }">{!$LABEL.COMPLAINT_LBL_Do_You_Wish_To_Receive_Further_Updates} &nbsp; 
+                                        
+                                    </label>
+                                <div class="col-xs-12 col-md-6">
+                                    <div class="form-group" id="optOutToggle">
+                                        
+                                        <apex:inputCheckbox id="emailOptOut" html-data-toggle="toggle" html-data-on="{!$Label.COMPLAINT_TXT_Yes}" html-data-off="{!$Label.COMPLAINT_TXT_No}" value="{!emailOptOut}" />
+                                    </div>
+                                </div>
+                            </apex:outputPanel>
+                        </div>
+                    </apex:outputPanel>
+                </apex:actionRegion>
+                <hr/>
+                <div class="row">
+                    <div class="col-xs-12">&nbsp;</div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-xs-4 ">
+                        <apex:commandlink action="{!step2}">
+                            <button class="btn btn-primary btn-lg">
+                                <i class="fa fa-arrow-left"></i>&nbsp; {!$LABEL.COMPLAINT_BNT_Previous}
+                            </button>
+                        </apex:commandlink>
+                    </div>
+                    <div class="col-xs-4 text-center">
+                        <apex:commandlink id="buttonSubmit" onClick="submitComplaint('{!$Component.buttonSubmit}'); return false;" >
+                            <button id="iButton" class="btn btn-primary btn-lg" >
+                                {!$Label.COMPLAINT_BTN_Submit} &nbsp; <i class="fa fa-arrow-right"></i>
+                            </button>
+                        </apex:commandlink>
+                    </div>
+                    <div class="col-xs-4 text-right">
+                         <a href="#privacyModal" data-toggle="modal" data-target="#privacyModal">{!$LABEL.COMPLAINT_LBL_Privacy_Notice_Regarding_Information_Collection}</a>
+                    </div>
+                </div>
+                <apex:actionFunction name="uaFunction" reRender="accountDetails,anonMessage" oncomplete="$('input[data-toggle=toggle]').bootstrapToggle();$('.selectpicker').selectpicker();" action="{!updateAnonymous}" />
+                <apex:actionFunction name="updaterefFunction" reRender="refDetails" oncomplete="$('input[data-toggle=toggle]').bootstrapToggle();$('.selectpicker').selectpicker();" action="{!updateReferring}" />
+                <apex:actionFunction name="submitComplaintAction" action="{!step4}" />
+                
+            </apex:form>
+        </apex:define>
+        
+        <apex:define name="scripts">
+            <!-- ALL, yes ALL custom javascript for the page should go here otherwise it will get executed out of order -->
+            <script type="text/javascript">
+            function submitComplaint(btId){
+                
+                document.getElementById(btId).removeAttribute('href');
+                document.getElementById("iButton").disabled = true;
+                document.getElementById("iButton").style.background='#dddddd';
+                submitComplaintAction();
+            }
+            function updateAnonymous(el, anonId){
+                if ($(el).prop('checked')){
+                    console.log('checked');
+                    document.getElementById(anonId).value = true;
+                } else {
+                    console.log('unchecked');
+                    document.getElementById(anonId).value = false;
+                }
+                console.log('val: ' + document.getElementById(anonId).value);
+                console.log('anonymous: ' + '{!complaint.Anonymous__c}');
+                uaFunction();
+            }
+            
+            function updateReferring(el, refId){ 
+                if ($(el).prop('checked')){
+                    console.log('checked');
+                    document.getElementById(refId).value = true;
+                } else {
+                    console.log('unchecked');
+                    document.getElementById(refId).value = false;
+                }
+                console.log('val: ' + document.getElementById(refId).value);
+                console.log('referring: ' + '{!complaint.Referring__c}');
+                updaterefFunction();
+            }
+            
+            $(function() {
+                /* 
+                var anon = "{!complaint.Anonymous__c}";
+                var ref = "{!complaint.Referring__c}";
+                
+                if(anon == "true"){
+                    console.log('anon: ' + anon);
+                    $("#anonToggle").attr("checked","checked");
+                } else{
+                    $("#anonToggle").removeAttr("checked");
+                }
+                
+                if(ref == "true"){
+                    console.log('ref: ' + ref);
+                    //$("#refToggle").attr("checked","checked");
+                } else {
+                    //$("#refToggle").removeAttr( "checked" )
+                }
+                */
+                
+                $('#accountDetails').toggle(!$("#{! SUBSTITUTE($Component.AnonymousForm.anonToggle,':','\\\\:') }").is(':checked'));
+                
+                $('body').on('change',"#{! SUBSTITUTE($Component.AnonymousForm.anonToggle,':','\\\\:') }", function(){
+                    if (this.checked){
+                        $('.account-details input[data-required="required"]').attr('required','required');
+                    }else{
+                        $('.account-details input[required=required]').attr('data-required','required').attr('required',false);
+                    };
+                    $('#accountDetails').toggle(!this.checked);
+                    $('#receiveInfo').toggle(!this.checked);
+                });
+                
+                
+            });
+            
+            
+            
+            </script>
+        </apex:define>
+    </apex:composition>
+    
+    
+</apex:page>

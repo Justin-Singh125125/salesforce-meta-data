@@ -1,0 +1,340 @@
+<apex:page applyBodyTag="false"    
+    applyHTMLTag="false" 
+    docType="HTML-5.0" 
+    id="ExternalPartnerLandingScreen" 
+    sidebar="false" 
+    showChat="false"  
+    showHeader="false"  
+    standardController="Finding__c" 
+    standardStylesheets="false"
+    extensions="ExternalPartnerPortalController"
+    cache="false" 
+    action="{!LoadExternalPartnerLandingScreen}"> 
+    <apex:composition template="ExternalPartnerLayout"> 
+        <apex:define name="ExternalPartnerLayoutTitle"></apex:define>
+        <apex:define name="PageCss">
+            <apex:stylesheet value="https://cdn.datatables.net/v/dt/dt-1.10.15/datatables.min.css" />
+        </apex:define>        
+        <apex:define name="ExternalPartnerLayoutBody">
+            <apex:form id="FindingsLandingForm" html-role="form">
+                <apex:inputhidden value="{!Authentication.UserId}" html-class="UserId" />
+                <apex:inputhidden value="{!Authentication.ExternalPartnerId}" html-class="ExternalPartnerId" />
+                <apex:inputhidden value="{!ExternalPartnerLandingScreenViewModel.ReferralId}" html-class="ReferralId" />
+                <apex:inputhidden value="{!ExternalPartnerLandingScreenViewModel.ComplaintId}" html-class="ComplaintId" />
+                <div class="group">
+                    <div class="full-width">
+                        <div class="panel panel-understated">
+                            <div class="panel-heading">
+                                <h4>Referrals</h4>
+                            </div>
+                            <div class="panel-body">
+                                <div class="group">
+                                    <div class="half"></div>
+                                    <div class="half form-inline" style="text-align: right;">
+                                        <div class="form-group">
+                                            <label for="exampleInputName2">Show</label>
+                                            <select class="form-control" id="Status">
+                                                <option value="" selected="selected">All Referrals</option>
+                                                <option value="Awaiting Findings">Referrals Awaiting Findings</option>
+                                                <option value="Findings Received">Referrals With Findings</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <table id="referrals" class="table table-striped"></table>                                
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+                <div class="group">
+                    <div class="full-width">
+                        <div class="panel panel-understated">
+                            <div class="panel-heading">
+                                <h4>Submitted Findings</h4>
+                            </div>
+                            <div class="panel-body">
+                                <table id="FindingsTable" class="table table-striped" width="100%"></table>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+                <apex:actionFunction name="ViewFindingDetails" action="{!ViewLandingScreenFindingDetails}"/>
+                <apex:actionFunction name="ViewComplaintDetails" action="{!ViewLandingScreenComplaintDetails}"/>
+                <apex:actionFunction name="RedirectToCreate" action="{!RedirectToCreate}"/>
+                <div id="dialog" title="Findings">
+                    <table id="findings" class="table table-striped" width="100%">
+                    </table>
+                </div>
+                <apex:inputhidden value="{!ExternalPartnerLandingScreenViewModel.FindingId}" html-class="FindingId" />
+            </apex:form>
+        </apex:define>
+        <apex:define name="ExternalPartnerLayoutPageScriptIncludes">
+            <apex:includescript value="https://cdn.datatables.net/v/dt/dt-1.10.15/datatables.min.js" />       
+        </apex:define>
+        <apex:define name="ExternalPartnerLayoutPageScripts">
+            <script>
+                //Start
+                var referralDataSet = new Array();
+                var findingDataSet = new Array();
+                $(document).ready(function() 
+                {
+                   onLoad();
+                });
+                
+                function onLoad()
+                {
+                    var externalPartnerId = $('.ExternalPartnerId').val();
+                    Visualforce.remoting.Manager.invokeAction('{!$RemoteAction.ExternalPartnerPortalController.GetFindings}', externalPartnerId ,
+                        function(result, event)
+                        {
+                            if (event.status) 
+                            {
+                                console.log(result);
+                                DrawFindingsTable(result);
+                            } 
+                            else 
+                            {
+                                console.log(event.message);
+                            }
+                        }, 
+                        {escape: true}
+                    );
+                    DrawReferralsTable();
+                    $( "#dialog" ).dialog({
+                        width: 600,
+                        autoOpen: false,
+                        show: {
+                            effect: "blind",
+                            duration: 1000
+                        },
+                        hide: {
+                            effect: "blind",
+                            duration: 1000
+                        },
+                        open: function() {
+                            $(this).closest(".ui-dialog")
+                            .find(".ui-dialog-titlebar-close")
+                            .removeClass("ui-dialog-titlebar-close")
+                            .html("<span class='ui-button-icon-primary ui-icon ui-icon-closethick'></span>");
+                        }
+                    });
+                }
+                
+                $(document).on('click', '.referralLink', function() 
+                {
+                    var referralId = $(this).data('id');
+                    $(".ReferralId").val(referralId);
+                    RedirectToCreate();
+                });
+                
+                $(document).on('click', '.complaintLink', function() 
+                {
+                    var complaintId = $(this).data('id');                        
+                    $(".ComplaintId").val(complaintId);
+                    ViewComplaintDetails();
+                });
+                
+                $(document).on('change', '#Status', function() 
+                {
+                    DrawReferralsTable();
+                });     
+                
+                function DrawReferralsTable(data)
+                {
+                    var externalPartnerId = $(".ExternalPartnerId").val();
+                    var status = $("#Status").val();
+                    Visualforce.remoting.Manager.invokeAction('{!$RemoteAction.ExternalPartnerPortalController.GetReferrals}', externalPartnerId, status,
+                        function(result, event)
+                        {
+                            if (event.status) 
+                            {
+                                console.log(result);
+                                $('#referrals').DataTable( {
+                                    scrollY:  "200px",
+                                    scrollCollapse: true,
+                                    destroy: true,
+                                    paging:   false,
+                                    ordering: false,
+                                    info:     false,
+                                    filter: false,
+                                    data: result,
+                                    columns: 
+                                    [
+                                        {
+                                            title: "Referral Date",
+                                            render: function ( data, type, row, meta ) 
+                                                {
+                                                    if(type === 'display'){
+                                                        data = row.CreatedDate;
+                                                    }
+                                                    return data;
+                                                },
+                                                width: "20%"
+                                        },
+                                        { 
+                                                title: "Complaint",
+                                                render: function ( data, type, row, meta ) 
+                                                {
+                                                    if(type === 'display'){
+                                                        data = '<a class="complaintLink" href="#" data-id=' + row.ComplaintId + '>' + row.ComplaintNumber + '</a>';
+                                                    }
+                                                    return data;
+                                                },
+                                                width: "20%"
+                                            },
+                                            { 
+                                                title: "Status",
+                                                render: function ( data, type, row, meta ) 
+                                                {
+                                                    if(type === 'display')
+                                                    {
+                                                        if(row.Status == 'Findings Received')
+                                                        {
+                                                            data = '<a class="referralFindingsLink" href="#" data-id=' + row.ReferralId + '>' + row.Status + '</a>';
+                                                        }
+                                                        else
+                                                        {
+                                                            data = row.Status;
+                                                        }
+                                                    }
+                                                    return data;
+                                                },
+                                                width: "20%"
+                                            },
+                                            { 
+                                                title: "",
+                                                render: function ( data, type, row, meta ) 
+                                                {
+                                                    if(type === 'display'){
+                                                        data = '<a class="referralLink" href="#" data-id=' + row.ReferralId + '>Submit Findings</a>';
+                                                    }
+                                                    return data;
+                                                },
+                                                width: "20%"
+                                            },                           
+                                    ]
+                                } );
+                            } 
+                            else 
+                            {
+                                console.log(event.message);
+                            }
+                        }, 
+                        {escape: true}
+                    );
+                }
+                
+                function DrawReferralFindingsTable(referralId)
+                {
+                    Visualforce.remoting.Manager.invokeAction('{!$RemoteAction.ExternalPartnerPortalController.GetFindingsByReferral}', referralId,
+                        function(result, event)
+                        {
+                            if (event.status) 
+                            {
+                                console.log(result);
+                                $('#findings').DataTable( {
+                                    scrollY:  "200px",
+                                    scrollCollapse: true,
+                                    destroy: true,
+                                    paging:   false,
+                                    ordering: false,
+                                    info:     false,
+                                    filter: false,
+                                    data: result, 
+                                    columns: 
+                                    [
+                                        { 
+                                            title: "Finding", 
+                                            data: "Name",
+                                            render: function ( data, type, row ) 
+                                            {
+                                                return '<a class="FindingLink" href=\'#\' data-id=\'' + row.Id + '\'>' + data + '</a>';
+                                            }
+                                        },
+                                        { 
+                                            title: "Created Date", 
+                                            data: "CreatedDate",
+                                            render: function ( data, type, row ) 
+                                            {
+                                                var dataDate = new Date(parseInt(data));
+                                                var month = dataDate.getMonth() + 1;
+                                                var day = dataDate.getDate();
+                                                var year = dataDate.getFullYear();
+                                                var date = month + "/" + day + "/" + year;
+                                                return date;
+                                            }
+                                        },                           
+                                    ]
+                                } );
+                            } 
+                            else 
+                            {
+                                console.log(event.message);
+                            }
+                        }, 
+                        {escape: true}
+                    );
+                }
+                
+                function DrawFindingsTable(data)
+                {
+                    $('#FindingsTable').DataTable( {
+                        destroy: true,
+                        paging:   false,
+                        ordering: false,
+                        info:     false,
+                        filter: false,
+                        data: data,
+                        columns: 
+                        [
+                            { 
+                                title: "Finding", 
+                                data: "Name",
+                                render: function ( data, type, row ) 
+                                {
+                                    return '<a class="FindingLink" href=\'#\' data-id=\'' + row.Id + '\'>' + data + '</a>';
+                                }
+                            },
+                            { 
+                                title: "Complaint", 
+                                data: "Complaint__r.Name",
+                                render: function ( data, type, row ) 
+                                {
+                                    return '<a class="complaintLink" href="#" data-id=' + row.Complaint__c + '>' + data + '</a>';
+                                }
+                            },
+                            { 
+                                title: "Created Date", 
+                                data: "CreatedDate",
+                                render: function ( data, type, row ) 
+                                {
+                                    var dataDate = new Date(parseInt(data));
+                                    var month = dataDate.getMonth() + 1;
+                                    var day = dataDate.getDate();
+                                    var year = dataDate.getFullYear();
+                                    var date = month + "/" + day + "/" + year;
+                                    return date;
+                                }
+                            },
+                        ]
+                    } );
+
+                }
+                
+                $(document).on('click', '.FindingLink', function(event) 
+                {
+                    event.preventDefault();
+                    $('.FindingId').val($(this).data('id'));
+                    ViewFindingDetails();
+                }); 
+                
+                $(document).on('click', '.referralFindingsLink', function(event) 
+                {
+                    event.preventDefault();
+                    $( "#dialog" ).dialog( "open" );
+                    DrawReferralFindingsTable($(this).data('id'));
+                }); 
+            </script>
+        </apex:define>
+    </apex:composition> 
+</apex:page>
